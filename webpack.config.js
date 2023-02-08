@@ -1,20 +1,20 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./frontend/src/index.js",
+  entry: './frontend/src/index.js',
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "build"),
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'build'),
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "frontend/assets", "index.html"),
+      template: path.join(__dirname, 'frontend/assets', 'index.html'),
     }),
   ],
   devServer: {
     static: {
-      directory: path.join(__dirname, "build"),
+      directory: path.join(__dirname, 'build'),
     },
     port: 3000,
   },
@@ -22,15 +22,14 @@ module.exports = {
     // exclude node_modules
     rules: [
       {
-        test: /\.(js|jsx)$/,         // <-- added `|jsx` here
+        test: /\.(js|jsx)$/, // <-- added `|jsx` here
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ['babel-loader'],
       },
     ],
   },
   // pass all js files through Babel
   resolve: {
-    extensions: ["*", ".js", ".jsx"],    // <-- added `.jsx` here
+    extensions: ['*', '.js', '.jsx'], // <-- added `.jsx` here
   },
-    
 };

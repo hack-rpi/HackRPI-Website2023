@@ -48,6 +48,9 @@
     "**/*.{js,jsx,json}": [
       "eslint . --fix",
       "prettier --write ."
+    ],
+    "src/**/*.{html,css}": [
+      "prettier --write"
     ]
   },
   "husky": {
