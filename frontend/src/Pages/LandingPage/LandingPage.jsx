@@ -19,7 +19,7 @@ const LandingPage = () => {
 
         setTimeout(() => {
           setTransitionDuration(4000);
-          setAltitude(() => feat => Math.max(0.1, (Math.sqrt(+feat.properties.POP_EST) * 7e-5)/3));
+          setAltitude(() => feat => Math.max(0.1, (Math.sqrt(+feat.properties.POP_EST) * 3e-5)/3));
         }, 3500);
       });
   }, []);
@@ -66,6 +66,12 @@ const LandingPage = () => {
       </Container>
       <Container style={{position: "absolute", top: "15%", left: "50%", transform: "translate(-50%, -50%)"}}>
         <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>Change the World with Us</h1>
+      </Container>
+      <Container style={{position: "absolute", top: "18.5%", left: "50%", transform: "translate(-50%, -50%)"}}>
+        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>on November 4-5</h1>
+      </Container>
+      <Container style={{position: "absolute", bottom: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
+        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>More Details Coming Soon</h1>
       </Container>
     </div>
   );
