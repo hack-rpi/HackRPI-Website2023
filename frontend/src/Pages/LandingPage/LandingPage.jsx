@@ -28,6 +28,8 @@ const LandingPage = () => {
     // Auto-rotate
     globeEl.current.controls().autoRotate = true;
     globeEl.current.controls().autoRotateSpeed = 0.3;
+    // disable zoom
+    globeEl.current.controls().enableZoom = false;
 
     globeEl.current.pointOfView({ altitude: 4 }, 5000);
   }, []);

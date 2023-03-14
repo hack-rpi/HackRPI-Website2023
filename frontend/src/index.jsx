@@ -1,14 +1,14 @@
 import React from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Container';
+import FAQPage from './Pages/FAQPage/FAQPage.jsx';
+
 function App() {
     return(
         <>
             <NavBar/>
             <LandingPage/>
+            <FAQPage />
         </>
     );
 }

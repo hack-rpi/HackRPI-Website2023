@@ -32,7 +32,7 @@ module.exports = {
         title:"Hack RPI 2022",
         filename:"index.html",
         template: "frontend/assets/index.html"
-      }),
+      })
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx'], // <-- added `.jsx` here
