@@ -62,16 +62,44 @@ const LandingPage = () => {
         polygonsTransitionDuration={transitionDuration}
       />
       <Container style={{position: "absolute", top: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
-        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "3rem"}}>HackRPI 2023</h1>
+        <h1 style={{
+          fontFamily: "Orbitron, sans-serif", 
+          fontWeight: "500",
+          color: "white", 
+          textAlign: "center", 
+          fontSize: "3rem",
+          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
+        }}>HackRPI 2023</h1>
       </Container>
       <Container style={{position: "absolute", top: "15%", left: "50%", transform: "translate(-50%, -50%)"}}>
-        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>Change the World with Us</h1>
+        <h1 style={{
+          fontFamily: "Orbitron, sans-serif", 
+          fontWeight: "400",
+          color: "white", 
+          textAlign: "center", 
+          fontSize: "1.5rem",
+          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
+        }}>Change the World with Us</h1>
       </Container>
       <Container style={{position: "absolute", top: "18.5%", left: "50%", transform: "translate(-50%, -50%)"}}>
-        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>November 4-5</h1>
+        <h1 style={{
+          fontFamily: "Orbitron, sans-serif", 
+          fontWeight: "400",
+          color: "white", 
+          textAlign: "center", 
+          fontSize: "1.5rem",
+          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
+        }}>November 4-5</h1>
       </Container>
       <Container style={{position: "absolute", bottom: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
-        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>More Details Coming Soon</h1>
+        <h1 style={{
+          fontFamily: "Orbitron, sans-serif", 
+          fontWeight: "400",
+          color: "white", 
+          textAlign: "center", 
+          fontSize: "1.5rem",
+          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
+        }}>More Details Coming Soon</h1>
       </Container>
     </div>
   );
