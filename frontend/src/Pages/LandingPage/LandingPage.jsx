@@ -64,6 +64,9 @@ const LandingPage = () => {
       <Container style={{position: "absolute", top: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
         <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "3rem"}}>HackRPI 2023</h1>
       </Container>
+      <Container style={{position: "absolute", top: "15%", left: "50%", transform: "translate(-50%, -50%)"}}>
+        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "1.5rem"}}>Change the World with Us</h1>
+      </Container>
     </div>
   );
 };
