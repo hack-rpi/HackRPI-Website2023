@@ -45,23 +45,29 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <Globe
-      ref={globeEl}
-      globeImageUrl={globeimage}
-      width={windowDimensions.width}
-      height={windowDimensions.height}
-      polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
-      polygonAltitude={altitude}
-      polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
-      polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
-      polygonLabel={({ properties: d }) => `
-        <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-        Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
-      `}
-      polygonsTransitionDuration={transitionDuration}
-    />
+    <div style={{position: "relative"}}>
+      <Globe
+        ref={globeEl}
+        globeImageUrl={globeimage}
+        width={windowDimensions.width}
+        height={windowDimensions.height}
+        polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
+        polygonAltitude={altitude}
+        polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
+        polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
+        polygonLabel={({ properties: d }) => `
+          <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
+          Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
+        `}
+        polygonsTransitionDuration={transitionDuration}
+      />
+      <Container style={{position: "absolute", top: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
+        <h1 style={{fontFamily: "Google Orbitron", color: "white", textAlign: "center", fontSize: "3rem"}}>HackRPI 2023</h1>
+      </Container>
+    </div>
   );
 };
 
 export default LandingPage;
+
 
