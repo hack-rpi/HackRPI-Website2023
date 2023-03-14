@@ -14,7 +14,7 @@ class NavBar extends React.Component {
               height="30"
               className="d-inline-block align-top"
             />
-            HackRPI 2022
+            HackRPI 2023
           </Navbar.Brand>
         </Container>
       </Navbar>
