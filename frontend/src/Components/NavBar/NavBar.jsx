@@ -8,9 +8,9 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="dark" variant="dark">
+        <Navbar style={{ backgroundColor: "#8B0000", padding: "1rem" }} variant="dark">
           <Container fluid>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', fontSize: '1.25rem' }}>
               <Navbar.Brand href="#home">
                 <img
                   src={logo}
@@ -20,8 +20,17 @@ class NavBar extends React.Component {
                 />
                 HackRPI 2023
               </Navbar.Brand>
+              <Nav.Link href="#about" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
+                About
+              </Nav.Link>
+              <Nav.Link href="#register" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
+                Register
+              </Nav.Link>
               <Nav.Link href="#faq" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
                 FAQ
+              </Nav.Link>
+              <Nav.Link href="#sponsors" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
+                Sponsors
               </Nav.Link>
             </div>
           </Container>
@@ -32,3 +41,5 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
+
