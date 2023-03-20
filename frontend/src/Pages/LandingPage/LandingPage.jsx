@@ -28,6 +28,8 @@ const LandingPage = () => {
     // Auto-rotate
     globeEl.current.controls().autoRotate = true;
     globeEl.current.controls().autoRotateSpeed = 0.3;
+    // disable zoom
+    globeEl.current.controls().enableZoom = false;
 
     globeEl.current.pointOfView({ altitude: 4 }, 5000);
   }, []);
@@ -45,12 +47,14 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div style={{position: "relative"}}>
+    <div style={{position: "relative", backgroundColor: "black", height: "100vh"}}>
+      <div style={{ position: "absolute", right: 0, width: "50%", height: "100%" }}> {/* Add this div */}
       <Globe
         ref={globeEl}
         globeImageUrl={globeimage}
-        width={windowDimensions.width}
+        width={windowDimensions.width / 2} // Update this line
         height={windowDimensions.height}
+        backgroundColor="black"
         polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
         polygonAltitude={altitude}
         polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
@@ -61,7 +65,8 @@ const LandingPage = () => {
         `}
         polygonsTransitionDuration={transitionDuration}
       />
-      <Container style={{position: "absolute", top: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
+    </div>
+      <Container style={{position: "absolute", top: "10%", left: "20%", transform: "translate(-50%, -50%)"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "500",
@@ -71,7 +76,7 @@ const LandingPage = () => {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }}>HackRPI 2023</h1>
       </Container>
-      <Container style={{position: "absolute", top: "15%", left: "50%", transform: "translate(-50%, -50%)"}}>
+      <Container style={{position: "absolute", top: "15%", left: "20%", transform: "translate(-50%, -50%)"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "400",
@@ -81,7 +86,7 @@ const LandingPage = () => {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }}>Change the World with Us</h1>
       </Container>
-      <Container style={{position: "absolute", top: "18.5%", left: "50%", transform: "translate(-50%, -50%)"}}>
+      <Container style={{position: "absolute", top: "18.5%", left: "20%", transform: "translate(-50%, -50%)"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "400",
@@ -91,7 +96,7 @@ const LandingPage = () => {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }}>November 4-5</h1>
       </Container>
-      <Container style={{position: "absolute", bottom: "10%", left: "50%", transform: "translate(-50%, -50%)"}}>
+      <Container style={{position: "absolute", top: "45%", left: "20%", transform: "translate(-50%, -50%)"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "400",
