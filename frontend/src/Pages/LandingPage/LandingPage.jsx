@@ -47,7 +47,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div style={{position: "relative", backgroundColor: "black", height: "100vh"}}>
+    <div style={{position: "relative", backgroundColor: "black", height: "100vh"}} id="home">
       <div style={{ position: "absolute", right: 0, width: "50%", height: "100%" }}> {/* Add this div */}
       <Globe
         ref={globeEl}

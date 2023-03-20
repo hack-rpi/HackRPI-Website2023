@@ -8,7 +8,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar style={{ backgroundColor: "#8B0000", padding: "1rem" }} variant="dark">
+        <Navbar style={{ backgroundColor: "#8B0000", padding: "1rem" }} variant="dark" sticky="top">
           <Container fluid>
             <div style={{ display: 'flex', alignItems: 'center', fontSize: '1.25rem' }}>
               <Navbar.Brand href="#home">
