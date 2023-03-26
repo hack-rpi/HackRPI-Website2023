@@ -6,6 +6,7 @@ module.exports = {
   output : {
     path: path.resolve(__dirname,'build'),
     filename: '[name][contenthash].js',
+    publicPath: 'bulid/',
     assetModuleFilename:'[name][ext]',
     clean: true,
   },
