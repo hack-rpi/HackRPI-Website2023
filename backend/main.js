@@ -7,6 +7,7 @@ app.use(express.static('../build'));
 const path = require('path');
 console.log(path);
 app.get('*', (req, res) => {
+console.log(req)
 res.sendFile(path.resolve(__dirname+"/..", 'build', 'index.html'));
 });
 // if not in production use the port 5000
