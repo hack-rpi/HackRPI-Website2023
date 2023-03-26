@@ -11,7 +11,7 @@ function App() {
             <NavBar/>
             <LandingPage/>
             <Timer/>
-            <FAQPage/>
+            {/*<FAQPage/>*/}
         </>
     );
 }

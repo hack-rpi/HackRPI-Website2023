@@ -26,10 +26,10 @@ constructor(){
             <>
                 <Container sticky="bottom" style={{ position: "fixed", bottom: "5px", left: "0px" , "zIndex":4000}}>
                     <Col>
-                        <h2 class="border border-white rounded-circle" style={{display:"inline-block", padding:"10px"}}>{Math.floor(this.state.time / (1000 * 60 * 60 * 24))}</h2>
-                        <h2 class="border border-white rounded-circle"  style={{display:"inline-block" , padding:"10px"}}>{Math.floor((this.state.time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}</h2>
-                        <h2 class="border border-white rounded-circle"  style={{display:"inline-block" , padding:"10px"}}>{Math.floor((this.state.time % (1000 * 60 * 60)) / (1000 * 60))}</h2>
-                        <h2 class="border border-white rounded-circle" style={{display:"inline-block" , padding:"10px"}}>{Math.floor((this.state.time % (1000 * 60)) / 1000)}</h2>
+                        <h2 class="text-white" style={{display:"inline-block", padding:"10px"}}>{Math.floor(this.state.time / (1000 * 60 * 60 * 24))}</h2>
+                        <h2 class="text-white"  style={{display:"inline-block" , padding:"10px"}}>{Math.floor((this.state.time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}</h2>
+                        <h2 class="text-white"  style={{display:"inline-block" , padding:"10px"}}>{Math.floor((this.state.time % (1000 * 60 * 60)) / (1000 * 60))}</h2>
+                        <h2 class="text-white" style={{display:"inline-block" , padding:"10px"}}>{Math.floor((this.state.time % (1000 * 60)) / 1000)}</h2>
                     </Col>
                 </Container>
             </>

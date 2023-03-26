@@ -3,7 +3,8 @@ import Globe from 'react-globe.gl';
 import data from "../../../assets/data.geojson";
 import globeimage from "../../../assets/earth-dark.jpg";
 import Container from 'react-bootstrap/Container';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 const LandingPage = () => {
   const globeEl = useRef();
   const [countries, setCountries] = useState({ features: []});
@@ -52,7 +53,7 @@ const LandingPage = () => {
       <Globe
         ref={globeEl}
         globeImageUrl={globeimage}
-        width={windowDimensions.width / 2} // Update this line
+        width={windowDimensions.width / 1.85} // Update this line
         height={windowDimensions.height}
         backgroundColor="black"
         polygonsData={countries.features.filter(d => d.properties.ISO_A2 !== 'AQ')}
@@ -66,7 +67,7 @@ const LandingPage = () => {
         polygonsTransitionDuration={transitionDuration}
       />
     </div>
-      <Container style={{position: "absolute", top: "10%", left: "20%", transform: "translate(-50%, -50%)"}}>
+        <Container style={{position: "absolute", top: "10%", left: "20%", transform: "translate(-50%, -50%)", width: "50%"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "500",
@@ -76,7 +77,8 @@ const LandingPage = () => {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }}>HackRPI 2023</h1>
       </Container>
-      <Container style={{position: "absolute", top: "15%", left: "20%", transform: "translate(-50%, -50%)"}}>
+    <br/>
+    <Container style={{position: "absolute", top: "25%", left: "20%", transform: "translate(-50%, -50%)",width:"50%"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "400",
@@ -86,7 +88,7 @@ const LandingPage = () => {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }}>Change the World with Us</h1>
       </Container>
-      <Container style={{position: "absolute", top: "18.5%", left: "20%", transform: "translate(-50%, -50%)"}}>
+    <Container style={{position: "absolute", top: "18.5%", left: "20%", transform: "translate(-50%, -50%)" , width:"50%"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "400",
@@ -96,7 +98,7 @@ const LandingPage = () => {
           textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)"
         }}>November 4-5</h1>
       </Container>
-      <Container style={{position: "absolute", top: "45%", left: "20%", transform: "translate(-50%, -50%)"}}>
+    <Container style={{position: "absolute", top: "45%", left: "20%", transform: "translate(-50%, -50%)", width:"50%"}}>
         <h1 style={{
           fontFamily: "Orbitron, sans-serif", 
           fontWeight: "400",

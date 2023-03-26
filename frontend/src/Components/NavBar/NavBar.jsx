@@ -20,6 +20,7 @@ class NavBar extends React.Component {
                 />
                 HackRPI 2023
               </Navbar.Brand>
+              {/*
               <Nav.Link href="#about" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
                 About
               </Nav.Link>
@@ -32,6 +33,7 @@ class NavBar extends React.Component {
               <Nav.Link href="#sponsors" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
                 Sponsors
               </Nav.Link>
+               */}
             </div>
           </Container>
         </Navbar>
