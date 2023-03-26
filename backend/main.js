@@ -8,7 +8,7 @@ const path = require('path');
 console.log(path);
 app.get('*', (req, res) => {
 console.log(req)
-res.sendFile(path.resolve(__dirname+"/..", 'build', 'index.html'));
+res.sendFile(path.resolve(__dirname+"/..", 'build', req.route.path));
 });
 // if not in production use the port 5000
 const PORT = process.env.PORT || 5000;
