@@ -6,7 +6,7 @@ module.exports = {
   output : {
     path: path.resolve(__dirname,'build'),
     filename: '[name][contenthash].js',
-    publicPath: 'hackrpi.com',
+    publicPath: 'http:://hackrpi.com',
     assetModuleFilename:'[name][ext]',
     clean: true,
   },
