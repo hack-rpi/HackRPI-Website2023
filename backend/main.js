@@ -11,6 +11,6 @@ console.log(req)
 res.sendFile(path.resolve(__dirname+"/..", 'build', req.route.path));
 });
 // if not in production use the port 5000
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 console.log('server started on port:',PORT);
 app.listen(PORT);
