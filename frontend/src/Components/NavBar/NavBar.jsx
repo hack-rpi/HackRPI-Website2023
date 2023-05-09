@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import logo from "../../../assets/hackrpi_white.png"
+import logo from "../../../assets/hackrpi_logo.png"
 
 class NavBar extends React.Component {
   render() {
@@ -14,11 +14,11 @@ class NavBar extends React.Component {
               <Navbar.Brand href="#home">
                 <img
                   src={logo}
-                  width="30"
-                  height="30"
+                  width="35"
+                  height="32"
                   className="d-inline-block align-top"
                 />
-                HackRPI 2023
+                HackRPI X
               </Navbar.Brand>
               {/*
               <Nav.Link href="#about" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
