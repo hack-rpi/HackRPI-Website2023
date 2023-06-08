@@ -6,14 +6,14 @@ import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-    return(
-        <>
-            <NavBar/>
-            <LandingPage/>
-            <Timer/>
-            {/*<FAQPage/>*/}
-        </>
-    );
+  return (
+    <>
+      <NavBar />
+      <LandingPage />
+      <Timer />
+      <FAQPage />
+    </>
+  );
 }
 
 export default App;
