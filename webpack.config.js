@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: [
       new HtmlWebpackPlugin({
-        title:"Hack RPI 2022",
+        title:"HackRPI X",
         filename:"index.html",
         template: "frontend/assets/index.html"
       })
