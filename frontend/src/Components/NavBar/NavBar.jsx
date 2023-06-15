@@ -8,9 +8,19 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar style={{ backgroundColor: "#8B0000", padding: "1rem" }} variant="dark" sticky="top">
+        <Navbar
+          style={{ backgroundColor: '#8B0000', padding: '1rem' }}
+          variant="dark"
+          sticky="top"
+        >
           <Container fluid>
-            <div style={{ display: 'flex', alignItems: 'center', fontSize: '1.25rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '1.25rem',
+              }}
+            >
               <Navbar.Brand href="#home">
                 <img
                   src={logo}
@@ -20,12 +30,19 @@ class NavBar extends React.Component {
                 />
                 HackRPI X
               </Navbar.Brand>
+              <Nav.Link
+                href="https://my.mlh.io/oauth/authorize?client_id=mWuOuj6yD4rOvlubrBrUZvktKYcKccdfEePZWf--O6k&redirect_uri=http%3A%2F%2Fhackrpi%2Fouath&response_type=token"
+                style={{
+                  paddingLeft: '1rem',
+                  color: 'white',
+                  textDecoration: 'none',
+                }}
+              >
+                Register
+              </Nav.Link>
               {/*
               <Nav.Link href="#about" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
                 About
-              </Nav.Link>
-              <Nav.Link href="#register" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
-                Register
               </Nav.Link>
               <Nav.Link href="#faq" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
                 FAQ
@@ -43,5 +60,3 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-
-
