@@ -2,15 +2,25 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import logo from "../../../assets/hackrpi_white.png"
+import logo from '../../../assets/hackrpi_white.png';
 
 class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar style={{ backgroundColor: "#8B0000", padding: "1rem" }} variant="dark" sticky="top">
+        <Navbar
+          style={{ backgroundColor: '#8B0000', padding: '1rem' }}
+          variant="dark"
+          sticky="top"
+        >
           <Container fluid>
-            <div style={{ display: 'flex', alignItems: 'center', fontSize: '1.25rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                fontSize: '1.25rem',
+              }}
+            >
               <Navbar.Brand href="#home">
                 <img
                   src={logo}
@@ -20,6 +30,17 @@ class NavBar extends React.Component {
                 />
                 HackRPI 2023
               </Navbar.Brand>
+              <Nav.Link
+                href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                style={{
+                  paddingLeft: '1rem',
+                  color: 'white',
+                  textDecoration: 'none',
+                }}
+              >
+                MLH Code of Conduct
+              </Nav.Link>
+
               {/*
               <Nav.Link href="#about" style={{ paddingLeft: '1rem', color: 'white', textDecoration: 'none' }}>
                 About
@@ -43,5 +64,3 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-
-
