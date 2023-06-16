@@ -101,22 +101,24 @@ const LandingPage = () => {
       >
         <h1
           style={{
-            fontFamily: 'Orbitron, sans-serif',
+
+            fontFamily: 'Bungee, cursive', 
             fontWeight: '500',
             color: 'white',
             textAlign: 'center',
-            fontSize: '3rem',
+            fontSize: '5rem',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
           }}
         >
-          HackRPI 2023
+          HackRPI X
         </h1>
       </Container>
       <br />
       <Container
         style={{
           position: 'absolute',
-          top: '25%',
+
+          top: '30%',
           left: '20%',
           transform: 'translate(-50%, -50%)',
           width: '50%',
@@ -124,12 +126,12 @@ const LandingPage = () => {
       >
         <h1
           style={{
-            fontFamily: 'Orbitron, sans-serif',
+            fontFamily: 'Major Mono Display, monospace', 
             fontWeight: '400',
             color: 'white',
             textAlign: 'center',
-            fontSize: '1.5rem',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+            fontSize: '2rem', 
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
           }}
         >
           Change the World with Us
@@ -138,7 +140,7 @@ const LandingPage = () => {
       <Container
         style={{
           position: 'absolute',
-          top: '18.5%',
+          top: '20%',
           left: '20%',
           transform: 'translate(-50%, -50%)',
           width: '50%',
@@ -146,11 +148,12 @@ const LandingPage = () => {
       >
         <h1
           style={{
-            fontFamily: 'Orbitron, sans-serif',
-            fontWeight: '400',
+
+            fontFamily: 'Bungee, cursive',
+            fontWeight: '600',
             color: 'white',
             textAlign: 'center',
-            fontSize: '1.5rem',
+            fontSize: '2rem',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
           }}
         >
@@ -160,7 +163,7 @@ const LandingPage = () => {
       <Container
         style={{
           position: 'absolute',
-          top: '45%',
+          top: '55%',
           left: '20%',
           transform: 'translate(-50%, -50%)',
           width: '50%',
@@ -168,15 +171,15 @@ const LandingPage = () => {
       >
         <h1
           style={{
-            fontFamily: 'Orbitron, sans-serif',
-            fontWeight: '400',
+
             color: 'white',
             textAlign: 'center',
             fontSize: '1.5rem',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
           }}
         >
-          More Details Coming Soon
+
+          More Details Coming Soon...
         </h1>
       </Container>
     </div>
