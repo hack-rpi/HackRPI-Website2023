@@ -28,7 +28,14 @@
 
 @font-face {
     font-family: "Poppins";
-    src: local("Poppins"),
+    src: local("Poppins Light"),
         url("./Fonts/Poppins/Poppins-Light.ttf") format("truetype");
     font-weight: light;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins ExtraLight"),
+        url("./Fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+    font-weight: lighter;
 }
