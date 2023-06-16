@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
 import logo from "../../../assets/hackrpi_logo.png"
 
 class NavBar extends React.Component {
@@ -31,13 +32,23 @@ class NavBar extends React.Component {
                 HackRPI X
               </Navbar.Brand>
               <Nav.Link
-                href="https://my.mlh.io/oauth/authorize?client_id=mWuOuj6yD4rOvlubrBrUZvktKYcKccdfEePZWf--O6k&redirect_uri=http%3A%2F%2Fhackrpi%2Fouath&response_type=token"
+                href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
                 style={{
                   paddingLeft: '1rem',
                   color: 'white',
                   textDecoration: 'none',
                 }}
               >
+                MLH Code of Conduct
+              </Nav.Link
+                href="https://my.mlh.io/oauth/authorize?client_id=mWuOuj6yD4rOvlubrBrUZvktKYcKccdfEePZWf--O6k&redirect_uri=http%3A%2F%2Fhackrpi%2Fouath&response_type=token"
+style={{
+                  paddingLeft: '1rem',
+                  color: 'white',
+                  textDecoration: 'none',
+                }}
+                >
+
                 Register
               </Nav.Link>
               {/*

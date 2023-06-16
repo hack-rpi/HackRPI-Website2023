@@ -101,6 +101,7 @@ const LandingPage = () => {
       >
         <h1
           style={{
+
             fontFamily: 'Bungee, cursive', 
             fontWeight: '500',
             color: 'white',
@@ -116,6 +117,7 @@ const LandingPage = () => {
       <Container
         style={{
           position: 'absolute',
+
           top: '30%',
           left: '20%',
           transform: 'translate(-50%, -50%)',
@@ -146,6 +148,7 @@ const LandingPage = () => {
       >
         <h1
           style={{
+
             fontFamily: 'Bungee, cursive',
             fontWeight: '600',
             color: 'white',
@@ -168,14 +171,14 @@ const LandingPage = () => {
       >
         <h1
           style={{
-            fontFamily: 'Major Mono Display, monospace', 
-            fontWeight: '500',
+
             color: 'white',
             textAlign: 'center',
             fontSize: '1.5rem',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
           }}
         >
+
           More Details Coming Soon...
         </h1>
       </Container>
