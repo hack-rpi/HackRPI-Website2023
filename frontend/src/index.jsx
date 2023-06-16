@@ -4,6 +4,7 @@ import Timer from './Components/Timer/Timer.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './fonts.css';
 
 function App() {
   return (
