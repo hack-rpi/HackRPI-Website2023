@@ -1,6 +1,8 @@
 import React from 'react';
+import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
+
 const faqs = [
   {
     title: 'What is a HackRPI?',
@@ -40,31 +42,39 @@ const faqs = [
 ];
 
 const FAQPage = () => {
+  const [currentActiveKey, setCurrentActiveKey] = useState(null);
+
+  const toggleActiveKey = (key) => {
+    setCurrentActiveKey(currentActiveKey === key ? null : key);
+  };
+
+
   return (
-    <Container fluid style={{ backgroundColor: '#8B0000', minHeight: '100vh' }}>
-      <div>
+    <Container fluid style={{ backgroundColor: '#191919', height: '100vh',  alignItems: "center" }}>
         <h1
           style={{
-            fontFamily: 'Orbitron, sans-serif',
+            fontFamily: 'Mokoto',
             fontWeight: '400',
             color: 'white',
             textAlign: 'center',
             fontSize: '3rem',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+
+            paddingBottom: 10
           }}
         >
-          FAQ
+          FAQs
         </h1>
-
-        <Accordion>
-          {faqs.map((faq, index) => (
-            <Accordion.Item eventKey={index}>
-              <Accordion.Header>{faq.title}</Accordion.Header>
-              <Accordion.Body>{faq.content}</Accordion.Body>
-            </Accordion.Item>
-          ))}
-        </Accordion>
-      </div>
+        
+          <Accordion
+            style={{ fontFamily: "Poppins", width: "75vw", margin: "auto" }}>
+            {faqs.map((faq, index) => (
+              <Accordion.Item eventKey={index}>
+                <Accordion.Header  onClick={ () => { toggleActiveKey('0');}}>{faq.title}</Accordion.Header>
+                <Accordion.Body>{faq.content}</Accordion.Body>
+              </Accordion.Item>
+            ))}
+          </Accordion>"
     </Container>
   );
 };
