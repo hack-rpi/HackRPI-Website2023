@@ -53,6 +53,8 @@ export default function NavBar() {
               options={data2}
             />
           </Form>
+
+	    
         </Modal.Body>
       </Modal>
       <Navbar
