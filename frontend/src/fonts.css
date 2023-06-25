@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Mokoto";
+    src: local("Mokoto"),
+        url("./Fonts/Mokoto/mokoto.regular.ttf") format("truetype");
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: "Agrandir";
+    src: local("Agrandir"),
+        url("./Fonts/Agrandir/Agrandir-Regular.otf") format("opentype");
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins"),
+        url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins"),
+        url("./Fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins Light"),
+        url("./Fonts/Poppins/Poppins-Light.ttf") format("truetype");
+    font-weight: light;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: local("Poppins ExtraLight"),
+        url("./Fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+    font-weight: lighter;
+}

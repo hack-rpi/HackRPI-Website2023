@@ -5,6 +5,7 @@ import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 const LandingPage = () => {
   const globeEl = useRef();
   const [countries, setCountries] = useState({ features: [] });
@@ -58,25 +59,65 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div
+    <div className="hero"
       style={{
-        position: 'relative',
-        backgroundColor: 'black',
-        height: '100vh',
+        backgroundColor:"#191919",
+        display: "flex",
       }}
-      id="home"
     >
-      <div
-        style={{ position: 'absolute', right: 0, width: '50%', height: '100%' }}
+      <Container
+        style={{
+          color: "white",
+          textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
+          
+          justifyContent: "center",
+          paddingTop: 133,
+          postiion: "absolute",
+          width: "70%",
+        }}
       >
-        {' '}
-        {/* Add this div */}
+        <Row
+          style={{
+            fontFamily: "Mokoto",
+            fontSize: 110,
+            paddingLeft: 130,
+            lineHeight: "130%",
+          }}
+        >
+          <Col>HACKRPI X</Col>
+        </Row>
+
+        <Row 
+          style={{
+            fontFamily: "Agrandir",
+            lineHeight: "30%",
+            paddingLeft: 120,
+          }}
+        >
+          <Col sm style={{fontSize: 70}}>2023</Col>
+          <Col sm style={{fontSize: 30}}>november 4-5</Col>
+        </Row>
+
+        <Row
+          style={{
+            fontFamily: "Poppins",
+            fontStyle: "light",
+            fontSize: 30,
+            lineHeight: 10,
+            paddingLeft: 120,
+          }}
+        >
+          <Col>More Details Coming Soon...</Col>
+        </Row>
+      </Container>
+
+      <div className="globe" style={{width:"50%"}}>
         <Globe
           ref={globeEl}
           globeImageUrl={globeimage}
-          width={windowDimensions.width / 1.85} // Update this line
+          width={windowDimensions.width / 2} // Update this line
           height={windowDimensions.height}
-          backgroundColor="black"
+          backgroundColor="#191919"
           polygonsData={countries.features.filter(
             (d) => d.properties.ISO_A2 !== 'AQ',
           )}
@@ -90,98 +131,10 @@ const LandingPage = () => {
           polygonsTransitionDuration={transitionDuration}
         />
       </div>
-      <Container
-        style={{
-          position: 'absolute',
-          top: '10%',
-          left: '20%',
-          transform: 'translate(-50%, -50%)',
-          width: '50%',
-        }}
-      >
-        <h1
-          style={{
 
-            fontFamily: 'Bungee, cursive', 
-            fontWeight: '500',
-            color: 'white',
-            textAlign: 'center',
-            fontSize: '5rem',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-          HackRPI X
-        </h1>
-      </Container>
+
       <br />
-      <Container
-        style={{
-          position: 'absolute',
 
-          top: '30%',
-          left: '20%',
-          transform: 'translate(-50%, -50%)',
-          width: '50%',
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: 'Major Mono Display, monospace', 
-            fontWeight: '400',
-            color: 'white',
-            textAlign: 'center',
-            fontSize: '2rem', 
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-          Change the World with Us
-        </h1>
-      </Container>
-      <Container
-        style={{
-          position: 'absolute',
-          top: '20%',
-          left: '20%',
-          transform: 'translate(-50%, -50%)',
-          width: '50%',
-        }}
-      >
-        <h1
-          style={{
-
-            fontFamily: 'Bungee, cursive',
-            fontWeight: '600',
-            color: 'white',
-            textAlign: 'center',
-            fontSize: '2rem',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-          November 4-5
-        </h1>
-      </Container>
-      <Container
-        style={{
-          position: 'absolute',
-          top: '55%',
-          left: '20%',
-          transform: 'translate(-50%, -50%)',
-          width: '50%',
-        }}
-      >
-        <h1
-          style={{
-
-            color: 'white',
-            textAlign: 'center',
-            fontSize: '1.5rem',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-          }}
-        >
-
-          More Details Coming Soon...
-        </h1>
-      </Container>
     </div>
   );
 };
