@@ -5,6 +5,8 @@ import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import '../../../src/fonts.css';
+import GlitchEffect from '../../Components/GlitchEffect.jsx';
 
 const LandingPage = () => {
   const globeEl = useRef();
@@ -59,49 +61,60 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="hero"
+    <div
+      className="hero"
       style={{
-        backgroundColor:"#191919",
-        display: "flex",
+        backgroundColor: '#191919',
+        display: 'flex',
       }}
     >
       <Container
         style={{
-          color: "white",
+          color: 'white',
           textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
-          
-          justifyContent: "center",
+
+          justifyContent: 'center',
           paddingTop: 133,
-          postiion: "absolute",
-          width: "70%",
+          postiion: 'absolute',
+          width: '70%',
         }}
       >
-        <Row
-          style={{
-            fontFamily: "Mokoto",
-            fontSize: 110,
-            paddingLeft: 130,
-            lineHeight: "130%",
-          }}
-        >
-          <Col>HACKRPI X</Col>
+        <Row>
+          <Col>
+            <h1>
+              <GlitchEffect
+                style={{
+                  fontFamily: 'Mokoto',
+                  fontSize: 100,
+                  paddingLeft: 130,
+                  lineHeight: '130%',
+                }}
+              >
+                HACKRPI X
+              </GlitchEffect>
+            </h1>
+          </Col>
         </Row>
 
-        <Row 
+        <Row
           style={{
-            fontFamily: "Agrandir",
-            lineHeight: "30%",
+            fontFamily: 'Agrandir',
+            lineHeight: '30%',
             paddingLeft: 120,
           }}
         >
-          <Col sm style={{fontSize: 70}}>2023</Col>
-          <Col sm style={{fontSize: 30}}>november 4-5</Col>
+          <Col sm style={{ fontSize: 70 }}>
+            2023
+          </Col>
+          <Col sm style={{ fontSize: 30 }}>
+            November 4-5
+          </Col>
         </Row>
 
         <Row
           style={{
-            fontFamily: "Poppins",
-            fontStyle: "light",
+            fontFamily: 'Poppins',
+            fontStyle: 'light',
             fontSize: 30,
             lineHeight: 10,
             paddingLeft: 120,
@@ -111,7 +124,7 @@ const LandingPage = () => {
         </Row>
       </Container>
 
-      <div className="globe" style={{width:"50%"}}>
+      <div className="globe" style={{ width: '50%' }}>
         <Globe
           ref={globeEl}
           globeImageUrl={globeimage}
@@ -132,9 +145,7 @@ const LandingPage = () => {
         />
       </div>
 
-
       <br />
-
     </div>
   );
 };
