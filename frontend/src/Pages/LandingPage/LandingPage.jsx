@@ -81,7 +81,7 @@ const LandingPage = () => {
       >
         <Row>
           <Col>
-            <h1>
+            <h1 style={{ whiteSpace: 'nowrap' }}>
               <GlitchEffect
                 style={{
                   fontFamily: 'Mokoto',
