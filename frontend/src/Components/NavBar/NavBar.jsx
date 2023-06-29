@@ -10,8 +10,8 @@ import transparentLogo from '../../../assets/logo_transparent.png';
 class NavBar extends React.Component {
   render() {
     return (
-      <>
-        <Navbar variant="dark" sticky="top" style={{ backgroundColor: '#191919', padding: '0.5rem'}}>
+      <div style={{ overscrollBehavior: "none", overflow: "hidden", position: "fixed" }}>
+        <Navbar variant="dark" sticky="top" style={{ backgroundColor: '#191919', padding: '0.5rem', overscrollBehavior: "none", overflow: "hidden", position: "fixed"}}>
           <Container fluid 
             style={{           
               display: "flex",
@@ -38,11 +38,11 @@ class NavBar extends React.Component {
                     HackRPI
                 </div>
               </Navbar.Brand>
-              {/* <Nav style={{ marginRight: "auto" }}>
+              <Nav style={{ marginRight: "auto" }}>
                 <Nav.Link href="#about"> About </Nav.Link>
                 <Nav.Link href="#faq"> FAQ </Nav.Link>
                 <Nav.Link href="#sponsors"> Sponsor </Nav.Link>      
-              </Nav> */}
+              </Nav>
 
               <Nav style={{ alignLeft: "auto", alignItems: 'center',}}>
                 <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
@@ -58,7 +58,7 @@ class NavBar extends React.Component {
               </Nav>               
           </Container>
         </Navbar>
-      </>
+      </div>
     );
   }
 }

@@ -66,14 +66,19 @@ const LandingPage = () => {
       style={{
         backgroundColor: '#191919',
         display: 'flex',
+
+        width: "auto", height: "auto",
+        overscrollBehavior: "none", overflow: "hidden", position: "fixed"
       }}
     >
+
+      {/* text on the left side of the screen */}
       <Container
         style={{
           color: 'white',
           textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
 
-          justifyContent: 'center',
+          // justifyContent: 'center',
           paddingTop: 133,
           postiion: 'absolute',
           width: '70%',
@@ -86,7 +91,7 @@ const LandingPage = () => {
                 style={{
                   fontFamily: 'Mokoto',
                   fontSize: 100,
-                  paddingLeft: 130,
+                  paddingLeft: 120,
                   lineHeight: '130%',
                 }}
               >
@@ -124,7 +129,8 @@ const LandingPage = () => {
         </Row>
       </Container>
 
-      <div className="globe" style={{ width: '50%' }}>
+      {/* globe on the right side of the screen */}
+      <div className="globe" style={{ width: '50%'}}>
         <Globe
           ref={globeEl}
           globeImageUrl={globeimage}
