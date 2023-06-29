@@ -62,13 +62,12 @@ const LandingPage = () => {
 
   return (
     <div
-      className="hero"
       style={{
         backgroundColor: '#191919',
         display: 'flex',
 
         width: "auto", height: "auto",
-        overscrollBehavior: "none", overflow: "hidden", position: "fixed"
+        overscrollBehavior: "none", overflow: "hidden", postion: "fixed"
       }}
     >
 
@@ -131,7 +130,7 @@ const LandingPage = () => {
 
       {/* globe on the right side of the screen */}
       <div className="globe" style={{ width: '50%'}}>
-        <Globe
+        <Globe style={{ position: "fixed"}}
           ref={globeEl}
           globeImageUrl={globeimage}
           width={windowDimensions.width / 2} // Update this line
@@ -151,7 +150,6 @@ const LandingPage = () => {
         />
       </div>
 
-      <br />
     </div>
   );
 };

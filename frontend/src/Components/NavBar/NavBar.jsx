@@ -10,8 +10,8 @@ import transparentLogo from '../../../assets/logo_transparent.png';
 class NavBar extends React.Component {
   render() {
     return (
-      <div style={{ overscrollBehavior: "none", overflow: "hidden", position: "fixed" }}>
-        <Navbar variant="dark" sticky="top" style={{ backgroundColor: '#191919', padding: '0.5rem', overscrollBehavior: "none", overflow: "hidden", position: "fixed"}}>
+      <>
+        <Navbar variant="dark" sticky="top" style={{ backgroundColor: '#191919', padding: '0.5rem'}}>
           <Container fluid 
             style={{           
               display: "flex",
@@ -58,7 +58,7 @@ class NavBar extends React.Component {
               </Nav>               
           </Container>
         </Navbar>
-      </div>
+      </>
     );
   }
 }
