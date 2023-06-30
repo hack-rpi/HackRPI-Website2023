@@ -5,6 +5,7 @@ import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+imp;
 
 const LandingPage = () => {
 	const globeEl = useRef();
@@ -120,7 +121,7 @@ const LandingPage = () => {
 				<Globe
 					ref={globeEl}
 					globeImageUrl={globeimage}
-					width={windowDimensions.width / 2} // Update this line
+					width={windowDimensions.width / 2}
 					height={windowDimensions.height}
 					backgroundColor="#191919"
 					polygonsData={countries.features.filter(
