@@ -7,136 +7,139 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const LandingPage = () => {
-  const globeEl = useRef();
-  const [countries, setCountries] = useState({ features: [] });
-  const [altitude, setAltitude] = useState(0.1);
-  const [transitionDuration, setTransitionDuration] = useState(1000);
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+	const globeEl = useRef();
+	const [countries, setCountries] = useState({ features: [] });
+	const [altitude, setAltitude] = useState(0.1);
+	const [transitionDuration, setTransitionDuration] = useState(1000);
+	const [windowDimensions, setWindowDimensions] = useState({
+		width: window.innerWidth,
+		height: window.innerHeight,
+	});
 
-  useEffect(() => {
-    // load data
-    fetch(data)
-      .then((res) => res.json())
-      .then((countries) => {
-        setCountries(countries);
+	useEffect(() => {
+		// load data
+		fetch(data)
+			.then((res) => res.json())
+			.then((countries) => {
+				setCountries(countries);
 
-        setTimeout(() => {
-          setTransitionDuration(4000);
-          setAltitude(
-            () => (feat) =>
-              Math.max(0.1, (Math.sqrt(+feat.properties.POP_EST) * 3e-5) / 3),
-          );
-        }, 3500);
-      });
-  }, []);
+				setTimeout(() => {
+					setTransitionDuration(4000);
+					setAltitude(
+						() => (feat) =>
+							Math.max(0.1, (Math.sqrt(+feat.properties.POP_EST) * 3e-5) / 3),
+					);
+				}, 3500);
+			});
+	}, []);
 
-  useEffect(() => {
-    // Auto-rotate
-    globeEl.current.controls().autoRotate = true;
-    globeEl.current.controls().autoRotateSpeed = 0.3;
-    // disable zoom
-    globeEl.current.controls().enableZoom = false;
+	useEffect(() => {
+		// Auto-rotate
+		globeEl.current.controls().autoRotate = true;
+		globeEl.current.controls().autoRotateSpeed = 0.3;
+		// disable zoom
+		globeEl.current.controls().enableZoom = false;
 
-    globeEl.current.pointOfView({ altitude: 4 }, 5000);
-  }, []);
+		globeEl.current.pointOfView({ altitude: 4 }, 5000);
+	}, []);
 
-  const handleResize = () => {
-    setWindowDimensions({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  };
+	const handleResize = () => {
+		setWindowDimensions({
+			width: window.innerWidth,
+			height: window.innerHeight,
+		});
+	};
 
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
 
-  return (
-    <div className="hero"
-      style={{
-        backgroundColor:"#191919",
-        display: "flex",
-      }}
-    >
-      <Container
-        style={{
-          color: "white",
-          textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
-          
-          justifyContent: "center",
-          paddingTop: 133,
-          postiion: "absolute",
-          width: "70%",
-        }}
-      >
-        <Row
-          style={{
-            fontFamily: "Mokoto",
-            fontSize: 110,
-            paddingLeft: 130,
-            lineHeight: "130%",
-          }}
-        >
-          <Col>HACKRPI X</Col>
-        </Row>
+	return (
+		<div
+			className="hero"
+			style={{
+				backgroundColor: '#191919',
+				display: 'flex',
+			}}
+		>
+			<Container
+				style={{
+					color: 'white',
+					textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
 
-        <Row 
-          style={{
-            fontFamily: "Agrandir",
-            lineHeight: "30%",
-            paddingLeft: 120,
-          }}
-        >
-          <Col sm style={{fontSize: 70}}>2023</Col>
-          <Col sm style={{fontSize: 30}}>november 4-5</Col>
-        </Row>
+					justifyContent: 'center',
+					paddingTop: 133,
+					postiion: 'absolute',
+					width: '70%',
+				}}
+			>
+				<Row
+					style={{
+						fontFamily: 'Mokoto',
+						fontSize: 110,
+						paddingLeft: 130,
+						lineHeight: '130%',
+					}}
+				>
+					<Col>HACKRPI X</Col>
+				</Row>
 
-        <Row
-          style={{
-            fontFamily: "Poppins",
-            fontStyle: "light",
-            fontSize: 30,
-            lineHeight: 10,
-            paddingLeft: 120,
-          }}
-        >
-          <Col>More Details Coming Soon...</Col>
-        </Row>
-      </Container>
+				<Row
+					style={{
+						fontFamily: 'Agrandir',
+						lineHeight: '30%',
+						paddingLeft: 120,
+					}}
+				>
+					<Col sm style={{ fontSize: 70 }}>
+						2023
+					</Col>
+					<Col sm style={{ fontSize: 30 }}>
+						november 4-5
+					</Col>
+				</Row>
 
-      <div className="globe" style={{width:"50%"}}>
-        <Globe
-          ref={globeEl}
-          globeImageUrl={globeimage}
-          width={windowDimensions.width / 2} // Update this line
-          height={windowDimensions.height}
-          backgroundColor="#191919"
-          polygonsData={countries.features.filter(
-            (d) => d.properties.ISO_A2 !== 'AQ',
-          )}
-          polygonAltitude={altitude}
-          polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
-          polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
-          polygonLabel={({ properties: d }) => `
+				<Row
+					style={{
+						fontFamily: 'Poppins',
+						fontStyle: 'light',
+						fontSize: 30,
+						lineHeight: 10,
+						paddingLeft: 120,
+					}}
+				>
+					<Col>More Details Coming Soon...</Col>
+				</Row>
+			</Container>
+
+			<div className="globe" style={{ width: '50%' }}>
+				<Globe
+					ref={globeEl}
+					globeImageUrl={globeimage}
+					width={windowDimensions.width / 2} // Update this line
+					height={windowDimensions.height}
+					backgroundColor="#191919"
+					polygonsData={countries.features.filter(
+						(d) => d.properties.ISO_A2 !== 'AQ',
+					)}
+					polygonAltitude={altitude}
+					polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
+					polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
+					polygonLabel={({ properties: d }) => `
           <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
           Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
         `}
-          polygonsTransitionDuration={transitionDuration}
-        />
-      </div>
+					polygonsTransitionDuration={transitionDuration}
+				/>
+			</div>
 
-
-      <br />
-
-    </div>
-  );
+			<br />
+		</div>
+	);
 };
 
 export default LandingPage;
