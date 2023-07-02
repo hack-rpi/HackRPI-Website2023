@@ -66,11 +66,13 @@ const LandingPage = () => {
         backgroundColor: '#191919',
         display: 'flex',
 
-        width: "auto", height: "auto",
-        overscrollBehavior: "none", overflow: "hidden", postion: "fixed"
+        width: 'auto',
+        height: 'auto',
+        overscrollBehavior: 'none',
+        overflow: 'hidden',
+        postion: 'fixed',
       }}
     >
-
       {/* text on the left side of the screen */}
       <Container
         style={{
@@ -100,37 +102,42 @@ const LandingPage = () => {
           </Col>
         </Row>
 
-        <Row
-          style={{
-            fontFamily: 'Agrandir',
-            lineHeight: '30%',
-            paddingLeft: 120,
-          }}
-        >
-          <Col sm style={{ fontSize: 70 }}>
-            2023
-          </Col>
-          <Col sm style={{ fontSize: 30 }}>
-            November 4-5
+        <Row>
+          <Col>
+            <h1
+              style={{
+                fontFamily: 'Agrandir',
+                lineHeight: '30%',
+                paddingLeft: 120,
+                fontSize: 40,
+              }}
+            >
+              November 4-5
+            </h1>
           </Col>
         </Row>
 
-        <Row
-          style={{
-            fontFamily: 'Poppins',
-            fontStyle: 'light',
-            fontSize: 30,
-            lineHeight: 10,
-            paddingLeft: 120,
-          }}
-        >
-          <Col>More Details Coming Soon...</Col>
+        <Row>
+          <Col>
+            <h1
+              style={{
+                fontFamily: 'Poppins',
+                fontStyle: 'light',
+                fontSize: 30,
+                lineHeight: 10,
+                paddingLeft: 120,
+              }}
+            >
+              More Details Coming Soon...
+            </h1>
+          </Col>
         </Row>
       </Container>
 
       {/* globe on the right side of the screen */}
-      <div className="globe" style={{ width: '50%'}}>
-        <Globe style={{ position: "fixed"}}
+      <div className="globe" style={{ width: '50%' }}>
+        <Globe
+          style={{ position: 'fixed' }}
           ref={globeEl}
           globeImageUrl={globeimage}
           width={windowDimensions.width / 2} // Update this line
@@ -149,7 +156,6 @@ const LandingPage = () => {
           polygonsTransitionDuration={transitionDuration}
         />
       </div>
-
     </div>
   );
 };
