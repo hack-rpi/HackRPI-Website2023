@@ -20,10 +20,10 @@
 }
 
 @font-face {
-	font-family: 'Poppins';
-	src: local('Poppins'),
-		url('./Fonts/Poppins/Poppins-Bold.ttf') format('truetype');
-	font-weight: bold;
+    font-family: "Poppins";
+    src: local("Poppins-Bold"),
+        url("./Fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: bold;
 }
 
 @font-face {
@@ -34,8 +34,8 @@
 }
 
 @font-face {
-	font-family: 'Poppins';
-	src: local('Poppins ExtraLight'),
-		url('./Fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
-	font-weight: lighter;
+    font-family: "Poppins";
+    src: local("Poppins ExtraLight"),
+        url("./Fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+    font-weight: lighter;
 }

@@ -4,9 +4,9 @@ import NavBar from './Components/NavBar/NavBar.jsx';
 import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
+import AboutPage from './Pages/AboutPage/AboutPage.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts.css';
-// import AboutPage from './Pages/AboutPage/aboutPage.jsx';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,19 +25,14 @@ function App() {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: '#191919',
-        overflow: 'hidden',
-      }}
-    >
+  <div style={{ backgroundColor: "#191919", overflow: "none", overscrollBehavior: "none"}}>
       <NavBar />
       {/* <LandingPage /> */}
       {/* currently swapped for testming, swap back before commiting */}
       {isMobile ? <LandingPageMobile /> : <LandingPage />}
       {/* re-add if timer is fixed for both mobile and web */}
       {/* <Timer /> */}
-      {/* <AboutPage /> */}
+      <AboutPage />
       <FAQPage />
     </div>
   );
