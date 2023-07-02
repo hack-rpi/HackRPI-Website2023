@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                 MLH Code of Conduct
               </Nav.Link>
               <Nav className="d-flex" style={{ paddingRight: 150 }}>
-                <Nav.Link href="https://my.mlh.io/oauth/authorize?client_id=c5u9kjQ8osE_5AgRrLnsXXvol1gR45AXrabR7upaox0&redirect_uri=https%3A%2F%2Fhackrpi.com%2F&response_type=token">
+                <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
                   <Button
                     variant="outline"
                     size="sm"
