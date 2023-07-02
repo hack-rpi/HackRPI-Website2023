@@ -1,15 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
-import Globe from 'react-globe.gl';
+// import Globe from 'react-globe.gl';
 import data from '../../../assets/data.geojson';
-import globeimage from '../../../assets/earth-dark.jpg';
+// import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
-import Timer from '../../Components/Timer/Timer.jsx';
 
-const LandingPage = () => {
+const LandingPageMobile = () => {
   const globeEl = useRef();
   const [countries, setCountries] = useState({ features: [] });
   const [altitude, setAltitude] = useState(0.1);
@@ -36,15 +35,15 @@ const LandingPage = () => {
       });
   }, []);
 
-  useEffect(() => {
-    // Auto-rotate
-    globeEl.current.controls().autoRotate = true;
-    globeEl.current.controls().autoRotateSpeed = 0.3;
-    // disable zoom
-    globeEl.current.controls().enableZoom = false;
+  //   useEffect(() => {
+  //     // Auto-rotate
+  //     globeEl.current.controls().autoRotate = true;
+  //     globeEl.current.controls().autoRotateSpeed = 0.3;
+  //     // disable zoom
+  //     globeEl.current.controls().enableZoom = false;
 
-    globeEl.current.pointOfView({ altitude: 4 }, 5000);
-  }, []);
+  //     globeEl.current.pointOfView({ altitude: 4 }, 5000);
+  //   }, []);
 
   const handleResize = () => {
     setWindowDimensions({
@@ -64,71 +63,84 @@ const LandingPage = () => {
   return (
     <div
       style={{
-        backgroundColor: 'transparent',
+        backgroundColor: '#191919',
         display: 'flex',
-
+        content: 'center',
         width: 'auto',
         height: 'auto',
-        overscrollBehavior: 'contain',
+        overscrollBehavior: 'none',
         overflow: 'hidden',
-        postion: 'fixed',
+        /* position: 'fixed', */ // Remove this line
+        justifyContent: 'center',
       }}
     >
-      <Timer />
       {/* text on the left side of the screen */}
       <Container
         style={{
           color: 'white',
           textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
-
-          // justifyContent: 'center',
-
-          postiion: 'absolute',
-          width: '70%',
+          //   play with padding num a bit
+          paddingTop: 30,
+          /* postiion: 'absolute', */ // Remove this line
+          width: '100%',
+          margin: '0 auto', // Add this line to center the content
         }}
       >
-        <Row>
+        <Row style={{ justifyContent: 'center' }}>
+          {' '}
+          {/* Added: Center the content horizontally */}
           <Col>
+            {/* globe on the right side of the screen */}
+
+            {/* <Globe
+              style={{ position: 'relative' }}
+              ref={globeEl}
+              globeImageUrl={globeimage}
+              width={windowDimensions.width / 2} // Update this line
+              height={windowDimensions.height / 2}
+              backgroundColor="#191919"
+              polygonsData={countries.features.filter(
+                (d) => d.properties.ISO_A2 !== 'AQ',
+              )}
+              polygonAltitude={altitude}
+              polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
+              polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
+              polygonLabel={({ properties: d }) => `
+          <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
+          Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
+        `}
+              polygonsTransitionDuration={transitionDuration}
+            /> */}
+
             <h1 style={{ whiteSpace: 'nowrap' }}>
               <GlitchEffect
                 style={{
                   fontFamily: 'Mokoto',
                   fontSize: 100,
-                  paddingLeft: 120,
                   lineHeight: '130%',
-                  paddingTop: 133,
                 }}
               >
                 HACKRPI X
               </GlitchEffect>
             </h1>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
+            {/* both have glitch or just one? */}
             <h1
               style={{
                 fontFamily: 'Agrandir',
                 lineHeight: '30%',
-                paddingLeft: 120,
+
                 fontSize: 40,
               }}
             >
               November 4-5
             </h1>
-          </Col>
-        </Row>
 
-        <Row>
-          <Col>
             <p
               style={{
                 fontFamily: 'Poppins',
                 fontStyle: 'light',
                 fontSize: 17,
                 lineHeight: 1.5,
-                paddingLeft: 120,
                 paddingTop: 15,
               }}
             >
@@ -143,32 +155,9 @@ const LandingPage = () => {
             </p>
           </Col>
         </Row>
-      </Container>
-
-      {/* globe on the right side of the screen */}
-      <div className="globe" style={{ width: '50%' }}>
-        <Globe
-          style={{ position: 'fixed' }}
-          ref={globeEl}
-          globeImageUrl={globeimage}
-          width={windowDimensions.width / 2} // Update this line
-          height={windowDimensions.height}
-          backgroundColor="#191919"
-          polygonsData={countries.features.filter(
-            (d) => d.properties.ISO_A2 !== 'AQ',
-          )}
-          polygonAltitude={altitude}
-          polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
-          polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
-          polygonLabel={({ properties: d }) => `
-          <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-          Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
-        `}
-          polygonsTransitionDuration={transitionDuration}
-        />
-      </div>
+      </Container>{' '}
     </div>
   );
 };
 
-export default LandingPage;
+export default LandingPageMobile;

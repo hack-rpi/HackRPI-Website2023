@@ -11,51 +11,63 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar variant="dark" sticky="top" style={{ backgroundColor: '#191919', padding: '0.5rem'}}>
-          <Container fluid 
-            style={{           
-              display: "flex",
-              flexDirection: "row",
+        <Navbar
+          variant="dark"
+          sticky="top"
+          style={{ backgroundColor: '#191919', padding: '0.5rem' }}
+        >
+          <Container
+            fluid
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
               // justifyContent: 'center',
               alignItems: 'center',
-              fontFamily: "Poppins Light",
+              fontFamily: 'Poppins Light',
               fontSize: 15,
-              color: "white",
-            }}>
+              color: 'white',
+            }}
+          >
+            <Navbar.Brand href="#home" style={{ paddingLeft: 30 }}>
+              <img
+                src={transparentLogo}
+                className="d-inline-block align-top"
+                width="40"
+                height="40"
+              />
+              <div
+                className="d-inline-block align-top"
+                style={{
+                  fontFamily: 'Mokoto',
+                  fontSize: 20,
+                  padding: 5,
+                }}
+              >
+                HACKRPI
+              </div>
+            </Navbar.Brand>
+            <Nav style={{ marginRight: 'auto' }}>
+              <Nav.Link href="#about"> About </Nav.Link>
+              <Nav.Link href="#faq"> FAQ </Nav.Link>
+              <Nav.Link href="#sponsors"> Sponsor </Nav.Link>
+            </Nav>
 
-              <Navbar.Brand href="#home" style={{paddingLeft: 30}}>
-                <img
-                  src={transparentLogo}
-                  className="d-inline-block align-top"
-                  width="40" height="40"
-                />
-                <div className="d-inline-block align-top"
-                  style={{
-                    fontFamily: "Mokoto",
-                    fontSize: 20,
-                    padding: 5,
-                  }}>
-                    HackRPI
-                </div>
-              </Navbar.Brand>
-              <Nav style={{ marginRight: "auto" }}>
-                <Nav.Link href="#about"> About </Nav.Link>
-                <Nav.Link href="#faq"> FAQ </Nav.Link>
-                <Nav.Link href="#sponsors"> Sponsor </Nav.Link>      
-              </Nav>
-
-              <Nav style={{ alignLeft: "auto", alignItems: 'center',}}>
-                <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
-                    MLH Code of Conduct
+            <Nav style={{ alignLeft: 'auto', alignItems: 'center' }}>
+              <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
+                MLH Code of Conduct
+              </Nav.Link>
+              <Nav className="d-flex" style={{ paddingRight: 150 }}>
+                <Nav.Link href="https://my.mlh.io/oauth/authorize?client_id=c5u9kjQ8osE_5AgRrLnsXXvol1gR45AXrabR7upaox0&redirect_uri=https%3A%2F%2Fhackrpi.com%2F&response_type=token">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    style={{ backgroundColor: '#910307', color: 'white' }}
+                  >
+                    Register
+                  </Button>
                 </Nav.Link>
-                <Nav className="d-flex" style={{ paddingRight: 150 }}> 
-                  <Nav.Link href="https://my.mlh.io/oauth/authorize?client_id=c5u9kjQ8osE_5AgRrLnsXXvol1gR45AXrabR7upaox0&redirect_uri=https%3A%2F%2Fhackrpi.com%2F&response_type=token">
-                      <Button variant="outline" size="sm" style={{ backgroundColor: "#910307", color: "white" }}>
-                        Register
-                      </Button>
-                  </Nav.Link>
-                </Nav>   
-              </Nav>               
+              </Nav>
+            </Nav>
           </Container>
         </Navbar>
       </>
