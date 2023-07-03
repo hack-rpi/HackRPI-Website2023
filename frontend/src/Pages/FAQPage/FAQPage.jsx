@@ -3,36 +3,36 @@ import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 
+// need to re-write these asap
 const faqs = [
   {
-    title: 'What is a HackRPI?',
+    title: 'What is HackRPI?',
     content:
-      'Our hackathon is an exciting 24 hour coding event where hackers will work in teams of 1 to 4 people to create projects based around the theme to win epic prizes thanks to our sponsors!',
-  },
-  {
-    title: 'Do I need experience?',
-    content:
-      "Anyone with any skill level! Whether you're an experienced hackathon veteran, or if you've never coded before, our hackathon is for you! With our team of mentors ready to assist you with whatever direction you're taking your project, HackRPI is the place you should go to grow and test your technical skills!",
+      'HackRPI is a 24 hour coding event where hackers will work in teams of 1 to 4 people to create projects based around the theme to win epic prizes thanks to our sponsors!',
   },
   {
     title: 'Who can participate?',
     content:
-      "You don't have to be an RPI student to participate! Students from other colleges are welcome and any recent college graduates!",
+      "Anyone with any skill level! Whether you're an experienced hackathon veteran, or if you've never coded before, our hackathon is for you! With our team of mentors ready to assist you with whatever direction you're taking your project, HackRPI is the place you should go to grow and test your technical skills!",
+  },
+  {
+    title: 'Do I have to be an RPI student?',
+    content:
+      "No! You don't have to be an RPI student to participate! Students from other colleges are welcome and any recent college graduates!",
   },
   {
     title: 'Is it free to attend?',
     content:
-      "Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you're going to get!",
+      'Yes! Thanks to our many wonderful sponsors, HackRPI is free, as is all the swag, food, and snacks you can get!',
   },
   {
-    title: 'When is the hackathon?',
+    title: 'When is HackRPI X?',
     content:
       "November 4th-5th 2023, is the date for our 10th annual HackRPI. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
   },
   {
-    title: 'How do I sign up?',
-    content:
-      'The registration form will be up by the start of the Fall semester. Join our email list below to get updates on when registration opens, and about our pre-HackRPI mini events.',
+    title: 'How do I apply?',
+    content: 'Click the link above to apply!',
   },
   {
     title: 'Where is it happening?',
@@ -48,33 +48,46 @@ const FAQPage = () => {
     setCurrentActiveKey(currentActiveKey === key ? null : key);
   };
 
-
   return (
-    <Container fluid style={{ backgroundColor: '#191919', height: '100vh',  alignItems: "center" }}>
-        <h1
-          style={{
-            fontFamily: 'Mokoto',
-            fontWeight: '400',
-            color: 'white',
-            textAlign: 'center',
-            fontSize: '3rem',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+    <Container
+      fluid
+      style={{
+        backgroundColor: '#191919',
+        height: '100vh',
+        alignItems: 'center',
+      }}
+    >
+      <h1
+        style={{
+          fontFamily: 'Mokoto',
+          fontWeight: '400',
+          color: 'white',
+          textAlign: 'center',
+          fontSize: '3rem',
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
 
-            paddingBottom: 10
-          }}
-        >
-          FAQs
-        </h1>
-        
-          <Accordion
-            style={{ fontFamily: "Poppins", width: "75vw", margin: "auto" }}>
-            {faqs.map((faq, index) => (
-              <Accordion.Item eventKey={index}>
-                <Accordion.Header  onClick={ () => { toggleActiveKey('0');}}>{faq.title}</Accordion.Header>
-                <Accordion.Body>{faq.content}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>"
+          paddingBottom: 10,
+        }}
+      >
+        FAQs
+      </h1>
+      <Accordion
+        style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }}
+      >
+        {faqs.map((faq, index) => (
+          <Accordion.Item eventKey={index}>
+            <Accordion.Header
+              onClick={() => {
+                toggleActiveKey('0');
+              }}
+            >
+              {faq.title}
+            </Accordion.Header>
+            <Accordion.Body>{faq.content}</Accordion.Body>
+          </Accordion.Item>
+        ))}
+      </Accordion>
+      "
     </Container>
   );
 };
