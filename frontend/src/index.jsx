@@ -5,29 +5,29 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
-import Footer from './Components/Footer/Footer.jsx';
+// import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts.css';
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 767);
-    };
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 767);
+		};
 
-    handleResize(); // Check initial screen size
+		handleResize(); // Check initial screen size
 
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
 
-  return (
-  <div>
-    <style>{`
+	return (
+		<div>
+			<style>{`
         html,
         body {
           background-color: #191919;
@@ -65,17 +65,17 @@ function App() {
     
     `}</style>
 
-      <NavBar />
-      {/* <LandingPage /> */}
-      {/* currently swapped for testming, swap back before commiting */}
-      {isMobile ? <LandingPageMobile /> : <LandingPage />}
-      {/* re-add if timer is fixed for both mobile and web */}
-      {/* <Timer /> */}
-      <AboutPage />
-      <FAQPage />
-      <Footer />
-    </div>
-  );
+			<NavBar />
+			{/* <LandingPage /> */}
+			{/* currently swapped for testming, swap back before commiting */}
+			{isMobile ? <LandingPageMobile /> : <LandingPage />}
+			{/* re-add if timer is fixed for both mobile and web */}
+			{/* <Timer /> */}
+			<AboutPage />
+			<FAQPage />
+			{/* <Footer /> */}
+		</div>
+	);
 }
 
 export default App;
