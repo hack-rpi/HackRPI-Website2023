@@ -74,7 +74,7 @@ const LandingPage = () => {
         postion: 'fixed',
       }}
     >
-      <Timer />
+      {/* <Timer /> */}
       {/* text on the left side of the screen */}
       <Container
         style={{
@@ -94,7 +94,7 @@ const LandingPage = () => {
                 style={{
                   fontFamily: 'Mokoto',
                   fontSize: 100,
-                  paddingLeft: 120,
+                  paddingLeft: '8.2vw',
                   lineHeight: '130%',
                   paddingTop: 133,
                 }}
@@ -111,7 +111,7 @@ const LandingPage = () => {
               style={{
                 fontFamily: 'Agrandir',
                 lineHeight: '30%',
-                paddingLeft: 120,
+                paddingLeft: '8.2vw',
                 fontSize: 40,
               }}
             >
@@ -128,7 +128,7 @@ const LandingPage = () => {
                 fontStyle: 'light',
                 fontSize: 17,
                 lineHeight: 1.5,
-                paddingLeft: 120,
+                paddingLeft: '8.2vw',
                 paddingTop: 15,
               }}
             >

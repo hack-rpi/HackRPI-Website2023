@@ -72,6 +72,7 @@ const LandingPageMobile = () => {
         overflow: 'hidden',
         /* position: 'fixed', */ // Remove this line
         justifyContent: 'center',
+        textAlign: 'center',
       }}
     >
       {/* text on the left side of the screen */}
@@ -116,7 +117,7 @@ const LandingPageMobile = () => {
               <GlitchEffect
                 style={{
                   fontFamily: 'Mokoto',
-                  fontSize: 100,
+                  // fontSize: 100,
                   lineHeight: '130%',
                 }}
               >
@@ -124,24 +125,25 @@ const LandingPageMobile = () => {
               </GlitchEffect>
             </h1>
             {/* both have glitch or just one? */}
-            <h1
+            <h2
               style={{
                 fontFamily: 'Agrandir',
                 lineHeight: '30%',
-
-                fontSize: 40,
+                // fontSize: 40,
               }}
             >
               November 4-5
-            </h1>
+            </h2>
 
-            <p
+            {/* <p
               style={{
                 fontFamily: 'Poppins',
                 fontStyle: 'light',
                 fontSize: 17,
                 lineHeight: 1.5,
                 paddingTop: 15,
+
+                paddingLeft: '8.2vw',
               }}
             >
               HackRPl X is the 10th annual intercollegiate hackathon at
@@ -152,7 +154,8 @@ const LandingPageMobile = () => {
               on-site, there’s no experience necessary to attend. Hackers will
               also have the opportunity to network with our fantastic sponsors
               from the companies that make our event possible.
-            </p>
+            </p> */}
+
           </Col>
         </Row>
       </Container>{' '}

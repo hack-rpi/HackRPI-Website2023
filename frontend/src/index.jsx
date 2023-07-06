@@ -5,6 +5,7 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
+import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './fonts.css';
 
@@ -25,7 +26,45 @@ function App() {
   }, []);
 
   return (
-  <div style={{ backgroundColor: "#191919", overflow: "none", overscrollBehavior: "none"}}>
+  <div>
+    <style>{`
+        html,
+        body {
+          background-color: #191919;
+          overflow: none;
+          overscroll-behavior: none;
+        }
+
+        @media screen and (max-width: 1680px) {
+
+          h1 {
+            font-size: 100px;
+          }
+    
+        }
+    
+        @media screen and (max-width: 1280px) {
+    
+          h1 {
+            font-size: 60px;
+          }
+
+          h2 {
+            font-size: 30px;
+          }
+    
+        }
+    
+        @media screen and (max-width: 360px) {
+    
+          h1 {
+            font-size: 30px;
+          }
+    
+        }
+    
+    `}</style>
+
       <NavBar />
       {/* <LandingPage /> */}
       {/* currently swapped for testming, swap back before commiting */}
@@ -34,6 +73,7 @@ function App() {
       {/* <Timer /> */}
       <AboutPage />
       <FAQPage />
+      <Footer />
     </div>
   );
 }

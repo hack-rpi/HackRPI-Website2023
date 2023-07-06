@@ -10,7 +10,7 @@ import './styles.css';
 
 const AboutPage = () => {
   return (
-    <div style={{ textAlign: 'center', paddingRight: 200, paddingLeft: 200 }}>
+    <div style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
       <style>{`
                 h1 {
                     font-family: Mokoto;
@@ -27,9 +27,24 @@ const AboutPage = () => {
                     font-family: Poppins Light;
                     font-size: 20px;
                     padding-top: 10px;
-                    padding-bottom: 10px;
-                    height: 300px;
+                    padding-bottom: 30px;
                 }
+
+                  .tab-content {
+                    display: flex;
+                  }
+                  
+                  .tab-content > .tab-pane {
+                    display: block; /* undo "display: none;" */
+                    visibility: hidden;
+                    margin-right: -100%;
+                    width: 100%;
+                  }
+                  
+                  .tab-content > .active {
+                    visibility: visible;
+                  }
+                
 
                 .nav-link-custom {
                     color: #910307;
@@ -62,13 +77,39 @@ const AboutPage = () => {
                     border-radius: 50%;
                     width: 50px;
                     height: 50px;
+
                 }
+
+                .button {
+                  position: relative;
+                  font-family: Poppins;
+                  // font-weight: 500;
+                  font-size: 18px;
+                  letter-spacing: 0.05em;
+                  border-radius: 0.8em;
+                  border: none;
+                  background: #910307;
+                  color: white;
+                  overflow: hidden;
+                }
+
+                  .button:hover {
+                    background: linear-gradient(to right, #910307, #d50110, #560002);
+                    // transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+                  }
+                
+                @media screen and (max-width: 980px) {
+                  .title {
+                    display: none;
+                  }
+                }
+                
             `}</style>
 
-      <h1 style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
+      <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
         HackRPI X
       </h1>
-      <Tab.Container defaultActiveKey="one">
+      <Tab.Container defaultActiveKey="one" style={{paddingBottom: 30}}>
         <Col>
           <Row>
             <Nav
@@ -127,7 +168,7 @@ const AboutPage = () => {
         style={{
           display: 'flex',
           textAlign: 'left',
-          paddingBottom: 30,
+          paddingBottom: 125,
           alignItems: 'center',
           justifyContent: 'center',
         }}
@@ -151,7 +192,7 @@ const AboutPage = () => {
         <div>
           <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
             <Button
-              variant="outline"
+              variant="outline" className='button'
               style={{ backgroundColor: '#910307', color: 'white' }}
             >
               Register Now!
