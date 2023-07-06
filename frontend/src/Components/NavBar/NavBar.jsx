@@ -11,7 +11,14 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar
+        <style>{`
+          @media screen and (max-width: 980px) {
+            .mainNav {
+              display: none;
+            }
+          }
+        `}</style>
+        <Navbar collapseOnSelect
           variant="dark"
           sticky="top"
           style={{ backgroundColor: '#191919', padding: '0.5rem' }}
@@ -46,17 +53,19 @@ class NavBar extends React.Component {
                 HACKRPI
               </div>
             </Navbar.Brand>
-            <Nav style={{ marginRight: 'auto' }}>
+            
+            <Nav className='mainNav' style={{ marginRight: 'auto' }}>
               <Nav.Link href="#about"> About </Nav.Link>
               <Nav.Link href="#faq"> FAQ </Nav.Link>
               <Nav.Link href="#sponsors"> Sponsor </Nav.Link>
             </Nav>
 
-            <Nav style={{ alignLeft: 'auto', alignItems: 'center' }}>
+            <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
               <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
                 MLH Code of Conduct
               </Nav.Link>
-              <Nav className="d-flex" style={{ paddingRight: 150 }}>
+
+              <Nav className="d-flex" style={{ paddingRight: "10vw" }}>
                 <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
                   <Button
                     variant="outline"
@@ -68,6 +77,7 @@ class NavBar extends React.Component {
                 </Nav.Link>
               </Nav>
             </Nav>
+
           </Container>
         </Navbar>
       </>
