@@ -185,7 +185,7 @@ const AboutPage = () => {
           <p>
             {' '}
             Rensselear Polytechnic Institute (RPI), NY <br></br>
-            Darrin Communication Center
+            Darrin Communications Center
           </p>
         </div>
 
