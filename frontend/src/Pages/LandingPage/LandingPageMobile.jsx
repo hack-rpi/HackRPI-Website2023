@@ -5,7 +5,7 @@ import data from '../../../assets/data.geojson';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../../../src/fonts.css';
+// import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
 
 const LandingPageMobile = () => {

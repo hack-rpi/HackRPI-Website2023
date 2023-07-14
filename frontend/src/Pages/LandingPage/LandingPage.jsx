@@ -5,7 +5,7 @@ import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../../../src/fonts.css';
+// import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
 import Timer from '../../Components/Timer/Timer.jsx';
 
