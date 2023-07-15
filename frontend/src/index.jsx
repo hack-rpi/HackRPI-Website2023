@@ -5,9 +5,10 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
-// import Footer from './Components/Footer/Footer.jsx';
+import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import './fonts.css';
+// import StylePage from './style.jsx';
 
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -64,7 +65,7 @@ function App() {
         }
     
     `}</style>
-
+      {/* <StylePage /> */}
 			<NavBar />
 			{/* <LandingPage /> */}
 			{/* currently swapped for testming, swap back before commiting */}
@@ -73,7 +74,7 @@ function App() {
 			{/* <Timer /> */}
 			<AboutPage />
 			<FAQPage />
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }
