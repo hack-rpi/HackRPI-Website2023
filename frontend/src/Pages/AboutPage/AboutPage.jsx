@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Button from 'react-bootstrap/Button';
 
-import './styles.css';
+// import './styles.css';
 
 const AboutPage = () => {
   return (
@@ -48,7 +48,8 @@ const AboutPage = () => {
 
                 .nav-link-custom {
                     color: #910307;
-                    font-family: Poppins-Bold;
+                    font-family: Poppins;
+                    font-weight: bold;
                 }
                     .nav-link-custom:active,
                     .nav-link-custom:focus,
@@ -139,7 +140,7 @@ const AboutPage = () => {
               experience necessary to attend. Hackers will also have the
               opportunity to network with our fantastic sponsors from the
               companies that make our event possible. This year's theme,{' '}
-              <span style={{ fontFamily: 'Poppins-Bold', color: '#910307' }}>
+              <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
                 Change the World
               </span>{' '}
               is an ode to a decade inspring students and HackRPI!

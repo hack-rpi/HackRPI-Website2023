@@ -94,7 +94,7 @@ const LandingPage = () => {
                 style={{
                   fontFamily: 'Mokoto',
                   fontSize: 100,
-                  paddingLeft: '8.2vw',
+                  paddingLeft: '8vw',
                   lineHeight: '130%',
                   paddingTop: 133,
                 }}

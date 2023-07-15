@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const GlitchEffect = ({ children, style }) => {
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const letters = 'ABCDEFGHIJKLNOPQRSTUVXYZ';
   const numbers = '1234567890';
   const [glitchedText, setGlitchedText] = useState('');
   const [originalText, setOriginalText] = useState('');
