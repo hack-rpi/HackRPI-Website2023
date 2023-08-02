@@ -62,19 +62,46 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: 'transparent',
-        display: 'flex',
+    <div className='landingPage'>
+      <style>{`
 
-        width: 'auto',
-        height: 'auto',
-        overscrollBehavior: 'contain',
-        overflow: 'hidden',
-        postion: 'fixed',
-      }}
-    >
+        .landingPage {
+          background-color: transparent;
+          display: flex;
+
+          width: auto;
+          height: auto;
+          overscrollBehavior: contain;
+          overflow: hidden;
+          postion: fixed;
+        }
+
+      `}</style>
+
       {/* <Timer /> */}
+
+      <div className="globe" style={{ width: '50%', paddingLeft: '55%' }}>
+        <Globe
+          style={{ position: 'fixed' }}
+          ref={globeEl}
+          globeImageUrl={globeimage}
+          width={windowDimensions.width / 2} // Update this line
+          height={windowDimensions.height}
+          backgroundColor="#191919"
+          polygonsData={countries.features.filter(
+            (d) => d.properties.ISO_A2 !== 'AQ',
+          )}
+          polygonAltitude={altitude}
+          polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
+          polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
+          polygonLabel={({ properties: d }) => `
+          <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
+          Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
+        `}
+          polygonsTransitionDuration={transitionDuration}
+        />
+      </div>
+
       {/* text on the left side of the screen */}
       <Container
         style={{
@@ -83,7 +110,7 @@ const LandingPage = () => {
 
           // justifyContent: 'center',
 
-          postiion: 'absolute',
+          position: 'absolute',
           width: '70%',
         }}
       >
@@ -93,9 +120,9 @@ const LandingPage = () => {
               <GlitchEffect
                 style={{
                   fontFamily: 'Mokoto',
-                  fontSize: 100,
+                  fontSize: 150,
                   paddingLeft: '8vw',
-                  lineHeight: '130%',
+                  lineHeight: '100%',
                   paddingTop: 133,
                 }}
               >
@@ -109,10 +136,11 @@ const LandingPage = () => {
           <Col>
             <h1
               style={{
-                fontFamily: 'Agrandir',
-                lineHeight: '30%',
+                fontFamily: 'Poppins Light',
+                lineHeight: ".02",
                 paddingLeft: '8.2vw',
-                fontSize: 40,
+                paddingBottom: '10vh',
+                fontSize: 50,
               }}
             >
               November 4-5
@@ -120,7 +148,7 @@ const LandingPage = () => {
           </Col>
         </Row>
 
-        <Row>
+        {/* <Row>
           <Col>
             <p
               style={{
@@ -142,11 +170,16 @@ const LandingPage = () => {
               from the companies that make our event possible.
             </p>
           </Col>
-        </Row>
+        </Row> */}
+         <Timer />
       </Container>
+      
+      {/* <div className='timer'>
+        <Timer />
+      </div> */}
 
       {/* globe on the right side of the screen */}
-      <div className="globe" style={{ width: '50%' }}>
+      {/* <div className="globe" style={{ width: '50%', paddingLeft: '50%' }}>
         <Globe
           style={{ position: 'fixed' }}
           ref={globeEl}
@@ -166,7 +199,7 @@ const LandingPage = () => {
         `}
           polygonsTransitionDuration={transitionDuration}
         />
-      </div>
+      </div> */}
     </div>
   );
 };

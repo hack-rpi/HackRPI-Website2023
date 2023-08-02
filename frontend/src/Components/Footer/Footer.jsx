@@ -92,7 +92,7 @@ const Footer = () => {
       `}</style>
 
             <div className='footer-banner'>
-                <h3> Come join us this coming November 4-5, 2023 to hack, learn, and meet other poeple! </h3>
+                <h3> Join us this coming November 4-5, 2023 to learn, hack, and Change the World! </h3>
 
                 <div style={{ paddingRight: "10%", width: "30%", alignItems: 'center', justifyContent: 'center' }}>
                     <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
