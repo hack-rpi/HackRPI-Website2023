@@ -1,7 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-// import Globe from 'react-globe.gl';
 import data from '../../../assets/data.geojson';
-// import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -70,7 +68,6 @@ const LandingPageMobile = () => {
         height: 'auto',
         overscrollBehavior: 'none',
         overflow: 'hidden',
-        /* position: 'fixed', */ // Remove this line
         justifyContent: 'center',
         textAlign: 'center',
       }}
@@ -82,7 +79,6 @@ const LandingPageMobile = () => {
           textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
           //   play with padding num a bit
           paddingTop: 30,
-          /* postiion: 'absolute', */ // Remove this line
           width: '100%',
           margin: '0 auto', // Add this line to center the content
         }}
