@@ -19,6 +19,20 @@ const LandingPage = () => {
     height: window.innerHeight,
   });
 
+
+  const formatPopulation = (population) => {
+    var formattedPopulation = Math.round(population / 1e4) / 1e2;
+    var suffix;
+    if (formattedPopulation > 999) {
+      suffix = "B";
+      formattedPopulation = Math.round(formattedPopulation / 100) / 10;
+    } else {
+      suffix = "M";
+    }
+    return formattedPopulation + suffix;
+  }
+
+
   useEffect(() => {
     // load data
     fetch(data)
@@ -162,7 +176,7 @@ const LandingPage = () => {
           polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
           polygonLabel={({ properties: d }) => `
           <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-          Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
+          Population: <i>${formatPopulation(d.POP_EST)}</i>
         `}
           polygonsTransitionDuration={transitionDuration}
         />
