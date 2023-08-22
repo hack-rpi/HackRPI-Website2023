@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
 import Timer from '../../Components/Timer/Timer.jsx';
+import Progressbar from '../../Components/Timmer/ProgressBar.jsx';
 
 const LandingPage = () => {
   const globeEl = useRef();
@@ -167,6 +168,7 @@ const LandingPage = () => {
           polygonsTransitionDuration={transitionDuration}
         />
       </div>
+      <Timer/>
     </div>
   );
 };

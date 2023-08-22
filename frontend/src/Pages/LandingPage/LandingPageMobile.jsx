@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
+import Timer from '../../Components/Timer/Timer.jsx';
 
 const LandingPageMobile = () => {
   const globeEl = useRef();
@@ -159,6 +160,7 @@ const LandingPageMobile = () => {
           </Col>
         </Row>
       </Container>{' '}
+      <Timer/>
     </div>
   );
 };

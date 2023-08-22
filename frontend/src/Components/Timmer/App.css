@@ -1,0 +1,27 @@
+.circle-background{
+  fill: none;
+  stroke: #ddd;
+}
+
+.circle-progress{
+  fill: none;
+  /* stroke: var(--none); */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+}
+
+.circle-text{
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

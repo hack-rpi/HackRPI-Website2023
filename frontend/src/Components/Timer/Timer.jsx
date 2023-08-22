@@ -46,7 +46,7 @@ class Timer extends React.Component {
 
     const labelStyle = {
       textAlign: 'center',
-      color: 'white',
+      color: 'red',
     };
 
     const groupStyle = {
@@ -63,18 +63,17 @@ class Timer extends React.Component {
 
     return (
       <Container
-        sticky="bottom"
         style={{ position: 'fixed', bottom: '5px', left: '0px', zIndex: 4000 }}
       >
         <Col style={colStyle}>
           <div style={groupStyle}>
-            <div style={circleStyle} className="text-white">
+            <div style={circleStyle} className="text-danger">
               {Math.floor(this.state.time / (1000 * 60 * 60 * 24))}
             </div>
             <div style={labelStyle}>Days</div>
           </div>
           <div style={groupStyle}>
-            <div style={circleStyle} className="text-white">
+            <div style={circleStyle} className="text-danger">
               {Math.floor(
                 (this.state.time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
               )}
@@ -82,13 +81,13 @@ class Timer extends React.Component {
             <div style={labelStyle}>Hours</div>
           </div>
           <div style={groupStyle}>
-            <div style={circleStyle} className="text-white">
+            <div style={circleStyle} className="text-danger">
               {Math.floor((this.state.time % (1000 * 60 * 60)) / (1000 * 60))}
             </div>
             <div style={labelStyle}>Minutes</div>
           </div>
           <div style={groupStyle}>
-            <div style={circleStyle} className="text-white">
+            <div style={circleStyle} className="text-danger">
               {Math.floor((this.state.time % (1000 * 60)) / 1000)}
             </div>
             <div style={labelStyle}>Seconds</div>
