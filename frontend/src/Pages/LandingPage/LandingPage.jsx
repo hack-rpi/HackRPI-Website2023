@@ -5,7 +5,6 @@ import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
 import Timer from '../../Components/Timer/Timer.jsx';
 import Progressbar from '../../Components/Timmer/ProgressBar.jsx';
@@ -63,91 +62,10 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        backgroundColor: 'transparent',
-        display: 'flex',
-
-        width: 'auto',
-        height: 'auto',
-        overscrollBehavior: 'contain',
-        overflow: 'hidden',
-        postion: 'fixed',
-      }}
-    >
+    <div className='landingPage'>
       {/* <Timer /> */}
-      {/* text on the left side of the screen */}
-      <Container
-        style={{
-          color: 'white',
-          textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
 
-          // justifyContent: 'center',
-
-          postiion: 'absolute',
-          width: '70%',
-        }}
-      >
-        <Row>
-          <Col>
-            <h1 style={{ whiteSpace: 'nowrap' }}>
-              <GlitchEffect
-                style={{
-                  fontFamily: 'Mokoto',
-                  fontSize: 100,
-                  paddingLeft: '8.2vw',
-                  lineHeight: '130%',
-                  paddingTop: 133,
-                }}
-              >
-                HACKRPI X
-              </GlitchEffect>
-            </h1>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <h1
-              style={{
-                fontFamily: 'Agrandir',
-                lineHeight: '30%',
-                paddingLeft: '8.2vw',
-                fontSize: 40,
-              }}
-            >
-              November 4-5
-            </h1>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <p
-              style={{
-                fontFamily: 'Poppins',
-                fontStyle: 'light',
-                fontSize: 17,
-                lineHeight: 1.5,
-                paddingLeft: '8.2vw',
-                paddingTop: 15,
-              }}
-            >
-              HackRPl X is the 10th annual intercollegiate hackathon at
-              Rensselaer Polytechnic Institute, completely organized by RPI
-              students! We welcome everyone to travel to RPI for our completely
-              in-person 24 hour Hackathon. Get swag and free food as you compete
-              for exciting prizes! With a broad range of workshops and mentors
-              on-site, there’s no experience necessary to attend. Hackers will
-              also have the opportunity to network with our fantastic sponsors
-              from the companies that make our event possible.
-            </p>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* globe on the right side of the screen */}
-      <div className="globe" style={{ width: '50%' }}>
+      <div className="globe" style={{ width: '50%', paddingLeft: '55%' }}>
         <Globe
           style={{ position: 'fixed' }}
           ref={globeEl}
@@ -168,6 +86,26 @@ const LandingPage = () => {
           polygonsTransitionDuration={transitionDuration}
         />
       </div>
+
+      {/* text on the left side of the screen */}
+      <Container>
+        <Row>
+            <h1>
+              <GlitchEffect>
+                HACKRPI X
+              </GlitchEffect>
+            </h1>
+        </Row>
+
+        <Row>
+            <h2>
+              November 4-5
+            </h2>
+        </Row>
+
+         {/* <Timer /> */}
+      </Container>
+      
       <Timer/>
     </div>
   );
