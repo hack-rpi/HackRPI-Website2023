@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 
 const AboutPage = () => {
   return (
-    <div style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
+    <div className="AboutPage" style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
       <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
         HackRPI X
       </h1>

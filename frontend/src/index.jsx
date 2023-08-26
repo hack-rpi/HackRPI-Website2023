@@ -32,10 +32,10 @@ function App() {
 			<NavBar />
 			{/* <LandingPage /> */}
 			{/* currently swapped for testming, swap back before commiting */}
-			{isMobile ? <LandingPageMobile /> : <LandingPage /> && <AboutPage />}
+			{isMobile ? <LandingPageMobile /> : <LandingPage />}
 			{/* re-add if timer is fixed for both mobile and web */}
 			{/* <Timer /> */}
-			{/* <AboutPage /> */}
+			<AboutPage />
 			<FAQPage />
 			<Footer />
 		</div>
