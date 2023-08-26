@@ -11,7 +11,6 @@ import transparentLogo from '../../../assets/logo_transparent.png';
 
 // import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
-import Timer from '../../Components/Timer/Timer.jsx';
 
 const LandingPageMobile = () => {
   return (
@@ -50,7 +49,26 @@ const LandingPageMobile = () => {
             </div>
   
       </Container>{' '}
-    </div>
+      </div>
+      
+      <div>
+        <p>
+                HackRPI X is RPI's 10th annual hackathon hosted for students not only from RPI but also from all around the
+                world! Get swag and free food as you compete for exciting prizes!
+                With a broad range of workshops and mentors on-site, there’s no
+                experience necessary to attend. Hackers will also have the
+                opportunity to network with our fantastic sponsors from the
+                companies that make our event possible.
+                <br></br>
+                <br></br>
+                This year's theme,{' '}
+                <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
+                  Change the World
+                </span>{' '}
+                is an ode to a decade inspring students and HackRPI!
+        </p>
+      </div>
+
     </div>
   );
 };
