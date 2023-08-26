@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
 import Timer from '../../Components/Timer/Timer.jsx';
+import Progressbar from '../../Components/Timmer/ProgressBar.jsx';
 
 const LandingPage = () => {
   const globeEl = useRef();
@@ -105,6 +106,7 @@ const LandingPage = () => {
          {/* <Timer /> */}
       </Container>
       
+      <Timer/>
     </div>
   );
 };
