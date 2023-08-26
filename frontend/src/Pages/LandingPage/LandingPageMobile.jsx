@@ -14,76 +14,20 @@ import GlitchEffect from '../../Components/GlitchEffect.jsx';
 
 const LandingPageMobile = () => {
   return (
-    <div
-      style={{
-        backgroundColor: '#191919',
-        // display: 'flex',
-        content: 'center',
-        width: 'auto',
-        // height: 'fit-content',
-        overscrollBehavior: 'none',
-        overflow: 'hidden',
-        /* position: 'fixed', */ // Remove this line
-        justifyContent: 'center',
-        textAlign: 'center',
-      }}
-    >
-      <div style={{display:'flex',         justifyContent: 'center',
-        textAlign: 'center',}}>
-      <div>
-        <img
-          src={transparentLogo}
-          width="450"
-          height="420"
+    <div className='landingPageMobile'>
+      <div className='hero'>
 
-          style={{opacity: "0.2",
-            position: "relative",
-            right: "130px",
-            top: "-45px"
-        
-          }}
-          />
-      </div>
+        <img src={transparentLogo} />
 
       {/* text on the left side of the screen */}
-      <Container className='mobileLanding'
-        style={{
-          color: 'white',
-          textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
-          paddingTop: 30,
-          width: '100%',
-          // margin: '0 auto', // Add this line to center the content
-          position: "absolute"
-        }}
-      >
-        {/* <Row style={{ justifyContent: 'center' }}> */}
-          {' '}
-          {/* Added: Center the content horizontally */}
-          {/* <Col> */}
-            {/* globe on the right side of the screen */}
-
-            <h1 style={{ whiteSpace: 'nowrap' }}>
-              <GlitchEffect
-                style={{
-                  fontFamily: 'Mokoto',
-                  fontSize: "13vw",
-                  lineHeight: '100%',
-                  paddingTop: 97
-                }}
-              >
+      <Container >
+            <h1>
+              <GlitchEffect >
                 HACKRPI X
               </GlitchEffect>
             </h1>
             {/* both have glitch or just one? */}
-            <h2
-              style={{
-                fontFamily: 'Poppins ExtraLight',
-                lineHeight: '30%',
-                fontSize: '5vw',
-
-                paddingBottom: 30,
-              }}
-            >
+            <h2 >
               November 4-5
             </h2>
 
@@ -103,27 +47,26 @@ const LandingPageMobile = () => {
                 MLH Code of Conduct
               </Nav.Link>
             </div>
-                      {/* </Col>
-        </Row> */}
+  
       </Container>{' '}
       </div>
       
       <div>
-      <p style={{paddingTop: "3%", paddingRight: "8%", paddingLeft: "8%", marginTop: "-12vh"}}>
-              HackRPI X is RPI's 10th annual hackathon hosted for students not only from RPI but also from all around the
-              world! Get swag and free food as you compete for exciting prizes!
-              With a broad range of workshops and mentors on-site, there’s no
-              experience necessary to attend. Hackers will also have the
-              opportunity to network with our fantastic sponsors from the
-              companies that make our event possible.
-              <br></br>
-              <br></br>
-              This year's theme,{' '}
-              <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
-                Change the World
-              </span>{' '}
-              is an ode to a decade inspring students and HackRPI!
-      </p>
+        <p>
+                HackRPI X is RPI's 10th annual hackathon hosted for students not only from RPI but also from all around the
+                world! Get swag and free food as you compete for exciting prizes!
+                With a broad range of workshops and mentors on-site, there’s no
+                experience necessary to attend. Hackers will also have the
+                opportunity to network with our fantastic sponsors from the
+                companies that make our event possible.
+                <br></br>
+                <br></br>
+                This year's theme,{' '}
+                <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
+                  Change the World
+                </span>{' '}
+                is an ode to a decade inspring students and HackRPI!
+        </p>
       </div>
 
 

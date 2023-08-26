@@ -5,7 +5,6 @@ import globeimage from '../../../assets/earth-dark.jpg';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import '../../../src/fonts.css';
 import GlitchEffect from '../../Components/GlitchEffect.jsx';
 import Timer from '../../Components/Timer/Timer.jsx';
 
@@ -63,21 +62,6 @@ const LandingPage = () => {
 
   return (
     <div className='landingPage'>
-      <style>{`
-
-        .landingPage {
-          background-color: transparent;
-          display: flex;
-
-          width: auto;
-          height: auto;
-          overscrollBehavior: contain;
-          overflow: hidden;
-          postion: fixed;
-        }
-
-      `}</style>
-
       {/* <Timer /> */}
 
       <div className="globe" style={{ width: '50%', paddingLeft: '55%' }}>
@@ -103,103 +87,24 @@ const LandingPage = () => {
       </div>
 
       {/* text on the left side of the screen */}
-      <Container
-        style={{
-          color: 'white',
-          textShadow: '2px 2px 2px rgba(0, 0, 0, 0)',
-
-          // justifyContent: 'center',
-
-          position: 'absolute',
-          width: '70%',
-        }}
-      >
+      <Container>
         <Row>
-          <Col>
-            <h1 style={{ whiteSpace: 'nowrap' }}>
-              <GlitchEffect
-                style={{
-                  fontFamily: 'Mokoto',
-                  fontSize: 150,
-                  paddingLeft: '8vw',
-                  lineHeight: '100%',
-                  paddingTop: 133,
-                }}
-              >
+            <h1>
+              <GlitchEffect>
                 HACKRPI X
               </GlitchEffect>
             </h1>
-          </Col>
         </Row>
 
         <Row>
-          <Col>
-            <h1
-              style={{
-                fontFamily: 'Poppins Light',
-                lineHeight: ".02",
-                paddingLeft: '8.2vw',
-                paddingBottom: '10vh',
-                fontSize: 50,
-              }}
-            >
+            <h2>
               November 4-5
-            </h1>
-          </Col>
+            </h2>
         </Row>
 
-        {/* <Row>
-          <Col>
-            <p
-              style={{
-                fontFamily: 'Poppins',
-                fontStyle: 'light',
-                fontSize: 17,
-                lineHeight: 1.5,
-                paddingLeft: '8.2vw',
-                paddingTop: 15,
-              }}
-            >
-              HackRPl X is the 10th annual intercollegiate hackathon at
-              Rensselaer Polytechnic Institute, completely organized by RPI
-              students! We welcome everyone to travel to RPI for our completely
-              in-person 24 hour Hackathon. Get swag and free food as you compete
-              for exciting prizes! With a broad range of workshops and mentors
-              on-site, there’s no experience necessary to attend. Hackers will
-              also have the opportunity to network with our fantastic sponsors
-              from the companies that make our event possible.
-            </p>
-          </Col>
-        </Row> */}
-         <Timer />
+         {/* <Timer /> */}
       </Container>
       
-      {/* <div className='timer'>
-        <Timer />
-      </div> */}
-
-      {/* globe on the right side of the screen */}
-      {/* <div className="globe" style={{ width: '50%', paddingLeft: '50%' }}>
-        <Globe
-          style={{ position: 'fixed' }}
-          ref={globeEl}
-          globeImageUrl={globeimage}
-          width={windowDimensions.width / 2} // Update this line
-          height={windowDimensions.height}
-          backgroundColor="#191919"
-          polygonsData={countries.features.filter(
-            (d) => d.properties.ISO_A2 !== 'AQ',
-          )}
-          polygonAltitude={altitude}
-          polygonCapColor={() => 'rgba(150, 0, 0, 0.8)'}
-          polygonSideColor={() => 'rgba(255, 255, 255, 0.10)'}
-          polygonLabel={({ properties: d }) => `
-          <b>${d.ADMIN} (${d.ISO_A2})</b> <br />
-          Population: <i>${Math.round(+d.POP_EST / 1e4) / 1e2}M</i>
-        `}
-          polygonsTransitionDuration={transitionDuration}
-        />
-      </div> */}
     </div>
   );
 };
