@@ -15,7 +15,7 @@ function App() {
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth <= 767);
+			setIsMobile(window.innerWidth <= 900);
 		};
 
 		handleResize(); // Check initial screen size
