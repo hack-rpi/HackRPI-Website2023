@@ -51,6 +51,7 @@ const FAQPage = () => {
         alignItems: 'center',
         color: "white"
       }}
+      id="faq"
     >
       <h1
         style={{

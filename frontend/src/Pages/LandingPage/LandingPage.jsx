@@ -62,7 +62,7 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className='landingPage'>
+    <div id="home" className='landingPage'>
       {/* <Timer /> */}
 
       <div className="globe" style={{ width: '50%', paddingLeft: '55%' }}>
