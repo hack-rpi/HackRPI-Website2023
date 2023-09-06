@@ -9,7 +9,6 @@ import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 // import './fonts.css';
-import StylePage from './style.jsx';
 
 function App() {
 	const [isMobile, setIsMobile] = useState(false);

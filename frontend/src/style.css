@@ -246,10 +246,13 @@ p {
     outline: none;
 }
 
+.accordion-button{
+    box-shadow: none !important;
+}
+
 .accordion-button:not(.collapsed){
     color: var(--light-red);
     background-color: white;
-    box-shadow: none;
 }
 
 .accordion-item *{
@@ -263,4 +266,8 @@ p {
 
 .accordion-button:not(.collapsed)::after{
     filter: hue-rotate(180deg);
+}
+
+#faq{
+    margin-bottom: 100px;
 }
