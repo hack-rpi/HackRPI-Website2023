@@ -24,6 +24,11 @@ const SponsorPage = () => {
           height: 'fit-content',
         }}
       >
+        <p style={{
+            fontFamily: 'Mokoto',
+            color: '#FFFFFF',
+            textAlign: 'center',
+          }} > Hello World </p>
         <h3
           style={{
             fontFamily: 'Mokoto',
