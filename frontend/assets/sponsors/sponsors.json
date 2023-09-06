@@ -1,3 +1,14 @@
 {
-  "sponsors": [{ "name": "IBM", "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg", "url": "https://www.ibm.com/us-en" }]
+  "sponsors": [
+    {
+      "name": "IBM",
+      "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+      "url": "https://www.ibm.com/us-en"
+    },
+    {
+      "name": "Google Cloud",
+      "logoPath": "https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Emblem.png",
+      "url": "cloud.google.com"
+    }
+  ]
 }

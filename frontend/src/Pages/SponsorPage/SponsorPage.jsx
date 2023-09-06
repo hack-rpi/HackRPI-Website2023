@@ -42,25 +42,45 @@ const SponsorPage = () => {
             paddingBottom: '2.5rem',
             backgroundColor: '#222222',
             borderRadius: '15px',
+            width: '91.667%',
           }}
         >
           {sponsors.sponsors.map((sponsor) => (
-            <Carousel.Item >
+            <Carousel.Item>
               <a
                 href={sponsor.url}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  paddingLeft: '1rem',
+                  paddingRight: '1rem',
                 }}
               >
+                <Carousel.Caption>
+                  {
+                    // This is kinda janky, but it works for putting
+                    // the company's name at the top of the carousel
+                    // It might be a good idea to just remove this?
+                  }
+                  <p
+                    style={{
+                      position: 'absolute',
+                      top: '-17.5rem',
+                      left: '0',
+                      right: '0',
+                      zIndex: '10',
+                      fontSize: '2rem'
+                    }}
+                  >
+                    {sponsor.name}
+                  </p>
+                </Carousel.Caption>
                 <Image
                   src={sponsor.logoPath}
-                  style={{ width: '50%', marginTop: '2.5rem' }}
+                  style={{ maxHeight: '300px', marginTop: '2.5rem' }}
+                  alt={sponsor}
                 />
-                {/* <Carousel.Caption >
-                  <p>{sponsor.name}</p>
-                </Carousel.Caption> */}
               </a>
             </Carousel.Item>
           ))}
