@@ -235,20 +235,10 @@ p {
     margin-bottom: 125px;
 }
 
-.accordian-button{
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.accordian-button:focus{
-    box-shadow: none;
-    border-color: white !important;
-    outline: none;
-}
-
 .accordion-button{
     box-shadow: none !important;
 }
+
 
 .accordion-button:not(.collapsed){
     color: var(--light-red);
@@ -266,6 +256,10 @@ p {
 
 .accordion-button:not(.collapsed)::after{
     filter: hue-rotate(180deg);
+}
+
+.accordion-header, .accordion-body{
+    background-color: transparent;
 }
 
 #faq{
