@@ -24,11 +24,6 @@ const SponsorPage = () => {
           height: 'fit-content',
         }}
       >
-        <p style={{
-            fontFamily: 'Mokoto',
-            color: '#FFFFFF',
-            textAlign: 'center',
-          }} > Hello World </p>
         <h3
           style={{
             fontFamily: 'Mokoto',
@@ -43,11 +38,18 @@ const SponsorPage = () => {
           activeIndex={index}
           onSelect={handleSelect}
           style={{
-            marginBottom: '5rem',
+            marginBottom: '.5rem',
             paddingBottom: '2.5rem',
             backgroundColor: '#222222',
-            borderRadius: '15px',
+            borderTopLeftRadius: '15px',
+            borderTopRightRadius: '15px',
+            borderBottomLeftRadius: '5px',
+            borderBottomRightRadius: '5px',
             width: '91.667%',
+            height: '350px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           {sponsors.sponsors.map((sponsor) => (
@@ -58,38 +60,39 @@ const SponsorPage = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  paddingLeft: '1rem',
-                  paddingRight: '1rem',
+               
                 }}
               >
-                <Carousel.Caption>
-                  {
-                    // This is kinda janky, but it works for putting
-                    // the company's name at the top of the carousel
-                    // It might be a good idea to just remove this?
-                  }
-                  <p
-                    style={{
-                      position: 'absolute',
-                      top: '-17.5rem',
-                      left: '0',
-                      right: '0',
-                      zIndex: '10',
-                      fontSize: '2rem'
-                    }}
-                  >
-                    {sponsor.name}
-                  </p>
-                </Carousel.Caption>
                 <Image
                   src={sponsor.logoPath}
-                  style={{ maxHeight: '300px', marginTop: '2.5rem' }}
+                  style={{
+                    maxHeight: '300px',
+                    marginTop: '2.5rem',
+                    maxWidth: '82.5%',
+                  }}
                   alt={sponsor}
                 />
               </a>
             </Carousel.Item>
           ))}
         </Carousel>
+        <h2
+          style={{
+            color: '#FFFFFF',
+            marginBottom: '1rem',
+            padding: '4px',
+            fontFamily: 'Poppins Light',
+            backgroundColor: '#222222',
+            borderTopLeftRadius: '5px',
+            borderTopRightRadius: '5px',
+            borderBottomLeftRadius: '15px',
+            borderBottomRightRadius: '15px',
+            width: '91.667%',
+            textAlign: 'center',
+          }}
+        >
+          {sponsors.sponsors[index].name}
+        </h2>
       </div>
     </>
   );
