@@ -24,11 +24,6 @@ const SponsorPage = () => {
           height: 'fit-content',
         }}
       >
-        <p style={{
-            fontFamily: 'Mokoto',
-            color: '#FFFFFF',
-            textAlign: 'center',
-          }} > Hello World </p>
         <h3
           style={{
             fontFamily: 'Mokoto',
@@ -44,33 +39,59 @@ const SponsorPage = () => {
           activeIndex={index}
           onSelect={handleSelect}
           style={{
-            marginBottom: '5rem',
+            marginBottom: '.5rem',
             paddingBottom: '2.5rem',
             backgroundColor: '#222222',
-            borderRadius: '15px',
+            borderTopLeftRadius: '15px',
+            borderTopRightRadius: '15px',
+            borderBottomLeftRadius: '5px',
+            borderBottomRightRadius: '5px',
+            width: '91.667%',
+            height: '350px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
           {sponsors.sponsors.map((sponsor) => (
-            <Carousel.Item >
+            <Carousel.Item>
               <a
                 href={sponsor.url}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+               
                 }}
               >
                 <Image
                   src={sponsor.logoPath}
                   style={{ width: '50%', marginTop: '2.5rem' }}
                 />
-                <Carousel.Caption >
+                {/* <Carousel.Caption >
                   <p>{sponsor.name}</p>
-                </Carousel.Caption>
+                </Carousel.Caption> */}
               </a>
             </Carousel.Item>
           ))}
         </Carousel>
+        <h2
+          style={{
+            color: '#FFFFFF',
+            marginBottom: '1rem',
+            padding: '4px',
+            fontFamily: 'Poppins Light',
+            backgroundColor: '#222222',
+            borderTopLeftRadius: '5px',
+            borderTopRightRadius: '5px',
+            borderBottomLeftRadius: '15px',
+            borderBottomRightRadius: '15px',
+            width: '91.667%',
+            textAlign: 'center',
+          }}
+        >
+          {sponsors.sponsors[index].name}
+        </h2>
       </div>
     </>
   );
