@@ -40,6 +40,7 @@ const SponsorPage = () => {
         </h3>
 
         <Carousel
+          controls = {false}
           activeIndex={index}
           onSelect={handleSelect}
           style={{
@@ -63,9 +64,9 @@ const SponsorPage = () => {
                   src={sponsor.logoPath}
                   style={{ width: '50%', marginTop: '2.5rem' }}
                 />
-                {/* <Carousel.Caption >
+                <Carousel.Caption >
                   <p>{sponsor.name}</p>
-                </Carousel.Caption> */}
+                </Carousel.Caption>
               </a>
             </Carousel.Item>
           ))}
