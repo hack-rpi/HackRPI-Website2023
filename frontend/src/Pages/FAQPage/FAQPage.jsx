@@ -45,12 +45,6 @@ const FAQPage = () => {
 
   return (
     <Container fluid
-      style={{
-        backgroundColor: '#191919',
-        height: '100vh',
-        alignItems: 'center',
-        color: "white"
-      }}
       id="faq"
     >
       <h1

@@ -2,95 +2,11 @@ import React from 'react';
 
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import './footer.css';
 
 const Footer = () => {
     return (
         <div>
-            <style>{`
-
-        .footer p{
-            align-items: center;
-            justify-content: center;  
-            text-align: center;    
-            padding-bottom: 20px;
-        }
-        .footer-banner {
-            background-color: #910307;
-            height: 25vh;
-            align-items: center;
-            justify-content: center;            
-            font-family: Poppins Light;
-            color: white;
-
-            display: flex;
-        }
-            .footer-banner h3 {
-                padding-right: 40px;
-                padding-left: 10%;
-            }
-        
-            .Btn {
-                width: 45px;
-                height: 45px;
-                /* border: none; */
-                border-radius: 50%;
-                background-color: #910307;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                position: relative;
-                transition-duration: .5s;
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.137);
-                border: 2px solid #bbecff;
-              }
-              
-              .logoIcon {
-                fill: white;
-              }
-              
-              .tooltip {
-                position: absolute;
-                top: -20px;
-                opacity: 0;
-                background-color: #910307;
-                color: white;
-                padding: 5px 10px;
-                border-radius: 5px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition-duration: .2s;
-                pointer-events: none;
-                letter-spacing: 0.5px;
-              }
-              
-              .tooltip::before {
-                position: absolute;
-                content: "";
-                width: 10px;
-                height: 10px;
-                background-color: #910307;
-                background-size: 1000%;
-                background-position: center;
-                transform: rotate(45deg);
-                bottom: -20%;
-                transition-duration: .3s;
-              }
-              
-              .Btn:hover .tooltip {
-                top: -45px;
-                opacity: 1;
-                transition-duration: .3s;
-              }
-              
-              .Btn:hover {
-                background-position: right;
-                transition-duration: .5s;
-              }
-        
-      `}</style>
-
             <div className='footer-banner'>
                 <h3> Join us this coming November 4-5, 2023 to learn, hack, and Change the World! </h3>
 
