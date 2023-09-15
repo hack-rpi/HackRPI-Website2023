@@ -69,7 +69,7 @@ const FAQPage = () => {
       </h1>
       <Accordion style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }} >
         {faqs.map((faq, index) => (
-          <Accordion.Item eventKey={index}>
+          <Accordion.Item eventKey={index} key={index}>
             <Accordion.Header> {faq.title} </Accordion.Header>
             <Accordion.Body> {faq.content} </Accordion.Body>
           </Accordion.Item>

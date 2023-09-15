@@ -51,8 +51,8 @@ const SponsorPage = () => {
             height: 'fit-content',
           }}
         >
-          {sponsorGroups.sponsorGroups.map((sponsorGroup) => (
-            <Carousel.Item>
+          {sponsorGroups.sponsorGroups.map((sponsorGroup, indx) => (
+            <Carousel.Item key={indx}>
               <div
                 style={{
                   display: 'flex',
@@ -181,9 +181,9 @@ const SponsorPage = () => {
             marginBottom: '2rem',
           }}
         >
-          {sponsorGroups.sponsorGroups[index].map((sponsor) => {
+          {sponsorGroups.sponsorGroups[index].map((sponsor, indx) => {
             return (
-              <a href={sponsor.url} style={{ textDecoration: 'none' }}>
+              <a href={sponsor.url} style={{ textDecoration: 'none' }} key={indx}>
                 <h2
                   style={{
                     color: '#FFFFFF',
