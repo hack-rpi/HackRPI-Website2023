@@ -45,4 +45,4 @@ We're thrilled to see the HackRPI community grow each year and are always on the
 
 6. **Push and Create a Pull Request:** 
    - Push your branch to GitHub using GitHub Desktop.
-   - Then, visit the repository on GitHub's website and create a pull request. Our team will review, provide feedback, or merge your changes.
+   - Then, visit the repository on GitHub's website and create a pull request. Write a description of the changes in the comment, and paste any relevant images showcasing updates. Our team will review, provide feedback, or merge your changes.
