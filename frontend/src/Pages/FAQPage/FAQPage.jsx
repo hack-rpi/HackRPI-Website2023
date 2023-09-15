@@ -47,7 +47,8 @@ const FAQPage = () => {
     <Container fluid
       style={{
         backgroundColor: '#191919',
-        height: '100vh',
+        height: 'fit-content',
+        marginBottom:'1rem',
         alignItems: 'center',
         color: "white"
       }}

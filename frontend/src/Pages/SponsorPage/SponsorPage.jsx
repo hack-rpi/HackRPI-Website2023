@@ -4,7 +4,7 @@ import sponsorsJson from '../../../assets/sponsors/sponsors.json';
 import Image from 'react-bootstrap/Image';
 
 const SponsorPage = () => {
-  const [sponsors, setSponsors] = useState(sponsorsJson);
+  const [sponsorGroups, setSponsors] = useState(sponsorsJson);
 
   const [index, setIndex] = useState(0);
 
@@ -35,47 +35,137 @@ const SponsorPage = () => {
         </h3>
 
         <Carousel
-          controls = {false}
+          controls={false}
+          indicators={false}
+          interval={7500}
           activeIndex={index}
           onSelect={handleSelect}
           style={{
             marginBottom: '.5rem',
-            paddingBottom: '2.5rem',
             backgroundColor: '#222222',
             borderTopLeftRadius: '15px',
             borderTopRightRadius: '15px',
             borderBottomLeftRadius: '5px',
             borderBottomRightRadius: '5px',
             width: '91.667%',
-            height: '350px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            height: 'fit-content',
           }}
         >
-          {sponsors.sponsors.map((sponsor) => (
+          {sponsorGroups.sponsorGroups.map((sponsorGroup) => (
             <Carousel.Item>
-              <a
-                href={sponsor.url}
+              <div
                 style={{
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-               
+                  flexDirection: 'column',
                 }}
               >
-                <Image
-                  src={sponsor.logoPath}
-                  style={{ width: '50%', marginTop: '2.5rem' }}
-                />
-                {/* <Carousel.Caption >
-                  <p>{sponsor.name}</p>
-                </Carousel.Caption> */}
-              </a>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-around',
+                    marginBottom: '1rem',
+                    marginTop: '1rem',
+                  }}
+                >
+                  {sponsorGroup.length >= 1 && (
+                    <a
+                      href={sponsorGroup[0].url}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '50%',
+                      }}
+                    >
+                      <Image
+                        src={sponsorGroup[0].logoPath}
+                        style={{
+                          maxHeight: '150px',
+                          maxWidth: '80%',
+                        }}
+                        alt={sponsorGroup[0].name}
+                      />
+                    </a>
+                  )}
+                  {sponsorGroup.length >= 3 && (
+                    <a
+                      href={sponsorGroup[1].url}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '50%',
+                      }}
+                    >
+                      <Image
+                        src={sponsorGroup[1].logoPath}
+                        style={{
+                          maxHeight: '150px',
+                          maxWidth: '80%',
+                        }}
+                        alt={sponsorGroup[1].name}
+                      />
+                    </a>
+                  )}
+                </div>
+
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-around',
+                    marginBottom: '1rem',
+                    marginTop: '1rem',
+                  }}
+                >
+                  {sponsorGroup.length >= 3 && (
+                    <a
+                      href={sponsorGroup[2].url}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '50%',
+                      }}
+                    >
+                      <Image
+                        src={sponsorGroup[2].logoPath}
+                        style={{
+                          maxHeight: '150px',
+                          maxWidth: '80%',
+                        }}
+                        alt={sponsorGroup[2].name}
+                      />
+                    </a>
+                  )}
+
+                  {sponsorGroup.length >= 4 && (
+                    <a
+                      href={sponsorGroup[3].url}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        width: '50%',
+                      }}
+                    >
+                      <Image
+                        src={sponsorGroup[3].logoPath}
+                        style={{
+                          maxHeight: '150px',
+                          maxWidth: '80%',
+                        }}
+                        alt={sponsorGroup[3].name}
+                      />
+                    </a>
+                  )}
+                </div>
+              </div>
             </Carousel.Item>
           ))}
         </Carousel>
-        <h2
+        {/* <h2
           style={{
             color: '#FFFFFF',
             marginBottom: '1rem',
@@ -91,7 +181,7 @@ const SponsorPage = () => {
           }}
         >
           {sponsors.sponsors[index].name}
-        </h2>
+        </h2> */}
       </div>
     </>
   );
