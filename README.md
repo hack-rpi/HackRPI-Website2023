@@ -14,3 +14,35 @@ We're thrilled to see the HackRPI community grow each year and are always on the
 4. **Documentation:** Help make our documentation clearer and more comprehensive for future contributors.
 5. **Outreach:** Share the website and gather feedback, helping us reach a broader audience.
 6. **Connect with Us:** Reach out to our organizing team on [Discord](https://discord.gg/q4tdARPazB) and ask the technology team for tasks or any assistance.
+
+## 🛠 Getting Started
+
+**Recommended Tools:**
+- **Editor:** [Visual Studio Code](https://code.visualstudio.com/download)
+- **GitHub Desktop:** [Download here](https://desktop.github.com/)
+- **Node:** [Download Node.js](https://nodejs.org/en)
+
+**Steps:**
+
+1. **Clone the Repository:** 
+   - Using GitHub Desktop, choose `File` > `Clone repository` and select the HackRPI repository. This will create a local copy on your machine.
+
+2. **Create a New Branch:** 
+   - Once the repository is cloned, create a new branch in GitHub Desktop.
+   - For features, use the naming convention: `feature/your-feature-description`.
+   - For bugs, use the naming convention: `bug/your-bug-description`.
+
+3. **Implement and Commit Changes:** 
+   - Make the necessary changes in your branch. Use Visual Studio Code or your preferred editor.
+   - Add comments!!
+   - Once done, commit your changes using GitHub Desktop.
+
+4. **Update with Main:** 
+   - Before pushing your changes, ensure you have the latest version of `main`. In GitHub Desktop, pull the latest changes from the `main` branch and merge them into your branch.
+
+5. **Test Your Changes:** 
+   - Ensure your design is responsive. Test on multiple screen sizes, including mobile. Employ best practices for responsive design.
+
+6. **Push and Create a Pull Request:** 
+   - Push your branch to GitHub using GitHub Desktop.
+   - Then, visit the repository on GitHub's website and create a pull request. Our team will review, provide feedback, or merge your changes.
