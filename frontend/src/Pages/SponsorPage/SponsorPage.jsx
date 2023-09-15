@@ -165,23 +165,40 @@ const SponsorPage = () => {
             </Carousel.Item>
           ))}
         </Carousel>
-        {/* <h2
+        <div
           style={{
-            color: '#FFFFFF',
-            marginBottom: '1rem',
-            padding: '4px',
-            fontFamily: 'Poppins Light',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            flexWrap: 'wrap',
             backgroundColor: '#222222',
             borderTopLeftRadius: '5px',
             borderTopRightRadius: '5px',
             borderBottomLeftRadius: '15px',
             borderBottomRightRadius: '15px',
             width: '91.667%',
-            textAlign: 'center',
+            height: 'fit-content',
+            marginBottom: '2rem',
           }}
         >
-          {sponsors.sponsors[index].name}
-        </h2> */}
+          {sponsorGroups.sponsorGroups[index].map((sponsor) => {
+            return (
+              <a href={sponsor.url} style={{ textDecoration: 'none' }}>
+                <h2
+                  style={{
+                    color: '#FFFFFF',
+                    marginTop: '10px',
+                    padding: '4px',
+                    fontFamily: 'Poppins Light',
+                    textAlign: 'center',
+                  }}
+                >
+                  {sponsor.name}
+                </h2>
+              </a>
+            );
+          })}
+        </div>
       </div>
     </>
   );
