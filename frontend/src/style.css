@@ -239,7 +239,6 @@ p {
     box-shadow: none !important;
 }
 
-
 .accordion-button:not(.collapsed){
     color: var(--light-red);
     background-color: white;
@@ -263,5 +262,9 @@ p {
 }
 
 #faq{
+    margin-bottom: 100px;
+}
+
+#prize{
     margin-bottom: 100px;
 }

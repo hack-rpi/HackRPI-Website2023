@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
-
 import logo from '../../../assets/hackrpi_logo.png';
 import transparentLogo from '../../../assets/logo_transparent.png';
 
@@ -58,6 +57,7 @@ class NavBar extends React.Component {
               <Nav.Link href="#about"> About </Nav.Link>
               <Nav.Link href="#faq"> FAQ </Nav.Link>
               <Nav.Link href="#sponsors"> Sponsor </Nav.Link>
+              <Nav.Link hred="#prizes"> Prizes</Nav.Link>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
