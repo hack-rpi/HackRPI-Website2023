@@ -5,6 +5,7 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
+import PrizesPage from './Pages/PrizesPage/prizes.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
@@ -36,6 +37,7 @@ function App() {
 			{/* <Timer /> */}
 			<AboutPage />
 			<FAQPage />
+			<PrizesPage />
 			<Footer />
 		</div>
 	);
