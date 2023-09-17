@@ -81,8 +81,6 @@ const FAQPage = () => {
 
       </Accordion>
 
-      <h2 style ={{ fontFamily: 'Poppins Light', fontSize: 20, textAlign: "center", paddingTop: 20}}
-      >Feel free to contact us with any other questions at <a href='mailto:hackrpi@rpi.edu' style ={{color: "#db4941"}}>hackrpi@rpi.edu!</a></h2>
       
     </Container>
   );
