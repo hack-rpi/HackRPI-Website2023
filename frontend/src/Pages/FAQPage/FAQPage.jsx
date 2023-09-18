@@ -45,6 +45,12 @@ const FAQPage = () => {
 
   return (
     <Container fluid
+      style={{
+        height: 'fit-content',
+        marginBottom:'2rem',
+        alignItems: 'center',
+        color: "white"
+      }}
       id="faq"
     >
       <h1
@@ -63,7 +69,7 @@ const FAQPage = () => {
       </h1>
       <Accordion style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }} >
         {faqs.map((faq, index) => (
-          <Accordion.Item eventKey={index}>
+          <Accordion.Item eventKey={index} key={index}>
             <Accordion.Header> {faq.title} </Accordion.Header>
             <Accordion.Body> {faq.content} </Accordion.Body>
           </Accordion.Item>
@@ -80,8 +86,10 @@ const FAQPage = () => {
         </AccordionItem>
 
       </Accordion>
-
-      <h2 style ={{ fontFamily: 'Poppins Light', fontSize: 20, textAlign: "center", paddingTop: 20}}
+      {/* I added id=sponsors here so that when you click the sponsors 
+      link at the top of the site, the sponsors segment isn't cut off 
+      by the nav bar */}
+      <h2 id='sponsors' style ={{ fontFamily: 'Poppins Light', fontSize: 20, textAlign: "center", paddingTop: 20}}
       >Feel free to contact us with any other questions at <a href='mailto:hackrpi@rpi.edu' style ={{color: "#db4941"}}>hackrpi@rpi.edu!</a></h2>
       
     </Container>

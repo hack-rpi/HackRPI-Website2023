@@ -7,6 +7,7 @@ import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
 import './style.css';
 // import './fonts.css';
 
@@ -36,6 +37,7 @@ function App() {
 			{/* <Timer /> */}
 			<AboutPage />
 			<FAQPage />
+			<SponsorPage/>
 			<Footer />
 		</div>
 	);
