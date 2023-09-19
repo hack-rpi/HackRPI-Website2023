@@ -46,3 +46,10 @@ We're thrilled to see the HackRPI community grow each year and are always on the
 6. **Push and Create a Pull Request:** 
    - Push your branch to GitHub using GitHub Desktop.
    - Then, visit the repository on GitHub's website and create a pull request. Write a description of the changes in the comment, and paste any relevant images showcasing updates. Our team will review, provide feedback, or merge your changes.
+
+## ⏯️ Running Locally
+1. Navigate to your cloned repository
+2. Run `npm install` to install/update packages
+3. Run `npm start` to start the app
+4. Go to localhost:3000 or the port that is mentioned when the app starts up
+5. Enjoy the view! 😎 (and debug)
