@@ -1,10 +1,10 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+
 
 // need to re-write these asap
 const faqs = [
