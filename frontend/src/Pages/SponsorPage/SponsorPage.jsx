@@ -34,7 +34,7 @@ const SponsorPage = () => {
           Thank you to our sponsors that make HackRPI possible!
         </h3>
 
-        {/*<Carousel
+        <Carousel
           controls={false}
           indicators={false}
           interval={7500}
@@ -164,7 +164,7 @@ const SponsorPage = () => {
               </div>
             </Carousel.Item>
           ))}
-        </Carousel>*/}
+        </Carousel>
         <div
           style={{
             display: 'flex',
