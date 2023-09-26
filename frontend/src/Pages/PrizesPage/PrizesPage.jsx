@@ -6,18 +6,6 @@ import Container from 'react-bootstrap/Container';
 // import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 // import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 
-const topPrizes = [
-  { title: "#1 Best Hack",
-    cash: true,
-    cost: 1500,
-    content: "",
-  },
-  { title: "#2 Hack",
-    cash: true,
-    cost: 750,
-    content: "",
-  },
-];
 const subPrizes = [
   { title: 'Best AI Hack',
     cash: true,
@@ -96,13 +84,7 @@ const PrizesPage = () => {
 
   return (
     <Container fluid
-      style={{
-        height: 'fit-content',
-        marginBottom:'2rem',
-        alignItems: 'center',
-        color: "white"
-      }}
-      id="faq"
+      id="prize"
     >
       <h1
         style={{
@@ -112,7 +94,6 @@ const PrizesPage = () => {
           textAlign: 'center',
           fontSize: '3rem',
           textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
-
           paddingBottom: 10,
         }}
       >
@@ -125,23 +106,10 @@ const PrizesPage = () => {
             <Accordion.Body> {faq.content} </Accordion.Body>
           </Accordion.Item>
         ))}
-
-        <AccordionItem eventKey="1">
-          <AccordionHeader>What is the spaceship like?</AccordionHeader>
-          <AccordionBody>It's actually very pink a la Barbie, see <a href="https://www.google.com/search?q=barbie+spaceship+movie&tbm=isch&ved=2ahUKEwjr_PLFw7eBAxXhMFkFHUgbDnMQ2-cCegQIABAA&oq=barbie+spaceship+movie&gs_lcp=CgNpbWcQAzIHCAAQGBCABDoECCMQJzoECAAQHlDlAljnBmDBB2gAcAB4AIABlgGIAZgEkgEDNi4xmAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=cAYKZeuECeHh5NoPyLa4mAc&bih=563&biw=1280&rlz=1C1JZAP_enUS1063US1063#imgrc=nSTkIJQG5Z4JnM">here</a>.</AccordionBody>
-        </AccordionItem>
-
-        <AccordionItem eventKey='2'>
-          <AccordionHeader>What color are Adam's eyes?</AccordionHeader>
-          <AccordionBody>Blue, but the color is not guarenteed to be preserved!.</AccordionBody>
-        </AccordionItem>
-
       </Accordion>
       {/* I added id=sponsors here so that when you click the sponsors 
       link at the top of the site, the sponsors segment isn't cut off 
       by the nav bar */}
-      <h2 id='sponsors' style ={{ fontFamily: 'Poppins Light', fontSize: 20, textAlign: "center", paddingTop: 20}}
-      >Feel free to contact us with any other questions at <a href='mailto:hackrpi@rpi.edu' style ={{color: "#db4941"}}>hackrpi@rpi.edu!</a></h2> */}
       
     </Container>
   );
