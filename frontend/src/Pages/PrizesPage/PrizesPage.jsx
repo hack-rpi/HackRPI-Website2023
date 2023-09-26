@@ -1,26 +1,91 @@
 import React from 'react';
 import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
-import Accordion from 'react-bootstrap/Accordion';
-import AccordionItem from 'react-bootstrap/esm/AccordionItem';
-import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
-import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+// import Accordion from 'react-bootstrap/Accordion';
+// import AccordionItem from 'react-bootstrap/esm/AccordionItem';
+// import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
+// import AccordionBody from 'react-bootstrap/esm/AccordionBody';
 
-// need to re-write these asap
-const prizes = [
-  { title: 'First Prize',
-    content:
-      'A spaceship, but you have to assemble it yourself a la IKEA',
+const topPrizes = [
+  { title: "#1 Best Hack",
+    cash: true,
+    cost: 1500,
+    content: "",
   },
-  { title: 'Second Place',
-  content:
-    "Adam Smart's right eyeball",
-  },
-  { title: 'Third Place',
-  content:
-    'Riri\'s glasses and maroon Vans',
+  { title: "#2 Hack",
+    cash: true,
+    cost: 750,
+    content: "",
   },
 ];
+const subPrizes = [
+  { title: 'Best AI Hack',
+    cash: true,
+    cost: 400,
+    content: "",
+  },
+  { title: 'Best Education Hack',
+    cash: true,
+    cost: 400,
+    content: "",
+  },
+  { title: 'Cyber Security Hack',
+    cash: true,
+    cost: 400,
+    content: "",
+  },
+  { title: 'Best Sustainaibility Hack',
+    cash: false,
+    cost: 200,
+    content: "",
+  },
+  { title: 'Best Mobile Hack',
+    cash: false,
+    cost: 200,
+    content: "",
+  },
+  { title: 'Best Data Science',
+    cash: false,
+    cost: 100,
+    content: "",
+  },
+  { title: 'Best Startup (Severino)',
+    cash: false,
+    cost: 200,
+    content: "",
+  },
+  { title: 'Best First Time',
+    cash: false,
+    cost: 100,
+    content: "",
+  },
+  { title: 'Raffle Prize',
+    cash: false,
+    cost: 0, // to be decided, un clear on provided information
+    content: "",
+  },
+];
+
+const sponsorPrize = [
+  { title: 'Best in Patient Safety Tech',
+    cash: true,
+    cost: 1000,
+    sponsor: "PRHI",
+    content: "",
+  },
+  { title: 'Web3',
+    cash: true,
+    cost: 500,
+    sponsor: "TBD",
+    content: "",
+  },
+  { title: 'The Wolfram Award',
+    cash: false,
+    cost: 375, // to be decided, unclear on provided information
+    content: "Wolfram Alpha",
+  },
+]
+
 
 const PrizesPage = () => {
   const [currentActiveKey, setCurrentActiveKey] = useState(null);
@@ -53,7 +118,7 @@ const PrizesPage = () => {
       >
         Prizes
       </h1>
-      <Accordion style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }} >
+      {/* <Accordion style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }} >
         {faqs.map((faq, index) => (
           <Accordion.Item eventKey={index} key={index}>
             <Accordion.Header> {faq.title} </Accordion.Header>
@@ -76,7 +141,7 @@ const PrizesPage = () => {
       link at the top of the site, the sponsors segment isn't cut off 
       by the nav bar */}
       <h2 id='sponsors' style ={{ fontFamily: 'Poppins Light', fontSize: 20, textAlign: "center", paddingTop: 20}}
-      >Feel free to contact us with any other questions at <a href='mailto:hackrpi@rpi.edu' style ={{color: "#db4941"}}>hackrpi@rpi.edu!</a></h2>
+      >Feel free to contact us with any other questions at <a href='mailto:hackrpi@rpi.edu' style ={{color: "#db4941"}}>hackrpi@rpi.edu!</a></h2> */}
       
     </Container>
   );
