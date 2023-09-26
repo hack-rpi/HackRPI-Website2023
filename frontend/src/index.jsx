@@ -5,7 +5,7 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
-import PrizesPage from './Pages/Prizes/prizes.jsx';
+import PrizesPage from './Pages/PrizesPage/PrizesPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
@@ -37,8 +37,8 @@ function App() {
 			{/* re-add if timer is fixed for both mobile and web */}
 			{/* <Timer /> */}
 			<AboutPage />
-			{/* <PrizesPage /> */}
 			<FAQPage />
+			<PrizesPage />
 			<SponsorPage/>
 			<Footer />
 		</div>
