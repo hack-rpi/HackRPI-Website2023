@@ -11,16 +11,11 @@
         "logoPath": "https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Logo.png",
         "url": "https://cloud.google.com"
       },
-      {
-        "name": "Google Cloud",
-        "logoPath": "https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Logo.png",
-        "url": "https://cloud.google.com"
-      },
-      {
-        "name": "IBM",
-        "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-        "url": "https://www.ibm.com/us-en"
-      }
+     {
+			"name": "Stand Out Stickers",
+			"logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
+			"url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
+		 }
     ],
     [
       {
@@ -33,16 +28,11 @@
         "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
         "url": "https://www.ibm.com/us-en"
       },
-      {
-        "name": "IBM",
-        "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-        "url": "https://www.ibm.com/us-en"
-      },
-      {
-        "name": "Google Cloud",
-        "logoPath": "https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Logo.png",
-        "url": "https://cloud.google.com"
-      }
+			{
+				"name": "Stand Out Stickers",
+				"logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
+				"url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
+			 }
     ]
   ]
 }
