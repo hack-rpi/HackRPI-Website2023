@@ -9,6 +9,8 @@ import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
 import './style.css';
+import SchedulePage from './Pages/SchedulePage/SchedulePage.jsx';
+
 // import './fonts.css';
 
 function App() {
@@ -38,9 +40,11 @@ function App() {
 			<AboutPage />
 			<FAQPage />
 			<SponsorPage/>
+			<SchedulePage />
 			<Footer />
 		</div>
 	);
 }
+
 
 export default App;
