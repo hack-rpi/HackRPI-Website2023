@@ -99,17 +99,10 @@ const PrizesPage = () => {
       >
         Prizes
       </h1>
-      {/* <Accordion style={{ fontFamily: 'Poppins', width: '75vw', margin: 'auto' }} >
-        {faqs.map((faq, index) => (
-          <Accordion.Item eventKey={index} key={index}>
-            <Accordion.Header> {faq.title} </Accordion.Header>
-            <Accordion.Body> {faq.content} </Accordion.Body>
-          </Accordion.Item>
-        ))}
-      </Accordion>
-      {/* I added id=sponsors here so that when you click the sponsors 
-      link at the top of the site, the sponsors segment isn't cut off 
-      by the nav bar */}
+
+      <section>
+        
+      </section>
       
     </Container>
   );
