@@ -8,6 +8,7 @@ import AboutPage from './Pages/AboutPage/AboutPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
+import MeetTheTeamPage from './Pages/MeetTheTeamPage/MeetTheTeamPage.jsx';
 import './style.css';
 // import './fonts.css';
 
@@ -36,6 +37,7 @@ function App() {
 			{/* re-add if timer is fixed for both mobile and web */}
 			{/* <Timer /> */}
 			<AboutPage />
+			<MeetTheTeamPage/>
 			<FAQPage />
 			<SponsorPage/>
 			<Footer />
