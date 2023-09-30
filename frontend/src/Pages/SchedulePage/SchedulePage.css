@@ -3,5 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 30vh;
+    height: 40vh;
+    gap: 20px; /* adjust the value as needed */
+}
+
+.schedule-page-container h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
