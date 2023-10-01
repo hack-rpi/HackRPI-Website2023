@@ -34,6 +34,10 @@ const faqs = [
   { title: 'Who else will be there?',
     content: 'Not only can you meet other RPI students and people from other colleges, but we’ve got wonderful sponsors who make this event possible! You’ll have the opportunity to talk to representatives from a variety of tech companies at career-fair style tables.'
   },
+  { title: 'Does HackRPI provide travel reimbursement?',
+    content: 'We are unable to provide travel reimbursement at this time, but are happy to offer advice for nearby and affordable transportation options.',
+  },
+
 ];
 
 const FAQPage = () => {
