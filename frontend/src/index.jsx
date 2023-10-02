@@ -10,8 +10,11 @@ import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
 import './style.css';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 // import './fonts.css';
+import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
+
+
 
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -31,39 +34,36 @@ function App() {
 
 	return (
 		<div>
-			<NavBar />
-			<BrowserRouter>
-				<Routes>
-					<Route path"/" element={<LandingPage />} />
-						{/* re-add if timer is fixed for both mobile and web */}
-						{/* <Timer /> */}
-						{/* <PrizesPage /> */}
-					{/*	<FAQPage />*/}
-					{/*	<SponsorPage/>*/}
-					{/*}/>*/}
-					{/*<Route path"/home" element={*/}
-					{/*	{isMobile */}
-					{/*		? <LandingPageMobile /> */}
-					{/*		: <LandingPage />}*/}
-					{/*}/>*/}
-					{/*<Route path"/ " />*/}
-					{/*<Route path"/ " />*/}
-					{/*<Route path="*" element={<NoMatch />} />*/}
-				</Routes>
-			</BrowserRouter>
-			<Footer />
-			{/* <LandingPage /> */}
-			{/* currently swapped for testming, swap back before commiting */}
-			{/*{isMobile ? <LandingPageMobile /> : <LandingPage />}*/}
-			{/* re-add if timer is fixed for both mobile and web */}
-			{/* <Timer /> */}
-			{/*<AboutPage />*/}
-			{/* <PrizesPage /> */}
-			{/*<FAQPage />*/}
-			{/*<SponsorPage/>*/}
-			{/*<Footer />*/}
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					{isMobile ?
+						<Route index element={<LandingPageMobile />} />
+							: <Route index element={<LandingPage />} />
+					}
+					{/* Landing Pages are the default route (as they should be) */}
+
+					<Route path="about" element={<AboutPage />} />
+					<Route path="faq" element={<FAQPage />} />
+					<Route path="sponsors" element={<SponsorPage />} />
+
+
+					<Route path="*" element={<ErrorPage />} />
+					{/*Added in case someone goes to random nonexistent route...*/}
+
+				</Route>
+			</Routes>
 		</div>
 	);
+}
+
+function Layout() {
+	return (
+		<div>
+			<NavBar/>
+			<Outlet /> {/* Outlet = Current Route */}
+			<Footer />
+		</div>
+	)
 }
 
 export default App;

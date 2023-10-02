@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../../../assets/hackrpi_logo.png';
 import transparentLogo from '../../../assets/logo_transparent.png';
@@ -16,6 +17,20 @@ class NavBar extends React.Component {
             .mainNav {
               display: none;
             }
+          }
+          
+          .pageNav {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.25);
+            padding: .5rem; 
+          }
+          
+          .pageNav:hover {
+            color: rgba(255, 255, 255, 0.45);
+          }
+          
+          .active, .active:hover {
+            color: rgba(255, 255, 255, 1);
           }
         `}</style>
         <Navbar collapseOnSelect
@@ -35,7 +50,7 @@ class NavBar extends React.Component {
               color: 'white',
             }}
           >
-            <Navbar.Brand href="#home" style={{ paddingLeft: 30 }}>
+            <NavLink to="/" style={{ paddingLeft: 30 }}>
               <img
                 src={transparentLogo}
                 className="d-inline-block align-top"
@@ -52,12 +67,12 @@ class NavBar extends React.Component {
               >
                 HACKRPI
               </div>
-            </Navbar.Brand>
+            </NavLink>
             
             <Nav className='mainNav' style={{ marginRight: 'auto' }}>
-              <Nav.Link href="#about"> About </Nav.Link>
-              <Nav.Link href="#faq"> FAQ </Nav.Link>
-              <Nav.Link href="#sponsors"> Sponsor </Nav.Link>
+              <NavLink to="/about" className='pageNav'> About </NavLink>
+              <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
+              <NavLink to="/sponsors" className='pageNav'> Sponsors </NavLink>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
