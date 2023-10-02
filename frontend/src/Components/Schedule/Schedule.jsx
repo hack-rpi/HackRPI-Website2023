@@ -1,8 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+
 const tolerance = 60 * 1000; // 1 minute in milliseconds
 
+const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
+  const startTimeString = useMemo(() => item.startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), [item.startTime]);
+  const endTimeString = useMemo(() => item.endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), [item.endTime]);
+
+  return (
+    <tr>
+      <td style={{ color: isCurrentEvent ? 'green' : 'white', paddingRight: '10px' }}>{startTimeString} - {endTimeString}</td>
+      <td style={{ color: isCurrentEvent ? 'green' : 'white', paddingRight: '10px' }}>{item.event}</td>
+      <td style={{ color: isCurrentEvent ? 'green' : 'white' }}>{item.location}</td>
+    </tr>
+  );
+});
+
 const Schedule = () => {
-  const schedule = [
+  const schedule = useMemo(() => [
     {
       startTime: new Date('2023-09-30T08:00:00-04:00'),
       endTime: new Date('2023-09-30T20:30:00-04:00'),
@@ -10,13 +24,18 @@ const Schedule = () => {
       location: 'Room A',
     },
     {
-      startTime: new Date('2023-09-30T15:00:00-04:00'), // 3:00 PM
-      endTime: new Date('2023-09-30T15:17:00-04:00'), // 3:04 PM
+      startTime: new Date('2023-09-30T15:00:00-04:00'),
+      endTime: new Date('2023-09-30T15:17:00-04:00'),
       event: 'Event 2',
       location: 'Room B',
     },
-    // ... add more schedule items as needed
-  ];
+    {
+      startTime: new Date('2023-10-01T15:00:00-04:00'),
+      endTime: new Date('2023-10-02T15:17:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+  ], []);
 
   const [currentEvent, setCurrentEvent] = useState(null);
 
@@ -26,20 +45,20 @@ const Schedule = () => {
       const runningEvent = schedule.find((event) => {
         const startTime = event.startTime.getTime();
         const endTime = event.endTime.getTime();
-        return currentTime >= startTime && currentTime <= endTime + tolerance; // include the end time with tolerance
+        return currentTime >= startTime && currentTime <= endTime + tolerance;
       });
 
       setCurrentEvent(runningEvent || null);
     };
 
-    updateCurrentEvent(); // Call once on mount
+    updateCurrentEvent();
 
-    const intervalId = setInterval(updateCurrentEvent, 60000); // Update every minute
+    const intervalId = setInterval(updateCurrentEvent, 60000);
 
     return () => {
-      clearInterval(intervalId); // Cleanup function
+      clearInterval(intervalId);
     };
-  }, []); // Empty dependency array for mounting effect
+  }, [schedule]);
 
   return (
     <div>
@@ -53,7 +72,7 @@ const Schedule = () => {
         <p>No ongoing events.</p>
       )}
 
-      <h2>Schedule:</h2>
+      <h2></h2>
       <table className="schedule-table">
         <thead>
           <tr>
@@ -64,15 +83,13 @@ const Schedule = () => {
         </thead>
         <tbody>
           {schedule.map((item, index) => {
-            const startTimeString = item.startTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            const endTimeString = item.endTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const isCurrentEvent = currentEvent &&
+              item.startTime.getTime() === currentEvent.startTime.getTime() &&
+              item.event === currentEvent.event &&
+              item.location === currentEvent.location;
 
             return (
-              <tr key={index}>
-                <td style={{ color: currentEvent && item.startTime.getTime() === currentEvent.startTime.getTime() ? 'green' : 'white', paddingRight: '10px' }}>{startTimeString} - {endTimeString}</td>
-                <td style={{ color: currentEvent && item.event === currentEvent.event ? 'green' : 'white', paddingRight: '10px' }}>{item.event}</td>
-                <td style={{ color: currentEvent && item.location === currentEvent.location ? 'green' : 'white' }}>{item.location}</td>
-              </tr>
+              <ScheduleRow key={index} item={item} isCurrentEvent={isCurrentEvent} />
             );
           })}
         </tbody>
