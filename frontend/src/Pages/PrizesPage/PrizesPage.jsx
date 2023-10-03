@@ -7,7 +7,23 @@ import styled, { keyframes } from 'styled-components';
 // import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 // import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 // import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+const PrizeTitle = styled.h2`
+  margin: 0;
+  color: #0a0a0a;
+  font-size: 1.5em; // Increase font size for better visibility
+  font-weight: bold; // Make it bold to stand out
+`;
 
+const PrizeAmount = styled.p`
+  margin: 5px 0;
+  color: #4CAF50;
+  font-size: 1.2em; // Slightly larger font size for the amount
+`;
+
+const PrizeDescription = styled.p`
+  color: #666; // Subtle color for less important text
+  font-style: italic; // Styling to differentiate from other text
+`;
 
 const shine = keyframes`
   0% {
