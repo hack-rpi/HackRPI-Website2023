@@ -13,7 +13,7 @@ const faqs = [
   },
   { title: 'When is HackRPI X?',
   content:
-    "November 4th-5th 2023, is the date for our 10th annual HackRPI. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
+    "November 4th-5th 2023, is the date for our 10th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
   },
   { title: 'Is it free to attend?',
   content:
