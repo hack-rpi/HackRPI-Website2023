@@ -1,10 +1,36 @@
 import React from 'react';
 import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
+import styled, { keyframes } from 'styled-components';
+
 // import Accordion from 'react-bootstrap/Accordion';
 // import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 // import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 // import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+
+
+const shine = keyframes`
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+`;
+
+const TotalPrize = styled.h1`
+  text-align: center;
+  background-image: linear-gradient(45deg, #f06, #9f6);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2.5em;
+  margin: 20px 0;
+  animation: ${shine} 2s linear infinite;
+`;
+
 const topPrizes = [
   { title: "#1 Best Hack",
     cash: true,
@@ -112,7 +138,7 @@ const PrizesPage = () => {
       </h1>
 
       <section id="PrizePage_main_body">
-        <h1 class="prize_header">[Total Prizes...]</h1>
+      <TotalPrize>$18,875 in Prizes</TotalPrize>
         <section class="first_half_prize_page">
           <div>
             {topPrizes.map((Prize, Index) => (
