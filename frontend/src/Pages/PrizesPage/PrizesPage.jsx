@@ -5,6 +5,18 @@ import Container from 'react-bootstrap/Container';
 // import AccordionItem from 'react-bootstrap/esm/AccordionItem';
 // import AccordionHeader from 'react-bootstrap/esm/AccordionHeader';
 // import AccordionBody from 'react-bootstrap/esm/AccordionBody';
+const topPrizes = [
+  { title: "#1 Best Hack",
+    cash: true,
+    cost: 1500,
+    content: "",
+  },
+  { title: "#2 Best Hack",
+  cash: true,
+  cost: 750,
+  content: "",
+  }
+];
 
 const subPrizes = [
   { title: 'Best AI Hack',
@@ -74,7 +86,6 @@ const sponsorPrize = [
   },
 ]
 
-
 const PrizesPage = () => {
   const [currentActiveKey, setCurrentActiveKey] = useState(null);
 
@@ -100,8 +111,46 @@ const PrizesPage = () => {
         Prizes
       </h1>
 
-      <section>
-        
+      <section id="PrizePage_main_body">
+        <h1 class="prize_header">[Total Prizes...]</h1>
+        <section class="first_half_prize_page">
+          <div>
+            {topPrizes.map((Prize, Index) => (
+              <section key={Index}>
+                <h2 className="topPrizes_title">{Prize.title}</h2>
+                {Prize.cash && <p className="sponsor_prize_amount">{Prize.cost}</p>}
+                {!Prize.cash && <p className="subPrizes_cash">{Prize.cost}</p>}
+
+                <p className="topPrizes_description">{Prize.content}</p>
+              </section>
+            ))}
+          </div>
+          <div>
+            {sponsorPrize.map((Prize, Index) => (
+              <section key={Index}>
+                <h2 className="sponsor_prize_title">{Prize.title}</h2>
+                {Prize.cash && <p className="sponsor_prize_amount">{Prize.cost}</p>}
+                {!Prize.cash && <p className="subPrizes_cash">{Prize.cost}</p>}
+
+                <p className="sponsor_prize_description">{Prize.content}</p>
+              </section>
+            ))}
+          </div>
+        </section>
+        <section class="second_half_prize_page">
+          <div>
+            {subPrizes.map((Prize, Index) => (
+              <section key={Index}>
+                <h2 className="subPrizes_title">{Prize.title}</h2>
+                {Prize.cash && <p className="subPrizes_amount">{Prize.cost}</p>}
+                {!Prize.cash && <p className="subPrizes_cash">{Prize.cost}</p>}
+
+                <p className="subPrizes_description">{Prize.content}</p>
+              </section>
+            ))}
+          </div>
+        </section>
+
       </section>
       
     </Container>
