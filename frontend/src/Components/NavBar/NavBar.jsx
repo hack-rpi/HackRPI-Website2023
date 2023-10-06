@@ -58,6 +58,7 @@ class NavBar extends React.Component {
               <Nav.Link href="#about"> About </Nav.Link>
               <Nav.Link href="#faq"> FAQ </Nav.Link>
               <Nav.Link href="#sponsors"> Sponsor </Nav.Link>
+              <Nav.Link href="#members"> Members </Nav.Link>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>

@@ -45,7 +45,7 @@ const MeetTheTeamPage = () => {
     ];
 
     return (
-      <div id="MeetTheTeam"  className="MeetTheTeamPage" style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
+      <div id="members"  className="MeetTheTeamPage" style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
         <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
           Meet Our Team!
         </h1>
