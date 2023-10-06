@@ -2,15 +2,32 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
+import best_hackTrophy from './trophy-design-fin.png';
 
 //npm install styled-components
 //npm install styled-components@latest
 //npm install react-spring
 
+const Prizes = [
+  { title: '#1 Best Hack', amount: '$1,500' },
+  { title: '#2 Hack', amount: '$750' },
+  { title: 'Best AI Hack', amount: '$400' },
+  { title: 'Best Education Hack', amount: '$400' },
+  { title: 'Best Sustainability Hack', amount: '$200' },
+  { title: 'Best Mobile Hack', amount: '$200' },
+  { title: 'Best Data Science Hack', amount: '$100' },
+  { title: 'Best Startup', amount: '$200' },
+  { title: 'Best First Time Hack', amount: '$100' },
+  { title: 'Best in Patient Safety Tech', amount: '$1,000' },
+  { title: 'Cyber Security Hack', amount: '$400' },
+  { title: 'Web3', amount: '$500' },
+  { title: 'The Wolfram Award (35)', amount: '$375 in cash value per person' },
+];
+
 const PrizeContainer = styled.div`
   padding: 20px;
-  max-width: 600px;
   margin: auto;
+  margin-bottom: 36vh;
 `;
 
 const shine = keyframes`
@@ -33,6 +50,7 @@ const pulsate = keyframes`
   }
 `;
 
+
 const TotalPrize = styled.h1`
   text-align: center;
   background-image: linear-gradient(45deg, #191919, #910307,#353535, #d50110);
@@ -47,22 +65,6 @@ const TotalPrize = styled.h1`
   position: relative;
 `;
 
-const Prizes = [
-  { title: '#1 Best Hack', amount: '$1,500' },
-  { title: '#2 Hack', amount: '$750' },
-  { title: 'Best AI Hack', amount: '$400' },
-  { title: 'Best Education Hack', amount: '$400' },
-  { title: 'Best Sustainability Hack', amount: '$200' },
-  { title: 'Best Mobile Hack', amount: '$200' },
-  { title: 'Best Data Science Hack', amount: '$100' },
-  { title: 'Best Startup', amount: '$200' },
-  { title: 'Best First Time Hack', amount: '$100' },
-  { title: 'Best in Patient Safety Tech', amount: '$1,000' },
-  { title: 'Cyber Security Hack', amount: '$400' },
-  { title: 'Web3', amount: '$500' },
-  { title: 'The Wolfram Award (35)', amount: '$375 in cash value per person' },
-];
-
 const TotalPrizeContainer = styled.div`
   display: flex;
   align-items: center;
@@ -72,34 +74,104 @@ const TotalPrizeContainer = styled.div`
   gap: 120px; //black gear
 `;
 
+const TopPrizeContainer = styled.section`
+  margin: auto;
+  margin-top: 8vh; // Make some space against the title
+  margin-bottom: 140px; // Make some space against other prizes
+  display: flex; // Use flex display
+  flex-direction: row; // Arrange prizes horizontally
+  flex-wrap: wrap; // Allow prizes to wrap to the next line if necessary
+  justify-content: space-between; // Distribute space between prizes
+  gap: 20px; // Adjust the gap between prizes
+  height: fit-content;
+  text-align: center;
+  width: 1200px;
+`;
+
+const Top_Prize = styled.section`
+  position: relative; /* Set relative positioning for the container */
+  width: 500px;
+  height: 500px; /* Adjust the height as needed */
+
+  .topPrizes_image {
+    position: absolute; // Set absolute positioning for the image, so the descriptions 
+                        // can show above
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(${best_hackTrophy});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+  }
+
+  /* Adjust the styles for the text and other elements as needed */
+  h2.topPrizes_title, p.prize_amount, p.prize_description {
+    position: relative; /* Set relative positioning for text elements */
+    z-index: 1;
+  }
+
+  h2.topPrizes_title {
+    margin-top: 60px;
+  }
+
+  p.prize_amount {
+  }
+
+  p.prize_description {
+  }
+`;
+const Prize_Description = styled.section`
+  //TBD
+`;
+
 const PrizesPage = () => {
 
   const bestHacksPrizes = Prizes.slice(2, 10);
   const cyber = Prizes.slice(10,11);
   const web3Prizes = Prizes.slice(11, 12);
   const wolframPrizes = Prizes.slice(12, 13);
+  const topPrizes = Prizes.slice(0, 2);
 
   return (
     <PrizeContainer>
       <TotalPrizeContainer>
-        <SpinningGear />
+        <SpinningGear/>
         <TotalPrize>
           $18,875&nbsp;in Prizes
         </TotalPrize>
-        <SpinningGear />
+        <SpinningGear/>
       </TotalPrizeContainer>
 
+      <TopPrizeContainer>
+        {topPrizes.map((Prize, Index) => (
+          <Top_Prize key={Index} className={Prize.code}>
+            <div className="topPrizes_image">
+              {/* The image is added as a background */}
+            </div>
+            <Prize_Description>
+              <h2 className="topPrizes_title">{Prize.title}</h2>
+              {Prize.cash && <p className="prize_amount">{Prize.cost}</p>}
+              <p className="prize_description">{Prize.content}</p>
+            </Prize_Description>
+          </Top_Prize>
+        ))}
+      </TopPrizeContainer>
+
       <div style={{ 
-      display: 'flex', 
-      justifyContent: 'space-evenly',  
-      marginTop: '20px',
-      gap: '120px',  // Add or adjust gap
-    }}>
-      <Tab title="Cyber Security Hack Award" prizes={cyber} />
-      <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
-      <Tab title="Web 3 Prize" prizes={web3Prizes} />
-      <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
-    </div>
+        display: 'flex', 
+        justifyContent: 'space-evenly',  
+        marginTop: '20px',
+        gap: '120px',  // Add or adjust gap
+      }}>
+        <Tab title="Cyber Security Hack Award" prizes={cyber} />
+        <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
+        <Tab title="Web 3 Prize" prizes={web3Prizes} />
+        <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
+      </div>
+
     </PrizeContainer>
   );
 };
