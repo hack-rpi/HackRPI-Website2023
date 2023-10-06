@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
+import Tab from './tab'; // Import the Tab component
 
 //npm install styled-components
 //npm install styled-components@latest
@@ -51,13 +52,13 @@ const Prizes = [
   { title: '#2 Hack', amount: '$750' },
   { title: 'Best AI Hack', amount: '$400' },
   { title: 'Best Education Hack', amount: '$400' },
-  { title: 'Cyber Security Hack', amount: '$400' },
   { title: 'Best Sustainability Hack', amount: '$200' },
   { title: 'Best Mobile Hack', amount: '$200' },
   { title: 'Best Data Science Hack', amount: '$100' },
   { title: 'Best Startup', amount: '$200' },
   { title: 'Best First Time Hack', amount: '$100' },
   { title: 'Best in Patient Safety Tech', amount: '$1,000' },
+  { title: 'Cyber Security Hack', amount: '$400' },
   { title: 'Web3', amount: '$500' },
   { title: 'The Wolfram Award (35)', amount: '$375 in cash value per person' },
 ];
@@ -72,6 +73,12 @@ const TotalPrizeContainer = styled.div`
 `;
 
 const PrizesPage = () => {
+
+  const bestHacksPrizes = Prizes.slice(2, 10);
+  const cyber = Prizes.slice(10,11);
+  const web3Prizes = Prizes.slice(11, 12);
+  const wolframPrizes = Prizes.slice(12, 13);
+
   return (
     <PrizeContainer>
       <TotalPrizeContainer>
@@ -81,6 +88,18 @@ const PrizesPage = () => {
         </TotalPrize>
         <SpinningGear />
       </TotalPrizeContainer>
+
+      <div style={{ 
+      display: 'flex', 
+      justifyContent: 'space-evenly',  
+      marginTop: '20px',
+      gap: '120px',  // Add or adjust gap
+    }}>
+      <Tab title="Cyber Security Hack Award" prizes={cyber} />
+      <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
+      <Tab title="Web 3 Prize" prizes={web3Prizes} />
+      <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
+    </div>
     </PrizeContainer>
   );
 };
