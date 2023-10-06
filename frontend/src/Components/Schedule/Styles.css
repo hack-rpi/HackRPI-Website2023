@@ -1,0 +1,14 @@
+.cell {
+    font-family: 'Poppins';
+    color: white;
+    padding-right: 1rem;
+    font-size: 32px;
+  }
+  
+  /* Remove padding from the last cell */
+  .cell:last-child {
+    padding-right: 0;
+  }
+  
+
+/*Useful For Optimization in the future*/
