@@ -35,25 +35,37 @@ function App() {
 	return (
 		<div>
 			<Routes>
-				<Route path="/" element={<Layout />}>
-					{isMobile ?
-						<Route index element={<LandingPageMobile />} />
-							: <Route index element={<LandingPage />} />
-					}
-					{/* Landing Pages are the default route (as they should be) */}
+				{isMobile ?
+					<Route path="/" element={<MobileLayout />} />
+					: <Route path="/" element={<Layout />}>
+							<Route index element={<LandingPage />} />
+							{/* Landing Page is the default route */}
 
-					<Route path="about" element={<AboutPage />} />
-					<Route path="faq" element={<FAQPage />} />
-					<Route path="sponsors" element={<SponsorPage />} />
+							<Route path="about" element={<AboutPage />} />
+							<Route path="faq" element={<FAQPage />} />
+							<Route path="sponsors" element={<SponsorPage />} />
 
 
-					<Route path="*" element={<ErrorPage />} />
-					{/*Added in case someone goes to random nonexistent route...*/}
-
-				</Route>
+							<Route path="*" element={<ErrorPage />} />
+							{/*Added in case someone goes to random nonexistent route...*/}
+					</Route>
+				}
 			</Routes>
 		</div>
 	);
+}
+
+function MobileLayout() {
+	return (
+		<div>
+			<NavBar/>
+			<LandingPageMobile />
+			<AboutPage />
+			<FAQPage />
+			<SponsorPage />
+			<Footer />
+		</div>
+	)
 }
 
 function Layout() {
