@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 
-
-
-
 const tolerance = 10 * 1000; // 10 sec in milliseconds
 
 const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {            //React.memo optimizes the rendering of the ScheduleRow component based on its props.
@@ -14,9 +11,9 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {            //Reac
 
   return (
     
- <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.5rem', borderBottom: '10px solid black' }}>
-    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '1rem', fontSize: '32px'}}>{item.event}</td>
-    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '1rem', fontSize: '32px' }}>{item.location}</td>  
+ <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '1rem', borderBottom: '10px solid black' }}>
+    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '5rem', fontSize: '32px'}}>{item.event}</td>
+    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px' }}>{item.location}</td>  
     <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '1rem', fontSize: '32px' }}>{startTimeString} - {endTimeString}</td> 
  </tr>
   );
@@ -38,14 +35,50 @@ const Schedule = () => {
       location: 'Room B',
     },
     {
-      startTime: new Date('2023-10-09T15:10:17-04:00'),
-      endTime: new Date('2023-10-02T12:16:00-04:00'),
+      startTime: new Date('2023-10-06T16:52:00-04:00'),
+      endTime: new Date('2023-10-06T16:53:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+    {
+      startTime: new Date('2023-10-06T16:52:00-04:00'),
+      endTime: new Date('2023-10-06T16:53:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+    {
+      startTime: new Date('2023-10-06T16:52:00-04:00'),
+      endTime: new Date('2023-10-06T16:53:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+    {
+      startTime: new Date('2023-10-06T16:52:00-04:00'),
+      endTime: new Date('2023-10-06T16:53:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+    {
+      startTime: new Date('2023-10-06T16:52:00-04:00'),
+      endTime: new Date('2023-10-06T16:53:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+    {
+      startTime: new Date('2023-10-06T16:55:00-04:00'),
+      endTime: new Date('2023-10-06T16:56:00-04:00'),
+      event: 'Event 3',
+      location: 'Room B',
+    },
+    {
+      startTime: new Date('2023-10-06T16:55:00-04:00'),
+      endTime: new Date('2023-10-06T16:56:00-04:00'),
       event: 'Event 3',
       location: 'Room B',
     },
 
      //* add more events here... MAKE SURE  IT IS -05:00 for daylight savings time on november 5th */}
-    //* separate nov and nov 5. */}
+    //* separate nov 4 and nov 5. */}
 
   ], []);
 
@@ -74,7 +107,7 @@ const Schedule = () => {
 
   return (
     <div>
-      <h2>Current Event:</h2>
+{/*      <h2>Current Event:</h2>
       {currentEvent ? (
         <div>
           <h3 style={{ color: 'red' }}>{currentEvent.event}</h3>
@@ -84,17 +117,17 @@ const Schedule = () => {
         <p>No ongoing events.</p>          // If Current event is true/happening, display the current event.else  display no ongoing events
       )}
 
-      <h2></h2>                                
+      <h2></h2>    */}                            
       <table className="schedule-table">
   <thead>
     <tr>
-      <th>Event</th>
-      <th>Location</th>
-      <th>Time</th>
+      <th style ={{fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px'}}>Event</th>
+      <th style ={{fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px'}}>Location</th>
+      <th style ={{fontFamily: 'Poppins', color: 'white', fontSize: '32px'}}>Time</th>
     </tr>
-    <tr>
-      <td colSpan="3" style={{ borderBottom: '2px solid #bd0909' }}></td>    {/*injects a horizontal line ,if need to remove, , td in between <tr></tr> and the tr itself*/}
-    </tr> 
+    {/*<tr>
+      <td colSpan="3" style={{ borderBottom: '2px solid #bd0909' }}></td>    {/*injects a horizontal line ,if need to remove, , td in between <tr></tr> and the tr itself
+    </tr> */}
   </thead>
   <tbody>
           {schedule.map((item, index) => {
