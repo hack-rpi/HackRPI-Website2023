@@ -50,7 +50,6 @@ const pulsate = keyframes`
   }
 `;
 
-
 const TotalPrize = styled.h1`
   text-align: center;
   background-image: linear-gradient(45deg, #191919, #910307,#353535, #d50110);
@@ -123,6 +122,7 @@ const Top_Prize = styled.section`
   p.prize_description {
   }
 `;
+
 const Prize_Description = styled.section`
   //TBD
 `;
@@ -164,7 +164,9 @@ const PrizesPage = () => {
         display: 'flex', 
         justifyContent: 'space-evenly',  
         marginTop: '20px',
-        gap: '120px',  // Add or adjust gap
+        gap: '30px', 
+        fontFamily: 'Mokoto',
+        color: '#FFFFFF', 
       }}>
         <Tab title="Cyber Security Hack Award" prizes={cyber} />
         <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />

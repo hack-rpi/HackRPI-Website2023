@@ -28,15 +28,17 @@ const Gear = styled.div`
   user-select: none; 
 `;
 
-
 const Dropdown = styled.div`
-  display: ${props => (props.open ? 'block' : 'none')};
   background-color: #353535;  
   border: 1px solid #ccc;
   position: absolute;
   z-index: 1;
   top: 50px;
   width: 200px;  // Fixed width
+  max-height: ${props => (props.open ? '500px' : '0')}; 
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+  border: none;
 `;
 
 const Prize = styled.div`
