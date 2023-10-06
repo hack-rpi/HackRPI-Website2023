@@ -2,8 +2,8 @@
   "sponsorGroups": [
     [
       {
-        "name": "IBM",
-        "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+        "name": "IBM Call for Code",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Call_for_Code%C2%AE_logotype_primary_pos_blue60_RGB.png",
         "url": "https://www.ibm.com/us-en"
       },
       {
@@ -11,28 +11,38 @@
         "logoPath": "https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Logo.png",
         "url": "https://cloud.google.com"
       },
-     {
-			"name": "Stand Out Stickers",
-			"logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
-			"url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
-		 }
+      {
+        "name": "Stand Out Stickers",
+        "logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
+        "url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
+      },
+      {
+        "name": "Echo3D",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Copy+of+echo3D+-+Logo+2021+-+Background+-+Round+Edges.png",
+        "url": "https://echo3D.com"
+      }
     ],
     [
       {
-        "name": "Google Cloud",
-        "logoPath": "https://logos-world.net/wp-content/uploads/2021/02/Google-Cloud-Logo.png",
-        "url": "https://cloud.google.com"
-      },
-      {
-        "name": "IBM",
-        "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-        "url": "https://www.ibm.com/us-en"
+        "name": "Global Foundries",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/GF_Logo_png.png",
+        "url": "https://gf.com/"
       },
 			{
-				"name": "Stand Out Stickers",
-				"logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
-				"url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
-			 }
+        "name": "Lutron",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/lutron_logo_K_lo.jpg",
+        "url": "https://www.lutron.com/en-US/pages/default.aspx"
+      },
+			{
+        "name": "WB Games",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/WBGAMES-NY_Logo_Lockup_Hor_Flat_Pos_RGB.png",
+        "url": "https://warnerbrosgames.com/"
+      },
+			{
+        "name": "Wolfram",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Wolfram-horiz-white-bg.png",
+        "url": "https://www.wolfram.com/"
+      }
     ]
   ]
 }
