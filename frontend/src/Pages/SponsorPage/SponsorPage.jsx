@@ -39,7 +39,8 @@ const SponsorPage = () => {
         <Carousel
           controls={false}
           indicators={false}
-          interval={7500}
+          interval={4500}
+					pause={false}
           activeIndex={index}
           onSelect={handleSelect}
           style={{
