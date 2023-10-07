@@ -119,7 +119,7 @@ const SponsorPage = () => {
                     marginTop: '1rem',
                   }}
                 >
-                  {sponsorGroup.length >= 3 && (
+                  {/*{sponsorGroup.length >= 3 && (
                     <a
                       href={sponsorGroup[2].url}
                       style={{
@@ -138,7 +138,7 @@ const SponsorPage = () => {
                         alt={sponsorGroup[2].name}
                       />
                     </a>
-                  )}
+                      )}*/}
 
                   {sponsorGroup.length >= 4 && (
                     <a
