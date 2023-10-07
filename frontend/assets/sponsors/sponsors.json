@@ -28,21 +28,34 @@
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/GF_Logo_png.png",
         "url": "https://gf.com/"
       },
-			{
+      {
         "name": "Lutron",
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/lutron_logo_K_lo.jpg",
         "url": "https://www.lutron.com/en-US/pages/default.aspx"
       },
-			{
+      {
         "name": "WB Games",
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/WBGAMES-NY_Logo_Lockup_Hor_Flat_Pos_RGB.png",
         "url": "https://warnerbrosgames.com/"
       },
-			{
+      {
         "name": "Wolfram",
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Wolfram-horiz-white-bg.png",
         "url": "https://www.wolfram.com/"
       }
+    ],
+    [
+      {
+        "name": "RPI School of Science",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/12041-03+RPI+Science+Lockup_Small_RGB_RED.png",
+        "url": "https://science.rpi.edu/"
+      },
+      {
+        "name": "PRHI",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Challenge_Logo_stacked_RGB_reverse_green.png",
+        "url": "https://www.prhi.org/whatwedo/partnership-initiatives/patient-safety-technology-challenge"
+      },
+      {}
     ]
   ]
 }

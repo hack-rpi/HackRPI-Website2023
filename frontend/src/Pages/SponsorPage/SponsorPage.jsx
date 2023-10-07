@@ -50,8 +50,10 @@ const SponsorPage = () => {
             borderBottomLeftRadius: '5px',
             borderBottomRightRadius: '5px',
             width: '91.667%',
+						minHeight:'400px',
             height: 'fit-content',
           }}
+
         >
           {sponsorGroups.sponsorGroups.map((sponsorGroup, indx) => (
             <Carousel.Item key={indx}>
@@ -59,6 +61,8 @@ const SponsorPage = () => {
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
+									height:'400px',
+									justifyContent:'space-around'
                 }}
               >
                 <div
