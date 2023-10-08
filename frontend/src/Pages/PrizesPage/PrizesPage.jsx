@@ -66,15 +66,15 @@ const TotalPrize = styled.h1`
   word-wrap: break-word; // Manage word breaking
 
   @media (min-width: 1200px) {
-    font-size: 8vw; // Adjust for larger screens
+    font-size: 8vw;
   }
 
   @media (max-width: 600px) {
-    font-size: 13vw; // Increase font size for smaller screens
+    font-size: 13vw; 
   }
 
   @media (max-width: 400px) {
-    font-size: 13vw; // Further increase font size for very small screens
+    font-size: 13vw; 
   }
 `;
 
@@ -84,7 +84,15 @@ const TotalPrizeContainer = styled.div`
   justify-content: center;
   margin: 20px 0; 
   //gap: 70px; //red gear
-  gap: 100px; //black gear
+  gap: 40px; 
+
+  @media (max-width: 600px) {
+    gap: 20px; 
+  }
+
+  @media (max-width: 400px) {
+    gap: 10px; 
+  }
 `;
 
 const TopPrizeContainer = styled.section`
