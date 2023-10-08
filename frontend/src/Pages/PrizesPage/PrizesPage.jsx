@@ -58,10 +58,24 @@ const TotalPrize = styled.h1`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 8em; 
-  margin: 20px -100px;
+  font-size: 8vw; // Responsive font size
+  margin: 2vw; // Responsive margin
   animation: ${shine} 2s linear infinite, ${pulsate} 1.5s ease-in-out infinite;
   position: relative;
+  overflow-wrap: break-word; // Manage word breaking
+  word-wrap: break-word; // Manage word breaking
+
+  @media (min-width: 1200px) {
+    font-size: 8vw; // Adjust for larger screens
+  }
+
+  @media (max-width: 600px) {
+    font-size: 13vw; // Increase font size for smaller screens
+  }
+
+  @media (max-width: 400px) {
+    font-size: 13vw; // Further increase font size for very small screens
+  }
 `;
 
 const TotalPrizeContainer = styled.div`
@@ -70,7 +84,7 @@ const TotalPrizeContainer = styled.div`
   justify-content: center;
   margin: 20px 0; 
   //gap: 70px; //red gear
-  gap: 120px; //black gear
+  gap: 100px; //black gear
 `;
 
 const TopPrizeContainer = styled.section`
