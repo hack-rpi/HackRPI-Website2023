@@ -4,62 +4,68 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Button from 'react-bootstrap/Button';
+import './style.css';
+import maryellenImage from './../../../assets/TeamAvatars/Maryellen.png';
+import ravenImage from './../../../assets/TeamAvatars/Raven.png';
+import xeniaImage from './../../../assets/TeamAvatars/Xenia.png';
+import adwaitImage from './../../../assets/TeamAvatars/Adwait.png';
+import sanayImage from './../../../assets/TeamAvatars/Sanay.png';
+import mirandaImage from './../../../assets/TeamAvatars/Miranda.png';
 
 const MeetTheTeamPage = () => {
     const teamMembers = [
       {
         name: 'Maryellen Marino',
         role: 'President',
-        avatar: '', 
+        avatar: maryellenImage, 
       },
       {
         name: 'Raven Levitt',
         role: 'Vice President',
-        avatar: '',
+        avatar: ravenImage,
       },
 
       {
         name: 'Xenia Khusid',
         role: 'Director of Logistics',
-        avatar: '',
+        avatar: xeniaImage,
       },
 
       {
         name: 'Adwait Naware',
         role: 'Director of Finance',
-        avatar: '',
+        avatar: adwaitImage,
       },
 
       {
         name: 'Sanay Tralshawala',
         role: 'Director of Sponsorship',
-        avatar: '',
+        avatar: sanayImage,
       },
 
       {
         name: 'Miranda Zheng',
         role: 'Director of Marketing',
-        avatar: '',
+        avatar: mirandaImage,
       },
 
     ];
 
     return (
       <div id="members" className="MeetTheTeamPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
-          <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
+          <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
               Meet Our Team!
           </h1>
           <div className="team-members">
-              <Row>
+              <Row className="mb-4">
                   {teamMembers.map((member, index) => (
                       <Col key={index} md={4}>
-                          <div className="card">
+                          <div className="card" style={{ marginBottom: '20px' }}>
                               <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
                               <div className="container">
-                                  <h2>{member.name}</h2>
-                                  <p className="title">{member.role}</p>
-                                  <p>Some text that describes them.</p>
-                                  <Button className="button">More Info</Button>
+                                  <h2 className="name">{member.name}</h2>
+                                  <p className="position">{member.role}</p>
+                                  <Button className="button" style={{ marginBottom: '10px' }}>More Info</Button>
                               </div>
                           </div>
                       </Col>
