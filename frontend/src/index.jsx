@@ -5,13 +5,12 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
-import PrizesPage from './Pages/Prizes/prizes.jsx';
+// import PrizesPage from './Pages/Prizes/prizes.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
 import './style.css';
-import { Routes, Route, Outlet, Switch } from 'react-router-dom';
-// import './fonts.css';
+import { Outlet } from 'react-router-dom';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import { createHashRouter, RouterProvider, } from "react-router-dom";
 
@@ -23,7 +22,7 @@ const router = createHashRouter([
 		children: [
 			{
 				index: true,
-				element: <LandingPage/>,
+				element:<LandingPage />,
 			},
 			{
 				path: "about",
@@ -37,28 +36,30 @@ const router = createHashRouter([
 				path: "sponsors",
 				element: <SponsorPage/>,
 			},
+			{
+				path: "*",
+				element: <ErrorPage/>,
+			},
 		],
-	},
-	{
-		path: "*",
-		element: <ErrorPage/>,
 	},
 ]);
 
 const mobileRouter = createHashRouter([
 	{
 		path: "/",
-		element: <MobileLayout />,
-	},
-	{
-		path: "*",
-		element: <ErrorPage />,
+		element: <Layout />,
+		children: [
+			{
+				index: true,
+				element: <MobilePage />,
+			},
+			{
+				path: '*',
+				element: <ErrorPage />,
+			},
+		]
 	},
 ]);
-
-// export default function App() {
-// 	return <RouterProvider router={router} />;
-// }
 
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -102,15 +103,13 @@ function App() {
 	);
 }
 
-function MobileLayout() {
+function MobilePage() {
 	return (
 		<div>
-			<NavBar/>
 			<LandingPageMobile />
 			<AboutPage />
 			<FAQPage />
 			<SponsorPage />
-			<Footer />
 		</div>
 	)
 }
