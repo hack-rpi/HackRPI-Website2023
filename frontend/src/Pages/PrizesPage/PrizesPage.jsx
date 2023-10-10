@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
 import best_hackTrophy from './img/trophy1.png';
-import podiumImage from './podium.png';
 
 //npm install styled-components
 //npm install styled-components@latest
@@ -155,56 +154,9 @@ const Top_Prize = styled.section`
 
 `;
 
-const Podium = styled.div`
-  position: relative;
-  width: 200px;
-  height: 400px;
-  background-image: url(${podiumImage});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: 0 20px;
+const Prize_Description = styled.section`
+  //TBD
 `;
-
-
-const PrizeInfo = styled.div`
-  position: absolute;
-  top: 10px; // Adjust as needed
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  animation: float 2s ease-in-out infinite;
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-10px);
-    }
-  }
-`;
-
-const LightEffect = styled.div`
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(255,255,255,0.8), transparent);
-  transform: translateX(-50%);
-  animation: shine 3s ease-in-out infinite;
-
-  @keyframes shine {
-    0%, 100% {
-      opacity: 0.8;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-`;
-
 
 const PrizesPage = () => {
 
@@ -226,13 +178,18 @@ const PrizesPage = () => {
 
       <TopPrizeContainer>
         {topPrizes.map((Prize, Index) => (
-          <Podium key={Index}>
-            <LightEffect />
-            <PrizeInfo>
-              <h2>{Prize.title}</h2>
-              <p>{Prize.amount}</p>
-            </PrizeInfo>
-          </Podium>
+          <Top_Prize key={Index} className={Prize.code}>
+            <div className="topPrizes_image">
+              {/* The image is added as a background */}
+            </div>
+            <Prize_Description style={{
+              fontFamily: 'Mokoto',
+              color: 'black',
+            }}>
+              <h2 className="topPrizes_title">{Prize.title}</h2>
+              <h3 className="prize_amount">{Prize.amount}</h3>
+            </Prize_Description>
+          </Top_Prize>
         ))}
       </TopPrizeContainer>
 
@@ -251,7 +208,6 @@ const PrizesPage = () => {
       </div>
 
     </PrizeContainer>
-      
   );
 };
 

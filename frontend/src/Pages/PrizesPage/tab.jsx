@@ -18,6 +18,7 @@ const TabContainer = styled.div`
   white-space: nowrap;
   font-size: 20px; 
   user-select: none; 
+  
 `;
 
 const Gear = styled.div`
