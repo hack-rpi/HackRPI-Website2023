@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
 import best_hackTrophy from './img/trophy1.png';
-
+import podium from './img/podium.png';
 //npm install styled-components
 //npm install styled-components@latest
 //npm install react-spring
@@ -112,10 +112,26 @@ const TopPrizeContainer = styled.section`
   width: 1200px;
 `;
 
+
 const Top_Prize = styled.section`
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+    transform: rotate(-15deg);
+
+  }
+
   position: relative; /* Set relative positioning for the container */
   width: 500px;
   height: 500px; /* Adjust the height as needed */
+  animation: moveUpDown 2s ease-in-out infinite, rotate 2s ease-in-out infinite;
 
   .topPrizes_image {
     position: absolute; // Set absolute positioning for the image, so the descriptions 
@@ -129,18 +145,28 @@ const Top_Prize = styled.section`
     background-repeat: no-repeat;
     background-position: center;
     z-index: 0;
+    transition: transform 0.2s ease; /* Adjust the duration and timing function as needed */
+
+    // &:hover {
+    //   transform: translateY(-20px); /* Move content 20px up on hover */
+    // }
+  
   }
 
+  
+  
+  
   /* Adjust the styles for the text and other elements as needed */
   h2.topPrizes_title, h3.prize_amount, p.prize_description {
     position: relative; /* Set relative positioning for text elements */
     z-index: 1;
-    transform: rotate(-15deg); /* Rotate the h2 element by 45 degrees */
+    transform: rotate(-15deg);
     padding-top: 320px;
     width: 500px;
     text-align: center;
     margin-botton: 0px;
     margin-left: -35px; /* Move the elements to the left by 15 pixels */
+
 
   }
   h3.prize_amount {
@@ -149,9 +175,14 @@ const Top_Prize = styled.section`
     padding-top: 0px;
     text-align: center;
     margin-left: 0px;
+
   }
 
-
+`;
+const Podium = styled.section`
+  background-image: url(${podium});
+  width: 100px;
+  height: 100px;
 `;
 
 const Prize_Description = styled.section`
@@ -189,6 +220,11 @@ const PrizesPage = () => {
               <h2 className="topPrizes_title">{Prize.title}</h2>
               <h3 className="prize_amount">{Prize.amount}</h3>
             </Prize_Description>
+            <img src={podium} alt="Podium Image" style={{
+              'margin-top': '80px',
+              'width': '360px',
+              'margin-bottom': '3vh',
+            }}/>
           </Top_Prize>
         ))}
       </TopPrizeContainer>
