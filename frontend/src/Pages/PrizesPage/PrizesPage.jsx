@@ -64,6 +64,7 @@ const TotalPrize = styled.h1`
   position: relative;
   overflow-wrap: break-word; // Manage word breaking
   word-wrap: break-word; // Manage word breaking
+  user-select: none; 
 
   @media (min-width: 1200px) {
     font-size: 8vw;
@@ -84,7 +85,8 @@ const TotalPrizeContainer = styled.div`
   justify-content: center;
   margin: 20px 100px; 
   //gap: 70px; //red gear
-  gap: 40px; 
+  gap: 10px; 
+  user-select: none; 
 
   
   @media (max-width: 600px) {
@@ -191,7 +193,7 @@ const PrizesPage = () => {
         fontFamily: 'Mokoto',
         color: '#FFFFFF', 
       }}>
-        <Tab title="Cyber Security Hack Award" prizes={cyber} />
+        <Tab title="Cyber Security Hack" prizes={cyber} />
         <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
         <Tab title="Web 3 Prize" prizes={web3Prizes} />
         <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
