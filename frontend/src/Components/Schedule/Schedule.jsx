@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 
-const tolerance = 10 * 1000; // 10 sec in milliseconds
+const tolerance = 30 * 1000; // 30 sec in milliseconds
 
-const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {            //React.memo optimizes the rendering of the ScheduleRow component based on its props.
+const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {       //React.memo optimizes the rendering of the ScheduleRow component based on its props or the site will overload
   const formatDate = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const startTimeString = useMemo(() => formatDate(item.startTime), []);
   const endTimeString = useMemo(() => formatDate(item.endTime), []);  // empty [] because we don't want to re-render the component if the startTime and endTime are the same/static. Also prevents update of start and end time
@@ -20,7 +20,7 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {            //Reac
 }); 
 //<div className="Textsize"> 
 const Schedule = () => {
-  const schedule = useMemo(() => [   //useMemo is used to optimize the initialization of the schedule array and prevents unnecessary rerender    
+  const schedule = useMemo(() => [   //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.
                 
     {
       startTime: new Date('2023-11-04T10:00:00-04:00'),
@@ -60,7 +60,7 @@ const Schedule = () => {
     },
     {
       startTime: new Date('2023-11-04T12:30:00-04:00'),
-      endTime: new Date('2023-11-04T1:30:00-04:00'),
+      endTime: new Date('2023-11-04T13:30:00-04:00'),
       event: 'Intro to Tech Stack Workshop',
       location: 'DCC 308',
     },
@@ -82,9 +82,119 @@ const Schedule = () => {
       event: 'Mobile Dev Workshop',
       location: 'DCC 318',
     },
+    {
+      startTime: new Date('2023-11-04T14:30:00-04:00'),
+      endTime: new Date('2023-11-04T15:30:00-04:00'),
+      event: 'Quantum',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-04T14:30:00-04:00'),
+      endTime: new Date('2023-11-04T15:30:00-04:00'),
+      event: 'Severino',
+      location: 'DCC 330',
+    },
+    {
+      startTime: new Date('2023-11-04T15:30:00-04:00'),
+      endTime: new Date('2023-11-04T16:30:00-04:00'),
+      event: 'Scrum Workshop',
+      location: 'DCC 327',
+    },
+    {
+      startTime: new Date('2023-11-04T16:30:00-04:00'),
+      endTime: new Date('2023-11-04T17:30:00-04:00'),
+      event: 'RPI SEC',
+      location: 'DCC 318',
+    },
+    {
+      startTime: new Date('2023-11-04T16:30:00-04:00'),
+      endTime: new Date('2023-11-04T17:30:00-04:00'),
+      event: 'Call For Code',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-04T17:30:00-04:00'),
+      endTime: new Date('2023-11-04T18:30:00-04:00'),
+      event: 'FBI',
+      location: 'DCC 318',
+    },
+    {
+      startTime: new Date('2023-11-04T17:30:00-04:00'),
+      endTime: new Date('2023-11-04T18:30:00-04:00'),
+      event: 'Global Foundries',
+      location: 'DCC 327',
+    },
+    {
+      startTime: new Date('2023-11-04T18:30:00-04:00'),
+      endTime: new Date('2023-11-04T19:30:00-04:00'),
+      event: 'Hugging Face',
+      location: 'DCC 327',
+    },
+    {
+      startTime: new Date('2023-11-04T18:30:00-04:00'),
+      endTime: new Date('2023-11-04T02:23:00-04:00'),
+      event: 'Smash Club',
+      location: 'DCC 318',
+    },
+    {
+      startTime: new Date('2023-11-04T19:00:00-04:00'),
+      endTime: new Date('2023-11-04T20:00:00-04:00'),
+      event: 'Dinner',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-04T20:00:00-04:00'),
+      endTime: new Date('2023-11-04T21:00:00-04:00'),
+      event: '?Sponsor Workshop/Event?',
+      location: 'DCC 330',
+    },
+    {
+      startTime: new Date('2023-11-04T21:00:00-04:00'),
+      endTime: new Date('2023-11-04T22:00:00-04:00'),
+      event: '!Light MLH Event',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-04T21:00:00-04:00'),
+      endTime: new Date('2023-11-04T22:00:00-04:00'),
+      event: '!Light MLH Event',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-04T22:00:00-04:00'),
+      endTime: new Date('2023-11-04T23:00:00-04:00'),
+      event: 'Fun Activity (Trivia/Game)',
+      location: 'DCC 318',
+    },
+    {
+      startTime: new Date('2023-11-04T23:00:00-04:00'),
+      endTime: new Date('2023-11-04T23:30:00-04:00'),
+      event: 'Boba',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T00:00:00-04:00'),
+      endTime: new Date('2023-11-05T02:00:00-04:00'),
+      event: 'Midnight Snacks',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T00:00:00-04:00'),
+      endTime: new Date('2023-11-05T02:00:00-04:00'),
+      event: 'Midnight Snacks',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T00:30:00-04:00'),
+      endTime: new Date('2023-11-05T02:01:30-04:00'),
+      event: 'Movie Starts',
+      location: 'DCC 324',
+    },
 
-     //* add more events here... MAKE SURE  IT IS -05:00 for daylight savings time on november 5th */}
-    //* separate nov 4 and nov 5. */}  Mobile Dev Workshop
+     //* add more events here... MAKE SURE  IT IS -05:00 for daylight savings time on november 5th 2am*/}
+    //* separate nov 4 and nov 5. */}  
+    // Critical issue: THE SCALING BREAKS ON MOBILE
+    
 
   ], []);
 
@@ -113,19 +223,8 @@ const Schedule = () => {
 
   return (
     <div>
-{/*      <h2>Current Event:</h2>
-      {currentEvent ? (
-        <div>
-          <h3 style={{ color: 'red' }}>{currentEvent.event}</h3>
-          <p>Location: {currentEvent.location}</p>
-        </div>
-      ) : (
-        <p>No ongoing events.</p>          // If Current event is true/happening, display the current event.else  display no ongoing events
-      )}
-
-      <h2></h2>    */}                            
       <table className="schedule-table">
-  <thead>
+      <thead>
     <tr>
       <th style ={{fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px'}}>Event</th>
       <th style ={{fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px'}}>Location</th>
@@ -134,21 +233,33 @@ const Schedule = () => {
     {/*<tr>
       <td colSpan="3" style={{ borderBottom: '2px solid #bd0909' }}></td>    {/*injects a horizontal line ,if need to remove, , td in between <tr></tr> and the tr itself
     </tr> */}
-  </thead>
-  <tbody>
-          {schedule.map((item, index) => {
-            const isCurrentEvent = currentEvent &&
-              item.startTime.getTime() === currentEvent.startTime.getTime() &&
-              item.event === currentEvent.event &&
-              item.location === currentEvent.location;  //multiple conditions are used to check if the current event is the same as the current item and all components are updated togehter.
+</thead>
+<tbody>
+  {schedule.map((item, index) => {
+    const isCurrentEvent =
+      currentEvent &&
+      item.startTime.getTime() === currentEvent.startTime.getTime() &&
+      item.event === currentEvent.event &&
+      item.location === currentEvent.location;
 
-            return (
-              <ScheduleRow key={index} item={item} isCurrentEvent={isCurrentEvent} /> // iterate through the schedule array
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+    return (
+      <React.Fragment key={index}>
+        {/* Add a row to separate events on different dates */}
+        {item.startTime.getDate() !== schedule[index - 1]?.startTime.getDate() && (
+          <tr>
+            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+              {item.startTime.getDate() === 4 ? 'November 4th' : 'November 5th'}  {/*The logic of this may be improper*/}
+            </td>
+          </tr>
+        )}
+        {/* Render individual event row */}
+        <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
+      </React.Fragment>
+    );
+  })}
+</tbody>
+</table>
+</div>
   );
 };
 

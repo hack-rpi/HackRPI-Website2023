@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: center;
     gap: 20px; /* adjust the value as needed */
-    height: 100vh; /* Set initial height to fill the viewport */
     overflow-y: auto;
     flex: 1;
+    height: fit-content;
 }
 
 .schedule-page-container h1 {
