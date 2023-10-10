@@ -5,7 +5,6 @@ import LandingPage from './Pages/LandingPage/LandingPage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
-// import PrizesPage from './Pages/Prizes/prizes.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
@@ -81,24 +80,6 @@ function App() {
 			{isMobile ? <RouterProvider router={mobileRouter} />
 				: <RouterProvider router={router} />
 			}
-
-			{/*<Routes>*/}
-			{/*	{isMobile ?*/}
-			{/*		<Route path="/" element={<MobileLayout />} />*/}
-			{/*		: <Route path="/" element={<Layout />}>*/}
-			{/*				<Route index element={<LandingPage />} />*/}
-			{/*				/!* Landing Page is the default route *!/*/}
-
-			{/*				<Route path="about" element={<AboutPage />} />*/}
-			{/*				<Route path="faq" element={<FAQPage />} />*/}
-			{/*				<Route path="sponsors" element={<SponsorPage />} />*/}
-
-
-			{/*				<Route path="*" element={<ErrorPage />} />*/}
-			{/*				/!*Added in case someone goes to random nonexistent route...*!/*/}
-			{/*		</Route>*/}
-			{/*	}*/}
-			{/*</Routes>*/}
 		</div>
 	);
 }
