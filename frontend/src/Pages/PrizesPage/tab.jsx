@@ -34,7 +34,7 @@ const Dropdown = styled.div`
   position: absolute;
   z-index: 1;
   top: 50px;
-  width: 200px;  // Fixed width
+  width: 250px; 
   max-height: ${props => (props.open ? '500px' : '0')}; 
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;

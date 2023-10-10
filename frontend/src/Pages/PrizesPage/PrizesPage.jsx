@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
-import best_hackTrophy from './trophy-design-fin.png';
+import best_hackTrophy from './trophy2.png';
 
 //npm install styled-components
 //npm install styled-components@latest
@@ -82,10 +82,11 @@ const TotalPrizeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 0; 
+  margin: 20px 100px; 
   //gap: 70px; //red gear
   gap: 40px; 
 
+  
   @media (max-width: 600px) {
     gap: 20px; 
   }
