@@ -1,10 +1,5 @@
-import { useRouteError } from "react-router-dom";
 
-
-export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
-
+function ErrorPage() {
   return (
     <div id="error-page" style={{height: '50vh', display: 'flex',
       flexDirection: 'column', justifyContent: 'center'}}>
@@ -17,3 +12,5 @@ export default function ErrorPage() {
     </div>
   );
 }
+
+export default ErrorPage
