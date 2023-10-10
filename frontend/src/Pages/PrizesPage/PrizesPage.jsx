@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
-import best_hackTrophy from './trophy2.png';
+import best_hackTrophy from './img/trophy1.png';
 
 //npm install styled-components
 //npm install styled-components@latest
@@ -10,7 +10,7 @@ import best_hackTrophy from './trophy2.png';
 
 const Prizes = [
   { title: '#1 Best Hack', amount: '$1,500' },
-  { title: '#2 Hack', amount: '$750' },
+  { title: '#2 Best Hack', amount: '$750' },
   { title: 'Best AI Hack', amount: '$400' },
   { title: 'Best Education Hack', amount: '$400' },
   { title: 'Best Sustainability Hack', amount: '$200' },
@@ -52,7 +52,7 @@ const pulsate = keyframes`
 
 const TotalPrize = styled.h1`
   text-align: center;
-  background-image: linear-gradient(45deg, #191919, #910307,#353535, #d50110);
+  background-image: linear-gradient(45deg, #FFC7C9, #BA292E,#D96F6F, #E50717);
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
@@ -132,20 +132,26 @@ const Top_Prize = styled.section`
   }
 
   /* Adjust the styles for the text and other elements as needed */
-  h2.topPrizes_title, p.prize_amount, p.prize_description {
+  h2.topPrizes_title, h3.prize_amount, p.prize_description {
     position: relative; /* Set relative positioning for text elements */
     z-index: 1;
+    transform: rotate(-15deg); /* Rotate the h2 element by 45 degrees */
+    padding-top: 320px;
+    width: 500px;
+    text-align: center;
+    margin-botton: 0px;
+    margin-left: -35px; /* Move the elements to the left by 15 pixels */
+
+  }
+  h3.prize_amount {
+    margin-top: 20px;
+    margin-top: 0px;
+    padding-top: 0px;
+    text-align: center;
+    margin-left: 0px;
   }
 
-  h2.topPrizes_title {
-    margin-top: 60px;
-  }
 
-  p.prize_amount {
-  }
-
-  p.prize_description {
-  }
 `;
 
 const Prize_Description = styled.section`
@@ -176,10 +182,12 @@ const PrizesPage = () => {
             <div className="topPrizes_image">
               {/* The image is added as a background */}
             </div>
-            <Prize_Description>
+            <Prize_Description style={{
+              fontFamily: 'Mokoto',
+              color: 'black',
+            }}>
               <h2 className="topPrizes_title">{Prize.title}</h2>
-              {Prize.cash && <p className="prize_amount">{Prize.cost}</p>}
-              <p className="prize_description">{Prize.content}</p>
+              <h3 className="prize_amount">{Prize.amount}</h3>
             </Prize_Description>
           </Top_Prize>
         ))}
