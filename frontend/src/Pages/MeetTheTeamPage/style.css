@@ -1,26 +1,32 @@
 .column {
     float: left;
-    width: 33.3%;
+    width: 33.33%;
     margin-bottom: 16px;
     padding: 0 8px;
-}
-@media screen and (max-width: 650px) {
-.column {
-    width: 100%;
-    display: block;
-   }
-}
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-.container {
-    padding: 0 16px;
+    box-sizing: border-box; /* Add this to include padding and border in the width */
 }
 
-.container::after, .row::after {
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+        float: none; /* Remove float on smaller screens */
+    }
+}
+
+.row::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center the text inside cards */
+}
+
+.container {
+    padding: 0 16px;
 }
 
 .title {

@@ -45,27 +45,29 @@ const MeetTheTeamPage = () => {
     ];
 
     return (
-      <div id="members"  className="MeetTheTeamPage" style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
-        <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
-          Meet Our Team!
-        </h1>
-        <br></br> <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br> <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <br></br> <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-        <div className="team-members"> 
-        {/* Will map through team members data and render their information here */}
-          {/* 
-          {teamMembers.map((member, index) => (
-            <div key={index} className="team-member">
-              <img src={member.avatar} alt={member.name} />
-              <h2>{member.name}</h2>
-              <p>{member.role}</p>
-            </div>
-          ))}
-          */}
-        </div>
+      <div id="members" className="MeetTheTeamPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
+          <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
+              Meet Our Team!
+          </h1>
+          <div className="team-members">
+              <Row>
+                  {teamMembers.map((member, index) => (
+                      <Col key={index} md={4}>
+                          <div className="card">
+                              <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
+                              <div className="container">
+                                  <h2>{member.name}</h2>
+                                  <p className="title">{member.role}</p>
+                                  <p>Some text that describes them.</p>
+                                  <Button className="button">More Info</Button>
+                              </div>
+                          </div>
+                      </Col>
+                  ))}
+              </Row>
+          </div>
       </div>
-    );
+  );
 }
 
 export default MeetTheTeamPage;
