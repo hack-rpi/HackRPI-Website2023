@@ -37,7 +37,7 @@ const SponsorPage = () => {
         <Carousel
           controls={false}
           indicators={false}
-          interval={7500}
+          interval={null}
           activeIndex={index}
           onSelect={handleSelect}
           style={{
@@ -68,7 +68,7 @@ const SponsorPage = () => {
                     marginTop: '1rem',
                   }}
                 >
-                  {/* {sponsorGroup.length >= 1 && (
+                  {sponsorGroup.length >= 1 && (
                     <a
                       href={sponsorGroup[0].url}
                       style={{
@@ -87,8 +87,8 @@ const SponsorPage = () => {
                         alt={sponsorGroup[0].name}
                       />
                     </a>
-                  )} */}
-                  {/* {sponsorGroup.length >= 3 && (
+                  )}
+                  { sponsorGroup.length >= 2 && (
                     <a
                       href={sponsorGroup[1].url}
                       style={{
@@ -107,7 +107,7 @@ const SponsorPage = () => {
                         alt={sponsorGroup[1].name}
                       />
                     </a>
-                  )} */}
+                  )}
                 </div>
 
                 <div
@@ -119,7 +119,7 @@ const SponsorPage = () => {
                     marginTop: '1rem',
                   }}
                 >
-                  {/*{sponsorGroup.length >= 3 && (
+                  {/* {sponsorGroup.length >= 3 && (
                     <a
                       href={sponsorGroup[2].url}
                       style={{
@@ -138,9 +138,9 @@ const SponsorPage = () => {
                         alt={sponsorGroup[2].name}
                       />
                     </a>
-                      )}*/}
+                      )} */}
 
-                  {sponsorGroup.length >= 4 && (
+                  {/* {sponsorGroup.length >= 4 && (
                     <a
                       href={sponsorGroup[3].url}
                       style={{
@@ -159,7 +159,7 @@ const SponsorPage = () => {
                         alt={sponsorGroup[3].name}
                       />
                     </a>
-                  )}
+                  )} */}
                 </div>
               </div>
             </Carousel.Item>
