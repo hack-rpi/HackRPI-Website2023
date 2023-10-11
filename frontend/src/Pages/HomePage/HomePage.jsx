@@ -1,7 +1,7 @@
 import React from 'react';
-import LandingPage from './Pages/LandingPage/LandingPage.jsx';
-import AboutPage from './Pages/AboutPage/AboutPage.jsx';
-import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
+import LandingPage from '../LandingPage/LandingPage.jsx';
+import AboutPage from '../AboutPage/AboutPage.jsx';
+import SponsorPage from '../SponsorPage/SponsorPage.jsx';
 
 const HomePage = () => {
   return (
@@ -14,3 +14,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+

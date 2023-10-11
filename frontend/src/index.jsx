@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
 // import Timer from './Components/Timer/Timer.jsx';
-import LandingPage from './Pages/LandingPage/LandingPage.jsx';
+import HomePage from './Pages/HomePage/HomePage.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
@@ -16,32 +16,29 @@ import { createHashRouter, RouterProvider, } from "react-router-dom";
 
 const router = createHashRouter([
 	{
-		path: "/",
-		element: <Layout/>,
-		children: [
-			{
-				index: true,
-				element:<LandingPage />,
-			},
-			{
-				path: "about",
-				element: <AboutPage/>,
-			},
-			{
-				path: "faq",
-				element: <FAQPage/>,
-			},
-			{
-				path: "sponsors",
-				element: <SponsorPage/>,
-			},
-			{
-				path: "*",
-				element: <ErrorPage/>,
-			},
-		],
+	  path: "/",
+	  element: <Layout/>,
+	  children: [
+		{
+		  index: true,
+		  element:<HomePage />,
+		},
+		{
+			path: "home",
+			element: <HomePage />,
+		},
+		{
+		  path: "faq",
+		  element: <FAQPage/>,
+		},
+		{
+		  path: "*",
+		  element: <ErrorPage/>,
+		},
+	  ],
 	},
-]);
+  ]);
+  
 
 const mobileRouter = createHashRouter([
 	{

@@ -70,9 +70,8 @@ class NavBar extends React.Component {
             </NavLink>
             
             <Nav className='mainNav' style={{ marginRight: 'auto' }}>
-              <NavLink to="/about" className='pageNav'> About </NavLink>
+              <NavLink to="/home" className='pageNav'> Home </NavLink>
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
-              <NavLink to="/sponsors" className='pageNav'> Sponsors </NavLink>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
