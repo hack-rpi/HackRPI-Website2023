@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
-import best_hackTrophy from './img/trophy1.png';
 import podium from './img/podium.png';
 //npm install styled-components
 //npm install styled-components@latest
@@ -113,80 +112,120 @@ const TopPrizeContainer = styled.section`
 `;
 
 
-const Top_Prize = styled.section`
-  @keyframes moveUpDown {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-    transform: rotate(-15deg);
-
+const moveUpDown = keyframes`
+  0%, 100% {
+    transform: translateY(0);
   }
-
-  position: relative; /* Set relative positioning for the container */
-  width: 500px;
-  height: 500px; /* Adjust the height as needed */
-  animation: moveUpDown 2s ease-in-out infinite, rotate 2s ease-in-out infinite;
-
-  .topPrizes_image {
-    position: absolute; // Set absolute positioning for the image, so the descriptions 
-                        // can show above
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(${best_hackTrophy});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 0;
-    transition: transform 0.2s ease; /* Adjust the duration and timing function as needed */
-
-    // &:hover {
-    //   transform: translateY(-20px); /* Move content 20px up on hover */
-    // }
-  
+  50% {
+    transform: translateY(-20px);
   }
-
-  
-  
-  
-  /* Adjust the styles for the text and other elements as needed */
-  h2.topPrizes_title, h3.prize_amount, p.prize_description {
-    position: relative; /* Set relative positioning for text elements */
-    z-index: 1;
-    transform: rotate(-15deg);
-    padding-top: 320px;
-    width: 500px;
-    text-align: center;
-    margin-botton: 0px;
-    margin-left: -35px; /* Move the elements to the left by 15 pixels */
-
-
-  }
-  h3.prize_amount {
-    margin-top: 20px;
-    margin-top: 0px;
-    padding-top: 0px;
-    text-align: center;
-    margin-left: 0px;
-
-  }
-
 `;
-const Podium = styled.section`
+
+const shineLight = keyframes`
+  0% {
+    opacity: 0.5;
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150px) scaleY(1.5);
+  }
+`;
+
+
+const Podium = styled.div`
   background-image: url(${podium});
-  width: 100px;
-  height: 100px;
+  width: 360px;
+  height: 150px;
+  position: relative;
+  margin: 150px auto 3vh auto;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 65%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+    width: 250px; 
+    height: 280px; 
+    background: linear-gradient(0deg, rgba(255,215,0,0.3) 0%, rgba(255,215,0,0) 100%); //yellow light
+    //background: linear-gradient(0deg, rgba(145, 3, 7, 0.3) 0%, rgba(145, 3, 0, 0) 100%); //red light
+    clip-path: polygon(25% 100%, 75% 100%, 100% 0%, 0% 0%);
+    animation: ${shineLight};
+    z-index: 0;
+  }
 `;
 
-const Prize_Description = styled.section`
-  //TBD
+const PrizeAmount = styled.h3`
+  position: absolute;
+  bottom: 150%;
+  left: 32%; // Adjusted left value
+  transform: translate(-50%, 50%);  // Centered vertically and horizontally
+  animation: ${moveUpDown} 2s ease-in-out infinite;
+  color: gold;
+  //color:white; 
+  font-size: 40px; 
+  z-index: 1;
+  font-family: 'Mokoto', sans-serif;
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; //yellow shadow
+  //text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #FFFFFF; //white shadow
+  text-align: center;  
+  width: 130px;  
+`;
+
+const PrizeTitle = styled.h2`
+  margin-top: -10px; 
+  color: white; 
+  font-size: 30px; 
+  text-align: center; 
+  font-family: 'Mokoto', sans-serif;
+`;
+
+const Top_Prize = styled.section`
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto; 
+`;
+
+const sparkle = keyframes`
+  0%, 100% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-200px) scale(1);  // Adjusted to move up higher
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-250px) scale(0.5);  // Adjusted to move up higher
+    opacity: 0.5;
+  }
+`;
+
+const Sparkle = styled.div`
+  position: absolute;
+  bottom: ${props => props.bottom || '65%'};
+  left: ${props => props.left || '50%'};
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: ${sparkle} 4s linear infinite;
+  animation-delay: ${props => props.delay || '0s'};
+  opacity: 0;
 `;
 
 const PrizesPage = () => {
@@ -210,21 +249,17 @@ const PrizesPage = () => {
       <TopPrizeContainer>
         {topPrizes.map((Prize, Index) => (
           <Top_Prize key={Index} className={Prize.code}>
-            <div className="topPrizes_image">
-              {/* The image is added as a background */}
-            </div>
-            <Prize_Description style={{
-              fontFamily: 'Mokoto',
-              color: 'black',
-            }}>
-              <h2 className="topPrizes_title">{Prize.title}</h2>
-              <h3 className="prize_amount">{Prize.amount}</h3>
-            </Prize_Description>
-            <img src={podium} alt="Podium Image" style={{
-              'margin-top': '80px',
-              'width': '360px',
-              'margin-bottom': '3vh',
-            }}/>
+            <Podium>
+              <Sparkle bottom="65%" left="45%" delay="-5s" />
+              <Sparkle bottom="70%" left="50%" delay="-2s" />
+              <Sparkle bottom="75%" left="55%" delay="-4s" />
+              <Sparkle bottom="80%" left="60%" delay="-2.5s" />
+              <Sparkle bottom="85%" left="65%" delay="-1s" />
+              <Sparkle bottom="85%" left="35%" delay="-6s" />
+              <Sparkle bottom="90%" left="30%" delay="-3s" />
+              <PrizeAmount>{Prize.amount}</PrizeAmount>
+            </Podium>
+            <PrizeTitle>{Prize.title}</PrizeTitle>
           </Top_Prize>
         ))}
       </TopPrizeContainer>
@@ -232,7 +267,8 @@ const PrizesPage = () => {
       <div style={{ 
         display: 'flex', 
         justifyContent: 'space-evenly',  
-        marginTop: '20px',
+        marginTop: '-200px',
+        marginBottom: '20px',
         gap: '30px', 
         fontFamily: 'Mokoto',
         color: '#FFFFFF', 

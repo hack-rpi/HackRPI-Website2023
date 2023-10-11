@@ -1,6 +1,6 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
-import gearImage from './img/gear2_ps.png'; //black gear
+import gearImage from './img/gear2.png'; //black gear
 //import gearImage from './gear.png'; //red gear
 import styled from 'styled-components';
 
