@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
 // import Timer from './Components/Timer/Timer.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
+import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
 import LandingPageMobile from './Pages/LandingPage/LandingPageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import AboutPage from './Pages/AboutPage/AboutPage.jsx';
@@ -84,10 +85,8 @@ function App() {
 function MobilePage() {
 	return (
 		<div>
-			<LandingPageMobile />
-			<AboutPage />
+			<HomePageMobile />
 			<FAQPage />
-			<SponsorPage />
 		</div>
 	)
 }
