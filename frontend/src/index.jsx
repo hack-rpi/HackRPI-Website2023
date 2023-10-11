@@ -39,7 +39,7 @@ function App() {
 			<AboutPage />
 			<FAQPage />
 			<SponsorPage/>
-			<SponsorUsPage/>
+			<SponsorUsPage />
 			<Footer />
 		</div>
 	);
