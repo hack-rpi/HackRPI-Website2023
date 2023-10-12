@@ -21,10 +21,9 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {       //React.mem
   );
 });
 const Schedule = () => {
-  const schedule = useMemo(() => [   //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.
-                
+  const schedule = useMemo(() => [   //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.             
     {
-      startTime: new Date('2023-10-04T10:00:00-04:00'),
+      startTime: new Date('2023-11-04T10:00:00-04:00'),
       endTime: new Date('2023-11-04T11:00:00-04:00'),
       event: 'Participant Check-In',
       location: 'DCC Lobby',
@@ -284,7 +283,7 @@ const Schedule = () => {
   }, [schedule, tolerance]);
     
   let currentDate = null; // To keep track of the current date
-  // Critical Issue The block highlighting broke for nov 4 and nov 5 
+  // Critical Issue Events may be missing despite being on the schedule above.
   return (
     <div>
      
@@ -297,34 +296,39 @@ const Schedule = () => {
           </tr>
         </thead>
         <tbody>
-          {/* Render Events */}
-          {schedule.map((item, index) => {
-            // Check if the current event's date is different from the previous event's date
-            if (item.startTime.getDate() !== currentDate) {
-              // Render a row with the date as the heading
-              currentDate = item.startTime.getDate();
-              return (
-                <tr key={`date-heading-${currentDate}`}>
-                  <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
-                    {currentDate === 4 ? 'November 4th' : 'November 5th'}
-                  </td>
-                </tr>
-              );
-            }
-            // Render individual event row
-            return (
-              <ScheduleRow
-                key={index}
-                item={item}
-                isCurrentEvent={
-                  currentEvent &&
-                  item.startTime.getTime() === currentEvent.startTime.getTime() &&
-                  item.event === currentEvent.event &&
-                  item.location === currentEvent.location
-                }
-              />
-            );
-          })}
+        {
+  /* Render Events */
+  schedule.map((item, index) => {
+    // Use a loop to Check if the current event's date is different from the previous event's date
+    if (item.startTime.getDate() !== currentDate) {
+      // Render a row with the date as the heading
+      currentDate = item.startTime.getDate();
+      return (
+        <tr key={`date-heading-${currentDate}`}>
+          <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+            {currentDate === 4 ? 'November 4th' : 'November 5th'}
+          </td>
+        </tr>
+      );
+    }
+    // Determine if the current event should be highlighted
+    const isCurrentEvent =
+      currentEvent &&
+      currentEvent.startTime >= item.startTime &&
+      currentEvent.endTime <= item.endTime;
+
+    // Render individual event row using a fragment
+    return (
+      <React.Fragment key={index}>
+        <ScheduleRow
+          item={item}
+          isCurrentEvent={isCurrentEvent}
+        />
+      </React.Fragment>
+    );
+  })
+}
+
           {/* Constant Events */}
                   {/* Blank row for spacing after November 5th events */}
         <tr>
