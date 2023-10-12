@@ -320,7 +320,7 @@ const Schedule = () => {
 </tbody>
       </table>
 
-       {/* Render Constant Events after November 5th events. */}
+       {/* Render Constant Events after November 5th events. Ideally should be in another jsx file */}
        {/* CRITICAL ISSUE! styling seems to be broken for constant events */}
 <h2 style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', fontSize: '32px', marginTop: '20px' }}>Constant Events</h2>
 <table className="schedule-table">
