@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 import './Styles.css';
+import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
@@ -23,7 +24,7 @@ const Schedule = () => {
   const schedule = useMemo(() => [   //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.
                 
     {
-      startTime: new Date('2023-11-04T10:00:00-04:00'),
+      startTime: new Date('2023-10-04T10:00:00-04:00'),
       endTime: new Date('2023-11-04T11:00:00-04:00'),
       event: 'Participant Check-In',
       location: 'DCC Lobby',
@@ -237,7 +238,7 @@ const Schedule = () => {
 
      //* add more events here... MAKE SURE  IT IS -05:00 for daylight savings time on november 5th 2am*/}
     //* separate nov 4 and nov 5. */}  
-    // Critical issue: THE SCALING BREAKS ON MOBILE
+    // Critical issue: THE SCALING BREAKS ON very small MOBILE
     
 
   ], []);
@@ -245,7 +246,7 @@ const Schedule = () => {
     // Define your constant events here after November 5th
     // Example:
     {
-      startTime: new Date('2023-11-05T15:30:00-05:00'),
+      startTime: new Date('2023-10-05T15:30:00-05:00'),
       endTime: new Date('2023-11-05T16:30:00-05:00'),
       event: 'Constant Event 1',
       location: 'DCC 310',
@@ -281,70 +282,79 @@ const Schedule = () => {
       clearInterval(intervalId);
     };
   }, [schedule, tolerance]);
-
+    
+  let currentDate = null; // To keep track of the current date
+  // Critical Issue The block highlighting broke for nov 4 and nov 5 
   return (
     <div>
-      {currentEvent && (
-        <div>
-          <h2>{currentEvent.event}</h2>
-          <p>{currentEvent.location}</p>
-          <p>{currentEvent.startTime.toLocaleTimeString()} - {currentEvent.endTime.toLocaleTimeString()}</p>
-        </div>
-      )}
+     
       <table className="schedule-table">
-      <thead>
-      <tr>
-        <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Event</th>
-        <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Location</th>
-        <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Time</th>
-      </tr>
-    {/*<tr>
-      <td colSpan="3" style={{ borderBottom: '2px solid #bd0909' }}></td>    {/*injects a horizontal line ,if need to remove, , td in between <tr></tr> and the tr itself
-    </tr> */}
-</thead>
-<tbody>
-  {schedule.map((item, index) => (
-    <React.Fragment key={index}>
-      {/* Add a row to separate events on different dates */}
-      {item.startTime.getDate() !== schedule[index - 1]?.startTime.getDate() && (
+        <thead>
+          <tr>
+            <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Event</th>
+            <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Location</th>
+            <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Render Events */}
+          {schedule.map((item, index) => {
+            // Check if the current event's date is different from the previous event's date
+            if (item.startTime.getDate() !== currentDate) {
+              // Render a row with the date as the heading
+              currentDate = item.startTime.getDate();
+              return (
+                <tr key={`date-heading-${currentDate}`}>
+                  <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+                    {currentDate === 4 ? 'November 4th' : 'November 5th'}
+                  </td>
+                </tr>
+              );
+            }
+            // Render individual event row
+            return (
+              <ScheduleRow
+                key={index}
+                item={item}
+                isCurrentEvent={
+                  currentEvent &&
+                  item.startTime.getTime() === currentEvent.startTime.getTime() &&
+                  item.event === currentEvent.event &&
+                  item.location === currentEvent.location
+                }
+              />
+            );
+          })}
+          {/* Constant Events */}
+                  {/* Blank row for spacing after November 5th events */}
         <tr>
-          <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
-            {item.startTime.getDate() === 4 ? 'November 4th' : 'November 5th'}
-          </td>
+          <td colSpan="3" style={{ height: '50px' }}></td>
         </tr>
-      )}
-      {/* Render individual event row */}
-      <ScheduleRow item={item} isCurrentEvent={currentEvent === item} />
-    </React.Fragment>
-  ))}
-</tbody>
+          <tr>
+            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+              Constant Events
+            </td>
+          </tr>
+          {/* Render Constant Events */}
+          {constantEvents.map((item, index) => {
+            const currentTime = new Date().getTime();
+            const startTime = item.startTime.getTime();
+            const endTime = item.endTime.getTime();
+            const isCurrentEvent = currentTime >= startTime && currentTime <= endTime + tolerance;
+
+            return (
+              <React.Fragment key={index}>
+                {/* Render individual constant event row */}
+                <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
+              </React.Fragment>
+            );
+          })}
+        </tbody>
       </table>
-
-       {/* Render Constant Events after November 5th events. Ideally should be in another jsx file */}
-       {/* CRITICAL ISSUE! styling seems to be broken for constant events */}
-<h2 style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', fontSize: '32px', marginTop: '20px' }}>Constant Events</h2>
-<table className="schedule-table">
-  <thead>
-    <tr>
-      <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Event</th>
-      <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Location</th>
-      <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Time</th>
-    </tr>
-    <tr>
-      <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
-        {/* Content for the colSpan row */}
-      </td>
-    </tr>
-  </thead>
-  <tbody>
-    {constantEvents.map((item, index) => (
-      <ScheduleRow key={index} item={item} isCurrentEvent={false} />
-    ))}
-  </tbody>
-</table>
-
     </div>
   );
 };
+
+
 
 export default Schedule;
