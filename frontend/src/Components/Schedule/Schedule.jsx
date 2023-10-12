@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
+import './Styles.css';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
@@ -11,14 +12,13 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {       //React.mem
 
   return (
     
- <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '1rem', borderBottom: '10px solid black' }}>
-    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '5rem', fontSize: '32px'}}>{item.event}</td>
-    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px' }}>{item.location}</td>  
-    <td style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '1rem', fontSize: '32px' }}>{startTimeString} - {endTimeString}</td> 
+ <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
+    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.event}</td>
+    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>  
+    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td> 
  </tr>
   );
-}); 
-//<div className="Textsize"> 
+});
 const Schedule = () => {
   const schedule = useMemo(() => [   //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.
                 
@@ -186,16 +186,77 @@ const Schedule = () => {
     },
     {
       startTime: new Date('2023-11-05T00:30:00-04:00'),
-      endTime: new Date('2023-11-05T02:01:30-04:00'),
+      endTime: new Date('2023-11-05T01:30:00-04:00'),
       event: 'Movie Starts',
       location: 'DCC 324',
     },
+    {
+      startTime: new Date('2023-11-05T01:00:00-04:00'),
+      endTime: new Date('2023-11-05T02:00:00-04:00'),
+      event: 'Daylight Savings Party',
+      location: 'DCC Lounge',
+    },
+    //Account for daylight savings using GMT -5:00
+    {
+      startTime: new Date('2023-11-05T07:00:00-05:00'),
+      endTime: new Date('2023-11-05T09:00:00-05:00'),
+      event: 'Breakfast',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T07:00:00-05:00'),
+      endTime: new Date('2023-11-05T09:00:00-05:00'),
+      event: 'Submission Deadline',
+      location: 'Online',
+    },
+    {
+      startTime: new Date('2023-11-05T11:30:00-05:00'),
+      endTime: new Date('2023-11-05T12:00:00-05:00'),
+      event: 'Hacking Ends @ 12',
+      location: '',
+    },
+    {
+      startTime: new Date('2023-11-05T12:00:00-05:00'),
+      endTime: new Date('2023-11-05T15:00:00-05:00'),
+      event: 'Showcase',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-05T13:00:00-05:00'),
+      endTime: new Date('2023-11-05T14:00:00-05:00'),
+      event: 'Lunch',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T15:00:00-05:00'),
+      endTime: new Date('2023-11-05T15:30:00-05:00'),
+      event: 'Closing Ceremony',
+      location: 'DCC Lounge',
+    },
+
 
      //* add more events here... MAKE SURE  IT IS -05:00 for daylight savings time on november 5th 2am*/}
     //* separate nov 4 and nov 5. */}  
     // Critical issue: THE SCALING BREAKS ON MOBILE
     
 
+  ], []);
+  const constantEvents = useMemo(() => [
+    // Define your constant events here after November 5th
+    // Example:
+    {
+      startTime: new Date('2023-11-05T15:30:00-05:00'),
+      endTime: new Date('2023-11-05T16:30:00-05:00'),
+      event: 'Constant Event 1',
+      location: 'DCC 310',
+    },
+    {
+      startTime: new Date('2023-11-05T17:00:00-05:00'),
+      endTime: new Date('2023-11-05T18:00:00-05:00'),
+      event: 'Constant Event 2',
+      location: 'DCC 312',
+    },
+    // },
   ], []);
 
   const [currentEvent, setCurrentEvent] = useState(null);
@@ -214,52 +275,75 @@ const Schedule = () => {
 
     updateCurrentEvent();
 
-    const intervalId = setInterval(updateCurrentEvent, 60000);
+    const intervalId = setInterval(updateCurrentEvent, 60000);  //updates every minute, setting it shorter is not ideal
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [schedule]);
+  }, [schedule, tolerance]);
 
   return (
     <div>
+      {currentEvent && (
+        <div>
+          <h2>{currentEvent.event}</h2>
+          <p>{currentEvent.location}</p>
+          <p>{currentEvent.startTime.toLocaleTimeString()} - {currentEvent.endTime.toLocaleTimeString()}</p>
+        </div>
+      )}
       <table className="schedule-table">
       <thead>
-    <tr>
-      <th style ={{fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px'}}>Event</th>
-      <th style ={{fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px'}}>Location</th>
-      <th style ={{fontFamily: 'Poppins', color: 'white', fontSize: '32px'}}>Time</th>
-    </tr>
+      <tr>
+        <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Event</th>
+        <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Location</th>
+        <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Time</th>
+      </tr>
     {/*<tr>
       <td colSpan="3" style={{ borderBottom: '2px solid #bd0909' }}></td>    {/*injects a horizontal line ,if need to remove, , td in between <tr></tr> and the tr itself
     </tr> */}
 </thead>
 <tbody>
-  {schedule.map((item, index) => {
-    const isCurrentEvent =
-      currentEvent &&
-      item.startTime.getTime() === currentEvent.startTime.getTime() &&
-      item.event === currentEvent.event &&
-      item.location === currentEvent.location;
-
-    return (
-      <React.Fragment key={index}>
-        {/* Add a row to separate events on different dates */}
-        {item.startTime.getDate() !== schedule[index - 1]?.startTime.getDate() && (
-          <tr>
-            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
-              {item.startTime.getDate() === 4 ? 'November 4th' : 'November 5th'}  {/*The logic of this may be improper*/}
-            </td>
-          </tr>
-        )}
-        {/* Render individual event row */}
-        <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
-      </React.Fragment>
-    );
-  })}
+  {schedule.map((item, index) => (
+    <React.Fragment key={index}>
+      {/* Add a row to separate events on different dates */}
+      {item.startTime.getDate() !== schedule[index - 1]?.startTime.getDate() && (
+        <tr>
+          <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+            {item.startTime.getDate() === 4 ? 'November 4th' : 'November 5th'}
+          </td>
+        </tr>
+      )}
+      {/* Render individual event row */}
+      <ScheduleRow item={item} isCurrentEvent={currentEvent === item} />
+    </React.Fragment>
+  ))}
 </tbody>
+      </table>
+
+       {/* Render Constant Events after November 5th events. */}
+       {/* CRITICAL ISSUE! styling seems to be broken for constant events */}
+<h2 style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', fontSize: '32px', marginTop: '20px' }}>Constant Events</h2>
+<table className="schedule-table">
+  <thead>
+    <tr>
+      <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Event</th>
+      <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Location</th>
+      <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Time</th>
+    </tr>
+    <tr>
+      <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+        {/* Content for the colSpan row */}
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    {constantEvents.map((item, index) => (
+      <ScheduleRow key={index} item={item} isCurrentEvent={false} />
+    ))}
+  </tbody>
 </table>
-</div>
+
+    </div>
   );
 };
 
