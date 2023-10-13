@@ -99,17 +99,30 @@ const TotalPrizeContainer = styled.div`
 
 const TopPrizeContainer = styled.section`
   margin: auto;
-  margin-top: 8vh; // Make some space against the title
-  margin-bottom: 140px; // Make some space against other prizes
-  display: flex; // Use flex display
-  flex-direction: row; // Arrange prizes horizontally
-  flex-wrap: wrap; // Allow prizes to wrap to the next line if necessary
-  justify-content: space-between; // Distribute space between prizes
-  gap: 20px; // Adjust the gap between prizes
-  height: fit-content;
+  margin-top: 18vh;
+  margin-bottom: 140px;
+  display: flex;
+  justify-content: center; /*align to center*/
+  gap: 20px;
   text-align: center;
-  width: 1200px;
+  max-width: 1200px; /* Updated from width */
+  
+  @media (max-width: 850px) {
+    transform: scale(0.80);
+    margin-top: 8vh;
+
+    flex-direction: row; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items vertically */
+  }
+
+  @media (max-width: 750px) {
+    margin-top: 0vh;
+    transform: scale(0.66);
+    flex-direction: row; /* Stack items vertically on even smaller screens */
+    align-items: center; /* Center items vertically */
+  }
 `;
+
 
 
 const moveUpDown = keyframes`
@@ -149,7 +162,7 @@ const Podium = styled.div`
     transform: translateX(-50%);
     width: 250px; 
     height: 280px; 
-    background: linear-gradient(0deg, rgba(255,215,0,0.3) 0%, rgba(255,215,0,0) 100%); //yellow light
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%); // White light
     //background: linear-gradient(0deg, rgba(145, 3, 7, 0.3) 0%, rgba(145, 3, 0, 0) 100%); //red light
     clip-path: polygon(25% 100%, 75% 100%, 100% 0%, 0% 0%);
     animation: ${shineLight};
@@ -157,7 +170,7 @@ const Podium = styled.div`
   }
 `;
 
-const PrizeAmount = styled.h3`
+const PrizeTitle= styled.h3`
   position: absolute;
   bottom: 150%;
   left: 32%; // Adjusted left value
@@ -174,19 +187,32 @@ const PrizeAmount = styled.h3`
   width: 130px;  
 `;
 
-const PrizeTitle = styled.h2`
+const PrizeAmount = styled.h2`
   margin-top: -10px; 
   color: white; 
   font-size: 30px; 
   text-align: center; 
   font-family: 'Mokoto', sans-serif;
+  transform: translate(-50%, 50%);  // Centered vertically and horizontally
+  animation: ${moveUpDown} 2s ease-in-out infinite;
+  color: white;
+  text-shadow: 0 0 10px silver, 0 0 20px silver, 0 0 30px silver, 0 0 40px silver;
+
+
 `;
 
 const Top_Prize = styled.section`
   position: relative;
-  width: 500px;
-  height: 500px;
-  margin: 0 auto; 
+  width: 45%; /* Adjust the width as needed for two items on the same line */
+  text-align: center;
+  
+  @media (max-width: 850px) {
+    width: 100%; /* Take full width on smaller screens to stack items */
+  }
+
+  @media (max-width: 750px) {
+    width: 100%; /* Take full width on even smaller screens to stack items */
+  }
 `;
 
 const sparkle = keyframes`
@@ -228,6 +254,17 @@ const Sparkle = styled.div`
   opacity: 0;
 `;
 
+const PrizeDescription = styled.section`
+    margin-top: 3vh;
+    height: 500px;
+`;
+
+const OtherPrizeContainer = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: space_around;
+`;
+
 const PrizesPage = () => {
 
   const bestHacksPrizes = Prizes.slice(2, 10);
@@ -257,27 +294,31 @@ const PrizesPage = () => {
               <Sparkle bottom="85%" left="65%" delay="-1s" />
               <Sparkle bottom="85%" left="35%" delay="-6s" />
               <Sparkle bottom="90%" left="30%" delay="-3s" />
-              <PrizeAmount>{Prize.amount}</PrizeAmount>
+              <PrizeDescription>
+                <PrizeTitle>{Prize.title}</PrizeTitle>
+                <PrizeAmount>{Prize.amount}</PrizeAmount>
+              </PrizeDescription>
             </Podium>
-            <PrizeTitle>{Prize.title}</PrizeTitle>
           </Top_Prize>
         ))}
       </TopPrizeContainer>
-
-      <div style={{ 
-        display: 'flex', 
-        justifyContent: 'space-evenly',  
-        marginTop: '-200px',
-        marginBottom: '20px',
-        gap: '30px', 
-        fontFamily: 'Mokoto',
-        color: '#FFFFFF', 
-      }}>
-        <Tab title="Cyber Security Hack" prizes={cyber} />
-        <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
-        <Tab title="Web 3 Prize" prizes={web3Prizes} />
-        <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
-      </div>
+      
+      <OtherPrizeContainer>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'space-evenly',  
+          marginTop: '-200px',
+          marginBottom: '20px',
+          gap: '30px', 
+          fontFamily: 'Mokoto',
+          color: '#FFFFFF', 
+        }}>
+          <Tab title="Cyber Security Hack" prizes={cyber} />
+          <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
+          <Tab title="Web 3 Prize" prizes={web3Prizes} />
+          <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
+        </div>
+      </OtherPrizeContainer>
 
     </PrizeContainer>
   );
