@@ -144,7 +144,6 @@ p {
 .landingPage {
     background-color: transparent;
     display: flex;
-    /* position: fixed; */
     width: auto;
     height: auto;
     overflow: hidden;
@@ -158,11 +157,11 @@ p {
     width: 70vw;
 }
 
-.landingPage h1 {
+.landingPage h1,
+.landingPage .glitchEffectWrapper {
     font-family: Mokoto;
     font-size: 150px;
     line-height: 100%;
-
     padding-left: 4vw;
     padding-top: 65px;
     white-space: nowrap;
@@ -188,7 +187,8 @@ p {
     overflow: hidden;
 }
 
-.landingPageMobile h1 {
+.landingPageMobile h1,
+.landingPageMobile .glitchEffectWrapper {
     font-family: Mokoto;
     font-size: 13vw;
     line-height: 100%;

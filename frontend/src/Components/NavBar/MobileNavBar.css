@@ -1,0 +1,51 @@
+.mobile-navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-logo {
+    position: relative;
+    left: 15px;
+    margin-left: 15px;
+}
+
+
+.bm-burger-button {
+    position: relative;
+    width: 30px;
+    height: 24px;
+    left: 20px;
+}
+
+.bm-burger-bars {
+  background: white;
+}
+
+.bm-menu {
+  background: var(--black);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.menu-item {
+  font-family: 'Mokoto', sans-serif;
+  color: white;
+  font-size: 6vw;
+  margin-bottom: 1em;
+}
+
+.menu-item:active {
+  color: var(--red);
+}
+
+#faq {
+  margin-bottom: 1em !important;
+}
+
+@media (min-width: 1024px) {
+  .menu-item {
+      font-size: 2em; /* Set a maximum font size for large screens */
+  }
+}
