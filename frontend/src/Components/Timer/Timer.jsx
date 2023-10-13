@@ -62,12 +62,48 @@ class Timer extends React.Component {
     };
 
     return (
-      <Container
-        style={{ position: 'fixed', bottom: '5px', left: '0px', zIndex: 4000 }}
-      >
-        <Col style={colStyle}>
-          <div style={groupStyle}>
-            <div style={circleStyle} className="text-danger">
+      <Container className='timer timerContainer' >
+
+      {/* //   <div className='contain'>
+      //     <div className='outerCircle'>
+      //       <div className='innerCircle'>
+
+      //         <div id="number"> 
+      //          {Math.floor((this.state.time % (1000 * 60)) / 1000)}
+      //         </div>
+
+      //       </div>
+      //     </div>
+
+      //     <svg xmlns='http://www.w3.org/2000/svg' version='1.1' width="10vw" height="10vw" >
+      //       <circle cx="72" cy="72" r="60.75" stroke-linecap="round"/>
+      //       <circle cx="72" cy="72" r="60.75" id='base-timer-path-remaining' strokeDasharray="90 480"/>
+      //     </svg>
+      //   </div> */}
+
+        <Col className='colStyle'>
+
+          {/* <div className='groupStyle'> */}
+
+                {/* <div className='outerCicle'>
+                  <div className='innterCircle'>
+                    nn
+                  </div>
+                </div>
+
+            </div> */}
+
+
+
+          <div className='groupStyle'>
+            <div className='circleStyle' >
+
+              <div className='outerCicle'>
+                <div className='innterCircle'>
+
+                </div>
+              </div>
+
               {Math.floor(this.state.time / (1000 * 60 * 60 * 24))}
             </div>
             <div style={labelStyle}>Days</div>
@@ -92,7 +128,9 @@ class Timer extends React.Component {
             </div>
             <div style={labelStyle}>Seconds</div>
           </div>
+
         </Col>
+
       </Container>
     );
   }

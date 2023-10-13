@@ -265,3 +265,159 @@ p {
 #faq{
     margin-bottom: 100px;
 }
+
+.timer {
+    top: 450px;
+    left: 100px;
+    max-width: 750px;
+    height: 350px;
+    /* background: linear-gradient(
+        to bottom,
+        white 0%, 
+        white 60%,
+        transparent 100%
+    ); */
+}
+/* 
+.timerContainer {
+    display: flex;
+    max-width: 750px;
+    height: 210px;
+} */
+
+.circleStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid #910307;
+    border-radius: 50%;
+
+    width: 10vw;
+    height: 10vw;
+    font-size: 3vw;
+    font-family: Poppins;
+
+    /* color: black; */
+    color: white;
+}
+
+.contain {
+    width: 10vw;
+    height: 10vw;
+    background-color: yellow;
+    position: relative;
+}
+    .outerCircle {
+        width: 10vw;
+        height: 10vw;
+        padding: 20px;
+        border: 1px solid #910307;
+        border-radius: 50%;
+    }
+
+    .innerCircle {
+        width: 7vw;
+        height: 7vw;
+        border: 1px solid #910307;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #number {
+        font-weight: 600;
+        color: #555;
+    }
+
+    circle {
+        /* fill: none;
+        stroke: #910307;
+        stroke-width: 20px;
+        stroke-dasharray: 100 400;
+        stroke-dashoffset: 900;
+        animation: anim 2s linear forwards; */
+        stroke-width: 20px;
+        stroke: grey;
+        fill: none;
+    }
+
+    /* @keyframes anim {
+        100% {
+            stroke-dashoffset: 100;
+        }
+    } */
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* background-color: green; */
+    }
+
+.groupStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.colStyle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 5vh;
+}
+
+.labelStyle {
+    text-align: center;
+    /* color: black; */
+    color: white;
+    font-family: Poppins Light;
+    font-size: 1.5vw;
+}
+
+#base-timer-path-remaining {
+    fill: none;
+    fill-rule: nonzero;
+    stroke: #910307;
+    stroke-width: 20px;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    /* stroke-dasharray: 280 480; */
+}
+
+.base-timer-path-remaining {
+    fill: none;
+    fill-rule: nonzero;
+    stroke: #910307;
+    stroke-width: 20px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    
+
+
+
+    /* stroke-width: 20px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 10s linear all;
+    fill-rule: nonzero;
+    stroke: #910307; */
+    stroke-dasharray: 100 480;
+
+
+        /* fill: none;
+        stroke: #910307;
+        stroke-width: 20px;
+        stroke-dasharray: 400; */
+        /* stroke-dashoffset: 90; */
+        /* animation: anim 2s linear forwards; */
+}
