@@ -5,6 +5,7 @@ import MobileNavBar from './Components/NavBar/MobileNavBar.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
+import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
@@ -33,8 +34,12 @@ const router = createHashRouter([
 		},
 		{
 		  path: "faq",
-		  element: <FAQPage/>,
+		  element: <FAQPage />,
 		},
+        {
+            path: "mini-event",
+            element: <MiniEventPage />,
+        },
 		{
 		  path: "*",
 		  element: <ErrorPage/>,
@@ -65,6 +70,10 @@ const mobileRouter = createHashRouter([
             {
                 path: 'faq',
                 element: <FAQPage />,
+            },
+            {
+                path: 'mini-event',
+                element: <MiniEventPage />,
             },
             {
                 path: '*',

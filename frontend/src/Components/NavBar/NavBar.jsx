@@ -5,7 +5,6 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../../../assets/hackrpi_logo.png';
 import transparentLogo from '../../../assets/logo_transparent.png';
 
 class NavBar extends React.Component {
@@ -72,6 +71,7 @@ class NavBar extends React.Component {
             <Nav className='mainNav' style={{ marginRight: 'auto' }}>
               <NavLink to="/home" className='pageNav'> Home </NavLink>
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
+              <NavLink to="/mini-event" className='pageNav'> Mini Event </NavLink>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
