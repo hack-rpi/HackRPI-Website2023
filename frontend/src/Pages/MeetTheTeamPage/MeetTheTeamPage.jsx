@@ -20,9 +20,6 @@ const MeetTheTeamPage = () => {
       role: 'President',
       avatar: maryellenImage,
     },
-  ];
-
-  const teamMembersSecondRow = [
     {
       name: 'Raven Levitt',
       role: 'Vice President',
@@ -33,14 +30,14 @@ const MeetTheTeamPage = () => {
       role: 'Director of Technology',
       avatar: johnImage,
     },
+  ];
+
+  const teamMembersSecondRow = [
     {
       name: 'Xenia Khusid',
       role: 'Director of Logistics',
       avatar: xeniaImage,
     },
-  ];
-
-  const teamMembersThirdRow = [
     {
       name: 'Adwait Naware',
       role: 'Director of Finance',
@@ -67,9 +64,9 @@ const MeetTheTeamPage = () => {
       <div className="team-members">
         <Row className="mb-4">
           {teamMembersFirstRow.map((member, index) => (
-            <Col key={index} md={12} className="text-center mb-4">
+            <Col key={index} md={4}>
               <div className="" style={{ marginBottom: '20px' }}>
-                <img src={member.avatar} alt={member.name} style={{ width: '50%' }} />
+                <img src={member.avatar} alt={member.name} style={{ width: '70%' }} />
                 <div className="container">
                   <h2 className="name">{member.name}</h2>
                   <p className="position">{member.role}</p>
@@ -84,26 +81,9 @@ const MeetTheTeamPage = () => {
 
         <Row className="mb-4">
           {teamMembersSecondRow.map((member, index) => (
-            <Col key={index} md={4}>
+            <Col key={index} md={3}>
               <div className="" style={{ marginBottom: '20px' }}>
-                <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
-                <div className="container">
-                  <h2 className="name">{member.name}</h2>
-                  <p className="position">{member.role}</p>
-                  <Button className="button" style={{ marginBottom: '10px' }}>
-                    More Info
-                  </Button>
-                </div>
-              </div>
-            </Col>
-          ))}
-        </Row>
-
-        <Row className="mb-4">
-          {teamMembersThirdRow.map((member, index) => (
-            <Col key={index} md={4}>
-              <div className="" style={{ marginBottom: '20px' }}>
-                <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
+                <img src={member.avatar} alt={member.name} style={{ width: '70%' }} />
                 <div className="container">
                   <h2 className="name">{member.name}</h2>
                   <p className="position">{member.role}</p>
