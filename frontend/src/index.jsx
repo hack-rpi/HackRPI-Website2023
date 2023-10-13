@@ -8,6 +8,8 @@ import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
+import SponsorUsPage from './Pages/SponsorUsPage/SponsorUsPage.jsx';
 import './style.css';
 import { Outlet } from 'react-router-dom';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
@@ -39,6 +41,10 @@ const router = createHashRouter([
         {
             path: "mini-event",
             element: <MiniEventPage />,
+        },
+        {
+            path: 'sponsor-us',
+            element: <SponsorUsPage />,
         },
 		{
 		  path: "*",
@@ -74,6 +80,10 @@ const mobileRouter = createHashRouter([
             {
                 path: 'mini-event',
                 element: <MiniEventPage />,
+            },
+            {
+                path: 'sponsor-us',
+                element: <SponsorUsPage />,
             },
             {
                 path: '*',

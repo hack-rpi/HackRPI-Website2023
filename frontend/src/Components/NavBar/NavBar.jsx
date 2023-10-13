@@ -72,6 +72,7 @@ class NavBar extends React.Component {
               <NavLink to="/home" className='pageNav'> Home </NavLink>
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
               <NavLink to="/mini-event" className='pageNav'> Mini Event </NavLink>
+              <NavLink to="/sponsor-us" className='pageNav'> Sponsor </NavLink>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
