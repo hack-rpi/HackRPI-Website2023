@@ -1,0 +1,34 @@
+.MiniEventPage {
+    text-align: center;
+    width: 100%;
+    padding: 0 10%;
+  }
+  
+  .event-title {
+    font-family: 'Mokoto';
+    font-size: 3em;
+    margin: 20px 0;
+  }
+  
+  .event-details p {
+    font-weight: bold;
+    font-family: 'Poppins';
+  }
+  
+  .event-date {
+    margin-bottom: 0;
+  }
+  
+  .event-location {
+    margin-top: 0;
+  }
+  
+  .info-section {
+    padding-bottom: 20px;
+  }
+  
+  .button.register-btn {
+    background-color: #910307;
+    color: white;
+  }
+  
