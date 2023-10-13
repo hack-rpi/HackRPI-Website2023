@@ -56,9 +56,37 @@
   color: white;
 }
 
-@media (max-width: 768px) {
+.content-image {
+  width: 100%;
+  max-width: 50px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.bottom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .content-image {
+    max-width: 25px;
+  }
+}
+
+@media (min-width: 768px) {
   .buttons-container {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+  }
+  .content-image {
+    max-width: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .content-image {
+    max-width: 75px;
   }
 }

@@ -4,6 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Button from 'react-bootstrap/Button';
+import gears from '../../../assets/gears.png';
+import computer from '../../../assets/computer.png';
 import './MiniEventPage.css';
 
 const MiniEventPage = () => {
@@ -34,6 +36,24 @@ const MiniEventPage = () => {
           New to hackathons, web development, coding?
         </p>
       </div>
+
+      <Row className="bottom-content">
+        <Col xs={12} md={2} className="content-item">
+          <p>Content 1</p>
+        </Col>
+        <Col xs={12} md={2} className="content-item">
+          <img src={gears} alt="Description" className="content-image" />
+        </Col>
+        <Col xs={12} md={2} className="content-item">
+          <p>Content 2</p>
+        </Col>
+        <Col xs={12} md={2} className="content-item">
+          <img src={computer} alt="Description" className="content-image" />
+        </Col>
+        <Col xs={12} md={2} className="content-item">
+          <p>Content 3</p>
+        </Col>
+      </Row>
     </div>
   );
 };
