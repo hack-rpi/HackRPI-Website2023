@@ -31,7 +31,9 @@ function SponsorUsPage() {
           }}
           >
           <h3 style={{ 
-            textAlign: 'center'
+            textAlign: 'center', 
+            fontFamily: 'Poppins', 
+            fontSize: 20,
             }}
             >
               Want to support us?
@@ -51,7 +53,9 @@ function SponsorUsPage() {
           }}
           >
           <h3 style={{ 
-            textAlign: 'center'
+            textAlign: 'center', 
+            fontFamily: 'Poppins', 
+            fontSize: 20,
             }}
             >
               Interested in sponsoring us?
