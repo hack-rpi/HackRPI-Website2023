@@ -65,7 +65,7 @@ const LandingPage = () => {
     <div id="home" className='landingPage'>
       {/* <Timer /> */}
 
-      <div className="globe" style={{ paddingLeft: '27%' }}>
+      <div className="globe" style={{ paddingLeft: '25%' }}>
         <Globe
           style={{ position: 'fixed' }}
           ref={globeEl}

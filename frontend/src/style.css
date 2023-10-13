@@ -307,7 +307,7 @@ p {
     }
 
     circle {
-        stroke-width: 9.5px;
+        stroke-width: 8px;
         stroke: white;
         fill: none;
     }
@@ -344,7 +344,7 @@ p {
     fill: none;
     fill-rule: nonzero;
     stroke: #910307;
-    stroke-width: 10px;
+    stroke-width: 9px;
     stroke-linecap: round;
     transform-origin: center;
     transform: rotate(-90deg);
