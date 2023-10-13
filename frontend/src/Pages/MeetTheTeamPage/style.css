@@ -1,4 +1,6 @@
-.name,
+.name {
+    white-space: nowrap;
+  }
 .position,
 .description {
     color: white;
