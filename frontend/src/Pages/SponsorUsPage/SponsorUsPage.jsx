@@ -1,74 +1,37 @@
 import React from 'react';
+import './SponsorUsPage.css';
+import { Row, Col } from 'react-bootstrap';
 
 function SponsorUsPage() {
   return (
-    <div>
-      <h2 
-      style={{ 
-        textAlign: 'center', 
-        fontFamily: 'Mokoto',
-        fontWeight: '400',
-        color: 'white',
-        fontSize: '3rem',
-        marginTop: '50px'
-    }}
-    >
-      Sponsor Us!
-    </h2>
-      <div style={{
-        display: 'flex', 
-        flexDirection: 'row', 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        columnGap: '10%', 
-        padding: '2% 10%'
-      }}>
-        <div style={{ 
-          width: '50%', 
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
-          }}
-          >
-          <h3 style={{ 
-            textAlign: 'center', 
-            fontFamily: 'Poppins', 
-            fontSize: 20,
-            }}
-            >
-              Want to support?
-              </h3>
-        <iframe 
-        src="https://drive.google.com/file/d/17z1LSpUkCeY-AO3tYG5PfMv0U2FngzD_/preview"
-        width="100%" 
-        height="550" 
-        allow="autoplay"
-        ></iframe>
-        </div>
-        <div style={{ 
-          width: '50%', 
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center'
-          }}
-          >
-          <h3 style={{ 
-            textAlign: 'center', 
-            fontFamily: 'Poppins', 
-            fontSize: 20,
-            }}
-            >
-              Interested in sponsoring?
-              </h3>
-        <iframe 
-        src="https://drive.google.com/file/d/17GguOFdq5aU5NuFXnHyLxxsXSzxryHQc/preview"
-        width="100%" 
-        height="550" 
-        allow="autoplay"
-        ></iframe>
-      </div>
-    </div>
+    <div className="sponsor-container text-center">
+      <h2 className="sponsor-title">
+        Sponsor Us!
+      </h2>
+      <Row className="sponsor-content justify-content-center">
+        <Col lg={6} md={12} className="content-section">
+          <h3 className="content-title">
+            Want to support?
+          </h3>
+          <iframe 
+            className="content-iframe"
+            src="https://drive.google.com/file/d/17z1LSpUkCeY-AO3tYG5PfMv0U2FngzD_/preview"
+            allow="autoplay"
+          ></iframe>
+        </Col>
+        <Col lg={6} md={12} className="content-section">
+          <h3 className="content-title">
+            Interested in sponsoring?
+          </h3>
+          <iframe 
+            className="content-iframe"
+            src="https://drive.google.com/file/d/17GguOFdq5aU5NuFXnHyLxxsXSzxryHQc/preview"
+            allow="autoplay"
+          ></iframe>
+        </Col>
+      </Row>
     </div>
   );
 }
+
 export default SponsorUsPage;
