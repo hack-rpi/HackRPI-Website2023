@@ -11,69 +11,113 @@ import xeniaImage from './../../../assets/TeamAvatars/Xenia.png';
 import adwaitImage from './../../../assets/TeamAvatars/Adwait.png';
 import sanayImage from './../../../assets/TeamAvatars/Sanay.png';
 import mirandaImage from './../../../assets/TeamAvatars/Miranda.png';
+import johnImage from './../../../assets/TeamAvatars/John.png';
 
 const MeetTheTeamPage = () => {
-    const teamMembers = [
-      {
-        name: 'Maryellen Marino',
-        role: 'President',
-        avatar: maryellenImage, 
-      },
-      {
-        name: 'Raven Levitt',
-        role: 'Vice President',
-        avatar: ravenImage,
-      },
+  const teamMembersFirstRow = [
+    {
+      name: 'Maryellen Marino',
+      role: 'President',
+      avatar: maryellenImage,
+    },
+  ];
 
-      {
-        name: 'Xenia Khusid',
-        role: 'Director of Logistics',
-        avatar: xeniaImage,
-      },
+  const teamMembersSecondRow = [
+    {
+      name: 'Raven Levitt',
+      role: 'Vice President',
+      avatar: ravenImage,
+    },
+    {
+      name: 'John Kloepfer',
+      role: 'Director of Technology',
+      avatar: johnImage,
+    },
+    {
+      name: 'Xenia Khusid',
+      role: 'Director of Logistics',
+      avatar: xeniaImage,
+    },
+  ];
 
-      {
-        name: 'Adwait Naware',
-        role: 'Director of Finance',
-        avatar: adwaitImage,
-      },
+  const teamMembersThirdRow = [
+    {
+      name: 'Adwait Naware',
+      role: 'Director of Finance',
+      avatar: adwaitImage,
+    },
+    {
+      name: 'Sanay Tralshawala',
+      role: 'Director of Sponsorship',
+      avatar: sanayImage,
+    },
+    {
+      name: 'Miranda Zheng',
+      role: 'Director of Marketing',
+      avatar: mirandaImage,
+    },
+  ];
 
-      {
-        name: 'Sanay Tralshawala',
-        role: 'Director of Sponsorship',
-        avatar: sanayImage,
-      },
+  return (
+    <div id="members" className="MeetTheTeamPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
+      <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
+        Meet Our Team!
+      </h1>
 
-      {
-        name: 'Miranda Zheng',
-        role: 'Director of Marketing',
-        avatar: mirandaImage,
-      },
+      <div className="team-members">
+        <Row className="mb-4">
+          {teamMembersFirstRow.map((member, index) => (
+            <Col key={index} md={12} className="text-center mb-4">
+              <div className="" style={{ marginBottom: '20px' }}>
+                <img src={member.avatar} alt={member.name} style={{ width: '50%' }} />
+                <div className="container">
+                  <h2 className="name">{member.name}</h2>
+                  <p className="position">{member.role}</p>
+                  <Button className="button" style={{ marginBottom: '10px' }}>
+                    More Info
+                  </Button>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
 
-    ];
+        <Row className="mb-4">
+          {teamMembersSecondRow.map((member, index) => (
+            <Col key={index} md={4}>
+              <div className="" style={{ marginBottom: '20px' }}>
+                <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
+                <div className="container">
+                  <h2 className="name">{member.name}</h2>
+                  <p className="position">{member.role}</p>
+                  <Button className="button" style={{ marginBottom: '10px' }}>
+                    More Info
+                  </Button>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
 
-    return (
-      <div id="members" className="MeetTheTeamPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
-          <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
-              Meet Our Team!
-          </h1>
-          <div className="team-members">
-              <Row className="mb-4">
-                  {teamMembers.map((member, index) => (
-                      <Col key={index} md={4}>
-                          <div className="card" style={{ marginBottom: '20px' }}>
-                              <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
-                              <div className="container">
-                                  <h2 className="name">{member.name}</h2>
-                                  <p className="position">{member.role}</p>
-                                  <Button className="button" style={{ marginBottom: '10px' }}>More Info</Button>
-                              </div>
-                          </div>
-                      </Col>
-                  ))}
-              </Row>
-          </div>
+        <Row className="mb-4">
+          {teamMembersThirdRow.map((member, index) => (
+            <Col key={index} md={4}>
+              <div className="" style={{ marginBottom: '20px' }}>
+                <img src={member.avatar} alt={member.name} style={{ width: '100%' }} />
+                <div className="container">
+                  <h2 className="name">{member.name}</h2>
+                  <p className="position">{member.role}</p>
+                  <Button className="button" style={{ marginBottom: '10px' }}>
+                    More Info
+                  </Button>
+                </div>
+              </div>
+            </Col>
+          ))}
+        </Row>
       </div>
+    </div>
   );
-}
+};
 
 export default MeetTheTeamPage;
