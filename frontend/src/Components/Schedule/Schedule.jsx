@@ -245,16 +245,22 @@ const Schedule = () => {
       // Define your constant events here after November 5th
       // Example:
       {
-        startTime: new Date('2023-10-05T15:30:00-05:00'),
-        endTime: new Date('2023-11-05T16:30:00-05:00'),
-        event: 'Constant Event 1',
-        location: 'DCC 310',
+        startTime: new Date('2023-11-04T12:00:00-04:00'),
+        endTime: new Date('2023-11-04T12:00:00-04:00'),
+        event: 'Mentoring Desk',
+        location: 'Great Hall',
       },
       {
-        startTime: new Date('2023-11-05T17:00:00-05:00'),
-        endTime: new Date('2023-11-05T18:00:00-05:00'),
-        event: 'Constant Event 2',
-        location: 'DCC 312',
+        startTime: new Date('2023-11-04T22:00:00-04:00'),
+        endTime: new Date('2023-11-05T07:00:00-05:00'),
+        event: 'Sleeping Rooms',
+        location: 'LOW 3112, 3130, 3116',
+      },
+      {
+        startTime: new Date('2023-11-05T08:00-05:00'),
+        endTime: new Date('2023-11-05T12:00:00-05:00'),
+        event: 'Last Chance Mentoring',
+        location: '',
       },
       // },
     ], []);
@@ -305,7 +311,7 @@ const Schedule = () => {
         currentDate = item.startTime.getDate();
         return (
           <tr key={`date-heading-${currentDate}`}>
-            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
               {currentDate === 4 ? 'November 4th' : 'November 5th'}
             </td>
           </tr>
@@ -348,7 +354,6 @@ const Schedule = () => {
 
               return (
                 <React.Fragment key={index}>
-                  {/* Render individual constant event row */}
                   <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
                 </React.Fragment>
               );
