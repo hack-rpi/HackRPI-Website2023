@@ -59,8 +59,8 @@ const MiniEventPage = () => {
           <img src={gears} alt="Description" className="content-image" />
         </Col>
         <Col xs={12} md={2} className="content-item">
-          <p className="red-bold-text">Resume</p>
-          <p className="reg-white-text">BUILDING</p>
+          <p className="red-bold-text">HTML &  CSS</p>
+          <p className="reg-white-text">SKILL BUILDING</p>
         </Col>
         <Col xs={12} md={2} className="content-item">
           <img src={computer} alt="Description" className="content-image" />
