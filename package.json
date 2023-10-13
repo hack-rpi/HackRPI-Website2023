@@ -26,6 +26,7 @@
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
+    "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-globe.gl": "^2.24.4",
     "react-iframe": "^1.8.5",

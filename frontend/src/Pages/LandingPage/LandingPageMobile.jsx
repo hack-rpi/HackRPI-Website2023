@@ -21,11 +21,11 @@ const LandingPageMobile = () => {
 
       {/* text on the left side of the screen */}
       <Container >
-            <h1>
+            <div className="glitchEffectWrapper">
               <GlitchEffect >
                 HACKRPI X
               </GlitchEffect>
-            </h1>
+            </div>
             {/* both have glitch or just one? */}
             <h2 >
               November 4-5
