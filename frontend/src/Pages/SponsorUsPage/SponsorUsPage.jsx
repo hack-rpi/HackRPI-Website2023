@@ -23,19 +23,47 @@ function SponsorUsPage() {
         columnGap: '10%', 
         padding: '2% 10%'
       }}>
+        <div style={{ 
+          width: '50%', 
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+          }}
+          >
+          <h3 style={{ 
+            textAlign: 'center'
+            }}
+            >
+              Want to support us?
+              </h3>
         <iframe 
         src="https://drive.google.com/file/d/17z1LSpUkCeY-AO3tYG5PfMv0U2FngzD_/preview"
-        width="50%" 
+        width="100%" 
         height="550" 
         allow="autoplay"
         ></iframe>
+        </div>
+        <div style={{ 
+          width: '50%', 
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+          }}
+          >
+          <h3 style={{ 
+            textAlign: 'center'
+            }}
+            >
+              Interested in sponsoring us?
+              </h3>
         <iframe 
         src="https://drive.google.com/file/d/17GguOFdq5aU5NuFXnHyLxxsXSzxryHQc/preview"
-        width="50%" 
+        width="100%" 
         height="550" 
         allow="autoplay"
         ></iframe>
       </div>
+    </div>
     </div>
   );
 }
