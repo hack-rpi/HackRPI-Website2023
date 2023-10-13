@@ -44,7 +44,7 @@ const router = createHashRouter([
   ]);
   
 
-  const mobileRouter = createHashRouter([
+const mobileRouter = createHashRouter([
     {
         path: "/",
         element: (

@@ -7,8 +7,8 @@ import { NavLink } from 'react-router-dom';
 const MobileNavBar = () => (
     <div className="mobile-navbar">
         <Menu>
-            <a id="home" className="menu-item" href="/">Home</a>
-            <a id="faq" className="menu-item" href="/faq">FAQ</a>
+            <NavLink id="home" className="menu-item" to="/">Home</NavLink>
+            <NavLink id="faq" className="menu-item" to="/faq">FAQ</NavLink>
         </Menu>
         <NavLink to="/" style={{ paddingLeft: 30 }}>
               <img
