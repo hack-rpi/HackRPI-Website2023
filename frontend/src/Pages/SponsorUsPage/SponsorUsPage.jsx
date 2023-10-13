@@ -6,7 +6,11 @@ function SponsorUsPage() {
       <h2 
       style={{ 
         textAlign: 'center', 
-        martinTop: '50px'
+        fontFamily: 'Mokoto',
+        fontWeight: '400',
+        color: 'white',
+        fontSize: '3rem',
+        marginTop: '50px'
     }}
     >
       Sponsor Us!
