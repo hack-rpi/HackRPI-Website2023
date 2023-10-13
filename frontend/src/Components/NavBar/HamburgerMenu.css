@@ -29,3 +29,19 @@
   font-size: 1.15em;
 }
 
+.menu-item {
+  font-family: 'Mokoto', sans-serif;
+  color: white;
+  font-size: 6vw;
+  margin-bottom: 1em;
+}
+
+.menu-item:active {
+  color: var(--red);
+}
+
+@media (min-width: 1024px) {
+  .menu-item {
+      font-size: 2em; /* Set a maximum font size for large screens */
+  }
+}
