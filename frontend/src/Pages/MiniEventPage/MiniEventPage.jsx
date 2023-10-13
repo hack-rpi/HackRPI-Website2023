@@ -2,16 +2,26 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
-import Tab from 'react-bootstrap/Tab';
 import Button from 'react-bootstrap/Button';
 import gears from '../../../assets/gears.png';
 import computer from '../../../assets/computer.png';
+import transparentLogo from '../../../assets/logo_transparent.png';
 import './MiniEventPage.css';
 
 const MiniEventPage = () => {
   return (
     <div id="mini-event" className="MiniEventPage">
-      <h1 className="event-title">HOW TO HACKRPI</h1>
+      <Row>
+        <Col xs={2}>
+          <img src={transparentLogo} width="90" height="90" />
+        </Col>
+        <Col xs={8}>
+          <h1 className="event-title">HOW TO HACKRPI</h1>
+        </Col>
+        <Col xs={2}>
+          <img src={transparentLogo} width="90" height="90" />
+        </Col>
+      </Row>
       <Row>
         <Col xs={12} className="event-details">
           <p className="event-date">Date: October 21st 12pm-4pm</p>
@@ -58,9 +68,7 @@ const MiniEventPage = () => {
         </Col>
       </Row>
 
-      <p className="additional-info">
-        Get HackRPI Prepared!
-      </p>
+      <p className="additional-info">Get HackRPI Prepared!</p>
     </div>
   );
 };
