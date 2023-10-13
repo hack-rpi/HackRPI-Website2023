@@ -3,6 +3,14 @@ import React from 'react';
 function SponsorUsPage() {
   return (
     <div>
+      <h2 
+      style={{ 
+        textAlign: 'center', 
+        martinTop: '50px'
+    }}
+    >
+      Sponsor Us!
+    </h2>
       <div style={{
         display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center',
         columnGap: '10%', padding: '2% 10%'
