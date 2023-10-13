@@ -40,6 +40,10 @@
   color: var(--red);
 }
 
+#faq {
+  margin-bottom: 1em !important;
+}
+
 @media (min-width: 1024px) {
   .menu-item {
       font-size: 2em; /* Set a maximum font size for large screens */
