@@ -90,11 +90,11 @@ const LandingPage = () => {
       {/* text on the left side of the screen */}
       <Container>
         <Row>
-            <h1>
+            <div className="glitchEffectWrapper">
               <GlitchEffect>
                 HACKRPI X
               </GlitchEffect>
-            </h1>
+            </div>
         </Row>
 
         <Row>
