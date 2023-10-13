@@ -5,23 +5,31 @@ import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
-const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {       //React.memo optimizes the rendering of the ScheduleRow component based on its props or the site will overload
+const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
+  /* React.memo optimizes the rendering of the ScheduleRow component based on its props or the site will overload */
+
   const formatDate = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   const startTimeString = useMemo(() => formatDate(item.startTime), []);
-  const endTimeString = useMemo(() => formatDate(item.endTime), []);  // empty [] because we don't want to re-render the component if the startTime and endTime are the same/static. Also prevents update of start and end time
+  const endTimeString = useMemo(() => formatDate(item.endTime), []);
+  /* empty [] because we don't want to re-render the component if the startTime and endTime are the same/static.
+  Also prevents update of start and end time */
 
 
   return (
     
- <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
+ <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem',
+   borderBottom: '5px solid black', specificity: 'important' }}>
     <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.event}</td>
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>  
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td> 
+    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
+    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>
+      {startTimeString} - {endTimeString}</td>
  </tr>
   );
 });
 const Schedule = () => {
-  const schedule = useMemo(() => [   //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.             
+  const schedule = useMemo(() => [
+    /* useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and
+    overload. */
     {
       startTime: new Date('2023-11-04T10:00:00-04:00'), 
       endTime: new Date('2023-11-04T11:00:00-04:00'),
@@ -311,7 +319,8 @@ const Schedule = () => {
         currentDate = item.startTime.getDate();
         return (
           <tr key={`date-heading-${currentDate}`}>
-            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1px solid #bd0909',
+              textAlign: 'center', fontSize: '32px', padding: '30px 0 12px 0' }}>
               {currentDate === 4 ? 'November 4th' : 'November 5th'}
             </td>
           </tr>
@@ -337,11 +346,12 @@ const Schedule = () => {
 
             {/* Constant Events */}
                     {/* Blank row for spacing after November 5th events */}
-          <tr>
-            <td colSpan="3" style={{ height: '50px' }}></td>
-          </tr>
+          {/*<tr>*/}
+          {/*  <td colSpan="3" style={{ height: '50px' }}></td>*/}
+          {/*</tr>*/}
             <tr>
-              <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+              <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909',
+                textAlign: 'center', fontSize: '32px', padding: '30px 0 12px 0'}}>
                 Constant Events
               </td>
             </tr>
