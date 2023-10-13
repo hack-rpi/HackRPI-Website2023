@@ -13,6 +13,7 @@
 .event-details p {
   font-weight: bold;
   font-family: 'Poppins';
+  font-size: 1.5em;
 }
 
 .event-date {
@@ -21,10 +22,6 @@
 
 .event-location {
   margin-top: 0;
-}
-
-.info-section {
-  padding-bottom: 40px;
 }
 
 .register-button {
@@ -38,7 +35,6 @@
 
 .additional-info {
   font-size: 1.5em;
-  padding-bottom: 20px;
   font-weight: bold;
   font-family: 'Poppins';
 }
@@ -58,20 +54,39 @@
 
 .content-image {
   width: 100%;
-  max-width: 50px;
+  max-width: 75px;
   height: auto;
   margin: 0 auto;
+}
+
+.content-item {
+  font-weight: bold;
+  font-family: 'Poppins';
 }
 
 .bottom-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
+}
+
+.red-bold-text {
+  color: var(--red);
+  font-family: 'Poppins';
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.reg-white-text {
+  font-size: 1.4em;
+  margin-bottom: 0;
 }
 
 @media (min-width: 576px) {
   .content-image {
-    max-width: 25px;
+    max-width: 40px;
   }
 }
 

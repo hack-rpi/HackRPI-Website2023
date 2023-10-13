@@ -39,21 +39,28 @@ const MiniEventPage = () => {
 
       <Row className="bottom-content">
         <Col xs={12} md={2} className="content-item">
-          <p>Content 1</p>
+          <p className="reg-white-text">LEARN</p>
+          <p className="red-bold-text">GitHub</p>
         </Col>
         <Col xs={12} md={2} className="content-item">
           <img src={gears} alt="Description" className="content-image" />
         </Col>
         <Col xs={12} md={2} className="content-item">
-          <p>Content 2</p>
+          <p className="red-bold-text">Resume</p>
+          <p className="reg-white-text">BUILDING</p>
         </Col>
         <Col xs={12} md={2} className="content-item">
           <img src={computer} alt="Description" className="content-image" />
         </Col>
         <Col xs={12} md={2} className="content-item">
-          <p>Content 3</p>
+          <p className="reg-white-text">DESIGN Your</p>
+          <p className="red-bold-text">First Website</p>
         </Col>
       </Row>
+
+      <p className="additional-info">
+        Get HackRPI Prepared!
+      </p>
     </div>
   );
 };
