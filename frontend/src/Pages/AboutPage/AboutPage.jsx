@@ -33,7 +33,12 @@ const AboutPage = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link className = "nav-link-custom" eventKey = "two">
+                <Button
+                  variant="outline" className='button'
+                  style={{ backgroundColor: '#910307', color: 'white' }}
+                  >
                   the team
+                  </Button>
                 </Nav.Link>
               </Nav.Item>
             </Nav>
