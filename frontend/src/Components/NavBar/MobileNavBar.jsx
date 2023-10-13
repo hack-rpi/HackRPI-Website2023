@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import './HamburgerMenu.css';
+import './MobileNavBar.css';
 import transparentLogo from '../../../assets/logo_transparent.png'; // Adjust the path according to your folder structure
 import { NavLink } from 'react-router-dom';
 
