@@ -19,11 +19,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 
 .content-title {
   font-family: 'Poppins';
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .content-iframe {
@@ -41,5 +42,9 @@
 
   .content-title {
     font-size: 18px;
+  }
+
+  .content-iframe {
+    height: 400px;
   }
 }
