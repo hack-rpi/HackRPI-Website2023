@@ -36,7 +36,7 @@ function SponsorUsPage() {
             fontSize: 20,
             }}
             >
-              Want to support us?
+              Want to support?
               </h3>
         <iframe 
         src="https://drive.google.com/file/d/17z1LSpUkCeY-AO3tYG5PfMv0U2FngzD_/preview"
@@ -58,7 +58,7 @@ function SponsorUsPage() {
             fontSize: 20,
             }}
             >
-              Interested in sponsoring us?
+              Interested in sponsoring?
               </h3>
         <iframe 
         src="https://drive.google.com/file/d/17GguOFdq5aU5NuFXnHyLxxsXSzxryHQc/preview"

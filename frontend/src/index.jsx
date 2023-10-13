@@ -42,6 +42,10 @@ const router = createHashRouter([
             path: "mini-event",
             element: <MiniEventPage />,
         },
+        {
+            path: 'sponsor-us',
+            element: <SponsorUsPage />,
+        },
 		{
 		  path: "*",
 		  element: <ErrorPage/>,
@@ -76,6 +80,10 @@ const mobileRouter = createHashRouter([
             {
                 path: 'mini-event',
                 element: <MiniEventPage />,
+            },
+            {
+                path: 'sponsor-us',
+                element: <SponsorUsPage />,
             },
             {
                 path: '*',
