@@ -9,25 +9,30 @@ import Button from 'react-bootstrap/Button';
 
 const AboutPage = () => {
   return (
-    <div id="about"  className="AboutPage" style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
-      <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
+    <div id = "about"  className = "AboutPage" style = {{ textAlign: 'center', width: "80%", margin: 'auto'}}>
+      <h1 className = "title" style = {{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
         HackRPI X
       </h1>
-      <Tab.Container defaultActiveKey="one" style={{paddingBottom: 30}}>
+      <Tab.Container defaultActiveKey="one" style = {{paddingBottom: 30}}>
         <Col>
           <Row>
             <Nav
-              variant="pills-primary"
-              className="flex-row justify-content-center"
-              style={{ height: 30 }}
+              variant = "pills-primary"
+              className = "flex-row justify-content-center"
+              style = {{ height: 30 }}
             >
               <Nav.Item>
-                <Nav.Link className="nav-link-custom" eventKey="one">
+                <Nav.Link className = "nav-link-custom" eventKey = "one">
+                  <Button
+                  variant="outline" className='button'
+                  style={{ backgroundColor: '#910307', color: 'white' }}
+                  >
                   the event
+                  </Button>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="nav-link-custom" eventKey="two">
+                <Nav.Link className = "nav-link-custom" eventKey = "two">
                   the team
                 </Nav.Link>
               </Nav.Item>
