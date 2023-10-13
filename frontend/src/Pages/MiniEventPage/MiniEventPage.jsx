@@ -12,18 +12,19 @@ const MiniEventPage = () => {
   return (
     <div id="mini-event" className="MiniEventPage">
       <Row>
-        <Col xs={1}></Col>
-        <Col xs={2}>
+        <Col xs={0} md={1}></Col>
+        <Col xs={0} md={2} className="d-none d-md-block">
           <img src={transparentLogo} width="90" height="90" />
         </Col>
-        <Col xs={6}>
+        <Col xs={12} md={6}>
           <h1 className="event-title">HOW TO HACKRPI</h1>
         </Col>
-        <Col xs={2}>
+        <Col xs={0} md={2} className="d-none d-md-block">
           <img src={transparentLogo} width="90" height="90" />
         </Col>
-        <Col xs={1}></Col>
+        <Col xs={0} md={1}></Col>
       </Row>
+
       <Row>
         <Col xs={12} className="event-details">
           <p className="event-date">Date: October 21st 12pm-4pm</p>
