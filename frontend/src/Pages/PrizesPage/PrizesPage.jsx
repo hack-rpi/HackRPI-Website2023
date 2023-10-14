@@ -123,8 +123,6 @@ const TopPrizeContainer = styled.section`
   }
 `;
 
-
-
 const moveUpDown = keyframes`
   0%, 100% {
     transform: translateY(0);
@@ -197,8 +195,6 @@ const PrizeAmount = styled.h2`
   animation: ${moveUpDown} 2s ease-in-out infinite;
   color: white;
   text-shadow: 0 0 10px silver, 0 0 20px silver, 0 0 30px silver, 0 0 40px silver;
-
-
 `;
 
 const Top_Prize = styled.section`
@@ -260,9 +256,9 @@ const PrizeDescription = styled.section`
 `;
 
 const OtherPrizeContainer = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: space_around;
+  display: flex;
+  justify-content: center;
+  position: relative;
 `;
 
 const PrizesPage = () => {
@@ -272,6 +268,13 @@ const PrizesPage = () => {
   const web3Prizes = Prizes.slice(11, 12);
   const wolframPrizes = Prizes.slice(12, 13);
   const topPrizes = Prizes.slice(0, 2);
+
+  const prizesColumns = [
+    { title: 'Cyber Security Hack', prizes: cyber },
+    { title: 'Best Hacks Prizes', prizes: bestHacksPrizes },
+    { title: 'Web 3 Prize', prizes: web3Prizes },
+    { title: 'Wolfram Alfa Award', prizes: wolframPrizes },
+  ];
 
   return (
     <PrizeContainer>
@@ -307,7 +310,7 @@ const PrizesPage = () => {
         <div style={{ 
           display: 'flex', 
           justifyContent: 'space-evenly',  
-          marginTop: '-200px',
+          marginTop: '-100px',
           marginBottom: '20px',
           gap: '30px', 
           fontFamily: 'Mokoto',
