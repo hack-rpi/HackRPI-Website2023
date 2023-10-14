@@ -5,11 +5,10 @@ import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
-const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {       //React.memo optimizes the rendering of the ScheduleRow component based on its props or the site will overload
-  const formatDate = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  const startTimeString = useMemo(() => formatDate(item.startTime), []);
-  const endTimeString = useMemo(() => formatDate(item.endTime), []);  // empty [] because we don't want to re-render the component if the startTime and endTime are the same/static. Also prevents update of start and end time
-
+const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
+  const formatDate = useMemo(() => date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), []);
+  const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
+  const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
 
   return (
     
@@ -270,28 +269,28 @@ const Schedule = () => {
     useEffect(() => {
       const updateCurrentEvent = () => {
         const currentTime = new Date().getTime();
-        const runningEvent = schedule.find((event) => {
-          const startTime = event.startTime.getTime() - tolerance; // Subtract tolerance from start time
-          const endTime = event.endTime.getTime() + tolerance; // Add tolerance to end time
-          return currentTime >= startTime && currentTime <= endTime;
+        const updatedSchedule = schedule.map(event => {
+          const startTime = event.startTime.getTime() - tolerance;
+          const endTime = event.endTime.getTime() + tolerance;
+          const isCurrentEvent = currentTime >= startTime && currentTime <= endTime;
+          return { ...event, isCurrentEvent };
         });
-      
-        setCurrentEvent(runningEvent || null);
+        setCurrentEvent(updatedSchedule); // Corrected function name here
       };
-
+    
       updateCurrentEvent();
-
-      const intervalId = setInterval(updateCurrentEvent, 60000);  //updates every minute, setting it shorter is not ideal
-
+    
+      const intervalId = setInterval(updateCurrentEvent, 60000);
+    
       return () => {
         clearInterval(intervalId);
       };
     }, [schedule, tolerance]);
+    
       
     let currentDate = null;
     let isFirstEvent = true;
-     // To keep track of the current date
-    // Critical Issue Events may be missing despite being on the schedule above.
+     // To keep track of the current date and let allows it to be reassigned
     return (
       <div>
       
