@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
 import MobileNavBar from './Components/NavBar/MobileNavBar.jsx';
-// import Timer from './Components/Timer/Timer.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
-import AboutPage from './Pages/AboutPage/AboutPage.jsx';
 import PrizesPage from './Pages/PrizesPage/PrizesPage.jsx';
 import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
 import SponsorUsPage from './Pages/SponsorUsPage/SponsorUsPage.jsx';
 import './style.css';
 import { Outlet } from 'react-router-dom';
@@ -47,6 +44,10 @@ const router = createHashRouter([
         {
             path: 'sponsor-us',
             element: <SponsorUsPage />,
+        },
+        {
+            path: 'prizes',
+            element: <PrizesPage />,
         },
 		{
 		  path: "*",
@@ -86,6 +87,10 @@ const mobileRouter = createHashRouter([
             {
                 path: 'sponsor-us',
                 element: <SponsorUsPage />,
+            },
+            {
+                path: 'prizes',
+                element: <PrizesPage />,
             },
             {
                 path: '*',
