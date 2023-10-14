@@ -312,7 +312,7 @@ p {
         fill: none;
     }
 
-    svg {
+    .timerSvg {
         position: absolute;
         top: 0;
         left: 0;
