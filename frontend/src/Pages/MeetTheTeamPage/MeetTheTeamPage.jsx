@@ -63,6 +63,7 @@
   
         <div className="team-members">
           <Row className="mb-4 justify-content-center">
+            {/* First Row */}
             {teamMembersFirstRow.map((member, index) => (
               <Col key={index} md={3}>
                 <div className="" style={{ marginBottom: '20px' }}>
@@ -80,6 +81,7 @@
           </Row>
   
           <Row className="mb-4">
+            {/* Second Row */}
             {teamMembersSecondRow.map((member, index) => (
               <Col key={index} md={3}>
                 <div className="" style={{ marginBottom: '20px' }}>
@@ -95,9 +97,29 @@
               </Col>
             ))}
           </Row>
+  
+          {/* Tab content and buttons */}
+          <p style={{fontSize: '2em', fontWeight: 'bold'}}>
+            Want to Help?
+          </p>
+  
+          <div className="button-container">
+            <Nav.Link href="https://forms.gle/VY1vXF1mPMgx82wdA">
+              <Button variant="outline"className='button'style={{ backgroundColor: '#910307', color: 'white' }}
+              >
+                Mentor Application
+              </Button>
+            </Nav.Link>
+            <Nav.Link href="https://forms.gle/kEpdKKKrFsSUQztR6">
+              <Button variant="outline" className='button'style={{ backgroundColor: '#910307', color: 'white', marginLeft: '30px' }}>
+                Volunteer Application
+              </Button>
+            </Nav.Link>
+          </div>
         </div>
       </div>
     );
   };
+  
   
   export default MeetTheTeamPage;

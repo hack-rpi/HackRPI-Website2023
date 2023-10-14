@@ -5,3 +5,14 @@
 .description {
     color: white;
 }
+
+/* Add these styles to your CSS file or include them in a style tag in your component */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+  
+  .button {
+    margin-left: 10px; /* Adjust the spacing between buttons as needed */
+  }
