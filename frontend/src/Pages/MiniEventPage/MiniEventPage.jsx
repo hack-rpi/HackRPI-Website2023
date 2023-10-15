@@ -91,7 +91,7 @@ const MiniEventPage = () => {
           <a className="sponsor-item" href="https://hackp.ac/pizzafund-stackoverflow">
             <img
 						className="sponsor-image"
-              src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Stack_Overflow_logo.png"
+              src="https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/logo-stackoverflow-dark-bg.png"
               alt="StackOverflow"
             />
             <p className='sponsor-name'>StackOverflow</p>
