@@ -5,18 +5,25 @@ import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
+
+
 const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const formatDate = useMemo(() => date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), []);
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
+  const eventName = item.event;
+  const isSmallEvent = eventName.length > 10; // Set a threshold for the event name length
+
 
   return (
-    
- <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.event}</td>
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>  
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td> 
- </tr>
+    <tr
+      className={isSmallEvent ? 'small-event' : ''}
+      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}
+    >
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>  
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td> 
+    </tr>
   );
 });
 const Schedule = () => {
@@ -299,7 +306,7 @@ const Schedule = () => {
             <tr>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
-                <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 1 }}>Time</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
             </tr>
             <style>
               {`

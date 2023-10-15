@@ -31,3 +31,8 @@
     font-size: 0.6rem; /* Further reduce font size for very small screens */
   }
 }
+
+
+.small-event .schedule-item {
+  font-size: 14px; /* Adjust the font size as needed for smaller events */
+}
