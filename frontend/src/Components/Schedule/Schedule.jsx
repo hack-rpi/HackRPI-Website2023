@@ -12,7 +12,7 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
-  const isSmallEvent = eventName.length > 10; // Set a threshold for the event name length
+  const isSmallEvent = eventName.length > 20; // Set a threshold for the event name length
 
 
   return (
