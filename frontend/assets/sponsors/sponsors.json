@@ -55,23 +55,7 @@
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Challenge_Logo_stacked_RGB_reverse_green.png",
         "url": "https://www.prhi.org/whatwedo/partnership-initiatives/patient-safety-technology-challenge"
       },
-      {
-        "name": "All In",
-        "logoPath": "https://user-images.githubusercontent.com/70516588/134951921-f530bb68-3190-4ab4-b86a-1c96b1d62cab.png",
-        "url": "hackp.ac/all-in-pizza-fund"
-      },
-      {
-        "name": "GitHub",
-        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/GitHub_Logo_White.png",
-        "url": "hackp.ac/pizzafund-github"
-      }
-    ],
-    [
-      {
-        "name": "StackOverflow",
-        "logoPath": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Stack_Overflow_logo.png",
-        "url": "hackp.ac/pizzafund-stackoverflow"
-      }
+      {}
     ]
   ]
 }
