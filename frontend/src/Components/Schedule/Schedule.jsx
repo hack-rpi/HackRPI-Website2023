@@ -12,7 +12,7 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
-  const isSmallEvent = eventName.length > 20; // Set a threshold for the event name length
+  const isSmallEvent = eventName.length > 18; // Set a threshold for the event name length
 
 
   return (
@@ -56,7 +56,7 @@ const Schedule = () => {
       startTime: new Date('2023-11-04T12:00:00-04:00'),
       endTime: new Date('2023-11-04T12:30:00-04:00'),
       event: 'Team Pairing',
-      location: 'DCC 308/HackRPI X Discord',
+      location: 'DCC 308/Discord',
     },
     {
       startTime: new Date('2023-11-04T12:00:00-04:00'),
@@ -248,8 +248,6 @@ const Schedule = () => {
 
     ], []);
     const constantEvents = useMemo(() => [
-      // Define your constant events here after November 5th
-      // Example:
       {
         startTime: new Date('2023-11-04T12:00:00-04:00'),
         endTime: new Date('2023-11-04T12:00:00-04:00'),
@@ -268,7 +266,6 @@ const Schedule = () => {
         event: 'Last Chance Mentoring',
         location: '',
       },
-      // },
     ], []);
 
     const [currentEvent, setCurrentEvent] = useState(null);
@@ -304,7 +301,7 @@ const Schedule = () => {
         <table className="schedule-table">
           <thead>
             <tr>
-                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
             </tr>
@@ -324,8 +321,6 @@ const Schedule = () => {
     
     schedule.map((item, index) => {
       // Use a loop to check if the current event's date is different from the previous event's date
-      console.log('Event Start Time:', item.startTime);
-      console.log('Current Date:', currentDate); // DEBUGGING
     
       // Render the heading row for the first event or if the event's date is different
       if (isFirstEvent || item.startTime.getDate() !== currentDate) {
