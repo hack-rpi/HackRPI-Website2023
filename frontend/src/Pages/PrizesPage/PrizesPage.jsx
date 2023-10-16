@@ -51,50 +51,29 @@ const pulsate = keyframes`
 
 const TotalPrize = styled.h1`
   text-align: center;
-  background-image: linear-gradient(45deg, #FFC7C9, #BA292E,#D96F6F, #E50717);
+  background-image: linear-gradient(45deg, #FFC7C9, #BA292E, #D96F6F, #E50717);
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 8vw; // Responsive font size
-  margin: 2vw; // Responsive margin
+  font-size: 8vw; 
+  margin: 1vw; 
   animation: ${shine} 2s linear infinite, ${pulsate} 1.5s ease-in-out infinite;
   position: relative;
-  overflow-wrap: break-word; // Manage word breaking
-  word-wrap: break-word; // Manage word breaking
+  overflow-wrap: break-word; 
+  word-wrap: break-word; 
   user-select: none; 
 
-  @media (min-width: 1200px) {
-    font-size: 8vw;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 13vw; 
-  }
-
-  @media (max-width: 400px) {
-    font-size: 13vw; 
-  }
 `;
 
 const TotalPrizeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 100px; 
-  //gap: 70px; //red gear
-  gap: 10px; 
+  margin: 20px 5vw; 
+  gap: 2vw;
   user-select: none; 
-
-  
-  @media (max-width: 600px) {
-    gap: 20px; 
-  }
-
-  @media (max-width: 400px) {
-    gap: 10px; 
-  }
 `;
 
 const TopPrizeContainer = styled.section`
@@ -262,19 +241,11 @@ const OtherPrizeContainer = styled.div`
 `;
 
 const PrizesPage = () => {
-
   const bestHacksPrizes = Prizes.slice(2, 10);
   const cyber = Prizes.slice(10,11);
   const web3Prizes = Prizes.slice(11, 12);
   const wolframPrizes = Prizes.slice(12, 13);
   const topPrizes = Prizes.slice(0, 2);
-
-  const prizesColumns = [
-    { title: 'Cyber Security Hack', prizes: cyber },
-    { title: 'Best Hacks Prizes', prizes: bestHacksPrizes },
-    { title: 'Web 3 Prize', prizes: web3Prizes },
-    { title: 'Wolfram Alfa Award', prizes: wolframPrizes },
-  ];
 
   return (
     <PrizeContainer>
