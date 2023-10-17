@@ -34,7 +34,7 @@ const MiniEventPage = () => {
 
       <div className="info-section">
         <div className="buttons-container">
-          <Nav.Link href="https://forms.gle/oW3W5Yx6jbNyKfbeA">
+          <Nav.Link href="https://events.mlh.io/events/10609-how-to-hackrpi-mini-event">
             <Button variant="outline" className="button register-btn">
               Register To Attend
             </Button>
