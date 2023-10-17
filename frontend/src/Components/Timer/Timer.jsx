@@ -95,6 +95,7 @@ class Timer extends React.Component {
                 version="1.1"
                 width="144px"
                 height="144px"
+								className='timerSvg'
               >
                 <circle cx="72" cy="72" r="65" strokeLinecap="round" />
                 <circle
@@ -123,6 +124,8 @@ class Timer extends React.Component {
                 version="1.1"
                 width="144px"
                 height="144px"
+								className='timerSvg'
+
               >
                 <circle cx="72" cy="72" r="65" strokeLinecap="round" />
                 <circle
@@ -150,6 +153,8 @@ class Timer extends React.Component {
                 version="1.1"
                 width="144px"
                 height="144px"
+								className='timerSvg'
+
               >
                 <circle cx="72" cy="72" r="65" strokeLinecap="round" />
                 <circle
@@ -176,6 +181,8 @@ class Timer extends React.Component {
                 version="1.1"
                 width="144px"
                 height="144px"
+								className='timerSvg'
+
               >
                 <circle cx="72" cy="72" r="65" strokeLinecap="round" />
                 <circle

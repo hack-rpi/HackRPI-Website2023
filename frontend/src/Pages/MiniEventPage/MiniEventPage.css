@@ -59,7 +59,48 @@
   margin: 0 auto;
 }
 
+
 .content-item {
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+.sponsor-col {
+  height: 100% !important;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+	width: 33.333%;
+	min-width: 200px;
+
+}
+
+.sponsor-image {
+  width: 90%;
+  margin: 0 auto;
+	max-height: 120px;
+}
+
+
+.sponsor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px;
+	text-decoration: none;
+}
+
+.sponsor-content {
+  display: flex;
+  justify-content: center;
+	flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 20px;
+	height: fit-content;
+}
+.sponsor-name {
+	font-size: 1.5em;
   font-weight: bold;
   font-family: 'Poppins';
 }

@@ -34,11 +34,25 @@
   color: white;
   font-size: 6vw;
   margin-bottom: 1em;
+  text-decoration: none;
 }
 
 .menu-item:active {
   color: var(--red);
 }
+
+.menu-item:link {
+  color: white !important;
+}
+
+.menu-item:visited {
+  color: white !important;
+}
+
+.menu-item:hover {
+  color: var(--red) !important;
+}
+
 
 #faq {
   margin-bottom: 1em !important;

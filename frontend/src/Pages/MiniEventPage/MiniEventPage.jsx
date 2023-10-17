@@ -34,7 +34,7 @@ const MiniEventPage = () => {
 
       <div className="info-section">
         <div className="buttons-container">
-          <Nav.Link href="https://forms.gle/oW3W5Yx6jbNyKfbeA">
+          <Nav.Link href="https://events.mlh.io/events/10609-how-to-hackrpi-mini-event">
             <Button variant="outline" className="button register-btn">
               Register To Attend
             </Button>
@@ -59,7 +59,7 @@ const MiniEventPage = () => {
           <img src={gears} alt="Description" className="content-image" />
         </Col>
         <Col xs={12} md={2} className="content-item">
-          <p className="red-bold-text">HTML &  CSS</p>
+          <p className="red-bold-text">HTML & CSS</p>
           <p className="reg-white-text">SKILL BUILDING</p>
         </Col>
         <Col xs={12} md={2} className="content-item">
@@ -72,6 +72,42 @@ const MiniEventPage = () => {
       </Row>
 
       <p className="additional-info">Get HackRPI Prepared!</p>
+      <p className="additional-info">
+        {' '}
+        Thank You to the MLH Pizza Fund Sponsors for Making Our Event Possible!{' '}
+      </p>
+      <Row className="sponsor-content">
+        <Col className="sponsor-col">
+          <a className="sponsor-item" href="https://hackp.ac/pizzafund-github">
+            <img
+						className="sponsor-image"
+              src="https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/GitHub_Logo_White.png"
+              alt="GitHub"
+            />
+            <p className='sponsor-name'>GitHub</p>
+          </a>
+        </Col>
+        <Col className="sponsor-col">
+          <a className="sponsor-item" href="https://hackp.ac/pizzafund-stackoverflow">
+            <img
+						className="sponsor-image"
+              src="https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/logo-stackoverflow-dark-bg.png"
+              alt="StackOverflow"
+            />
+            <p className='sponsor-name'>StackOverflow</p>
+          </a>
+        </Col>
+        <Col className="sponsor-col">
+          <a className="sponsor-item" href="https://hackp.ac/all-in-pizza-fund">
+            <img
+						className="sponsor-image"
+              src="https://user-images.githubusercontent.com/70516588/134951921-f530bb68-3190-4ab4-b86a-1c96b1d62cab.png"
+              alt="all-in"
+            />
+            <p className='sponsor-name'>all in</p>
+          </a>
+        </Col>
+      </Row>
     </div>
   );
 };
