@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
 import podium from './img/podium.png';
+import './style.css';
 //npm install styled-components
 //npm install styled-components@latest
 //npm install react-spring
@@ -26,7 +27,7 @@ const Prizes = [
 const PrizeContainer = styled.div`
   padding: 20px;
   margin: auto;
-  margin-bottom: 36vh;
+  margin-bottom: 8vh;
 `;
 
 const shine = keyframes`
@@ -100,6 +101,14 @@ const TopPrizeContainer = styled.section`
     flex-direction: row; /* Stack items vertically on even smaller screens */
     align-items: center; /* Center items vertically */
   }
+
+  @media (max-width: 436px) {
+    margin-top: 0vh;
+    transform: scale(0.50);
+    flex-direction: row; /* Stack items vertically on even smaller screens */
+    align-items: center; /* Center items vertically */
+  }
+
 `;
 
 const moveUpDown = keyframes`
@@ -232,12 +241,23 @@ const Sparkle = styled.div`
 const PrizeDescription = styled.section`
     margin-top: 3vh;
     height: 500px;
+    @media (max-width: 436px) {
+      height: 200px
+    }
 `;
 
 const OtherPrizeContainer = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+
+  @media (max-width: 436px) {
+    margin-top: 0vh;
+    transform: scale(0.66);
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items vertically */
+  }
+
 `;
 
 const PrizesPage = () => {
@@ -286,7 +306,7 @@ const PrizesPage = () => {
           gap: '30px', 
           fontFamily: 'Mokoto',
           color: '#FFFFFF', 
-        }}>
+        }} className='Tab'>
           <Tab title="Cyber Security Hack" prizes={cyber} />
           <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
           <Tab title="Web 3 Prize" prizes={web3Prizes} />

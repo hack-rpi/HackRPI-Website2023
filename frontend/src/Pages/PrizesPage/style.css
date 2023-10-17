@@ -1,0 +1,16 @@
+.Tab {
+    @media (max-width: 600px) {
+        display: flex;
+        flex-direction: column; 
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-contentZ:space-evenly;
+        align-items: normal;
+        gap: 20px; /* Adjust the gap between Tabs */
+        font-family: 'Mokoto';
+        color: #FFFFFF;
+        margin-top: -100px;
+        margin-bottom: 20px;
+    }
+        
+}

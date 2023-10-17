@@ -18,6 +18,8 @@ const TabContainer = styled.div`
   white-space: nowrap;
   font-size: 20px; 
   user-select: none; 
+  
+
 `;
 
 const Gear = styled.div`
@@ -56,7 +58,9 @@ const Tab = ({ title, prizes }) => {
   };
 
   return (
-    <div style={{ position: 'relative', marginRight: '40px' }}>  {/* Increase marginRight */}
+    <div style={{ 
+      position: 'relative', marginRight: '40px' 
+    }}>  {/* Increase marginRight */}
     <TabContainer onClick={handleGearClick}>
       <Gear spinning={spinning}>⚙️</Gear>
       {title}
