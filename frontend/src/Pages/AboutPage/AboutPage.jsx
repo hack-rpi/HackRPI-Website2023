@@ -1,17 +1,25 @@
-import React from 'react';
+import React from 'react'; // Import React only once
+import { useState } from 'react'; // Import useState separately if you need it
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Button from 'react-bootstrap/Button';
 
+// Rest of your code
+
 // import './styles.css';
 
 const AboutPage = () => {
+  const [activeTab, setActiveTab] = useState('one'); // 'one' represents the default active tab.
+
+  const handleTabClick = (tabKey) => {
+    setActiveTab(tabKey);
+  };
+  
   return (
     <div id = "about"  className = "AboutPage" style = {{ textAlign: 'center', width: "80%", margin: 'auto'}}>
       <h1 className = "title" style = {{ fontFamily: 'Mokoto', fontSize: 55, height: 55 }}>
-         
         HackRPI X
       </h1>
       <Tab.Container defaultActiveKey="one" style = {{paddingBottom: 50}}>
@@ -23,24 +31,41 @@ const AboutPage = () => {
               style = {{ height: 50 }}
             >
               <Nav.Item>
-                <Nav.Link className = "nav-link-custom" eventKey = "one">
-                  <Button
+                <Nav.Link className = "nav-link-custom" 
+                  eventKey = "one"
+                  style={{
+                    backgroundColor: activeTab === 'one' ? 'white' : '#910307',
+                    color: activeTab === 'one' ? '#910307' : 'white'
+                  }}
+                  onClick={() => handleTabClick('one')}
+                  >
+                  {/* <Button
                   variant="outline" className='button'
                   style={{ backgroundColor: '#910307', color: 'white' }}
-                  >
+                  > */}
                   the event
-                  </Button>
+                  {/* </Button> */}
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className = "nav-link-custom" eventKey = "two">
-                <Button
+              <Nav.Link
+                  className="nav-link-custom"
+                  eventKey="two"
+                  style={{
+                    backgroundColor: activeTab === 'two' ? 'white' : '#910307',
+                    color: activeTab === 'two' ? '#910307' : 'white'
+                  }}
+                  onClick={() => handleTabClick('two')}
+                >
+                  the team
+                </Nav.Link>
+                {/* <Button
                   variant="outline" className='button'
                   style={{ backgroundColor: '#910307', color: 'white' }}
-                  >
-                  the team
-                  </Button>
-                </Nav.Link>
+                  > */}
+                  {/* the team */}
+                  {/* </Button> */}
+                {/* </Nav.Link> */}
               </Nav.Item>
             </Nav>
           </Row>
@@ -54,7 +79,7 @@ const AboutPage = () => {
               experience necessary to attend. Hackers will also have the
               opportunity to network with our fantastic sponsors from the
               companies that make our event possible. This year's theme,{' '}
-              <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
+              <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: 'white' }}>
                 Change the World
               </span>{' '}
               is an ode to a decade inspring students and HackRPI!
