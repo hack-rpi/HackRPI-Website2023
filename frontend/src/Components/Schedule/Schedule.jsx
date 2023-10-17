@@ -5,25 +5,25 @@ import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
-const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
-  /* React.memo optimizes the rendering of the ScheduleRow component based on its props or the site will overload */
 
-  const formatDate = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-  const startTimeString = useMemo(() => formatDate(item.startTime), []);
-  const endTimeString = useMemo(() => formatDate(item.endTime), []);
-  /* empty [] because we don't want to re-render the component if the startTime and endTime are the same/static.
-  Also prevents update of start and end time */
+
+const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
+  const formatDate = useMemo(() => date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), []);
+  const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
+  const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
+  const eventName = item.event;
+  const isSmallEvent = eventName.length > 18; // Set a threshold for the event name length
 
 
   return (
-    
- <tr style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem',
-   borderBottom: '5px solid black', specificity: 'important' }}>
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.event}</td>
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
-    <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>
-      {startTimeString} - {endTimeString}</td>
- </tr>
+    <tr
+      className={isSmallEvent ? 'small-event' : ''}
+      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}
+    >
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td>
+    </tr>
   );
 });
 const Schedule = () => {
@@ -58,7 +58,7 @@ const Schedule = () => {
       startTime: new Date('2023-11-04T12:00:00-04:00'),
       endTime: new Date('2023-11-04T12:30:00-04:00'),
       event: 'Team Pairing',
-      location: 'DCC 308/HackRPI X Discord',
+      location: 'DCC 308/Discord',
     },
     {
       startTime: new Date('2023-11-04T12:00:00-04:00'),
@@ -250,8 +250,6 @@ const Schedule = () => {
 
     ], []);
     const constantEvents = useMemo(() => [
-      // Define your constant events here after November 5th
-      // Example:
       {
         startTime: new Date('2023-11-04T12:00:00-04:00'),
         endTime: new Date('2023-11-04T12:00:00-04:00'),
@@ -270,7 +268,6 @@ const Schedule = () => {
         event: 'Last Chance Mentoring',
         location: '',
       },
-      // },
     ], []);
 
     const [currentEvent, setCurrentEvent] = useState(null);
@@ -278,37 +275,36 @@ const Schedule = () => {
     useEffect(() => {
       const updateCurrentEvent = () => {
         const currentTime = new Date().getTime();
-        const runningEvent = schedule.find((event) => {
-          const startTime = event.startTime.getTime() - tolerance; // Subtract tolerance from start time
-          const endTime = event.endTime.getTime() + tolerance; // Add tolerance to end time
-          return currentTime >= startTime && currentTime <= endTime;
+        const updatedSchedule = schedule.map(event => {
+          const startTime = event.startTime.getTime() - tolerance;
+          const endTime = event.endTime.getTime() + tolerance;
+          const isCurrentEvent = currentTime >= startTime && currentTime <= endTime;
+          return { ...event, isCurrentEvent };
         });
-
-        setCurrentEvent(runningEvent || null);
+        setCurrentEvent(updatedSchedule); // Corrected function name here
       };
 
       updateCurrentEvent();
 
-      const intervalId = setInterval(updateCurrentEvent, 60000);  //updates every minute, setting it shorter is not ideal
+      const intervalId = setInterval(updateCurrentEvent, 60000);
 
       return () => {
         clearInterval(intervalId);
       };
     }, [schedule, tolerance]);
-      
+
     let currentDate = null;
     let isFirstEvent = true;
-     // To keep track of the current date
-    // Critical Issue Events may be missing despite being on the schedule above.
+     // To keep track of the current date and let allows it to be reassigned
     return (
       <div>
       
         <table className="schedule-table">
           <thead>
             <tr>
-                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
-                <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 1 }}>Time</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
             </tr>
             <style>
               {`
@@ -323,11 +319,9 @@ const Schedule = () => {
           <tbody>
           {
     /* Render Events */
-
+    
     schedule.map((item, index) => {
       // Use a loop to check if the current event's date is different from the previous event's date
-      console.log('Event Start Time:', item.startTime);
-      console.log('Current Date:', currentDate); // DEBUGGING
 
       // Render the heading row for the first event or if the event's date is different
       if (isFirstEvent || item.startTime.getDate() !== currentDate) {

@@ -178,7 +178,6 @@ p {
 
 /* LANDING PAGE MOBILE*/
 .landingPageMobile {
-    background-color: #191919;
     content: center;
     justify-content: center;
     text-align: center;
@@ -264,4 +263,89 @@ p {
 
 #faq{
     margin-bottom: 100px;
+}
+
+.timer {
+    top: 450px;
+    left: 5vw;
+    max-width: 750px;
+    height: 250px;
+    display: flex;
+    padding: 0px;
+}
+
+.circleStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid #910307;
+    border-radius: 50%;
+
+    width: 144px;
+    height: 144px;
+    font-size: 43px;
+    font-family: Poppins;
+
+    color: black;
+}
+
+.contain {
+    width: 144px;
+    height: 144px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    #number {
+        font-size: 43px;
+        font-family: Poppins;
+        color: white;
+    }
+
+    circle {
+        stroke-width: 8px;
+        stroke: white;
+        fill: none;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+.groupStyle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.colStyle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}
+
+.labelStyle {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    font-family: Poppins Light;
+    font-size: 21.6px;
+}
+
+.base-timer-path-remaining {
+    fill: none;
+    fill-rule: nonzero;
+    stroke: #910307;
+    stroke-width: 9px;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
 }
