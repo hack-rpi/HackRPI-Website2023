@@ -279,9 +279,9 @@ const Schedule = () => {
       const updateCurrentEvent = () => {
         const currentTime = new Date().getTime();
         const runningEvent = schedule.find((event) => {
-          const startTime = event.startTime.getTime();
-          const endTime = event.endTime.getTime();
-          return currentTime >= startTime && currentTime <= endTime + tolerance;
+          const startTime = event.startTime.getTime() - tolerance; // Subtract tolerance from start time
+          const endTime = event.endTime.getTime() + tolerance; // Add tolerance to end time
+          return currentTime >= startTime && currentTime <= endTime;
         });
 
         setCurrentEvent(runningEvent || null);
@@ -296,7 +296,9 @@ const Schedule = () => {
       };
     }, [schedule, tolerance]);
       
-    let currentDate = null; // To keep track of the current date
+    let currentDate = null;
+    let isFirstEvent = true;
+     // To keep track of the current date
     // Critical Issue Events may be missing despite being on the schedule above.
     return (
       <div>
@@ -304,26 +306,42 @@ const Schedule = () => {
         <table className="schedule-table">
           <thead>
             <tr>
-              <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Event</th>
-              <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Location</th>
-              <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle' }}>Time</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 1 }}>Time</th>
             </tr>
+            <style>
+              {`
+                @media screen and (max-width: 730px) {
+                  th {
+                    font-size: 5vw;
+                  }
+                }
+              `}
+            </style>
           </thead>
           <tbody>
           {
     /* Render Events */
+
     schedule.map((item, index) => {
-      // Use a loop to Check if the current event's date is different from the previous event's date
-      if (item.startTime.getDate() !== currentDate) {
-        // Render a row with the date as the heading
+      // Use a loop to check if the current event's date is different from the previous event's date
+      console.log('Event Start Time:', item.startTime);
+      console.log('Current Date:', currentDate); // DEBUGGING
+
+      // Render the heading row for the first event or if the event's date is different
+      if (isFirstEvent || item.startTime.getDate() !== currentDate) {
         currentDate = item.startTime.getDate();
+        isFirstEvent = false; // Set isFirstEvent to false after the first event
         return (
-          <tr key={`date-heading-${currentDate}`}>
-            <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1px solid #bd0909',
-              textAlign: 'center', fontSize: '32px', padding: '30px 0 12px 0' }}>
-              {currentDate === 4 ? 'November 4th' : 'November 5th'}
-            </td>
-          </tr>
+          <React.Fragment key={`date-heading-${currentDate}`}>
+            <tr>
+              <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+                {currentDate === 4 ? 'November 4th' : 'November 5th'}
+              </td>
+            </tr>
+            <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
+          </React.Fragment>
         );
       }
       // Determine if the current event should be highlighted
