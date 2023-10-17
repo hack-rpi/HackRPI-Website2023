@@ -12,14 +12,14 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
-  const isSmallEvent = eventName.length > 18; // Set a threshold for the event name length
+  /*const isSmallEvent = eventName.length > 1 || item.location.length > 1; // Set a threshold for the event name length*/
 
 
   return (
     <tr
-      className={isSmallEvent ? 'small-event' : ''}
-      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}
-    >
+      className="small-event"  //{isSmallEvent ? 'small-event' : ''
+      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', borderBottom: '5px solid black', specificity: 'important' }}
+    >     
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>  
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td> 
@@ -127,7 +127,7 @@ const Schedule = () => {
     {
       startTime: new Date('2023-11-04T17:30:00-04:00'),
       endTime: new Date('2023-11-04T18:30:00-04:00'),
-      event: 'Password Exploitation - FBI Albany ',
+      event: 'Password Exploitation - FBI Albany ',  
       location: 'DCC 318',
     },
     {
@@ -301,7 +301,7 @@ const Schedule = () => {
         <table className="schedule-table">
           <thead>
             <tr>
-                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
             </tr>
