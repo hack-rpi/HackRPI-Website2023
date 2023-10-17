@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
 //import styled, { keyframes } from 'styled-components';
 import styled, { keyframes, css } from 'styled-components';
+import React, { useState, useRef, useEffect } from 'react';
 
 const spin = keyframes`
   from {
@@ -18,8 +18,6 @@ const TabContainer = styled.div`
   white-space: nowrap;
   font-size: 20px; 
   user-select: none; 
-  
-
 `;
 
 const Gear = styled.div`
@@ -40,6 +38,9 @@ const Dropdown = styled.div`
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
   border: none;
+
+  height: ${props => (props.open ? `${props.height}px` : '0')};
+  transition: height 0.5s ease-in-out;
 `;
 
 const Prize = styled.div`
@@ -50,29 +51,40 @@ const Prize = styled.div`
 const Tab = ({ title, prizes }) => {
   const [open, setOpen] = useState(false);
   const [spinning, setSpinning] = useState(false);
+  const [dropdownHeight, setDropdownHeight] = useState(0);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    if (open && dropdownRef.current) {
+      setDropdownHeight(dropdownRef.current.getBoundingClientRect().height);
+    } else {
+      setDropdownHeight(0);
+    }
+  }, [open]);
 
   const handleGearClick = () => {
     setSpinning(true);
     setOpen(!open);
-    setTimeout(() => setSpinning(false), 2000); // Stop spinning after 2s
+    setTimeout(() => setSpinning(false), 2000); 
   };
 
   return (
     <div style={{ 
-      position: 'relative', marginRight: '40px' 
-    }}>  {/* Increase marginRight */}
-    <TabContainer onClick={handleGearClick}>
-      <Gear spinning={spinning}>⚙️</Gear>
-      {title}
-    </TabContainer>
-    <Dropdown open={open}>
-      {prizes.map((prize, index) => (
-        <Prize key={index}>{prize.title}: {prize.amount}</Prize>
-      ))}
-    </Dropdown>
-  </div>
+      position: 'relative', 
+      marginRight: '40px',
+      marginBottom: `${dropdownHeight}px` 
+    }}>
+      <TabContainer onClick={handleGearClick}>
+        <Gear spinning={spinning}>⚙️</Gear>
+        {title}
+      </TabContainer>
+      <Dropdown ref={dropdownRef} open={open}>
+        {prizes.map((prize, index) => (
+          <Prize key={index}>{prize.title}: {prize.amount}</Prize>
+        ))}
+      </Dropdown>
+    </div>
   );
 };
-
 
 export default Tab;

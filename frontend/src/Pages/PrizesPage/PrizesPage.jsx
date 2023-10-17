@@ -252,7 +252,8 @@ const OtherPrizeContainer = styled.div`
   position: relative;
 
   @media (max-width: 436px) {
-    margin-top: 0vh;
+    margin-top: -150px;
+    /*margin-top: 0vh;*/
     transform: scale(0.66);
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: center; /* Center items vertically */
@@ -306,6 +307,7 @@ const PrizesPage = () => {
           gap: '30px', 
           fontFamily: 'Mokoto',
           color: '#FFFFFF', 
+          
         }} className='Tab'>
           <Tab title="Cyber Security Hack" prizes={cyber} />
           <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
