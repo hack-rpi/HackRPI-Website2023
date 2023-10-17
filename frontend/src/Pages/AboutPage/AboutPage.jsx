@@ -33,6 +33,11 @@ const AboutPage = () => {
               <Nav.Item>
                 <Nav.Link className = "nav-link-custom" 
                   eventKey = "one"
+                  onClick={() => setActiveTab('one')}
+                >
+                  <Button
+                    variant="outline"
+                    className="button"
                   style={{
                     backgroundColor: activeTab === 'one' ? 'white' : '#910307',
                     color: activeTab === 'one' ? '#910307' : 'white'
@@ -44,6 +49,7 @@ const AboutPage = () => {
                   style={{ backgroundColor: '#910307', color: 'white' }}
                   > */}
                   the event
+                  </Button>
                   {/* </Button> */}
                 </Nav.Link>
               </Nav.Item>
@@ -51,6 +57,11 @@ const AboutPage = () => {
               <Nav.Link
                   className="nav-link-custom"
                   eventKey="two"
+                  onClick={() => setActiveTab('two')}
+                >
+                  <Button
+                    variant="outline"
+                    className="button"
                   style={{
                     backgroundColor: activeTab === 'two' ? 'white' : '#910307',
                     color: activeTab === 'two' ? '#910307' : 'white'
@@ -58,6 +69,7 @@ const AboutPage = () => {
                   onClick={() => handleTabClick('two')}
                 >
                   the team
+                  </Button>
                 </Nav.Link>
                 {/* <Button
                   variant="outline" className='button'
