@@ -60,6 +60,7 @@
         <h1 style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
           Meet Our Team!
         </h1>
+        <br></br>
   
         <div className="team-members">
           <Row className="mb-4 justify-content-center">
@@ -71,9 +72,9 @@
                   <div className="container">
                     <h2 className="name">{member.name}</h2>
                     <p className="position">{member.role}</p>
-                    <Button className="button" style={{ marginBottom: '10px' }}>
+                    {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </Col>
@@ -89,15 +90,15 @@
                   <div className="container">
                     <h2 className="name">{member.name}</h2>
                     <p className="position">{member.role}</p>
-                    <Button className="button" style={{ marginBottom: '10px' }}>
+                    {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </Col>
             ))}
           </Row>
-  
+          <br></br>
           {/* Tab content and buttons */}
           <p style={{fontSize: '2em', fontWeight: 'bold'}}>
             Want to Help?
@@ -117,6 +118,7 @@
             </Nav.Link>
           </div>
         </div>
+        <br></br><br></br><br></br>
       </div>
     );
   };
