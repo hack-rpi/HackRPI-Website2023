@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 
 const SponsorPage = () => {
   const [sponsorGroups] = useState(sponsorsJson);
-  
+
   return (
     <>
       <div
@@ -30,10 +30,12 @@ const SponsorPage = () => {
           Thank you to our sponsors that make HackRPI possible!
         </h2>
         
-        {sponsorGroups.sponsorGroups.map((tempSponsorGroup, indx) => (
+        {sponsorGroups.sponsorGroups.map((tempSponsorGroup, indx) => {
+          const tierList = ["Obsidian", "Gold", "Silver", "Bronze", "Collaborators"]
+          return(
             <div className="container" key={"sponsorGroup"+indx}>
               <div className="row g-2">
-                <h3 className="mokoto tierHeader">Tier {indx+1}</h3>
+                <h3 className="mokoto tierHeader">{tierList[indx]}</h3>
                 {tempSponsorGroup.map((sponsorGroup, innerIndx) => (
                   <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup"+indx+"sponsor"+innerIndx}>
                     <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
@@ -45,7 +47,8 @@ const SponsorPage = () => {
                 ))}
               </div>
             </div>
-          ))}
+            )
+          })}
       </div>
     </>
   );
