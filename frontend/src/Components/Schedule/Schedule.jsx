@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 import './Styles.css';
-import ConstantEvents from './ConstantEvents';
+//import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
@@ -300,16 +300,16 @@ const Schedule = () => {
       
         <table className="schedule-table">
           <thead>
-            <tr>
+            <tr className='scheduleitem'>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
             </tr>
             <style>
               {`
-                @media screen and (max-width: 730px) {
+                @media screen and (max-width: 844px) {
                   th {
-                    font-size: 5vw;
+                    font-size: 20vw;
                   }
                 }
               `}
