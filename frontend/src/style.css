@@ -149,7 +149,6 @@ p {
 .landingPage {
     background-color: transparent;
     display: flex;
-    postion: fixed;
     width: auto;
     height: auto;
     overflow: hidden;
@@ -163,11 +162,11 @@ p {
     width: 70vw;
 }
 
-.landingPage h1 {
+.landingPage h1,
+.landingPage .glitchEffectWrapper {
     font-family: Mokoto;
     font-size: 150px;
     line-height: 100%;
-
     padding-left: 4vw;
     padding-top: 65px;
     white-space: nowrap;
@@ -184,7 +183,6 @@ p {
 
 /* LANDING PAGE MOBILE*/
 .landingPageMobile {
-    background-color: #191919;
     content: center;
     justify-content: center;
     text-align: center;
@@ -194,7 +192,8 @@ p {
     overflow: hidden;
 }
 
-.landingPageMobile h1 {
+.landingPageMobile h1,
+.landingPageMobile .glitchEffectWrapper {
     font-family: Mokoto;
     font-size: 13vw;
     line-height: 100%;
@@ -269,8 +268,6 @@ p {
 
 #faq{
     margin-bottom: 100px;
-<<<<<<< Updated upstream
-=======
 }
 
 .timer {
@@ -356,31 +353,4 @@ p {
     stroke-linecap: round;
     transform-origin: center;
     transform: rotate(-90deg);
-}
-
-/* Sponsor Styling */
-
-.sponsor a{
-    color: white;
-    display: block;
-}
-
-.sponsor a{
-    text-decoration: none;
-    color: white;
-    transition: background 0.2s;
-}
-
-.sponsor a:hover{
-    background-color: rgba(0,0,0,0.2) !important;
-    color: white;
-}
-
-.innerSponsor{
-    height: 150px;
-}
-
-.tierHeader{
-    border-bottom: 1px solid white;
->>>>>>> Stashed changes
 }
