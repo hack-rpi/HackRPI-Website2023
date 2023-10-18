@@ -29,6 +29,11 @@
         "url": "https://gf.com/"
       },
       {
+        "name": "Lutron",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/lutron_logo_K_lo.jpg",
+        "url": "https://www.lutron.com/en-US/pages/default.aspx"
+      },
+      {
         "name": "WB Games",
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/WBGAMES-NY_Logo_Lockup_Hor_Flat_Pos_RGB.png",
         "url": "https://warnerbrosgames.com/"
