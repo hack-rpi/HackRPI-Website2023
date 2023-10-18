@@ -24,15 +24,28 @@
         "url": "https://cloud.google.com"
       },
       {
-        "name": "IBM",
-        "logoPath": "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
-        "url": "https://www.ibm.com/us-en"
+        "name": "WB Games",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/WBGAMES-NY_Logo_Lockup_Hor_Flat_Pos_RGB.png",
+        "url": "https://warnerbrosgames.com/"
       },
-			{
-				"name": "Stand Out Stickers",
-				"logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
-				"url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
-			 }
+      {
+        "name": "Wolfram",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Wolfram-horiz-white-bg.png",
+        "url": "https://www.wolfram.com/"
+      }
+    ],
+    [
+      {
+        "name": "RPI School of Science",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/12041-03+RPI+Science+Lockup_Small_RGB_RED.png",
+        "url": "https://science.rpi.edu/"
+      },
+      {
+        "name": "PRHI",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Challenge_Logo_stacked_RGB_reverse_green.png",
+        "url": "https://www.prhi.org/whatwedo/partnership-initiatives/patient-safety-technology-challenge"
+      },
+      
     ]
   ]
 }
