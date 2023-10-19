@@ -25,7 +25,6 @@ const Prizes = [
 ];
 
 const PrizeContainer = styled.div`
-  padding: 20px;
   margin: auto;
   margin-bottom: 8vh;
 `;
@@ -82,7 +81,7 @@ const TopPrizeContainer = styled.section`
   margin-top: 18vh;
   margin-bottom: 140px;
   display: flex;
-  justify-content: center; /*align to center*/
+  justify-content: space-evenly;
   gap: 20px;
   text-align: center;
   max-width: 1200px; /* Updated from width */
@@ -90,23 +89,31 @@ const TopPrizeContainer = styled.section`
   @media (max-width: 850px) {
     transform: scale(0.80);
     margin-top: 8vh;
-
     flex-direction: row; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items vertically */
+    align-items: space-evenly; /* Center items vertically */
   }
 
   @media (max-width: 750px) {
     margin-top: 0vh;
     transform: scale(0.66);
     flex-direction: row; /* Stack items vertically on even smaller screens */
-    align-items: center; /* Center items vertically */
+    align-items: space-evenly; /* Center items vertically */
   }
 
   @media (max-width: 436px) {
     margin-top: 0vh;
     transform: scale(0.50);
     flex-direction: row; /* Stack items vertically on even smaller screens */
-    align-items: center; /* Center items vertically */
+    align-items: space-evenly; /* Center items vertically */
+    width: 100%;
+  }
+
+  @media (max-width: 400px) {
+    margin-top: 0vh;
+    transform: scale(0.39);
+    flex-direction: row; /* Stack items vertically on even smaller screens */
+    align-items: space-evenly; /* Center items vertically */
+    width: 100%;
   }
 
 `;
@@ -191,11 +198,13 @@ const Top_Prize = styled.section`
   text-align: center;
   
   @media (max-width: 850px) {
-    width: 100%; /* Take full width on smaller screens to stack items */
+    width: 100%;
   }
 
   @media (max-width: 750px) {
-    width: 100%; /* Take full width on even smaller screens to stack items */
+    width: 100%; 
+    align-items: center;
+
   }
 `;
 
@@ -258,6 +267,20 @@ const OtherPrizeContainer = styled.div`
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: center; /* Center items vertically */
   }
+  @media (max-width: 750px) {
+    margin-top: -150px;
+    /*margin-top: 0vh;*/
+    transform: scale(0.66);
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items vertically */
+  }
+  @media (max-width: 1450px) {
+    margin-top: -150px;
+    /*margin-top: 0vh;*/
+    transform: scale(0.66);
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items vertically */
+  }
 
 `;
 
@@ -302,7 +325,7 @@ const PrizesPage = () => {
         <div style={{ 
           display: 'flex', 
           justifyContent: 'space-evenly',  
-          marginTop: '-100px',
+          marginTop: '-50px',
           marginBottom: '20px',
           gap: '30px', 
           fontFamily: 'Mokoto',
