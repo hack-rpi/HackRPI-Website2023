@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 import './Styles.css';
-import ConstantEvents from './ConstantEvents';
+//import ConstantEvents from './ConstantEvents';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
@@ -12,7 +12,6 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
-  const isSmallEvent = eventName.length > 18; // Set a threshold for the event name length
 
 
   return (
@@ -323,7 +322,6 @@ const Schedule = () => {
               <td className='table-header' colSpan="3">
                 {currentDate === 4 ? 'November 4th' : 'November 5th'}
               </td>
-              {/*<td colSpan="2" style={{borderBottom: '1px solid #bd0909' }}></td>*/}
             </tr>
             <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
           </React.Fragment>
@@ -348,10 +346,6 @@ const Schedule = () => {
   }
 
             {/* Constant Events */}
-                    {/* Blank row for spacing after November 5th events */}
-          {/*<tr>*/}
-          {/*  <td colSpan="3" style={{ height: '50px' }}></td>*/}
-          {/*</tr>*/}
             <tr>
               <td className='table-header' colSpan="3">
                 Constant Events
