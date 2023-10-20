@@ -320,8 +320,7 @@ const Schedule = () => {
         return (
           <React.Fragment key={`date-heading-${currentDate}`}>
             <tr>
-              <td className={'table-header'} colSpan="3" style={{ fontFamily: 'Poppins', color: '#910307', borderBottom: '1px solid #bd0909',
-                textAlign: 'start', fontSize: '32px', padding: '15px 0 7px 7px' }}>
+              <td className='table-header' colSpan="3">
                 {currentDate === 4 ? 'November 4th' : 'November 5th'}
               </td>
               {/*<td colSpan="2" style={{borderBottom: '1px solid #bd0909' }}></td>*/}
@@ -354,8 +353,7 @@ const Schedule = () => {
           {/*  <td colSpan="3" style={{ height: '50px' }}></td>*/}
           {/*</tr>*/}
             <tr>
-              <td className={'table-header'} colSpan="3" style={{ fontFamily: 'Poppins', color: '#910307', borderBottom: '1px solid #bd0909',
-                textAlign: 'start', fontSize: '32px', padding: '15px 0 7px 7px' }}>
+              <td className='table-header' colSpan="3">
                 Constant Events
               </td>
             </tr>

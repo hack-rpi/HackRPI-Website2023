@@ -1,5 +1,12 @@
 /* Add a class to target the event, location, and time cells */
-
+.table-header {
+  font-family: Poppins;
+  color: #910307;
+  border-bottom: 1px solid #bd0909;
+  text-align: start;
+  font-size: 32px;
+  padding: 15px 0 7px 7px;
+}
 
 .schedule-item {
   padding: 1rem 1rem; /* Adjust the padding as needed for regular screens */
@@ -68,5 +75,10 @@
 
   .schedule-table > thead > tr > th {
     font-size: 25px;
+  }
+
+  .table-header {
+    font-size: 27px;
+    padding: 13px 0 5px 6px;
   }
 }
