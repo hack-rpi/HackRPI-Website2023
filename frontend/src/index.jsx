@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SponsorPage from './Pages/SponsorPage/SponsorPage.jsx';
 import SponsorUsPage from './Pages/SponsorUsPage/SponsorUsPage.jsx';
+import WorkshopPage from './Pages/WorkshopPage/WorkshopPage.jsx';
 import './style.css';
 import { Outlet } from 'react-router-dom';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
@@ -45,6 +46,10 @@ const router = createHashRouter([
         {
             path: 'sponsor-us',
             element: <SponsorUsPage />,
+        },
+        {
+            path: 'workshops',
+            element: <WorkshopPage />,
         },
 		{
 		  path: "*",
@@ -84,6 +89,10 @@ const mobileRouter = createHashRouter([
             {
                 path: 'sponsor-us',
                 element: <SponsorUsPage />,
+            },
+            {
+                path: 'workshops',
+                element: <WorkshopPage />,
             },
             {
                 path: '*',
