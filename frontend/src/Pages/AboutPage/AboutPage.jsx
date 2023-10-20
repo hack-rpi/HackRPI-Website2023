@@ -107,5 +107,17 @@ const AboutPage = () => {
     </div>
   );
 };
+const ScrollToTopOnClick = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  };
 
+  return (
+    <div onClick={scrollToTop}>
+      <p>Click me to scroll to the top</p>
+    </div>
+  );
+};
+
+export default ScrollToTopOnClick;
 export default AboutPage;
