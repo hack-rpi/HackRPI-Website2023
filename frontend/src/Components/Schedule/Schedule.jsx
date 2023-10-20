@@ -17,11 +17,10 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
 
   return (
     <tr
-      className={isSmallEvent ? 'small-event' : ''}
       style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}
     >
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{eventName}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{item.location}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td>
     </tr>
   );
@@ -298,23 +297,14 @@ const Schedule = () => {
      // To keep track of the current date and let allows it to be reassigned
     return (
       <div>
-      
+
         <table className="schedule-table">
           <thead>
             <tr>
-                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
-                <th style={{ fontFamily: 'Poppins', color: 'white', paddingRight: '2rem', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
-                <th style={{ fontFamily: 'Poppins', color: 'white', fontSize: '32px', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', padding: '0 2rem', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
+                <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
             </tr>
-            <style>
-              {`
-                @media screen and (max-width: 730px) {
-                  th {
-                    font-size: 5vw;
-                  }
-                }
-              `}
-            </style>
           </thead>
           <tbody>
           {
@@ -330,9 +320,11 @@ const Schedule = () => {
         return (
           <React.Fragment key={`date-heading-${currentDate}`}>
             <tr>
-              <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1px solid #bd0909', textAlign: 'center', fontSize: '32px' }}>
+              <td className={'table-header'} colSpan="3" style={{ fontFamily: 'Poppins', color: '#910307', borderBottom: '1px solid #bd0909',
+                textAlign: 'start', fontSize: '32px', padding: '15px 0 7px 7px' }}>
                 {currentDate === 4 ? 'November 4th' : 'November 5th'}
               </td>
+              {/*<td colSpan="2" style={{borderBottom: '1px solid #bd0909' }}></td>*/}
             </tr>
             <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
           </React.Fragment>
@@ -362,8 +354,8 @@ const Schedule = () => {
           {/*  <td colSpan="3" style={{ height: '50px' }}></td>*/}
           {/*</tr>*/}
             <tr>
-              <td colSpan="3" style={{ fontFamily: 'Poppins', color: 'white', borderBottom: '1.5px solid #bd0909',
-                textAlign: 'center', fontSize: '32px', padding: '30px 0 12px 0'}}>
+              <td className={'table-header'} colSpan="3" style={{ fontFamily: 'Poppins', color: '#910307', borderBottom: '1px solid #bd0909',
+                textAlign: 'start', fontSize: '32px', padding: '15px 0 7px 7px' }}>
                 Constant Events
               </td>
             </tr>

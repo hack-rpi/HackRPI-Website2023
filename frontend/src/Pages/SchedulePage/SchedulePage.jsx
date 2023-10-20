@@ -4,7 +4,7 @@ import './SchedulePage.css'; // Import your CSS file for SchedulePage styling
 
 const SchedulePage = () => {
     return (
-        <div className="schedule-page-container">   {/*className for css styling*/}
+        <div className="schedule-page-container" style={{margin: '40px 0'}}>   {/*className for css styling*/}
             <h1>Schedule</h1>
             <Schedule />
         </div>
