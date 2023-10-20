@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
 import podium from './img/podium.png';
-import './style.css';
+import './style/style.css';
 //npm install styled-components
 //npm install styled-components@latest
 //npm install react-spring
@@ -115,6 +115,17 @@ const TopPrizeContainer = styled.section`
     align-items: space-evenly; /* Center items vertically */
     width: 100%;
   }
+  @media (max-width: 390px) {
+    transform: scale(0.30);
+    flex-direction: row; 
+    width: 100vw;
+    align-items: space-between; /* Center items vertically */
+    display: flex;
+    align-items: stretch;
+    justify-content-evenly;
+  }
+
+
 
 `;
 
@@ -204,8 +215,14 @@ const Top_Prize = styled.section`
   @media (max-width: 750px) {
     width: 100%; 
     align-items: center;
-
   }
+  @media (max-width: 390px) {
+    width: fit-content; 
+    align-items: center;
+    margin: 20px;
+  }
+
+  
 `;
 
 const sparkle = keyframes`

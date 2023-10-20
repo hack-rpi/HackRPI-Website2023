@@ -35,7 +35,6 @@ const Dropdown = styled.div`
   top: 50px;
   width: 250px; 
   max-height: ${props => (props.open ? '500px' : '0')}; 
-  overflow: hidden;
   transition: max-height 0.5s ease-in-out;
   border: none;
 

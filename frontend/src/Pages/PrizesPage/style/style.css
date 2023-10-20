@@ -27,5 +27,6 @@ body {
         flex-direction: column; /* Stack items vertically on smaller screens */
         align-items: center; /* Center items vertically */
     }
+
     
 }
