@@ -8,10 +8,6 @@ import './style.css';
 //npm install styled-components@latest
 //npm install react-spring
 
-//modify the tabs for ipad
-//fix dimensions on galaxy fold
-//Make sure the tabs don't drop too much
-
 const Prizes = [
   { title: '#1 Best Hack', amount: '$1,500' },
   { title: '#2 Best Hack', amount: '$750' },
@@ -141,6 +137,7 @@ const shineLight = keyframes`
     transform: translateY(-150px) scaleY(1.5);
   }
 `;
+
 
 const Podium = styled.div`
   background-image: url(${podium});
@@ -284,6 +281,7 @@ const OtherPrizeContainer = styled.div`
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: center; /* Center items vertically */
   }
+
 `;
 
 const PrizesPage = () => {
