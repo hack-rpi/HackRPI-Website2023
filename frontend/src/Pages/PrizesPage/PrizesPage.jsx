@@ -116,7 +116,7 @@ const TopPrizeContainer = styled.section`
     width: 100%;
   }
   @media (max-width: 390px) {
-    transform: scale(0.30);
+    transform: scale(0.36);
     flex-direction: row; 
     width: 100vw;
     align-items: space-between; /* Center items vertically */
