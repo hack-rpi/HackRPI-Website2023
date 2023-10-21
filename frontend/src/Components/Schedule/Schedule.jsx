@@ -181,12 +181,6 @@ const Schedule = () => {
       location: 'DCC Lounge',
     },
     {
-      startTime: new Date('2023-11-05T00:00:00-04:00'),
-      endTime: new Date('2023-11-05T02:00:00-04:00'),
-      event: 'Midnight Snacks',
-      location: 'DCC Lounge',
-    },
-    {
       startTime: new Date('2023-11-05T00:30:00-04:00'),
       endTime: new Date('2023-11-05T01:30:00-04:00'),
       event: 'Movie Starts',
@@ -194,54 +188,47 @@ const Schedule = () => {
     },
     {
       startTime: new Date('2023-11-05T01:00:00-04:00'),
-      endTime: new Date('2023-11-05T02:00:00-04:00'),
+      endTime: new Date('2023-11-05T02:00:00-05:00'),
       event: 'Daylight Savings Party',
       location: 'DCC Lounge',
     },
-      //Account for daylight savings using GMT -5:00
-      {
-        startTime: new Date('2023-11-05T07:00:00-05:00'),
-        endTime: new Date('2023-11-05T09:00:00-05:00'),
-        event: 'Breakfast',
-        location: 'DCC Lounge',
-      },
-      {
-        startTime: new Date('2023-11-05T07:00:00-05:00'),
-        endTime: new Date('2023-11-05T09:00:00-05:00'),
-        event: 'Submission Deadline',
-        location: 'Online',
-      },
-      {
-        startTime: new Date('2023-11-05T11:30:00-05:00'),
-        endTime: new Date('2023-11-05T12:00:00-05:00'),
-        event: 'Hacking Ends @ 12',
-        location: '',
-      },
-      {
-        startTime: new Date('2023-11-05T12:00:00-05:00'),
-        endTime: new Date('2023-11-05T15:00:00-05:00'),
-        event: 'Showcase',
-        location: 'DCC 308',
-      },
-      {
-        startTime: new Date('2023-11-05T13:00:00-05:00'),
-        endTime: new Date('2023-11-05T14:00:00-05:00'),
-        event: 'Lunch',
-        location: 'DCC Lounge',
-      },
-      {
-        startTime: new Date('2023-11-05T15:00:00-05:00'),
-        endTime: new Date('2023-11-05T15:30:00-05:00'),
-        event: 'Closing Ceremony',
-        location: 'DCC Lounge',
-      },
-
-
-      //* add more events here... MAKE SURE  IT IS -05:00 for daylight savings time on november 5th 2am*/}
-      //* separate nov 4 and nov 5. */}  
-      // Critical issue: THE SCALING BREAKS ON very small MOBILE
-      
-
+    //Account for daylight savings using GMT -5:00
+    {
+      startTime: new Date('2023-11-05T07:00:00-05:00'),
+      endTime: new Date('2023-11-05T09:00:00-05:00'),
+      event: 'Breakfast',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T07:00:00-05:00'),
+      endTime: new Date('2023-11-05T09:00:00-05:00'),
+      event: 'Submission Deadline',
+      location: 'Online',
+    },
+    {
+      startTime: new Date('2023-11-05T11:30:00-05:00'),
+      endTime: new Date('2023-11-05T12:00:00-05:00'),
+      event: 'Hacking Ends @ 12',
+      location: '',
+    },
+    {
+      startTime: new Date('2023-11-05T12:00:00-05:00'),
+      endTime: new Date('2023-11-05T15:00:00-05:00'),
+      event: 'Showcase',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-05T13:00:00-05:00'),
+      endTime: new Date('2023-11-05T14:00:00-05:00'),
+      event: 'Lunch',
+      location: 'DCC Lounge',
+    },
+    {
+      startTime: new Date('2023-11-05T15:00:00-05:00'),
+      endTime: new Date('2023-11-05T15:30:00-05:00'),
+      event: 'Closing Ceremony',
+      location: 'DCC Lounge',
+},
     ], []);
     const constantEvents = useMemo(() => [
       {
@@ -299,71 +286,41 @@ const Schedule = () => {
                 <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', padding: '0 2rem', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
                 <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
-            </tr>
-          </thead>
-          <tbody>
-          {
-    /* Render Events */
-    
-    schedule.map((item, index) => {
-      // Use a loop to check if the current event's date is different from the previous event's date
-
-      // Render the heading row for the first event or if the event's date is different
-      if (isFirstEvent || item.startTime.getDate() !== currentDate) {
-        currentDate = item.startTime.getDate();
-        isFirstEvent = false; // Set isFirstEvent to false after the first event
-        return (
-          <React.Fragment key={`date-heading-${currentDate}`}>
-            <tr>
-              <td className='table-header' colSpan="3">
-                {currentDate === 4 ? 'November 4th' : 'November 5th'}
-              </td>
-            </tr>
-            <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
+                </tr>
+      </thead>
+      <tbody>
+        {schedule.map((item, index) => (
+          <React.Fragment key={`schedule-${index}`}>
+            {isFirstEvent || item.startTime.getDate() !== currentDate ? (
+              <React.Fragment key={`date-heading-${currentDate}`}>
+                <tr>
+                  <td className='table-header' colSpan="3">
+                    {currentDate === 4 ? 'November 4th' : 'November 5th'}
+                  </td>
+                </tr>
+                <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} />
+              </React.Fragment>
+            ) : (
+              <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} key={`event-${index}`} />
+            )}
           </React.Fragment>
-        );
-      }
-      // Determine if the current event should be highlighted
-      const isCurrentEvent =
-        currentEvent &&
-        currentEvent.startTime >= item.startTime &&
-        currentEvent.endTime <= item.endTime;
+        ))}
 
-      // Render individual event row using a fragment
-      return (
-        <React.Fragment key={index}>
-          <ScheduleRow
-            item={item}
-            isCurrentEvent={isCurrentEvent}
-          />
-        </React.Fragment>
-      );
-    })
-  }
+        <tr>
+          <td className='table-header' colSpan="3">
+            Constant Events
+          </td>
+        </tr>
 
-            {/* Constant Events */}
-            <tr>
-              <td className='table-header' colSpan="3">
-                Constant Events
-              </td>
-            </tr>
-            {/* Render Constant Events */}
-            {constantEvents.map((item, index) => {
-              const currentTime = new Date().getTime();
-              const startTime = item.startTime.getTime();
-              const endTime = item.endTime.getTime();
-              const isCurrentEvent = currentTime >= startTime && currentTime <= endTime + tolerance;
-
-              return (
-                <React.Fragment key={index}>
-                  <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
-                </React.Fragment>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    );
+        {constantEvents.map((item, index) => (
+          <React.Fragment key={`constant-event-${index}`}>
+            <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} />
+          </React.Fragment>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
   };
 
 
