@@ -49,7 +49,7 @@ const AboutPage = () => {
               is an ode to a decade inspiring students and HackRPI!
               <br></br>
               <br></br>Come join us this coming November 4-5, 2023 to hack,
-              learn, and meet other poeple!{' '}
+              learn, and meet other people!{' '}
             </Tab.Pane>
             <Tab.Pane eventKey="two">
               We are a motivated team of RPI students who share a passion for
