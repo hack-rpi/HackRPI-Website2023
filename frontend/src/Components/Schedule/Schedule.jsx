@@ -289,16 +289,16 @@ const Schedule = () => {
                 </tr>
       </thead>
       <tbody>
-        {schedule.map((item, index) => (
+        {schedule.map((item, index) => (                 //Use a loop to check if the current event's date is different from the previous event's date. Render the heading row for the first event or if the event's date is different
           <React.Fragment key={`schedule-${index}`}>
             {isFirstEvent || item.startTime.getDate() !== currentDate ? (
-              <React.Fragment key={`date-heading-${currentDate}`}>
-                <tr>
-                  <td className='table-header' colSpan="3">
-                    {currentDate === 4 ? 'November 4th' : 'November 5th'}
+              <React.Fragment key={`date-heading-${currentDate}`}> 
+                <tr> 
+                  <td className='table-header' colSpan="3">  
+                    {currentDate === 4 ? 'November 4th' : 'November 5th'}  
                   </td>
                 </tr>
-                <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} />
+                <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} />   {/* Render the first event */}
               </React.Fragment>
             ) : (
               <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} key={`event-${index}`} />
