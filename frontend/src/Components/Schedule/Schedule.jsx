@@ -252,7 +252,9 @@ const Schedule = () => {
           const isCurrentEvent = currentTime >= startTime && currentTime <= endTime;
           return { ...event, isCurrentEvent };
         });
-        setCurrentEvent(updatedSchedule); // Corrected function name here
+        const currentEvent = updatedSchedule.find(event => event.isCurrentEvent);
+        setCurrentEvent(currentEvent);
+ // Corrected function name here
       };
 
       updateCurrentEvent();
