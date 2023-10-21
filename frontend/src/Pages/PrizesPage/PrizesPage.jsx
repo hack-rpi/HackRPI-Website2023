@@ -3,10 +3,14 @@ import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
 import Tab from './tab'; // Import the Tab component
 import podium from './img/podium.png';
-import './style/style.css';
+import './style.css';
 //npm install styled-components
 //npm install styled-components@latest
 //npm install react-spring
+
+//modify the tabs for ipad
+//fix dimensions on galaxy fold
+//Make sure the tabs don't drop too much
 
 const Prizes = [
   { title: '#1 Best Hack', amount: '$1,500' },
@@ -115,17 +119,6 @@ const TopPrizeContainer = styled.section`
     align-items: space-evenly; /* Center items vertically */
     width: 100%;
   }
-  @media (max-width: 390px) {
-    transform: scale(0.30);
-    flex-direction: row; 
-    width: 100vw;
-    align-items: space-between; /* Center items vertically */
-    display: flex;
-    align-items: stretch;
-    justify-content-evenly;
-  }
-
-
 
 `;
 
@@ -148,7 +141,6 @@ const shineLight = keyframes`
     transform: translateY(-150px) scaleY(1.5);
   }
 `;
-
 
 const Podium = styled.div`
   background-image: url(${podium});
@@ -215,14 +207,8 @@ const Top_Prize = styled.section`
   @media (max-width: 750px) {
     width: 100%; 
     align-items: center;
-  }
-  @media (max-width: 390px) {
-    width: fit-content; 
-    align-items: center;
-    margin: 20px;
-  }
 
-  
+  }
 `;
 
 const sparkle = keyframes`
@@ -298,7 +284,6 @@ const OtherPrizeContainer = styled.div`
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: center; /* Center items vertically */
   }
-
 `;
 
 const PrizesPage = () => {
