@@ -65,7 +65,7 @@ const LandingPageMobile = () => {
                 <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
                   Change the World
                 </span>{' '}
-                is an ode to a decade inspring students and HackRPI!
+                is an ode to a decade inspiring students and HackRPI!
         </p>
       </div>
 
