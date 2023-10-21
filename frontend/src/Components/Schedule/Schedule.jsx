@@ -148,18 +148,14 @@ const Schedule = () => {
       event: 'Dinner',
       location: 'DCC Lounge',
     },
+    /*
     {
       startTime: new Date('2023-11-04T20:00:00-04:00'),
       endTime: new Date('2023-11-04T21:00:00-04:00'),
       event: '?Sponsor Workshop/Event?',
       location: 'DCC 330',
     },
-    {
-      startTime: new Date('2023-11-04T21:00:00-04:00'),
-      endTime: new Date('2023-11-04T22:00:00-04:00'),
-      event: '!Light MLH Event',
-      location: 'DCC 308',
-    },
+    */
     {
       startTime: new Date('2023-11-04T21:00:00-04:00'),
       endTime: new Date('2023-11-04T22:00:00-04:00'),
