@@ -13,21 +13,18 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
 
-
   return (
     <tr
-      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}
-    >
+      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{eventName}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{item.location}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td>
     </tr>
   );
 });
+//useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.
 const Schedule = () => {
   const schedule = useMemo(() => [
-    /* useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and
-    overload. */
     {
       startTime: new Date('2023-11-04T10:00:00-04:00'), 
       endTime: new Date('2023-11-04T11:00:00-04:00'),
@@ -97,7 +94,7 @@ const Schedule = () => {
     {
       startTime: new Date('2023-11-04T14:30:00-04:00'),
       endTime: new Date('2023-11-04T15:30:00-04:00'),
-      event: 'Severino',
+      event: 'Nuvalence',
       location: 'DCC 330',
     },
     {
@@ -109,7 +106,7 @@ const Schedule = () => {
     {
       startTime: new Date('2023-11-04T16:30:00-04:00'),
       endTime: new Date('2023-11-04T17:30:00-04:00'),
-      event: 'RPI SEC',
+      event: 'Hacking The Machine For Fun',
       location: 'DCC 318',
     },
     {
@@ -148,14 +145,6 @@ const Schedule = () => {
       event: 'Dinner',
       location: 'DCC Lounge',
     },
-    /*
-    {
-      startTime: new Date('2023-11-04T20:00:00-04:00'),
-      endTime: new Date('2023-11-04T21:00:00-04:00'),
-      event: '?Sponsor Workshop/Event?',
-      location: 'DCC 330',
-    },
-    */
     {
       startTime: new Date('2023-11-04T21:00:00-04:00'),
       endTime: new Date('2023-11-04T22:00:00-04:00'),
@@ -230,6 +219,7 @@ const Schedule = () => {
       location: 'DCC Lounge',
 },
     ], []);
+    
     const constantEvents = useMemo(() => [
       {
         startTime: new Date('2023-11-04T12:00:00-04:00'),
@@ -239,7 +229,7 @@ const Schedule = () => {
       },
       {
         startTime: new Date('2023-11-04T22:00:00-04:00'),
-        endTime: new Date('2023-11-05T07:00:00-05:00'),
+        endTime: new Date('2023-11-05T09:00:00-05:00'),
         event: 'Sleeping Rooms',
         location: 'LOW 3112, 3130, 3116',
       },
@@ -277,46 +267,69 @@ const Schedule = () => {
     let currentDate = null;
     let isFirstEvent = true;
      // To keep track of the current date and let allows it to be reassigned
-    return (
-      <div>
-
-        <table className="schedule-table">
-          <thead>
-            <tr>
-                <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
-                <th style={{ fontFamily: 'Poppins', color: 'white', padding: '0 2rem', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
-                <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
-                </tr>
+// To keep track of the current date and let allows it to be reassigned
+return (
+  <div>
+    <table className="schedule-table">
+      <thead>
+        <tr>
+          <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Event</th>
+          <th style={{ fontFamily: 'Poppins', color: 'white', padding: '0 2rem', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Location</th>
+          <th style={{ fontFamily: 'Poppins', color: 'white', textAlign: 'center', verticalAlign: 'middle', flex: 2 }}>Time</th>
+        </tr>
       </thead>
       <tbody>
-        {schedule.map((item, index) => (                 //Use a loop to check if the current event's date is different from the previous event's date. Render the heading row for the first event or if the event's date is different
-          <React.Fragment key={`schedule-${index}`}>
-            {isFirstEvent || item.startTime.getDate() !== currentDate ? (
-              <React.Fragment key={`date-heading-${currentDate}`}> 
-                <tr> 
-                  <td className='table-header' colSpan="3">  
-                    {currentDate === 4 ? 'November 4th' : 'November 5th'}  
+        {/* Render Events */}
+        {schedule.map((item, index) => {
+          // Use a loop to check if the current event's date is different from the previous event's date
+          // Render the heading row for the first event or if the event's date is different
+          if (isFirstEvent || item.startTime.getDate() !== currentDate) {
+            currentDate = item.startTime.getDate();
+            isFirstEvent = false; // Set isFirstEvent to false after the first event
+            return (
+              <React.Fragment key={`date-heading-${currentDate}`}>
+                <tr>
+                  <td className='table-header' colSpan="3">
+                    {currentDate === 4 ? 'November 4th' : 'November 5th'}
                   </td>
                 </tr>
-                <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} />   {/* Render the first event */}
+                <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
               </React.Fragment>
-            ) : (
-              <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} key={`event-${index}`} />
-            )}
-          </React.Fragment>
-        ))}
-
+            );
+          }
+          // Determine if the current event should be highlighted
+          const isCurrentEvent =
+            currentEvent &&
+            currentEvent.startTime >= item.startTime &&
+            currentEvent.endTime <= item.endTime;
+          // Render individual event row using a fragment
+          return (
+            <React.Fragment key={index}>
+              <ScheduleRow
+                item={item}
+                isCurrentEvent={isCurrentEvent}
+              />
+            </React.Fragment>
+          );
+        })}
         <tr>
           <td className='table-header' colSpan="3">
             Constant Events
           </td>
         </tr>
-
-        {constantEvents.map((item, index) => (
-          <React.Fragment key={`constant-event-${index}`}>
-            <ScheduleRow item={item} isCurrentEvent={item.isCurrentEvent} />
-          </React.Fragment>
-        ))}
+        {/* Render Constant Events */}
+        {constantEvents.map((item, index) => {
+          const currentTime = new Date().getTime();
+          const startTime = item.startTime.getTime();
+          const endTime = item.endTime.getTime();
+          const isCurrentEvent = currentTime >= startTime && currentTime <= endTime + tolerance;
+          
+          return (
+            <React.Fragment key={index}>
+              <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
+            </React.Fragment>
+          );
+        })}
       </tbody>
     </table>
   </div>
