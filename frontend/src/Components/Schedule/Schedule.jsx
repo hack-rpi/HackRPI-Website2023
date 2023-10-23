@@ -163,12 +163,14 @@ const Schedule = () => {
       event: 'Fun Activity (Trivia/Game)',
       location: 'DCC 318',
     },
+    /*
     {
       startTime: new Date('2023-11-04T23:00:00-04:00'),
       endTime: new Date('2023-11-04T23:30:00-04:00'),
       event: 'Boba',
       location: 'DCC Lounge',
     },
+    */
     {
       startTime: new Date('2023-11-05T00:00:00-04:00'),
       endTime: new Date('2023-11-05T02:00:00-04:00'),
