@@ -112,6 +112,12 @@ const Schedule = () => {
     {
       startTime: new Date('2023-11-04T16:30:00-04:00'),
       endTime: new Date('2023-11-04T17:30:00-04:00'),
+      event: 'Design, Thinking, and Technical Innovation',
+      location: 'DCC 308',
+    },
+    {
+      startTime: new Date('2023-11-04T16:30:00-04:00'),
+      endTime: new Date('2023-11-04T17:30:00-04:00'),
       event: 'Call For Code',
       location: 'DCC 308',
     },
