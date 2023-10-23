@@ -20,9 +20,8 @@ const MobileNavBar = () => {
             <Menu isOpen={isOpen} onStateChange={handleStateChange}>
                 <NavLink id="home" className="menu-item" to="/" onClick={closeMenu}>Home</NavLink>
                 <NavLink id="faq" className="menu-item" to="/faq" onClick={closeMenu}>FAQ</NavLink>
-                <NavLink id="mini-event" className="menu-item" to="/mini-event" onClick={closeMenu}>Mini Event</NavLink>
-                <NavLink id="sponsor-us" className="menu-item" to="/sponsor-us" onClick={closeMenu}>Sponsor</NavLink>
                 <NavLink id="schedule" className="menu-item" to="/schedule" onClick={closeMenu}>Schedule</NavLink>
+                <NavLink id="sponsor-us" className="menu-item" to="/sponsor-us" onClick={closeMenu}>Sponsor</NavLink>
             </Menu>
             <NavLink to="/" style={{ paddingLeft: 30 }} onClick={closeMenu}>
                 <img

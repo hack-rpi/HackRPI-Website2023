@@ -42,10 +42,6 @@ const router = createHashRouter([
         element: <SchedulePage />,
       },
       {
-        path: 'mini-event',
-        element: <MiniEventPage />,
-      },
-      {
         path: 'sponsor-us',
         element: <SponsorUsPage />,
       },
@@ -82,10 +78,6 @@ const mobileRouter = createHashRouter([
       {
         path: 'schedule',
         element: <SchedulePage />,
-      },
-      {
-        path: 'mini-event',
-        element: <MiniEventPage />,
       },
       {
         path: 'sponsor-us',
