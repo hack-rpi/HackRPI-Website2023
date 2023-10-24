@@ -11,7 +11,12 @@
   import adwaitImage from './../../../assets/TeamPics/adwait image.jpg';
   import sanayImage from './../../../assets/TeamPics/sanay image.png';
   import mirandaImage from './../../../assets/TeamPics/miranda image.jpg';
-  import johnImage from './../../../assets/TeamPics/john image.jpg';
+  import johnImage from './../../../assets/TeamPics/john image.jpg'
+  import cjImage from './../../../assets/TeamPics/cj image.jpg';
+  import graceImage from './../../../assets/TeamPics/grace image.jpg';
+  import hemanImage from './../../../assets/TeamPics/heman image.jpg';
+  import amandaImage from './../../../assets/TeamPics/amanda image.jpeg';
+  import cooperImage from './../../../assets/TeamPics/cooper image.jpg';
 
   const MeetTheTeamPage = () => {
     const teamMembersFirstRow = [
@@ -52,6 +57,37 @@
         name: 'Miranda Zheng',
         role: 'Director of Marketing',
         avatar: mirandaImage,
+      },
+    ];
+
+    const teamMembers2FirstRow = [
+      {
+        name: 'CJ Marino',
+        role: 'Junior Director of Logistics',
+        avatar: cjImage,
+      },
+      {
+        name: 'Grace Hui',
+        role: 'Junior Director of Finance',
+        avatar: graceImage,
+      },
+    ];
+
+    const teamMembers2SecondRow = [
+      {
+        name: 'Heman Kolla',
+        role: 'Junior Director of Sponsorship',
+        avatar: hemanImage,
+      },
+      {
+        name: 'Amanda Ruan',
+        role: 'Junior Director of Marketing',
+        avatar: amandaImage,
+      },
+      {
+        name: 'Cooper Werner',
+        role: 'Junior Director of Technology',
+        avatar: cooperImage,
       },
     ];
   
@@ -101,14 +137,47 @@
               </Col>
             ))}
           </Row>
+          
           <br></br>
-          <h1 style={{ fontFamily: 'Mokoto', fontSize: 30, marginBottom: '20px' }}>
+          <h2 style={{ fontFamily: 'Mokoto', fontSize: 30, marginBottom: '20px' }}>
           Meet the Junior Directors
-          </h1>
+          </h2>
           <br></br>
-
-
-
+          <Row className="mb-2 justify-content-center">
+            {/* First Row */}
+            {teamMembers2FirstRow.map((member, index) => (
+              <Col key={index} md={3}>
+                <div className="" style={{ marginBottom: '20px'}}>
+                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '50%'}} />
+                  <div className="container">
+                    <h2 className="name">{member.name}</h2>
+                    <p className="position">{member.role}</p>
+                    {/* <Button className="button" style={{ marginBottom: '10px' }}>
+                      More Info
+                    </Button> */}
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+  
+          <Row className="mb-3 justify-content-center">
+            {/* Second Row */}
+            {teamMembers2SecondRow.map((member, index) => (
+              <Col key={index} md={3}>
+                <div className="" style={{ marginBottom: '20px' }}>
+                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover',  borderRadius: '50%' }} />
+                  <div className="container">
+                    <h2 className="name">{member.name}</h2>
+                    <p className="position">{member.role}</p>
+                    {/* <Button className="button" style={{ marginBottom: '10px' }}>
+                      More Info
+                    </Button> */}
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
 
           {/* Tab content and buttons */}
           <p style={{fontSize: '2em', fontWeight: 'bold'}}>
