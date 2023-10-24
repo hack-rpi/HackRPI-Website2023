@@ -14,7 +14,7 @@ const schedulerData = [
 ];
 
 const Schedule = () => (
-  <Paper>
+  <Paper style={{ width: '70%', margin: 'auto' }}>
     <Scheduler
       data={schedulerData}
     >
