@@ -16,6 +16,7 @@ body {
         margin-top: -100px;
         margin-bottom: 20px;
     }
+    
     @media (max-width: 750px) {
         margin-top: -150px;
         transform: scale(0.88);
@@ -23,9 +24,19 @@ body {
         align-items: center; 
     }
 
-    @media (max-width: 1400px) {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: center; /* Center items vertically */
+    @media (max-width: 850px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        white-space: nowrap;
+        font-size: 20px; 
+        user-select: none; 
+        align-items: flex-start;
+              
     }
-    
+    @media (max-width: 1050px) and (max-height: 620px) {
+        margin-top: 25px;
+    }
 }
