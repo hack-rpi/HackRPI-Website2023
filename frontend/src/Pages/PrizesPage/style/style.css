@@ -16,7 +16,7 @@ body {
         margin-top: -100px;
         margin-bottom: 20px;
     }
-    
+
     @media (max-width: 750px) {
         margin-top: -150px;
         transform: scale(0.88);
@@ -40,3 +40,4 @@ body {
         margin-top: 25px;
     }
 }
+

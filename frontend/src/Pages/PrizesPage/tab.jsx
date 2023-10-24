@@ -9,6 +9,12 @@ const spin = keyframes`
     transform: rotate(360deg);
   }
 `;
+const Gear = styled.div`
+  font-size: 32px;
+  // Removed margin-bottom as it's not needed anymore
+  animation: ${props => (props.spinning ? css`${spin} 2s linear infinite` : 'none')};
+  user-select: none; 
+`;
 
 const TabContainer = styled.div`
   display: flex;
@@ -18,34 +24,38 @@ const TabContainer = styled.div`
   white-space: nowrap;
   font-size: 20px; 
   user-select: none; 
-  
+  &:hover {
+    background-color: #888;
+    color: #fff;
+    border-radius: 18px; 
+    & > ${Gear} {
+      animation: ${css`${spin} 2s linear infinite`};
+    }
+  }
 `;
 
-const Gear = styled.div`
-  font-size: 32px;
-  // Removed margin-bottom as it's not needed anymore
-  animation: ${props => (props.spinning ? css`${spin} 2s linear infinite` : 'none')};
-  user-select: none; 
-`;
 
 const Dropdown = styled.div`
-  background-color: #353535;  
+  background-color: #353535;
   border: 1px solid #ccc;
   z-index: 1;
-  width: 250px; 
-  max-height: ${props => (props.open ? '500px' : '0')}; 
-  overflow: hidden;
+  width: 250px;
+  max-height: ${props => (props.open ? '500px' : '0')};
+  overflow-y: auto; 
   transition: max-height 0.5s ease-in-out;
   border: none;
+  display: block;
+  min-height: fit-content;
 `;
 
 const Prize = styled.div`
   padding: 8px 16px;
-  color: red;  // Red text
+  color: red;
+  white-space: normal; 
 `;
 
 const Tab = ({ title, prizes }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [spinning, setSpinning] = useState(false);
 
   const handleGearClick = () => {
@@ -56,7 +66,7 @@ const Tab = ({ title, prizes }) => {
 
   return (
     <div style={{ marginRight: '40px' }}>
-      <TabContainer onClick={handleGearClick}>
+      <TabContainer onClick={handleGearClick} className="TabContainer">
         <Gear spinning={spinning}>⚙️</Gear>
         {title}
       </TabContainer>
