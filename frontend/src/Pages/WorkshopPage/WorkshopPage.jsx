@@ -2,7 +2,6 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
 import workshopMern from '../../../assets/workshopPics/mern.png';
 import workshopPassword from '../../../assets/workshopPics/password.jpeg';
 import workshopHacking from '../../../assets/workshopPics/hacking.jpeg';
@@ -21,6 +20,11 @@ const WorkshopPage = () => {
             location: 'TBD',
             speaker: 'Yash Kaul',
             pic: workshopMern,
+            description: 'Gain hands-on experience with MongoDB—covering schema validation, client to database connection, and implementing API \
+            controllers. Learn about Express: including routing, middleware, and error handling. Utilize React to quickly build \
+            interactive applications with state management. Explore Node.js and Npm to manage package dependencies\
+             and build/run/test your application easily.  This workshop aims to introduce the basics of MERN applications for use in the\
+             hackathon and discuss potential considerations for real world use and deployment.'
         },
         
         {
@@ -29,6 +33,9 @@ const WorkshopPage = () => {
             location: 'TBD',
             speaker: 'Alex Vargas and Ryan Gallagher',
             pic: workshopPassword,
+            description: 'Join the FBI as they explain the math behind password complexity, including tactics for how to attack and\
+            break passwords. They will cover steps on how to extract a password hash from a file and run it with \
+           hashcat to crack the password. '
         },
 
         {
@@ -37,6 +44,13 @@ const WorkshopPage = () => {
             location: 'TBD',
             speaker: ' Dr. Brian Callahan (w/ Ayah Tharwat )',
             pic: workshopHacking,
+            description: 'Securing software requires developers to learn how to think like an attacker; you cannot defend against what you cannot\
+            imagine going  wrong with your software. There are a wide variety of potential attacks, but \
+            learning just a basic few can go a very long way towards improving your coding skills. In this workshop, we will participate in a \
+            set of interactive Capture the Flag (CTF) challenges designed to demonstrate some of the \
+            ways attackers think. Alongside hacking our machines, we will also learn some secure coding paradigms \
+            to protect against these attacks. By the end of the workshop, you will have a newfound appreciation for the importance \
+            of secure coding and be armed with the ability to build more secure software.'
         },
 
         {
@@ -45,6 +59,10 @@ const WorkshopPage = () => {
             location: 'TBD',
             speaker: 'TBD',
             pic: workshopSafety,
+            description: 'This workshop is designed for hackers interested in the Patient Safety Tech Prize. It will\
+            give you background on patient safety as an urgent issue and will help inspire you to\
+            spend your weekend hacking together a project that has the potential to save lives! \
+           The team with the best tech-enabled solution will win $1000.'
         },
 
         {
@@ -53,6 +71,10 @@ const WorkshopPage = () => {
             location: 'TBD',
             speaker: 'Kylinn Askew',
             pic: workshopDesign,
+            description: 'Explore the power of design thinking to drive innovation and foster collaboration to build\
+            strong technical products and startups. Learn how to harness creative problem-solving,\
+            empathetic user-centric approaches, and cross-functional teamwork to create products\
+            that not only meet technical requirements but also exceed user expectations'
         },
 
         {
@@ -61,6 +83,11 @@ const WorkshopPage = () => {
             location: 'TBD',
             speaker: 'Raven Levitt',
             pic: workshopAI,
+            description: 'Have a hack that needs AI but no idea where to start? In this workshop I’ll go over how to use the\
+            Hugging Face API to easily leverage thousands of different machine learning models to tackle whatever\
+             challenge you’re dealing with, be it text-generation, object detection, or just about any other machine \
+            learning challenge, hugging face is a great place to start! After a short presentation we’ll hold a mini \
+            competition for the best use of the API, and there just might be prizes…'
         },
 
         {
@@ -69,6 +96,9 @@ const WorkshopPage = () => {
           location: 'TBD',
           speaker: 'John Sturman',
           pic: workshopAgile,
+          description: 'Join John Sturman for a presentation about agile development and how to work in a development group for maximum productivity.\
+          We will explore Scrum and iterative development doing a fun simulation exercise to give you some hands-on experience. \
+          This is a good workshop to support you in working in a group creating a project efficiently and effectively.'
       },
 
       {
@@ -77,24 +107,37 @@ const WorkshopPage = () => {
         location: 'TBD',
         speaker: 'Mikiel Gica, Saad Mujahid, and Julia Kapchynsky',
         pic: workshopForge,
+        description: 'The Forge will be open to anyone interested in designing and creating their\
+        own contour-cut vinyl stickers. We will be holding a workshop on using free\
+        design software to prepare designs for our Roland BN-20A, and \
+       afterwards, we will help you print your designs for free! Bringing a laptop\
+        and a few images you want to turn into stickers is strongly recommended \
+       to be able to follow along and participate.'
     },
         // Add more workshop objects as needed
     ];
+
+    
   
     return (
       <div id="workshops" className="WorkshopPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
           <h1 style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
               Checkout our Workshops!
           </h1>
-          {workshops.map((workshop, index) => (
-              <div key={index} style={{ marginBottom: '20px' }}>
-                  {workshop.pic && <img src={workshop.pic} alt="Workshop" style={{ width: '300px', height: '200px' }} />}
-                  <h3 style={{ fontWeight: 'bold' }}>{workshop.title}</h3>
-                  <p>{workshop.time}</p>
-                  <p>{workshop.location}</p>
-                  <p>{workshop.speaker}</p>
-              </div>
-          ))}
+          <br></br>
+          <Row>
+              {workshops.map((workshop, index) => (
+                  <Col key={index} xs={12} md={4} style={{ marginBottom: '20px' }}>
+                      <div style={{ marginBottom: '20px' }}>
+                          {workshop.pic && <img src={workshop.pic} alt="Workshop" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />}
+                          <h3 style={{ fontWeight: 'bold' }}>{workshop.title}</h3>
+                          <p>{workshop.time}</p>
+                          <p>{workshop.location}</p>
+                          <p>{workshop.speaker}</p>
+                      </div>
+                  </Col>
+              ))}
+          </Row>
       </div>
   );
 };
