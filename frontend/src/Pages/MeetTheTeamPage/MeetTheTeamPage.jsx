@@ -12,23 +12,33 @@
   import sanayImage from './../../../assets/TeamPics/sanay image.png';
   import mirandaImage from './../../../assets/TeamPics/miranda image.jpg';
   import johnImage from './../../../assets/TeamPics/john image.jpg';
+  import maryellenAvatar from './../../../assets/TeamAvatars/Maryellen.png';
+  import ravenAvatar from './../../../assets/TeamAvatars/Raven.png';
+  import xeniaAvatar from './../../../assets/TeamAvatars/Xenia.png';
+  import adwaitAvatar from './../../../assets/TeamAvatars/Adwait.png';
+  import sanayAvatar from './../../../assets/TeamAvatars/Sanay.png';
+  import mirandaAvatar from './../../../assets/TeamAvatars/Miranda.png';
+  import johnAvatar from '../../../assets/TeamAvatars/John.png';
 
   const MeetTheTeamPage = () => {
     const teamMembersFirstRow = [
       {
         name: 'Maryellen Marino',
         role: 'President',
-        avatar: maryellenImage,
+        image: maryellenImage,
+        avatar: maryellenAvatar,
       },
       {
         name: 'Raven Levitt',
         role: 'Vice President',
-        avatar: ravenImage,
+        image: ravenImage,
+        avatar: ravenAvatar,
       },
       {
         name: 'John Kloepfer',
         role: 'Director of Technology',
-        avatar: johnImage,
+        image: johnImage,
+        avatar: johnAvatar,
       },
     ];
   
@@ -36,22 +46,26 @@
       {
         name: 'Xenia Khusid',
         role: 'Director of Logistics',
-        avatar: xeniaImage,
+        image: xeniaImage,
+        avatar: xeniaAvatar,
       },
       {
         name: 'Adwait Naware',
         role: 'Director of Finance',
-        avatar: adwaitImage,
+        image: adwaitImage,
+        avatar: adwaitAvatar,
       },
       {
         name: 'Sanay Tralshawala',
         role: 'Director of Sponsorship',
-        avatar: sanayImage,
+        image: sanayImage,
+        avatar: sanayAvatar,
       },
       {
         name: 'Miranda Zheng',
         role: 'Director of Marketing',
-        avatar: mirandaImage,
+        image: mirandaImage,
+        avatar: mirandaAvatar,
       },
     ];
   
@@ -63,18 +77,24 @@
         <br></br>
         <div className="team-members">
           <h1 style={{ fontFamily: 'Mokoto', fontSize: 30, marginBottom: '20px' }}>
-            Meet The Directors
+            Meet The <a style={{ color: '#910307'}}>Directors</a>
           </h1>
           <br></br>
           <Row className="mb-4 justify-content-center">
             {/* First Row */}
             {teamMembersFirstRow.map((member, index) => (
               <Col key={index} md={3}>
-                <div className="" style={{ marginBottom: '20px'}}>
-                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '50%'}} />
+                <div style={{ marginBottom: '5px', display: 'grid', rowGap: '13px' }}>
+                  <div style={{ width: 'auto', height: 'auto', display: 'grid', justifySelf: 'center', alignSelf: 'center' }}>
+                    <img src={member.image} alt={member.name} style={{ width: '200px', height: '200px',
+                      objectFit: 'cover', borderRadius: '50%', border: '4px solid white' }} />
+                    <img src={member.avatar} alt={member.name} style={{ width: '70px', height: '70px', objectFit: 'cover',
+                      borderRadius: '50%', border: '2px solid #910307', backgroundColor: "#353535", display: 'flex', position: 'absolute',
+                      justifySelf: 'flex-end', alignSelf: 'flex-end' }} />
+                  </div>
                   <div className="container">
                     <h2 className="name">{member.name}</h2>
-                    <p className="position">{member.role}</p>
+                    <p className="position" style={{color: '#910307', marginBottom: '0' }}>{member.role}</p>
                     {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
                     </Button> */}
@@ -88,11 +108,17 @@
             {/* Second Row */}
             {teamMembersSecondRow.map((member, index) => (
               <Col key={index} md={3}>
-                <div className="" style={{ marginBottom: '20px' }}>
-                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover',  borderRadius: '50%' }} />
+                <div style={{ marginBottom: '20px', display: 'grid', rowGap: '13px' }}>
+                  <div style={{ width: 'auto', height: 'auto', display: 'grid', justifySelf: 'center', alignSelf: 'center' }}>
+                    <img src={member.image} alt={member.name} style={{ width: '200px', height: '200px',
+                      objectFit: 'cover', borderRadius: '50%', border: '4px solid white' }} />
+                    <img src={member.avatar} alt={member.name} style={{ width: '70px', height: '70px', objectFit: 'cover',
+                      borderRadius: '50%', border: '2px solid #910307', backgroundColor: "#353535", display: 'flex', position: 'absolute',
+                      justifySelf: 'flex-end', alignSelf: 'flex-end' }} />
+                  </div>
                   <div className="container">
                     <h2 className="name">{member.name}</h2>
-                    <p className="position">{member.role}</p>
+                    <p className="position" style={{color: '#910307'}}>{member.role}</p>
                     {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
                     </Button> */}
@@ -103,7 +129,7 @@
           </Row>
           <br></br>
           <h1 style={{ fontFamily: 'Mokoto', fontSize: 30, marginBottom: '20px' }}>
-          Meet the Junior Directors
+          Meet the <a style={{ color: '#d50110'}}>Junior Directors</a>
           </h1>
           <br></br>
 
