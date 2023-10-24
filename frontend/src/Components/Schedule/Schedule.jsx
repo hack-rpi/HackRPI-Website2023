@@ -1,31 +1,33 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { ScheduleComponent, Day, Agenda, Inject } from '@syncfusion/ej2-react-schedule';
+import Paper from '@mui/material/Paper';
+import { ViewState } from '@devexpress/dx-react-scheduler';
+import {
+  Scheduler,
+  DayView,
+  Appointments,
+} from '@devexpress/dx-react-scheduler-material-ui';
 
-export const Schedule = () => {
-  const data = [
-    {
-      Id: 2,
-      Subject: 'Meeting',
-      StartTime: new Date(2018, 1, 15, 10, 0),
-      EndTime: new Date(2018, 1, 15, 12, 30),
-      IsAllDay: false,
-      Status: 'Completed',
-      Priority: 'High'
-    },
-  ];
-  const fieldsData = {
-    id: 'Id',
-    subject: { name: 'Subject' },
-    isAllDay: { name: 'IsAllDay' },
-    startTime: { name: 'StartTime' },
-    endTime: { name: 'EndTime' }
-  }
-  const eventSettings = { dataSource: data, fields: fieldsData }
+const currentDate = '2023-11-04';
+const schedulerData = [
+  { startDate: '2023-11-04T09:45', endDate: '2023-11-04T11:00', title: 'Meeting' },
+  { startDate: '2023-11-05T12:00', endDate: '2023-11-05T13:30', title: 'Go to a gym' },
+];
 
-  return (<ScheduleComponent height='550px' selectedDate={new Date(2018, 1, 15)} eventSettings={eventSettings}>
-    <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-  </ScheduleComponent>);
-}
+const Schedule = () => (
+  <Paper>
+    <Scheduler
+      data={schedulerData}
+    >
+      <ViewState
+        currentDate={currentDate}
+      />
+      <DayView
+        startDayHour={0}
+        endDayHour={48}
+      />
+      <Appointments />
+    </Scheduler>
+  </Paper>
+);
 
-ReactDOM.render(<Schedule />, document.getElementById('schedule'));
+export default Schedule;
