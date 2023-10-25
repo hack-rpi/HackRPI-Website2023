@@ -67,7 +67,7 @@ const TotalPrizeContainer = styled.div`
 const TopPrizeContainer = styled.section`
   margin: auto;
   margin-top: 18vh;
-  margin-bottom: 140px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
@@ -177,10 +177,8 @@ const PrizeTitle = styled.h3`
   z-index: 1;
   font-family: 'Mokoto', sans-serif;
   text-shadow:
-    0 0 10px #ffd700,
     0 0 20px #ffd700,
-    0 0 30px #ffd700,
-    0 0 40px #ffd700; //yellow shadow
+    0 0 30px #ffd700; //yellow shadow
   //text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #FFFFFF; //white shadow
   text-align: center;
   width: 130px;
@@ -264,6 +262,7 @@ const Sparkle = styled.div`
 const PrizeDescription = styled.section`
   margin-top: 3vh;
   height: 500px;
+  z-index: -1;
   @media (max-width: 436px) {
     height: 200px;
   }
@@ -272,29 +271,10 @@ const PrizeDescription = styled.section`
 const OtherPrizeContainer = styled.div`
   display: flex;
   justify-content: center;
+	align-items:center;
   position: relative;
-
-  @media (max-width: 436px) {
-    margin-top: -150px;
-    /*margin-top: 0vh;*/
-    transform: scale(0.66);
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items vertically */
-  }
-  @media (max-width: 750px) {
-    margin-top: -150px;
-    /*margin-top: 0vh;*/
-    transform: scale(0.66);
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items vertically */
-  }
-  @media (max-width: 1450px) {
-    margin-top: -150px;
-    /*margin-top: 0vh;*/
-    transform: scale(0.66);
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items vertically */
-  }
+	width: 90%
+	flex-wrap: wrap;
 `;
 
 const PrizesPage = () => {
@@ -311,7 +291,7 @@ const PrizesPage = () => {
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: '$100' },
     { title: 'Best Data Science Hack', amount: '$100' },
-		{title: 'Ugliest Code Competition', amount: '$50'}
+    { title: 'Ugliest Code Competition', amount: '$50' },
   ];
   const sponsorPrizes = [
     { title: 'Best in Patient Safety Tech', amount: '$1,000' },
@@ -353,26 +333,34 @@ const PrizesPage = () => {
           </Top_Prize>
         ))}
       </TopPrizeContainer>
-
-      <OtherPrizeContainer>
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <div
           style={{
             display: 'flex',
-            justifyContent: 'space-evenly',
+            flexWrap: 'wrap',
+            justifyContent: 'space-around',
+            width: '90%',
             marginTop: '-50px',
             marginBottom: '20px',
-            gap: '30px',
+            gap: '40px',
             fontFamily: 'Mokoto',
             color: '#FFFFFF',
           }}
           className="Tab"
         >
           <Tab title="Major Prize Tracks" prizes={prizeTracks} />
-          <Tab title="Smaller Prizes" prizes={smallPrize1} />
+          <Tab title="Minor Prize Tracks" prizes={smallPrize1} />
           <Tab title="Smaller Prizes" prizes={smallPrize2} />
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
-      </OtherPrizeContainer>
+      </div>
     </PrizeContainer>
   );
 };

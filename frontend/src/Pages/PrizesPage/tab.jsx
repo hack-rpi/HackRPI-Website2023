@@ -23,8 +23,12 @@ const Gear = styled.div`
 
 const TabContainer = styled.div`
   display: flex;
+	z-index:10;
+	position: relative;
+	text-align:center;
   flex-direction: row; // changed from column to row
   align-items: center;
+	justify-content:center;
   cursor: pointer;
   white-space: nowrap;
   font-size: 20px;
@@ -43,12 +47,13 @@ const TabContainer = styled.div`
 
 const Dropdown = styled.div`
   background-color: #353535;
+	border-radius: 10px;
   border: 1px solid #ccc;
   z-index: 1;
-  width: 250px;
-  max-height: ${(props) => (props.open ? '500px' : '0')};
+  width: 300px;
+  height: ${(props) => (props.open ? '225px' : '0')};
   overflow-y: auto;
-  transition: max-height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
   border: none;
   display: block;
   min-height: fit-content;
@@ -56,8 +61,10 @@ const Dropdown = styled.div`
 
 const Prize = styled.div`
   padding: 8px 16px;
-  color: red;
+  color: white;
   white-space: normal;
+	font-family: 'Poppins';
+	font-size: large;
 `;
 
 const Tab = ({ title, prizes }) => {
@@ -71,10 +78,10 @@ const Tab = ({ title, prizes }) => {
   };
 
   return (
-    <div style={{ marginRight: '40px' }}>
+    <div>
       <TabContainer onClick={handleGearClick} className="TabContainer">
         <Gear spinning={spinning}>⚙️</Gear>
-        {title}
+        <h3 style={{marginBottom:'0', fontFamily:'Poppins'}}>{title}</h3>
       </TabContainer>
       <Dropdown open={open}>
         {prizes.map((prize, index) => (
