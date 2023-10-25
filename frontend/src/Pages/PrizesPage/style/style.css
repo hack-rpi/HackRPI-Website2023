@@ -41,3 +41,8 @@ body {
     }
 }
 
+.otherprizes {
+    @media (max-width: 390px) {
+        margin-top: -120px;
+    }
+}

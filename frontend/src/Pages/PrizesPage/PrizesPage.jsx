@@ -326,6 +326,7 @@ const PrizesPage = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}
+        className='otherprizes'
       >
         <div
           style={{

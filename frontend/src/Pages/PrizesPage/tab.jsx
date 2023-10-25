@@ -55,8 +55,17 @@ const Prize = styled.div`
   padding: 8px 16px;
   color: white;
   white-space: normal;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	font-size: large;
+  font-family: 'Poppins', 'Arial';
+  font-size: large;
+  align-items: inline;
+
+  p {
+    display: inline; 
+    margin: 0; 
+  }
+  .Prize_Amount {
+    color: red;
+  }
 `;
 
 const Tab = ({ title, prizes }) => {
@@ -65,18 +74,19 @@ const Tab = ({ title, prizes }) => {
   const handleGearClick = () => {
     setSpinning(true);
     setOpen(!open);
-    setTimeout(() => setSpinning(false), 2000);
+    setTimeout(() => setSpinning(false), 1000);
   };
   return (
     <div>
       <TabContainer onClick={handleGearClick} className="TabContainer">
         <Gear spinning={spinning}>⚙️</Gear>
-        <h3 style={{marginBottom:'0', fontFamily:'Mokoto', fontSize: '25px',}}>{title}</h3>
+        <h3 style={{marginBottom:'0', fontFamily:'Mokoto', fontSize: '25px', marginLeft:'8px'}}>{title}</h3>
       </TabContainer>
       <Dropdown open={open}>
         {prizes.map((prize, index) => (
           <Prize key={index}>
-            • {prize.title}: {prize.amount}
+            <p>• {prize.title}: </p>
+            <p className='Prize_Amount'>{prize.amount} </p>
           </Prize>
         ))}
       </Dropdown>
