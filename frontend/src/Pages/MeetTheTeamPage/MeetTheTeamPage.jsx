@@ -116,7 +116,10 @@
         <div className="team-members">
           <h1 className="director-jrDirector-header" style={{ padding: '0 7px' }}>
             Meet The <a style={{ color: '#910307' }}>Directors</a>
+            <p style={{ fontSize: '10px', fontStyle: 'italic' }}>Avatars by Lilu Kaufman</p>
           </h1>
+
+
           <Row className="director-row">
             {/* First Row */}
             {teamMembersFirstRow.map((member, index) => (
@@ -203,11 +206,6 @@
               </Col>
             ))}
           </Row>
-          
-          {/* Tab content and buttons */}
-          <p style={{fontSize: '1em'}}>
-            Director designs by Lilu Kaufman
-          </p>
 
           {/* Tab content and buttons */}
           <p style={{fontSize: '2em', fontWeight: 'bold'}}>
