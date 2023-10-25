@@ -19,6 +19,11 @@
   import sanayAvatar from './../../../assets/TeamAvatars/Sanay.png';
   import mirandaAvatar from './../../../assets/TeamAvatars/Miranda.png';
   import johnAvatar from '../../../assets/TeamAvatars/John.png';
+  import cjImage from './../../../assets/TeamPics/cj image.jpg';
+  import graceImage from './../../../assets/TeamPics/grace image.jpg';
+  import hemanImage from './../../../assets/TeamPics/heman image.jpg';
+  import amandaImage from './../../../assets/TeamPics/amanda image.jpeg';
+  import cooperImage from './../../../assets/TeamPics/cooper image.jpg';
 
   const MeetTheTeamPage = () => {
     const teamMembersFirstRow = [
@@ -68,7 +73,38 @@
         avatar: mirandaAvatar,
       },
     ];
-  
+
+    const jrTeamMembersFirstRow = [
+      {
+        name: 'CJ Marino',
+        role: 'Junior Director of Logistics',
+        avatar: cjImage,
+      },
+      {
+        name: 'Grace Hui',
+        role: 'Junior Director of Finance',
+        avatar: graceImage,
+      },
+    ];
+
+    const jrTeamMembersSecondRow = [
+      {
+        name: 'Heman Kolla',
+        role: 'Junior Director of Sponsorship',
+        avatar: hemanImage,
+      },
+      {
+        name: 'Amanda Ruan',
+        role: 'Junior Director of Marketing',
+        avatar: amandaImage,
+      },
+      {
+        name: 'Cooper Werner',
+        role: 'Junior Director of Technology',
+        avatar: cooperImage,
+      },
+    ];
+
     return (
       <div id="members" className="MeetTheTeamPage">
         <h1 id="meet-our-team-header" style={{ fontFamily: 'Mokoto', fontSize: '46px' }}>
@@ -121,10 +157,47 @@
           </Row>
 
           <h1 className="director-jrDirector-header" style={{ marginTop: '30px' }}>
+            Meet the <a style={{ color: '#d50110'}}>Junior Directors</a>
+          </h1>
+          <Row className="mb-2 justify-content-center">
+            {/* First Row */}
+            {jrTeamMembersFirstRow.map((member, index) => (
+              <Col key={index} md={3}>
+                <div className="" style={{ marginBottom: '20px'}}>
+                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '50%'}} />
+                  <div className="container">
+                    <h2 className="name">{member.name}</h2>
+                    <p className="position">{member.role}</p>
+                    {/* <Button className="button" style={{ marginBottom: '10px' }}>
+                      More Info
+                    </Button> */}
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+
+          <Row className="mb-3 justify-content-center">
+            {/* Second Row */}
+            {jrTeamMembersSecondRow.map((member, index) => (
+              <Col key={index} md={3}>
+                <div className="" style={{ marginBottom: '20px' }}>
+                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover',  borderRadius: '50%' }} />
+                  <div className="container">
+                    <h2 className="name">{member.name}</h2>
+                    <p className="position">{member.role}</p>
+                    {/* <Button className="button" style={{ marginBottom: '10px' }}>
+                      More Info
+                    </Button> */}
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+
+          <h1 className="director-jrDirector-header" style={{ marginTop: '30px' }}>
           Meet the <a style={{ color: '#d50110'}}>Junior Directors</a>
           </h1>
-
-
 
 
           {/* Tab content and buttons */}
