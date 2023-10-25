@@ -1,4 +1,4 @@
-div, h1, h2, p {
+.centeredText {
     text-align: center;
 }
 
@@ -17,10 +17,6 @@ div, h1, h2, p {
     font-family: Mokoto;
     font-size: 30px;
     margin-bottom: 33px;
-}
-
-a {
-    font-size: 30px;
 }
 
 .director-row {

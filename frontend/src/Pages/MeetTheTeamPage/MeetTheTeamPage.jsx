@@ -106,7 +106,7 @@
     ];
 
     return (
-      <div id="members" className="MeetTheTeamPage">
+      <div id="members" className="MeetTheTeamPage centeredText">
         <h1 id="meet-our-team-header" style={{ fontFamily: 'Mokoto', fontSize: '46px' }}>
           Meet Our Team!
         </h1>
