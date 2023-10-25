@@ -65,13 +65,11 @@ const LandingPage = () => {
     <div id="home" className='landingPage'>
       {/* <Timer /> */}
 
-      <div className="globe" style={{ width: '50%', paddingLeft: '55%' }}>
+      <div className="globe" style={{ paddingLeft: '25%' }}>
         <Globe
           style={{ position: 'fixed' }}
           ref={globeEl}
           globeImageUrl={globeimage}
-          width={windowDimensions.width / 2} // Update this line
-          height={windowDimensions.height}
           backgroundColor="#191919"
           polygonsData={countries.features.filter(
             (d) => d.properties.ISO_A2 !== 'AQ',
@@ -90,11 +88,11 @@ const LandingPage = () => {
       {/* text on the left side of the screen */}
       <Container>
         <Row>
-            <h1>
+            <div className="glitchEffectWrapper">
               <GlitchEffect>
                 HACKRPI X
               </GlitchEffect>
-            </h1>
+            </div>
         </Row>
 
         <Row>

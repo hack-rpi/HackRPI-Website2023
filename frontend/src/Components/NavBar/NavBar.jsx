@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import { NavLink } from 'react-router-dom';
 
-import logo from '../../../assets/hackrpi_logo.png';
 import transparentLogo from '../../../assets/logo_transparent.png';
 
 class NavBar extends React.Component {
@@ -17,8 +17,23 @@ class NavBar extends React.Component {
               display: none;
             }
           }
+          
+          .pageNav {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.25);
+            padding: .5rem; 
+          }
+          
+          .pageNav:hover {
+            color: rgba(255, 255, 255, 0.45);
+          }
+          
+          .active, .active:hover {
+            color: rgba(255, 255, 255, 1);
+          }
         `}</style>
-        <Navbar collapseOnSelect
+        <Navbar
+          collapseOnSelect
           variant="dark"
           sticky="top"
           style={{ backgroundColor: '#191919', padding: '0.5rem' }}
@@ -35,7 +50,7 @@ class NavBar extends React.Component {
               color: 'white',
             }}
           >
-            <Navbar.Brand href="#home" style={{ paddingLeft: 30 }}>
+            <NavLink to="/" style={{ paddingLeft: 30 }}>
               <img
                 src={transparentLogo}
                 className="d-inline-block align-top"
@@ -52,21 +67,40 @@ class NavBar extends React.Component {
               >
                 HACKRPI
               </div>
-            </Navbar.Brand>
-            
-            <Nav className='mainNav' style={{ marginRight: 'auto' }}>
-              <Nav.Link href="#about"> About </Nav.Link>
-              <Nav.Link href="#faq"> FAQ </Nav.Link>
-              <Nav.Link href="#sponsors"> Sponsor </Nav.Link>
-              <Nav.Link href="#members"> Team </Nav.Link>
+            </NavLink>
+
+            <Nav className="mainNav" style={{ marginRight: 'auto' }}>
+              <NavLink to="/home" className="pageNav">
+                {' '}
+                Home{' '}
+              </NavLink>
+              <NavLink to="/faq" className="pageNav">
+                {' '}
+                FAQ{' '}
+              </NavLink>
+              <NavLink to="/schedule" className="pageNav">
+                {' '}
+                Schedule{' '}
+              </NavLink>
+              <NavLink to="/team" className="pageNav">
+                {' '}
+                Team{' '}
+              </NavLink>
+              <NavLink to="/sponsor-us" className="pageNav">
+                {' '}
+                Sponsor{' '}
+              </NavLink>
             </Nav>
 
-            <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
+            <Nav
+              className="mainNav"
+              style={{ alignLeft: 'auto', alignItems: 'center' }}
+            >
               <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
                 MLH Code of Conduct
               </Nav.Link>
 
-              <Nav className="d-flex" style={{ paddingRight: "10vw" }}>
+              <Nav className="d-flex" style={{ paddingRight: '10vw' }}>
                 <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
                   <Button
                     variant="outline"
@@ -78,7 +112,6 @@ class NavBar extends React.Component {
                 </Nav.Link>
               </Nav>
             </Nav>
-
           </Container>
         </Navbar>
       </>

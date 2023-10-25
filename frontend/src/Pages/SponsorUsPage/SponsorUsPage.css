@@ -1,0 +1,50 @@
+/* Styles */
+.sponsor-container {
+  text-align: center;
+}
+
+.sponsor-title {
+  font-family: 'Mokoto';
+  font-weight: 400;
+  color: white;
+  font-size: 3rem;
+  margin-top: 50px;
+}
+
+.sponsor-content {
+  padding: 2% 10%;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.content-title {
+  font-family: 'Poppins';
+  font-size: 30px;
+}
+
+.content-iframe {
+  width: 100%;
+  height: 550px;
+  border: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .sponsor-title {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  .content-title {
+    font-size: 18px;
+  }
+
+  .content-iframe {
+    height: 400px;
+  }
+}

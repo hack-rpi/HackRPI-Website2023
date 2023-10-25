@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionItem from 'react-bootstrap/esm/AccordionItem';
@@ -14,7 +13,7 @@ const faqs = [
   },
   { title: 'When is HackRPI X?',
   content:
-    "November 4th-5th 2023, is the date for our 10th annual HackRPI. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
+    "November 4th-5th 2023, is the date for our 10th annual HackRPI. Arrival and check-in will take place from 10-11am with the opening ceremony beginning at 11am. The event will end at 4pm on Sunday, November 5th. We're really excited to celebrate the 10th year of our incredible event with YOU! Save the date!",
   },
   { title: 'Is it free to attend?',
   content:
@@ -34,6 +33,10 @@ const faqs = [
   { title: 'Who else will be there?',
     content: 'Not only can you meet other RPI students and people from other colleges, but we’ve got wonderful sponsors who make this event possible! You’ll have the opportunity to talk to representatives from a variety of tech companies at career-fair style tables.'
   },
+  { title: 'Does HackRPI provide travel reimbursement?',
+    content: 'We are unable to provide travel reimbursement at this time, but are happy to offer advice for nearby and affordable transportation options.',
+  },
+
 ];
 
 const FAQPage = () => {
