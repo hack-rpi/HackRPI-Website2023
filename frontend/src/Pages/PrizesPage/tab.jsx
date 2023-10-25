@@ -12,8 +12,13 @@ const spin = keyframes`
 const Gear = styled.div`
   font-size: 32px;
   // Removed margin-bottom as it's not needed anymore
-  animation: ${props => (props.spinning ? css`${spin} 2s linear infinite` : 'none')};
-  user-select: none; 
+  animation: ${(props) =>
+    props.spinning
+      ? css`
+          ${spin} 2s linear infinite
+        `
+      : 'none'};
+  user-select: none;
 `;
 
 const TabContainer = styled.div`
@@ -22,26 +27,27 @@ const TabContainer = styled.div`
   align-items: center;
   cursor: pointer;
   white-space: nowrap;
-  font-size: 20px; 
-  user-select: none; 
+  font-size: 20px;
+  user-select: none;
   &:hover {
     background-color: #888;
     color: #fff;
-    border-radius: 18px; 
+    border-radius: 18px;
     & > ${Gear} {
-      animation: ${css`${spin} 2s linear infinite`};
+      animation: ${css`
+        ${spin} 2s linear infinite
+      `};
     }
   }
 `;
-
 
 const Dropdown = styled.div`
   background-color: #353535;
   border: 1px solid #ccc;
   z-index: 1;
   width: 250px;
-  max-height: ${props => (props.open ? '500px' : '0')};
-  overflow-y: auto; 
+  max-height: ${(props) => (props.open ? '500px' : '0')};
+  overflow-y: auto;
   transition: max-height 0.5s ease-in-out;
   border: none;
   display: block;
@@ -51,7 +57,7 @@ const Dropdown = styled.div`
 const Prize = styled.div`
   padding: 8px 16px;
   color: red;
-  white-space: normal; 
+  white-space: normal;
 `;
 
 const Tab = ({ title, prizes }) => {
@@ -61,7 +67,7 @@ const Tab = ({ title, prizes }) => {
   const handleGearClick = () => {
     setSpinning(true);
     setOpen(!open);
-    setTimeout(() => setSpinning(false), 2000); 
+    setTimeout(() => setSpinning(false), 2000);
   };
 
   return (
@@ -72,7 +78,9 @@ const Tab = ({ title, prizes }) => {
       </TabContainer>
       <Dropdown open={open}>
         {prizes.map((prize, index) => (
-          <Prize key={index}>{prize.title}: {prize.amount}</Prize>
+          <Prize key={index}>
+            {prize.title}: {prize.amount}
+          </Prize>
         ))}
       </Dropdown>
     </div>

@@ -9,21 +9,7 @@ import './style/style.css';
 //npm install styled-components@latest
 //npm install react-spring
 
-const Prizes = [
-  { title: '#1 Best Hack', amount: '$1,500' },
-  { title: '#2 Best Hack', amount: '$750' },
-  { title: 'Best AI Hack', amount: '$400' },
-  { title: 'Best Education Hack', amount: '$400' },
-  { title: 'Best Sustainability Hack', amount: '$200' },
-  { title: 'Best Mobile Hack', amount: '$200' },
-  { title: 'Best Data Science Hack', amount: '$100' },
-  { title: 'Best Startup', amount: '$200' },
-  { title: 'Best First Time Hack', amount: '$100' },
-  { title: 'Best in Patient Safety Tech', amount: '$1,000' },
-  { title: 'Cyber Security Hack', amount: '$400' },
-  { title: 'Web3', amount: '$500' },
-  { title: 'The Wolfram Award (35)', amount: '$375 in cash value per person' },
-];
+const Prizes = [];
 
 const PrizeContainer = styled.div`
   margin: auto;
@@ -52,29 +38,30 @@ const pulsate = keyframes`
 
 const TotalPrize = styled.h1`
   text-align: center;
-  background-image: linear-gradient(45deg, #FFC7C9, #BA292E, #D96F6F, #E50717);
+  background-image: linear-gradient(45deg, #ffc7c9, #ba292e, #d96f6f, #e50717);
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 8vw; 
-  margin: 1vw; 
-  animation: ${shine} 4s linear infinite, ${pulsate} 1.5s ease-in-out infinite;
+  font-size: 8vw;
+  margin: 1vw;
+  animation:
+    ${shine} 4s linear infinite,
+    ${pulsate} 1.5s ease-in-out infinite;
   position: relative;
-  overflow-wrap: break-word; 
-  word-wrap: break-word; 
-  user-select: none; 
-
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  user-select: none;
 `;
 
 const TotalPrizeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 5vw; 
+  margin: 20px 5vw;
   gap: 2vw;
-  user-select: none; 
+  user-select: none;
 `;
 
 const TopPrizeContainer = styled.section`
@@ -150,7 +137,6 @@ const shineLight = keyframes`
   }
 `;
 
-
 const Podium = styled.div`
   background-image: url(${podium});
   width: 360px;
@@ -159,15 +145,19 @@ const Podium = styled.div`
   margin: 150px auto 3vh auto;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 65%;
     left: 50%;
     transform-origin: bottom center;
     transform: translateX(-50%);
-    width: 250px; 
-    height: 280px; 
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%); // White light
+    width: 250px;
+    height: 280px;
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ); // White light
     //background: linear-gradient(0deg, rgba(145, 3, 7, 0.3) 0%, rgba(145, 3, 0, 0) 100%); //red light
     clip-path: polygon(25% 100%, 75% 100%, 100% 0%, 0% 0%);
     animation: ${shineLight};
@@ -175,55 +165,61 @@ const Podium = styled.div`
   }
 `;
 
-const PrizeTitle= styled.h3`
+const PrizeTitle = styled.h3`
   position: absolute;
   bottom: 150%;
   left: 32%; // Adjusted left value
-  transform: translate(-50%, 50%);  // Centered vertically and horizontally
+  transform: translate(-50%, 50%); // Centered vertically and horizontally
   animation: ${moveUpDown} 2s ease-in-out infinite;
   color: gold;
-  //color:white; 
-  font-size: 40px; 
+  //color:white;
+  font-size: 40px;
   z-index: 1;
   font-family: 'Mokoto', sans-serif;
-  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700; //yellow shadow
+  text-shadow:
+    0 0 10px #ffd700,
+    0 0 20px #ffd700,
+    0 0 30px #ffd700,
+    0 0 40px #ffd700; //yellow shadow
   //text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF, 0 0 40px #FFFFFF; //white shadow
-  text-align: center;  
-  width: 130px;  
+  text-align: center;
+  width: 130px;
 `;
 
 const PrizeAmount = styled.h2`
-  margin-top: -10px; 
-  color: white; 
-  font-size: 30px; 
-  text-align: center; 
+  margin-top: -10px;
+  color: white;
+  font-size: 30px;
+  text-align: center;
   font-family: 'Mokoto', sans-serif;
-  transform: translate(-50%, 50%);  // Centered vertically and horizontally
+  transform: translate(-50%, 50%); // Centered vertically and horizontally
   animation: ${moveUpDown} 2s ease-in-out infinite;
   color: white;
-  text-shadow: 0 0 10px silver, 0 0 20px silver, 0 0 30px silver, 0 0 40px silver;
+  text-shadow:
+    0 0 10px silver,
+    0 0 20px silver,
+    0 0 30px silver,
+    0 0 40px silver;
 `;
 
 const Top_Prize = styled.section`
   position: relative;
   width: 45%; /* Adjust the width as needed for two items on the same line */
   text-align: center;
-  
+
   @media (max-width: 850px) {
     width: 100%;
   }
 
   @media (max-width: 750px) {
-    width: 100%; 
+    width: 100%;
     align-items: center;
   }
   @media (max-width: 390px) {
-    width: fit-content; 
+    width: fit-content;
     align-items: center;
     margin: 20px;
   }
-
-  
 `;
 
 const sparkle = keyframes`
@@ -243,8 +239,8 @@ const sparkle = keyframes`
 
 const Sparkle = styled.div`
   position: absolute;
-  bottom: ${props => props.bottom || '65%'};
-  left: ${props => props.left || '50%'};
+  bottom: ${(props) => props.bottom || '65%'};
+  left: ${(props) => props.left || '50%'};
   width: 20px;
   height: 20px;
   background-color: #fff;
@@ -261,16 +257,16 @@ const Sparkle = styled.div`
     39% 35%
   );
   animation: ${sparkle} 4s linear infinite;
-  animation-delay: ${props => props.delay || '0s'};
+  animation-delay: ${(props) => props.delay || '0s'};
   opacity: 0;
 `;
 
 const PrizeDescription = styled.section`
-    margin-top: 3vh;
-    height: 500px;
-    @media (max-width: 436px) {
-      height: 200px
-    }
+  margin-top: 3vh;
+  height: 500px;
+  @media (max-width: 436px) {
+    height: 200px;
+  }
 `;
 
 const OtherPrizeContainer = styled.div`
@@ -299,24 +295,43 @@ const OtherPrizeContainer = styled.div`
     flex-direction: column; /* Stack items vertically on smaller screens */
     align-items: center; /* Center items vertically */
   }
-
 `;
 
 const PrizesPage = () => {
-  const bestHacksPrizes = Prizes.slice(2, 10);
-  const cyber = Prizes.slice(10,11);
-  const web3Prizes = Prizes.slice(11, 12);
-  const wolframPrizes = Prizes.slice(12, 13);
-  const topPrizes = Prizes.slice(0, 2);
+  const prizeTracks = [
+    { title: 'Best AI Hack', amount: '$400' },
+    { title: 'Best Education Hack', amount: '$400' },
+    { title: 'Cyber Security Hack', amount: '$400' },
+  ];
+  const smallPrize1 = [
+    { title: 'Best Mobile Hack', amount: '$200' },
+    { title: 'Best Startup', amount: '$200' },
+    { title: 'Best Sustainability Hack', amount: '$200' },
+  ];
+  const smallPrize2 = [
+    { title: 'Best First Time Hack', amount: '$100' },
+    { title: 'Best Data Science Hack', amount: '$100' },
+		{title: 'Ugliest Code Competition', amount: '$50'}
+  ];
+  const sponsorPrizes = [
+    { title: 'Best in Patient Safety Tech', amount: '$1,000' },
+    { title: 'Web3', amount: '$500' },
+    {
+      title: 'The Wolfram Award (35)',
+      amount: '$375 in cash value per person',
+    },
+  ];
+  const topPrizes = [
+    { title: '#1 Best Hack', amount: '$1,500' },
+    { title: '#2 Best Hack', amount: '$750' },
+  ];
 
   return (
     <PrizeContainer>
       <TotalPrizeContainer>
-        <SpinningGear/>
-        <TotalPrize>
-          $18,875&nbsp;in Prizes
-        </TotalPrize>
-        <SpinningGearReverse/>
+        <SpinningGear />
+        <TotalPrize>$18,875&nbsp;in Prizes</TotalPrize>
+        <SpinningGearReverse />
       </TotalPrizeContainer>
 
       <TopPrizeContainer>
@@ -338,25 +353,26 @@ const PrizesPage = () => {
           </Top_Prize>
         ))}
       </TopPrizeContainer>
-      
+
       <OtherPrizeContainer>
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'space-evenly',  
-          marginTop: '-50px',
-          marginBottom: '20px',
-          gap: '30px', 
-          fontFamily: 'Mokoto',
-          color: '#FFFFFF', 
-          
-        }} className='Tab'>
-          <Tab title="Cyber Security Hack" prizes={cyber} />
-          <Tab title="Best Hacks Prizes" prizes={bestHacksPrizes} />
-          <Tab title="Web 3 Prize" prizes={web3Prizes} />
-          <Tab title="Wolfram Alfa Award" prizes={wolframPrizes} />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            marginTop: '-50px',
+            marginBottom: '20px',
+            gap: '30px',
+            fontFamily: 'Mokoto',
+            color: '#FFFFFF',
+          }}
+          className="Tab"
+        >
+          <Tab title="Major Prize Tracks" prizes={prizeTracks} />
+          <Tab title="Smaller Prizes" prizes={smallPrize1} />
+          <Tab title="Smaller Prizes" prizes={smallPrize2} />
+          <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
       </OtherPrizeContainer>
-
     </PrizeContainer>
   );
 };
