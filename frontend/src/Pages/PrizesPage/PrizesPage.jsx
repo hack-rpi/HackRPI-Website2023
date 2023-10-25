@@ -60,7 +60,7 @@ const TotalPrize = styled.h1`
   color: transparent;
   font-size: 8vw; 
   margin: 1vw; 
-  animation: ${shine} 2s linear infinite, ${pulsate} 1.5s ease-in-out infinite;
+  animation: ${shine} 4s linear infinite, ${pulsate} 1.5s ease-in-out infinite;
   position: relative;
   overflow-wrap: break-word; 
   word-wrap: break-word; 
