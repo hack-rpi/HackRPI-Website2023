@@ -22,6 +22,7 @@ const MobileNavBar = () => {
                 <NavLink id="faq" className="menu-item" to="/faq" onClick={closeMenu}>FAQ</NavLink>
                 <NavLink id="schedule" className="menu-item" to="/schedule" onClick={closeMenu}>Schedule</NavLink>
                 <NavLink id="sponsor-us" className="menu-item" to="/sponsor-us" onClick={closeMenu}>Sponsor</NavLink>
+                <NavLink id="prizes" className="menu-item" to="/prizes" onClick={closeMenu}>Prizes</NavLink>
             </Menu>
             <NavLink to="/" style={{ paddingLeft: 30 }} onClick={closeMenu}>
                 <img

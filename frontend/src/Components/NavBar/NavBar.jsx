@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import logo from '../../../assets/hackrpi_logo.png';
 import { NavLink } from 'react-router-dom';
 
 import transparentLogo from '../../../assets/logo_transparent.png';
@@ -73,6 +74,7 @@ class NavBar extends React.Component {
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
               <NavLink to="/schedule" className='pageNav'> Schedule </NavLink>
               <NavLink to="/sponsor-us" className='pageNav'> Sponsor </NavLink>
+              <NavLink to="/prizes" className='pageNav'> Prizes </NavLink>
             </Nav>
 
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
