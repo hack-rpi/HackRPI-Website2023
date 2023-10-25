@@ -47,7 +47,12 @@
         "name": "RCOS",
         "logoPath": "https://rcos.io/static/icons/rcos-branding/img/lockup-red.png",
         "url": "https://rcos.io/"
-      }
+      }, 
+			{
+				"name":"Taichi Bubble Tea",
+				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/taichi-bubble-tea.png",
+				"url":"https://www.taichibubbletea.com/"
+			}
     ],
     [
       {
