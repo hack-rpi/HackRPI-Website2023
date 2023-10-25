@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
@@ -47,10 +46,10 @@ const AboutPage = () => {
               <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
                 Change the World
               </span>{' '}
-              is an ode to a decade inspring students and HackRPI!
+              is an ode to a decade inspiring students and HackRPI!
               <br></br>
               <br></br>Come join us this coming November 4-5, 2023 to hack,
-              learn, and meet other poeple!{' '}
+              learn, and meet other people!{' '}
             </Tab.Pane>
             <Tab.Pane eventKey="two">
               We are a motivated team of RPI students who share a passion for
