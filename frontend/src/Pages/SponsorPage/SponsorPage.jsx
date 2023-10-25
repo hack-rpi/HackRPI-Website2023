@@ -40,7 +40,7 @@ const SponsorPage = () => {
                   <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup"+indx+"sponsor"+innerIndx}>
                     <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
                           <div className="d-flex flex-column align-items-center justify-content-center innerSponsor">
-                            <img src={sponsorGroup.logoPath} className="img-fluid rounded"  alt={sponsorGroup.name}/>
+                            <img src={sponsorGroup.logoPath} className="img-fluid rounded mw-100 mh-100"  alt={sponsorGroup.name}/>
                         </div>
                     </a>
                   </div>
