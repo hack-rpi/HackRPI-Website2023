@@ -203,7 +203,11 @@
               </Col>
             ))}
           </Row>
-
+          
+          {/* Tab content and buttons */}
+          <p style={{fontSize: '1em'}}>
+            Director designs by Lilu Kaufman
+          </p>
 
           {/* Tab content and buttons */}
           <p style={{fontSize: '2em', fontWeight: 'bold'}}>
