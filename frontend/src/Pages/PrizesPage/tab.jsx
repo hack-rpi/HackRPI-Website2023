@@ -33,16 +33,6 @@ const TabContainer = styled.div`
   white-space: nowrap;
   font-size: 20px;
   user-select: none;
-  &:hover {
-    background-color: #888;
-    color: #fff;
-    border-radius: 18px;
-    & > ${Gear} {
-      animation: ${css`
-        ${spin} 2s linear infinite
-      `};
-    }
-  }
 `;
 
 const Dropdown = styled.div`
@@ -52,7 +42,7 @@ const Dropdown = styled.div`
   z-index: 1;
   width: 300px;
   height: ${(props) => (props.open ? '225px' : '0')};
-  overflow-y: auto;
+  overflow-y: hidden;
   transition: height 0.5s ease-in-out;
   border: none;
   display: block;
