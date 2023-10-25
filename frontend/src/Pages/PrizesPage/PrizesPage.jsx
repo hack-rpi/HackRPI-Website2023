@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SpinningGear from './SpinningGear'; // Import the SpinningGear component
+import SpinningGearReverse from './SpinningGearReverse';
 import Tab from './tab'; // Import the Tab component
 import podium from './img/podium.png';
 import './style/style.css';
@@ -315,7 +316,7 @@ const PrizesPage = () => {
         <TotalPrize>
           $18,875&nbsp;in Prizes
         </TotalPrize>
-        <SpinningGear/>
+        <SpinningGearReverse/>
       </TotalPrizeContainer>
 
       <TopPrizeContainer>

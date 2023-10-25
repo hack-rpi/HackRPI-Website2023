@@ -11,10 +11,10 @@ const SpinningGearImg = styled(animated.img)`
   }
 `;
 
-const SpinningGear = () => {
+const SpinningGearReverse = () => {
   const props = useSpring({
-    from: { transform: 'rotate(0deg)' },
-    to: { transform: 'rotate(360deg)' },
+    from: { transform: 'rotate(360deg)' },
+    to: { transform: 'rotate(0deg)' },
     loop: true,
     config: { duration: 5000 }, // Adjust duration as needed
   });
@@ -25,6 +25,6 @@ const SpinningGear = () => {
   );
 };
 
-export default SpinningGear;
+export default SpinningGearReverse;
 
 
