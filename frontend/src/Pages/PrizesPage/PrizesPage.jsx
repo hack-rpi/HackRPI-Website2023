@@ -287,10 +287,10 @@ const PrizesPage = () => {
     { title: 'Best Mobile Hack', amount: '$200' },
     { title: 'Best Startup', amount: '$200' },
     { title: 'Best Sustainability Hack', amount: '$200' },
+		{ title: 'Best Data Science Hack', amount: '$100' },
   ];
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: '$100' },
-    { title: 'Best Data Science Hack', amount: '$100' },
     { title: 'Ugliest Code Competition', amount: '$50' },
   ];
   const sponsorPrizes = [
@@ -357,7 +357,7 @@ const PrizesPage = () => {
         >
           <Tab title="Major Prize Tracks" prizes={prizeTracks} />
           <Tab title="Minor Prize Tracks" prizes={smallPrize1} />
-          <Tab title="Smaller Prizes" prizes={smallPrize2} />
+          <Tab title="Beginner Prizes" prizes={smallPrize2} />
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
       </div>
