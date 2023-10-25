@@ -14,7 +14,7 @@ div, h1, h2, p {
 .director-jrDirector-header {
     font-family: Mokoto;
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 33px;
 }
 
 a {
@@ -76,6 +76,10 @@ a {
 
 }
 
+.junior {
+    color: #d50110;
+}
+
 /* Add these styles to your CSS file or include them in a style tag in your component */
 .button-container {
     display: flex;
@@ -96,6 +100,11 @@ a {
         font-size: 1.6rem;
         margin-bottom: 5px;
     }
+
+    .director-row.jr {
+        column-gap: 40px;
+    }
+
 }
 
 @media (max-width: 768px) {

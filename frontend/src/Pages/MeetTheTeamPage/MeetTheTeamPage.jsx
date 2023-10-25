@@ -78,12 +78,12 @@
       {
         name: 'CJ Marino',
         role: 'Junior Director of Logistics',
-        avatar: cjImage,
+        image: cjImage,
       },
       {
         name: 'Grace Hui',
         role: 'Junior Director of Finance',
-        avatar: graceImage,
+        image: graceImage,
       },
     ];
 
@@ -91,17 +91,17 @@
       {
         name: 'Heman Kolla',
         role: 'Junior Director of Sponsorship',
-        avatar: hemanImage,
+        image: hemanImage,
       },
       {
         name: 'Amanda Ruan',
         role: 'Junior Director of Marketing',
-        avatar: amandaImage,
+        image: amandaImage,
       },
       {
         name: 'Cooper Werner',
         role: 'Junior Director of Technology',
-        avatar: cooperImage,
+        image: cooperImage,
       },
     ];
 
@@ -110,8 +110,11 @@
         <h1 id="meet-our-team-header" style={{ fontFamily: 'Mokoto', fontSize: '46px' }}>
           Meet Our Team!
         </h1>
+
+        {/* Directors: */}
+
         <div className="team-members">
-          <h1 className="director-jrDirector-header" style={{ marginBottom: '33px', padding: '0 7px' }}>
+          <h1 className="director-jrDirector-header" style={{ padding: '0 7px' }}>
             Meet The <a style={{ color: '#910307' }}>Directors</a>
           </h1>
           <Row className="director-row">
@@ -156,18 +159,22 @@
             ))}
           </Row>
 
-          <h1 className="director-jrDirector-header" style={{ marginTop: '30px' }}>
-            Meet the <a style={{ color: '#d50110'}}>Junior Directors</a>
+          {/* Jr Directors: */}
+
+          <h1 className="director-jrDirector-header" style={{ marginTop: '25px' }}>
+            Meet the <a style={{ color: '#d50110' }}>Junior Directors</a>
           </h1>
-          <Row className="mb-2 justify-content-center">
+          <Row className="director-row jr">
             {/* First Row */}
             {jrTeamMembersFirstRow.map((member, index) => (
               <Col key={index} md={3}>
-                <div className="" style={{ marginBottom: '20px'}}>
-                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '50%'}} />
-                  <div className="container">
+                <div className="director-div">
+                  <div style={{ width: 'auto', height: 'auto', display: 'grid', justifySelf: 'center', alignSelf: 'center' }}>
+                    <img className='director-img' src={member.image} alt={member.name}/>
+                  </div>
+                  <div className="director-name-div">
                     <h2 className="name">{member.name}</h2>
-                    <p className="position">{member.role}</p>
+                    <p className="position junior">{member.role}</p>
                     {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
                     </Button> */}
@@ -177,15 +184,17 @@
             ))}
           </Row>
 
-          <Row className="mb-3 justify-content-center">
+          <Row className="director-row jr">
             {/* Second Row */}
             {jrTeamMembersSecondRow.map((member, index) => (
               <Col key={index} md={3}>
-                <div className="" style={{ marginBottom: '20px' }}>
-                  <img src={member.avatar} alt={member.name} style={{ width: '200px', height: '200px', objectFit: 'cover',  borderRadius: '50%' }} />
-                  <div className="container">
+                <div className="director-div">
+                  <div style={{ width: 'auto', height: 'auto', display: 'grid', justifySelf: 'center', alignSelf: 'center' }}>
+                    <img className='director-img' src={member.image} alt={member.name}/>
+                  </div>
+                  <div className="director-name-div">
                     <h2 className="name">{member.name}</h2>
-                    <p className="position">{member.role}</p>
+                    <p className="position junior">{member.role}</p>
                     {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
                     </Button> */}
@@ -194,10 +203,6 @@
               </Col>
             ))}
           </Row>
-
-          <h1 className="director-jrDirector-header" style={{ marginTop: '30px' }}>
-          Meet the <a style={{ color: '#d50110'}}>Junior Directors</a>
-          </h1>
 
 
           {/* Tab content and buttons */}
@@ -207,8 +212,7 @@
   
           <div className="button-container">
             <Nav.Link href="https://forms.gle/VY1vXF1mPMgx82wdA">
-              <Button variant="outline"className='button'style={{ backgroundColor: '#910307', color: 'white' }}
-              >
+              <Button variant="outline"className='button'style={{ backgroundColor: '#910307', color: 'white' }}>
                 Mentor Application
               </Button>
             </Nav.Link>
