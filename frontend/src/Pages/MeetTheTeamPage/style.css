@@ -1,9 +1,79 @@
+div, h1, h2, p {
+    text-align: center;
+}
+
+.MeetTheTeamPage {
+    width: 1100px;
+    margin: auto;
+}
+
+#meet-our-team-header {
+    margin-bottom: 40px;
+}
+
+.director-jrDirector-header {
+    font-family: Mokoto;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+a {
+    font-size: 30px;
+}
+
+.director-row {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+    /*column-gap: 30px;*/
+}
+
+
+.director-div {
+    margin-bottom: 5px;
+    display: grid;
+    row-gap: 13px;
+}
+
+.director-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.director-avatar {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #910307;
+    background-color: #353535;
+    display: flex;
+    position: absolute;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.director-name-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
 .name {
-    white-space: nowrap;
-  }
-.position,
-.description {
     color: white;
+    font-size: 1.8rem;
+    white-space: nowrap;
+}
+
+.position {
+    color: #910307;
+    margin-bottom: 0;
+    width: max-content;
+
 }
 
 /* Add these styles to your CSS file or include them in a style tag in your component */
@@ -13,6 +83,80 @@
     margin-bottom: 20px; /* Adjust the margin as needed */
   }
   
-  .button {
+.button {
     margin-left: 10px; /* Adjust the spacing between buttons as needed */
-  }
+}
+
+@media (max-width: 1140px) {
+    .MeetTheTeamPage {
+        width: 900px;
+    }
+
+    .name {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .MeetTheTeamPage {
+        width: 700px;
+    }
+
+    .director-div {
+        row-gap: 8px;
+    }
+
+    .director-img {
+        width: 150px;
+        height: 150px;
+    }
+    .director-avatar {
+        width: 52.5px;
+        height: 52.5px;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+    .position {
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .MeetTheTeamPage {
+        width: 100%;
+    }
+
+    #meet-our-team-header {
+        margin-bottom: 15px;
+    }
+
+    .director-row {
+        column-gap: 0;
+        row-gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .director-div { /* mobile layout is slight off-center and it was triggering my OCD so offsetting with this */
+        width: 92%;
+        margin-left: 8%;
+    }
+
+    .director-img {
+        width: 200px;
+        height: 200px;
+    }
+    .director-avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+    .position {
+        font-size: 1.2rem;
+    }
+}

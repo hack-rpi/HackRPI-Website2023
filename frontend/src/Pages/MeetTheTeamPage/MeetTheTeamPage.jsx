@@ -70,31 +70,26 @@
     ];
   
     return (
-      <div id="members" className="MeetTheTeamPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
-        <h1 style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
+      <div id="members" className="MeetTheTeamPage">
+        <h1 id="meet-our-team-header" style={{ fontFamily: 'Mokoto', fontSize: '46px' }}>
           Meet Our Team!
         </h1>
-        <br></br>
         <div className="team-members">
-          <h1 style={{ fontFamily: 'Mokoto', fontSize: 30, marginBottom: '20px' }}>
-            Meet The <a style={{ color: '#910307'}}>Directors</a>
+          <h1 className="director-jrDirector-header" style={{ marginBottom: '33px', padding: '0 7px' }}>
+            Meet The <a style={{ color: '#910307' }}>Directors</a>
           </h1>
-          <br></br>
-          <Row className="mb-4 justify-content-center">
+          <Row className="director-row">
             {/* First Row */}
             {teamMembersFirstRow.map((member, index) => (
               <Col key={index} md={3}>
-                <div style={{ marginBottom: '5px', display: 'grid', rowGap: '13px' }}>
+                <div className="director-div">
                   <div style={{ width: 'auto', height: 'auto', display: 'grid', justifySelf: 'center', alignSelf: 'center' }}>
-                    <img src={member.image} alt={member.name} style={{ width: '200px', height: '200px',
-                      objectFit: 'cover', borderRadius: '50%', border: '4px solid white' }} />
-                    <img src={member.avatar} alt={member.name} style={{ width: '70px', height: '70px', objectFit: 'cover',
-                      borderRadius: '50%', border: '2px solid #910307', backgroundColor: "#353535", display: 'flex', position: 'absolute',
-                      justifySelf: 'flex-end', alignSelf: 'flex-end' }} />
+                    <img className='director-img' src={member.image} alt={member.name}/>
+                    <img className='director-avatar' src={member.avatar} alt={member.name}/>
                   </div>
-                  <div className="container">
+                  <div className="director-name-div">
                     <h2 className="name">{member.name}</h2>
-                    <p className="position" style={{color: '#910307', marginBottom: '0' }}>{member.role}</p>
+                    <p className="position">{member.role}</p>
                     {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
                     </Button> */}
@@ -103,22 +98,19 @@
               </Col>
             ))}
           </Row>
-  
-          <Row className="mb-4">
+
+          <Row className="director-row" style={{ columnGap: '0' }}>
             {/* Second Row */}
             {teamMembersSecondRow.map((member, index) => (
               <Col key={index} md={3}>
-                <div style={{ marginBottom: '20px', display: 'grid', rowGap: '13px' }}>
+                <div className="director-div">
                   <div style={{ width: 'auto', height: 'auto', display: 'grid', justifySelf: 'center', alignSelf: 'center' }}>
-                    <img src={member.image} alt={member.name} style={{ width: '200px', height: '200px',
-                      objectFit: 'cover', borderRadius: '50%', border: '4px solid white' }} />
-                    <img src={member.avatar} alt={member.name} style={{ width: '70px', height: '70px', objectFit: 'cover',
-                      borderRadius: '50%', border: '2px solid #910307', backgroundColor: "#353535", display: 'flex', position: 'absolute',
-                      justifySelf: 'flex-end', alignSelf: 'flex-end' }} />
+                    <img className='director-img' src={member.image} alt={member.name}/>
+                    <img className='director-avatar' src={member.avatar} alt={member.name}/>
                   </div>
-                  <div className="container">
+                  <div className="director-name-div">
                     <h2 className="name">{member.name}</h2>
-                    <p className="position" style={{color: '#910307'}}>{member.role}</p>
+                    <p className="position">{member.role}</p>
                     {/* <Button className="button" style={{ marginBottom: '10px' }}>
                       More Info
                     </Button> */}
@@ -127,11 +119,10 @@
               </Col>
             ))}
           </Row>
-          <br></br>
-          <h1 style={{ fontFamily: 'Mokoto', fontSize: 30, marginBottom: '20px' }}>
+
+          <h1 className="director-jrDirector-header" style={{ marginTop: '30px' }}>
           Meet the <a style={{ color: '#d50110'}}>Junior Directors</a>
           </h1>
-          <br></br>
 
 
 
@@ -155,7 +146,6 @@
             </Nav.Link>
           </div>
         </div>
-        <br></br><br></br><br></br>
       </div>
     );
   };
