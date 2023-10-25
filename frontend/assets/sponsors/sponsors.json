@@ -47,12 +47,7 @@
         "name": "RCOS",
         "logoPath": "https://rcos.io/static/icons/rcos-branding/img/lockup-red.png",
         "url": "https://rcos.io/"
-      }, 
-			{
-				"name":"Taichi Bubble Tea",
-				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/taichi-bubble-tea.png",
-				"url":"https://www.taichibubbletea.com/"
-			}
+      }
     ],
     [
       {
@@ -74,7 +69,17 @@
         "name": "Stand Out Stickers",
         "logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
         "url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
-      }
+      },
+			{
+				"name":"Taichi Bubble Tea",
+				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/taichi-bubble-tea.png",
+				"url":"https://www.taichibubbletea.com/"
+			},
+			{
+				"name":"Monster Energy",
+				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/monster-energy.png",
+				"url":"https://www.monsterenergy.com/en-us/"
+			}
     ]
   ]
 }
