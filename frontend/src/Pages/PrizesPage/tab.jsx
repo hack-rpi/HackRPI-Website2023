@@ -9,6 +9,7 @@ const spin = keyframes`
     transform: rotate(360deg);
   }
 `;
+
 const Gear = styled.div`
   font-size: 32px;
   // Removed margin-bottom as it's not needed anymore
@@ -23,16 +24,17 @@ const Gear = styled.div`
 
 const TabContainer = styled.div`
   display: flex;
-	z-index:10;
-	position: relative;
-	text-align:center;
-  flex-direction: row; // changed from column to row
+  z-index: 10;
+  position: relative;
+  text-align: ${(props) => (props.centerTitle ? 'center' : 'left')};
+  flex-direction: row;
   align-items: center;
-	justify-content:center;
+  justify-content: ${(props) => (props.centerTitle ? 'center' : 'flex-start')}; /* Conditionally set justification */
   cursor: pointer;
   white-space: nowrap;
   font-size: 20px;
   user-select: none;
+  width: 250px; /* Added a fixed width for consistency */
 `;
 
 const Dropdown = styled.div`
@@ -53,30 +55,28 @@ const Prize = styled.div`
   padding: 8px 16px;
   color: white;
   white-space: normal;
-	font-family: 'Poppins';
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: large;
 `;
 
 const Tab = ({ title, prizes }) => {
   const [open, setOpen] = useState(true);
   const [spinning, setSpinning] = useState(false);
-
   const handleGearClick = () => {
     setSpinning(true);
     setOpen(!open);
     setTimeout(() => setSpinning(false), 2000);
   };
-
   return (
     <div>
       <TabContainer onClick={handleGearClick} className="TabContainer">
         <Gear spinning={spinning}>⚙️</Gear>
-        <h3 style={{marginBottom:'0', fontFamily:'Poppins'}}>{title}</h3>
+        <h3 style={{marginBottom:'0', fontFamily:'Mokoto', fontSize: '25px',}}>{title}</h3>
       </TabContainer>
       <Dropdown open={open}>
         {prizes.map((prize, index) => (
           <Prize key={index}>
-            {prize.title}: {prize.amount}
+            • {prize.title}: {prize.amount}
           </Prize>
         ))}
       </Dropdown>

@@ -9,8 +9,6 @@ import './style/style.css';
 //npm install styled-components@latest
 //npm install react-spring
 
-const Prizes = [];
-
 const PrizeContainer = styled.div`
   margin: auto;
   margin-bottom: 8vh;
@@ -112,9 +110,6 @@ const TopPrizeContainer = styled.section`
     align-items: stretch;
     justify-content-evenly;
   }
-
-
-
 `;
 
 const moveUpDown = keyframes`
@@ -268,15 +263,6 @@ const PrizeDescription = styled.section`
   }
 `;
 
-const OtherPrizeContainer = styled.div`
-  display: flex;
-  justify-content: center;
-	align-items:center;
-  position: relative;
-	width: 90%
-	flex-wrap: wrap;
-`;
-
 const PrizesPage = () => {
   const prizeTracks = [
     { title: 'Best AI Hack', amount: '$400' },
@@ -284,13 +270,13 @@ const PrizesPage = () => {
     { title: 'Cyber Security Hack', amount: '$400' },
   ];
   const smallPrize1 = [
-    { title: 'Best Mobile Hack', amount: '$200' },
-    { title: 'Best Startup', amount: '$200' },
-    { title: 'Best Sustainability Hack', amount: '$200' },
+    { title: 'Best Mobile Hack', amount: 'Wireless Earbuds' },
+    { title: 'Best Startup', amount: 'Mini Projector' },
+    { title: 'Best Sustainability Hack', amount: 'Reusable Notepad' },
   ];
   const smallPrize2 = [
-    { title: 'Best First Time Hack', amount: '$100' },
-    { title: 'Best Data Science Hack', amount: '$100' },
+    { title: 'Best First Time Hack', amount: 'JBL Go 3 (Fire Speaker)' },
+    { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
     { title: 'Ugliest Code Competition', amount: '$50' },
   ];
   const sponsorPrizes = [
@@ -355,8 +341,8 @@ const PrizesPage = () => {
           }}
           className="Tab"
         >
-          <Tab title="Major Prize Tracks" prizes={prizeTracks} />
-          <Tab title="Minor Prize Tracks" prizes={smallPrize1} />
+          <Tab title="Major Prizes" prizes={prizeTracks} />
+          <Tab title="Minor Prizes" prizes={smallPrize1} />
           <Tab title="Smaller Prizes" prizes={smallPrize2} />
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
