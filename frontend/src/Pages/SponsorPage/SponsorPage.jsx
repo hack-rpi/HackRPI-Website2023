@@ -13,7 +13,7 @@ const SponsorPage = () => {
           width: '100%',
           justifyContent: 'start',
           alignItems: 'center',
-          background: `linear-gradient(var(--black), #700000 50%, #700000, var(--black))`,
+          background: `linear-gradient(var(--black), #600000 20%, #600000, var(--black))`,
         }}
       >
         <h2
@@ -31,13 +31,13 @@ const SponsorPage = () => {
           const tierList = ["Obsidian", "Gold", "Silver", "Bronze", "Collaborators"];
           return (
             <div className="container" key={"sponsorGroup" + indx}>
-              <h3 className="mokoto tierHeader">{tierList[indx]}</h3>
+              <h3 className="mokoto tierHeader" style={{ margin: '20px 0' }}>{tierList[indx]}</h3> {/* Add margin to tier name */}
               <div className="d-flex justify-content-center flex-wrap">
                 {tierList[indx] === "Obsidian"
                   ? tempSponsorGroup.slice().reverse().map((sponsorGroup, innerIndx) => (
                       <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup" + indx + "sponsor" + innerIndx}>
                         <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
-                          <div className="d-flex flex-column align-items-center justify-content-center innerSponsor">
+                          <div className="d-flex flex-column align-items-center justify-content-center innerSponsor" style={{ margin: '10px' }}>{/* Add margin to companies */}
                             <img src={sponsorGroup.logoPath} className="img-fluid rounded mw-100 mh-100" alt={sponsorGroup.name} />
                           </div>
                         </a>
@@ -46,7 +46,7 @@ const SponsorPage = () => {
                   : tempSponsorGroup.map((sponsorGroup, innerIndx) => (
                       <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup" + indx + "sponsor" + innerIndx}>
                         <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
-                          <div className="d-flex flex-column align-items-center justify-content-center innerSponsor">
+                          <div className="d-flex flex-column align-items-center justify-content-center innerSponsor" style={{ margin: '10px' }}>{/* Add margin to companies */}
                             <img src={sponsorGroup.logoPath} className="img-fluid rounded mw-100 mh-100" alt={sponsorGroup.name} />
                           </div>
                         </a>
