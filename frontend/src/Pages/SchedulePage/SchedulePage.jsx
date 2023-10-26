@@ -1,18 +1,22 @@
 import React from 'react';
+import Nav from 'react-bootstrap/Nav';
 import Schedule from '../../Components/Schedule/Schedule.jsx';
 import './SchedulePage.css'; // Import your CSS file for SchedulePage styling
 
 const SchedulePage = () => {
-    return (
-        <div className="schedule-page-container" style={{margin: '40px 0'}}>   {/*className for css styling*/}
-            <h1>Schedule</h1>
-            <Schedule />
-        </div>
-    );
+  return (
+    <div className="schedule-page-container" style={{ margin: '40px 0' }}>
+      <h1>Schedule</h1>
+      <Nav.Link
+        className="button btn btn-outline"
+				style={{padding:'5px'}}
+        href="https://calendar.google.com/calendar/u/0?cid=MDNmMmY5MDlhNjNkOTU1ZjljODIyOGQyNzM3NzJkOTg4NzA4NDM5YzBkOTc4ZDgwNTA2MWJhZWMyNTlkOTgxZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+      >
+        Add To Google Calendar!
+      </Nav.Link>
+      <Schedule />
+    </div>
+  );
 };
 
 export default SchedulePage;
-
-
-
-
