@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
+import logo from '../../../assets/hackrpi_logo.png';
 import { NavLink } from 'react-router-dom';
 
 import transparentLogo from '../../../assets/logo_transparent.png';
@@ -68,28 +69,14 @@ class NavBar extends React.Component {
                 HACKRPI
               </div>
             </NavLink>
-
-            <Nav className="mainNav" style={{ marginRight: 'auto' }}>
-              <NavLink to="/home" className="pageNav">
-                {' '}
-                Home{' '}
-              </NavLink>
-              <NavLink to="/faq" className="pageNav">
-                {' '}
-                FAQ{' '}
-              </NavLink>
-              <NavLink to="/schedule" className="pageNav">
-                {' '}
-                Schedule{' '}
-              </NavLink>
-              <NavLink to="/team" className="pageNav">
-                {' '}
-                Team{' '}
-              </NavLink>
-              <NavLink to="/sponsor-us" className="pageNav">
-                {' '}
-                Sponsor{' '}
-              </NavLink>
+            
+            <Nav className='mainNav' style={{ marginRight: 'auto' }}>
+              <NavLink to="/home" className='pageNav'> Home </NavLink>
+              <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
+              <NavLink to="/schedule" className='pageNav'> Schedule </NavLink>
+              <NavLink to="/prizes" className='pageNav'> Prizes </NavLink>
+              <NavLink to="/team" className='pageNav'> Team </NavLink>
+              <NavLink to="/sponsor-us" className='pageNav'> Sponsor </NavLink>
             </Nav>
 
             <Nav

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
 import MobileNavBar from './Components/NavBar/MobileNavBar.jsx';
-// import Timer from './Components/Timer/Timer.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
+import PrizesPage from './Pages/PrizesPage/PrizesPage.jsx';
 import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,6 +46,10 @@ const router = createHashRouter([
         path: 'sponsor-us',
         element: <SponsorUsPage />,
       },
+        {
+            path: 'prizes',
+            element: <PrizesPage />,
+        },
       {
         path: 'team',
         element: <MeetTheTeamPage />,
@@ -88,6 +92,10 @@ const mobileRouter = createHashRouter([
         path: 'sponsor-us',
         element: <SponsorUsPage />,
       },
+            {
+                path: 'prizes',
+                element: <PrizesPage />,
+            },
       {
         path: 'team',
         element: <MeetTheTeamPage />,
