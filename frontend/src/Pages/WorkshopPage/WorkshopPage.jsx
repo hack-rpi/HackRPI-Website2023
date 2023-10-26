@@ -1,7 +1,8 @@
-import React from 'react';
-import Col from 'react-bootstrap/Col';
+
+import React, { useState } from 'react';
+import { Col, Row, Card, Button, Modal } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
 import workshopMern from '../../../assets/workshopPics/mern.png';
 import workshopPassword from '../../../assets/workshopPics/password.jpeg';
 import workshopHacking from '../../../assets/workshopPics/hacking.jpeg';
@@ -12,6 +13,14 @@ import workshopAgile from '../../../assets/workshopPics/agile.jpeg';
 import workshopForge from '../../../assets/workshopPics/forge.png';
 
 const WorkshopPage = () => {
+  const [show, setShow] = useState(false);
+  const [selectedWorkshop, setSelectedWorkshop] = useState(null);
+
+  const handleClose = () => setShow(false);
+  const handleShow = (workshop) => {
+      setSelectedWorkshop(workshop);
+      setShow(true);
+  };
 
     const workshops = [
         {
@@ -128,16 +137,31 @@ const WorkshopPage = () => {
           <Row>
               {workshops.map((workshop, index) => (
                   <Col key={index} xs={12} md={4} style={{ marginBottom: '20px' }}>
-                      <div style={{ marginBottom: '20px' }}>
-                          {workshop.pic && <img src={workshop.pic} alt="Workshop" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />}
-                          <h3 style={{ fontWeight: 'bold' }}>{workshop.title}</h3>
-                          <p>{workshop.time}</p>
-                          <p>{workshop.location}</p>
-                          <p>{workshop.speaker}</p>
-                      </div>
+                      <Card style={{ width: '21rem', background: 'transparent', border: 'none' }} onClick={() => handleShow(workshop)}>
+                          <Card.Img variant="top" src={workshop.pic} style={{ height: '200px', objectFit: 'cover' }} />
+                          <Card.Body style={{ background: 'rgba(0,0,0,0.0)' }}>
+                          <Card.Title style={{ color: 'white' }}>{workshop.title}</Card.Title>
+                              <Card.Text>{workshop.time}</Card.Text>
+                              <Card.Text>{workshop.location}</Card.Text>
+                              <Card.Text>{workshop.speaker}</Card.Text>
+                          </Card.Body>
+                      </Card>
                   </Col>
               ))}
           </Row>
+          {selectedWorkshop && (
+              <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton>
+                      <Modal.Title>{selectedWorkshop.title}</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>{selectedWorkshop.description}</Modal.Body>
+                  <Modal.Footer>
+                      <Button variant="secondary" onClick={handleClose}>
+                          Close
+                      </Button>
+                  </Modal.Footer>
+              </Modal>
+          )}
       </div>
   );
 };
