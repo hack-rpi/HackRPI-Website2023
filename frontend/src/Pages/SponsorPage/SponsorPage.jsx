@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Carousel } from 'react-bootstrap';
+import React, { useState } from 'react';
 import sponsorsJson from '../../../assets/sponsors/sponsors.json';
-import Image from 'react-bootstrap/Image';
 
 const SponsorPage = () => {
   const [sponsorGroups] = useState(sponsorsJson);
@@ -15,7 +13,7 @@ const SponsorPage = () => {
           width: '100%',
           justifyContent: 'start',
           alignItems: 'center',
-          background: 'linear-gradient(var(--red), var(--black))',
+          background: `linear-gradient(var(--black), #700000 50%, #700000, var(--black))`,
         }}
       >
         <h2
@@ -35,15 +33,25 @@ const SponsorPage = () => {
             <div className="container" key={"sponsorGroup" + indx}>
               <h3 className="mokoto tierHeader">{tierList[indx]}</h3>
               <div className="d-flex justify-content-center flex-wrap">
-                {tempSponsorGroup.map((sponsorGroup, innerIndx) => (
-                  <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup" + indx + "sponsor" + innerIndx}>
-                    <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
-                      <div className="d-flex flex-column align-items-center justify-content-center innerSponsor">
-                        <img src={sponsorGroup.logoPath} className="img-fluid rounded mw-100 mh-100" alt={sponsorGroup.name} />
+                {tierList[indx] === "Obsidian"
+                  ? tempSponsorGroup.slice().reverse().map((sponsorGroup, innerIndx) => (
+                      <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup" + indx + "sponsor" + innerIndx}>
+                        <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
+                          <div className="d-flex flex-column align-items-center justify-content-center innerSponsor">
+                            <img src={sponsorGroup.logoPath} className="img-fluid rounded mw-100 mh-100" alt={sponsorGroup.name} />
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                ))}
+                    ))
+                  : tempSponsorGroup.map((sponsorGroup, innerIndx) => (
+                      <div className="sponsor col-md-3 d-flex mb-5" key={"sponsorGroup" + indx + "sponsor" + innerIndx}>
+                        <a href={sponsorGroup.url} target="_blank" className="rounded px-3">
+                          <div className="d-flex flex-column align-items-center justify-content-center innerSponsor">
+                            <img src={sponsorGroup.logoPath} className="img-fluid rounded mw-100 mh-100" alt={sponsorGroup.name} />
+                          </div>
+                        </a>
+                      </div>
+                    ))}
               </div>
             </div>
           );
