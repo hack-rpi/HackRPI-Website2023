@@ -281,7 +281,7 @@ const PrizesPage = () => {
   ];
   const sponsorPrizes = [
     { title: 'Best in Patient Safety Tech', amount: '$1,000' },
-    { title: 'Web3', amount: '$500' },
+    // { title: 'Web3', amount: '$500' },
     {
       title: 'The Wolfram Award (35)',
       amount: '$375 in cash value per person',
