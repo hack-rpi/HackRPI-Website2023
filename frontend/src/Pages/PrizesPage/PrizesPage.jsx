@@ -64,16 +64,16 @@ const TotalPrizeContainer = styled.div`
 
 const TopPrizeContainer = styled.section`
   margin: auto;
-  margin-top: 18vh;
-  margin-bottom: 40px;
+  margin-top: 80px;
   display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
+  justify-content: center;
+  flex-wrap:wrap;
   text-align: center;
   max-width: 1200px; /* Updated from width */
+  width: 100%;
   
   @media (max-width: 850px) {
-    transform: scale(0.80);
+    width:
     margin-top: 8vh;
     flex-direction: row; /* Stack items vertically on smaller screens */
     align-items: space-evenly; /* Center items vertically */
@@ -81,14 +81,12 @@ const TopPrizeContainer = styled.section`
 
   @media (max-width: 750px) {
     margin-top: 0vh;
-    transform: scale(0.66);
     flex-direction: row; /* Stack items vertically on even smaller screens */
     align-items: space-evenly; /* Center items vertically */
   }
 
   @media (max-width: 436px) {
     margin-top: 0vh;
-    transform: scale(0.50);
     flex-direction: row; /* Stack items vertically on even smaller screens */
     align-items: space-evenly; /* Center items vertically */
     width: 100%;
@@ -96,13 +94,11 @@ const TopPrizeContainer = styled.section`
 
   @media (max-width: 400px) {
     margin-top: 0vh;
-    transform: scale(0.39);
     flex-direction: row; /* Stack items vertically on even smaller screens */
     align-items: space-evenly; /* Center items vertically */
     width: 100%;
   }
   @media (max-width: 390px) {
-    transform: scale(0.39);
     flex-direction: row; 
     width: 100vw;
     align-items: space-between; /* Center items vertically */
@@ -134,7 +130,7 @@ const shineLight = keyframes`
 
 const Podium = styled.div`
   background-image: url(${podium});
-  width: 360px;
+  width: 350px;
   height: 150px;
   position: relative;
   margin: 150px auto 3vh auto;
@@ -168,7 +164,7 @@ const PrizeTitle = styled.h3`
   animation: ${moveUpDown} 2s ease-in-out infinite;
   color: gold;
   //color:white;
-  font-size: 40px;
+  font-size: 30px;
   z-index: 1;
   font-family: 'Mokoto', sans-serif;
   text-shadow:
@@ -196,9 +192,9 @@ const PrizeAmount = styled.h2`
 `;
 
 const Top_Prize = styled.section`
-  position: relative;
-  width: 45%; /* Adjust the width as needed for two items on the same line */
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 
   @media (max-width: 850px) {
     width: 100%;
@@ -207,11 +203,15 @@ const Top_Prize = styled.section`
   @media (max-width: 750px) {
     width: 100%;
     align-items: center;
+  transform: scale(0.66);
+
   }
   @media (max-width: 390px) {
     width: fit-content;
     align-items: center;
     margin: 20px;
+    transform: scale(2.0);
+
   }
 `;
 
@@ -256,7 +256,6 @@ const Sparkle = styled.div`
 
 const PrizeDescription = styled.section`
   margin-top: 3vh;
-  height: 500px;
   z-index: -1;
   @media (max-width: 436px) {
     height: 200px;
@@ -273,14 +272,13 @@ const PrizesPage = () => {
     { title: 'Best Mobile Hack', amount: 'Wireless Earbuds' },
     { title: 'Best Startup', amount: 'Mini Projector' },
     { title: 'Best Sustainability Hack', amount: 'Reusable Notepad' },
+    { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
   ];
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: 'JBL Go 3 (Fire Speaker)' },
-    { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
     { title: 'Ugliest Code Competition', amount: '$50' },
   ];
   const sponsorPrizes = [
-    { title: 'Best in Patient Safety Tech', amount: '$1,000' },
     // { title: 'Web3', amount: '$500' },
     {
       title: 'The Wolfram Award (35)',
@@ -289,6 +287,7 @@ const PrizesPage = () => {
   ];
   const topPrizes = [
     { title: '#1 Best Hack', amount: '$1,500' },
+    { title: 'Best in Patient Safety', amount: '$1,000' },
     { title: '#2 Best Hack', amount: '$750' },
   ];
 
@@ -326,7 +325,7 @@ const PrizesPage = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}
-        className='otherprizes'
+        className="otherprizes"
       >
         <div
           style={{
@@ -342,9 +341,9 @@ const PrizesPage = () => {
           }}
           className="Tab"
         >
-          <Tab title="Major Prizes" prizes={prizeTracks} />
-          <Tab title="Minor Prizes" prizes={smallPrize1} />
-          <Tab title="Smaller Prizes" prizes={smallPrize2} />
+          <Tab title="Major Prize Tracks" prizes={prizeTracks} />
+          <Tab title="Minor Prize Tracks" prizes={smallPrize1} />
+          <Tab title="Beginner Prizes" prizes={smallPrize2} />
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
       </div>
