@@ -24,8 +24,8 @@ const WorkshopPage = () => {
 
     const workshops = [
         {
-            title: ' Intro to MERN Stack Web Dev Workshop',
-            time: '1:30-2:30',
+            title: 'Intro to MERN Stack Web Dev Workshop',
+            time: '1:30-2:30pm',
             location: 'TBD',
             speaker: 'Yash Kaul',
             pic: workshopMern,
@@ -38,7 +38,7 @@ const WorkshopPage = () => {
         
         {
             title: 'Password Exploitation - FBI Albany',
-            time: '5:30-6:30',
+            time: '5:30-6:30pm',
             location: 'TBD',
             speaker: 'Alex Vargas and Ryan Gallagher',
             pic: workshopPassword,
@@ -49,7 +49,7 @@ const WorkshopPage = () => {
 
         {
             title: 'Hacking the machine for fun (and sometimes profit)',
-            time: '4:30-5:30',
+            time: '4:30-5:30pm',
             location: 'TBD',
             speaker: ' Dr. Brian Callahan (w/ Ayah Tharwat )',
             pic: workshopHacking,
@@ -64,7 +64,7 @@ const WorkshopPage = () => {
 
         {
             title: 'Patient Safety 101',
-            time: '12-12:30',
+            time: '12-12:30pm',
             location: 'TBD',
             speaker: 'TBD',
             pic: workshopSafety,
@@ -76,7 +76,7 @@ const WorkshopPage = () => {
 
         {
             title: 'Design Thinking for Technical Innovation',
-            time: '4:30-5:30',
+            time: '4:30-5:30pm',
             location: 'TBD',
             speaker: 'Kylinn Askew',
             pic: workshopDesign,
@@ -88,7 +88,7 @@ const WorkshopPage = () => {
 
         {
             title: 'AI made easy with Hugging Face',
-            time: '6:30-7:30',
+            time: '6:30-7:30pm',
             location: 'TBD',
             speaker: 'Raven Levitt',
             pic: workshopAI,
@@ -101,7 +101,7 @@ const WorkshopPage = () => {
 
         {
           title: 'Agile Development Workshop',
-          time: '3:30-4:30',
+          time: '3:30-4:30pm',
           location: 'TBD',
           speaker: 'John Sturman',
           pic: workshopAgile,
@@ -129,41 +129,46 @@ const WorkshopPage = () => {
     
   
     return (
-      <div id="workshops" className="WorkshopPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
+        <div id="workshops" className="WorkshopPage" style={{ textAlign: 'center', width: '80%', margin: 'auto' }}>
           <h1 style={{ fontFamily: 'Mokoto', fontSize: 46, marginBottom: '20px' }}>
-              Checkout our Workshops!
+            Checkout our Workshops!
           </h1>
           <br></br>
           <Row>
-              {workshops.map((workshop, index) => (
-                  <Col key={index} xs={12} md={4} style={{ marginBottom: '20px' }}>
-                      <Card style={{ width: '21rem', background: 'transparent', border: 'none' }} onClick={() => handleShow(workshop)}>
-                          <Card.Img variant="top" src={workshop.pic} style={{ height: '200px', objectFit: 'cover' }} />
-                          <Card.Body style={{ background: 'rgba(0,0,0,0.0)' }}>
-                          <Card.Title style={{ color: 'white' }}>{workshop.title}</Card.Title>
-                              <Card.Text>{workshop.time}</Card.Text>
-                              <Card.Text>{workshop.location}</Card.Text>
-                              <Card.Text>{workshop.speaker}</Card.Text>
-                          </Card.Body>
-                      </Card>
-                  </Col>
-              ))}
+          {workshops.map((workshop, index) => (
+            <Col key={index} xs={12} md={4} style={{ marginBottom: '20px' }}>
+                <Card style={{ width: '21rem', background: 'transparent', border: 'none' }} onClick={() => handleShow(workshop)}>
+                <Card.Img variant="top" src={workshop.pic} className="rounded-corners" style={{ height: '210px', objectFit: 'cover', borderRadius: '10px' }} />
+                <Card.Body style={{ background: 'rgba(0,0,0,0.0)' }}>
+                    <Card.Title style={{ color: 'white' }}>{workshop.title}</Card.Title> <br />
+                    <Card.Text style={{ fontSize: 14 }}><span style={{ color: 'red', fontWeight: 'bold' }}>Time:</span> <span style={{ color: 'white' }}>{workshop.time}</span></Card.Text>
+                    <Card.Text style={{ fontSize: 14 }}><span style={{ color: 'red', fontWeight: 'bold' }}>Location:</span> <span style={{ color: 'white' }}>{workshop.location}</span></Card.Text>
+                    <Card.Text style={{ fontSize: 14 }}><span style={{ color: 'red', fontWeight: 'bold' }}>Speaker:</span> <span style={{ color: 'white' }}>{workshop.speaker}</span></Card.Text>
+                </Card.Body>
+                </Card>
+            </Col>
+            ))}
           </Row>
           {selectedWorkshop && (
-              <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton>
-                      <Modal.Title>{selectedWorkshop.title}</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>{selectedWorkshop.description}</Modal.Body>
-                  <Modal.Footer>
-                      <Button variant="secondary" onClick={handleClose}>
-                          Close
-                      </Button>
-                  </Modal.Footer>
-              </Modal>
+            <Modal show={show} onHide={handleClose} dialogClassName="custom-modal">
+                <Modal.Header closeButton style={{ background: 'rgba(0,0,0,0.9)', border: 'none' }}>
+                <Modal.Title style={{ color: 'white', fontFamily: 'Roboto', fontSize: 45, textAlign: 'center', marginLeft: 'auto', marginRight: 'auto', width: '100%' }}>{selectedWorkshop.title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body style={{ background: 'rgba(0,0,0,0.9)', color: 'black', fontFamily: 'Roboto', fontSize: 16, textAlign: 'center' }}>
+                <p><strong style={{fontWeight: 'bold', color: 'red', fontSize: 18 }}>Time:</strong> {selectedWorkshop.time}</p>
+                <p><strong style={{ fontWeight: 'bold', color: 'red', fontSize: 18 }}>Location:</strong> {selectedWorkshop.location}</p>
+                <p><strong style={{ fontWeight: 'bold', color: 'red', fontSize: 18 }}>Speaker:</strong> {selectedWorkshop.speaker}</p>
+                <p>{selectedWorkshop.description}</p>
+                </Modal.Body>
+                <Modal.Footer style={{ background: 'rgba(0,0,0,0.9)', border: 'none' }}>
+                <Button variant="secondary" onClick={handleClose} style={{ backgroundColor: 'red', borderColor: 'red' }}>
+                    Close
+                </Button>
+                </Modal.Footer>
+            </Modal>
           )}
-      </div>
-  );
-};
+        </div>
+      );
+      };
 
 export default WorkshopPage;
