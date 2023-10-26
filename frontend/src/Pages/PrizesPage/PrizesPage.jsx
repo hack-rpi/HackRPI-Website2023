@@ -347,6 +347,7 @@ const PrizesPage = () => {
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
       </div>
+      <h2 style={{textAlign:'center', margin:'0px 20px'}}>... and a Raffle Prize of an Event Banner and Amazon Echo Dot Speaker!</h2>
     </PrizeContainer>
   );
 };
