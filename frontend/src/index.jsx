@@ -8,6 +8,7 @@ import PrizesPage from './Pages/PrizesPage/PrizesPage.jsx';
 import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MeetTheTeamPage from './Pages/MeetTheTeamPage/MeetTheTeamPage.jsx';
 import SponsorUsPage from './Pages/SponsorUsPage/SponsorUsPage.jsx';
 import './style.css';
 import SchedulePage from './Pages/SchedulePage/SchedulePage.jsx';
@@ -50,6 +51,10 @@ const router = createHashRouter([
             element: <PrizesPage />,
         },
       {
+        path: 'team',
+        element: <MeetTheTeamPage />,
+      },
+      {
         path: '*',
         element: <ErrorPage />,
       },
@@ -91,6 +96,10 @@ const mobileRouter = createHashRouter([
                 path: 'prizes',
                 element: <PrizesPage />,
             },
+      {
+        path: 'team',
+        element: <MeetTheTeamPage />,
+      },
       {
         path: '*',
         element: <ErrorPage />,

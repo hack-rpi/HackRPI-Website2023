@@ -33,7 +33,8 @@ class NavBar extends React.Component {
             color: rgba(255, 255, 255, 1);
           }
         `}</style>
-        <Navbar collapseOnSelect
+        <Navbar
+          collapseOnSelect
           variant="dark"
           sticky="top"
           style={{ backgroundColor: '#191919', padding: '0.5rem' }}
@@ -74,15 +75,19 @@ class NavBar extends React.Component {
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
               <NavLink to="/schedule" className='pageNav'> Schedule </NavLink>
               <NavLink to="/prizes" className='pageNav'> Prizes </NavLink>
+              <NavLink to="/team" className='pageNav'> Team </NavLink>
               <NavLink to="/sponsor-us" className='pageNav'> Sponsor </NavLink>
             </Nav>
 
-            <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
+            <Nav
+              className="mainNav"
+              style={{ alignLeft: 'auto', alignItems: 'center' }}
+            >
               <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
                 MLH Code of Conduct
               </Nav.Link>
 
-              <Nav className="d-flex" style={{ paddingRight: "10vw" }}>
+              <Nav className="d-flex" style={{ paddingRight: '10vw' }}>
                 <Nav.Link href="https://organize.mlh.io/participants/events/9892-hackrpi">
                   <Button
                     variant="outline"
@@ -94,7 +99,6 @@ class NavBar extends React.Component {
                 </Nav.Link>
               </Nav>
             </Nav>
-
           </Container>
         </Navbar>
       </>
