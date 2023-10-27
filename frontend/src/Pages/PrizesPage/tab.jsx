@@ -34,7 +34,7 @@ const TabContainer = styled.div`
   white-space: nowrap;
   font-size: 20px;
   user-select: none;
-  width: 250px; /* Added a fixed width for consistency */
+  width: 100%; /* Added a fixed width for consistency */
 `;
 
 const Dropdown = styled.div`
@@ -42,7 +42,7 @@ const Dropdown = styled.div`
 	border-radius: 10px;
   border: 1px solid #ccc;
   z-index: 1;
-  width: 300px;
+  width: 350px;
   height: ${(props) => (props.open ? '225px' : '0')};
   overflow-y: hidden;
   transition: height 0.5s ease-in-out;
@@ -52,7 +52,7 @@ const Dropdown = styled.div`
 `;
 
 const Prize = styled.div`
-  padding: 8px 16px;
+  padding: 4px 16px;
   color: white;
   white-space: normal;
   font-family: 'Poppins', 'Arial';
@@ -78,7 +78,7 @@ const Tab = ({ title, prizes }) => {
   };
   return (
     <div>
-      <TabContainer onClick={handleGearClick} className="TabContainer">
+      <TabContainer onClick={handleGearClick} className="TabContainer" centerTitle="center">
         <Gear spinning={spinning}>⚙️</Gear>
         <h3 style={{marginBottom:'0', fontFamily:'Mokoto', fontSize: '25px', marginLeft:'8px'}}>{title}</h3>
       </TabContainer>
