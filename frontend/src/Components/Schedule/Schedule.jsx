@@ -1,11 +1,14 @@
-import * as React from 'react';
 import Paper from '@mui/material/Paper';
-import { ViewState } from '@devexpress/dx-react-scheduler';
 import {
   Scheduler,
   DayView,
   Appointments,
+  Resources
 } from '@devexpress/dx-react-scheduler-material-ui';
+import { ViewState } from '@devexpress/dx-react-scheduler';
+
+const currentDate = '2023-11-04';
+const currentDate2 = '2023-11-05';
 
 const resourcesData = [
   { text: 'Location A', id: 1, color: '#E57373' },
@@ -40,15 +43,96 @@ const resourcesData = [
   { text: 'Location B', id: 30, color: '#81C784' },
   { text: 'Location B', id: 31, color: '#81C784' },
   { text: 'Location B', id: 32, color: '#81C784' },
-];
-
+]
 const resources = [{
   fieldName: 'resourceId',
   title: 'Location',
   instances: resourcesData,
 }];
-
-const currentDate = '2023-11-04';
+const schedulerData2 = [
+{
+  startDate: new Date('2023-11-05T00:00:00-04:00'),
+  endDate: new Date('2023-11-05T02:00:00-04:00'),
+  title: 'Midnight Snacks',
+  location: 'DCC Lounge',
+  resourceId: 24
+},
+{
+  startDate: new Date('2023-11-05T00:30:00-04:00'),
+  endDate: new Date('2023-11-05T01:30:00-04:00'),
+  title: 'Movie Starts',
+  location: 'DCC 324',
+  resourceId: 25
+},
+{
+  startDate: new Date('2023-11-05T01:00:00-04:00'),
+  endDate: new Date('2023-11-05T02:00:00-05:00'),
+  title: 'Daylight Savings Party',
+  location: 'DCC Lounge',
+  resourceId: 26
+},
+//Account for daylight savings using GMT -5:00
+{
+  startDate: new Date('2023-11-05T07:00:00-05:00'),
+  endDate: new Date('2023-11-05T09:00:00-05:00'),
+  title: 'Breakfast',
+  location: 'DCC Lounge',
+  resourceId: 27
+},
+{
+  startDate: new Date('2023-11-05T07:00:00-05:00'),
+  endDate: new Date('2023-11-05T09:00:00-05:00'),
+  title: 'Submission Deadline',
+  location: 'Online',
+  resourceId: 28
+},
+{
+  startDate: new Date('2023-11-05T11:30:00-05:00'),
+  endDate: new Date('2023-11-05T12:00:00-05:00'),
+  title: 'Hacking Ends @ 12',
+  location: '',
+  resourceId: 29
+},
+{
+  startDate: new Date('2023-11-05T12:00:00-05:00'),
+  endDate: new Date('2023-11-05T15:00:00-05:00'),
+  title: 'Showcase',
+  location: 'DCC 308',
+  resourceId: 30
+},
+{
+  startDate: new Date('2023-11-05T13:00:00-05:00'),
+  endDate: new Date('2023-11-05T14:00:00-05:00'),
+  title: 'Lunch',
+  location: 'DCC Lounge',
+  resourceId: 31
+},
+{
+  startDate: new Date('2023-11-05T15:00:00-05:00'),
+  endDate: new Date('2023-11-05T15:30:00-05:00'),
+  title: 'Closing Ceremony',
+  location: 'DCC Lounge',
+  resourceId: 32
+},
+{
+  startDate: new Date('2023-11-04T12:00:00-04:00'),
+  endDate: new Date('2023-11-04T12:00:00-04:00'),
+  title: 'Mentoring Desk',
+  location: 'Great Hall',
+},
+{
+  startDate: new Date('2023-11-05T22:00:00-00:00'),
+  endDate: new Date('2023-11-05T09:00:00-05:00'),
+  title: 'Sleeping Rooms',
+  location: 'LOW 3112, 3130, 3116',
+},
+{
+  startDate: new Date('2023-11-05T08:00-05:00'),
+  endDate: new Date('2023-11-05T12:00:00-05:00'),
+  title: 'Last Chance Mentoring',
+  location: '',
+},
+]
 
 const schedulerData = [
   {
@@ -206,76 +290,30 @@ const schedulerData = [
     resourceId: 22
   },
   // {
-  //   startTime: new Date('2023-11-04T23:00:00-04:00'),
-  //   endTime: new Date('2023-11-04T23:30:00-04:00'),
+  //   startDate: new Date('2023-11-04T23:00:00-04:00'),
+  //   endDate: new Date('2023-11-04T23:30:00-04:00'),
   //   title: 'Boba',
   //   location: 'DCC Lounge',
   //   resourceId: 23
   // },
   {
-    startDate: new Date('2023-11-05T00:00:00-04:00'),
-    endDate: new Date('2023-11-05T02:00:00-04:00'),
-    title: 'Midnight Snacks',
-    location: 'DCC Lounge',
-    resourceId: 24
+    startDate: new Date('2023-11-04T12:00:00-04:00'),
+    endDate: new Date('2023-11-04T12:00:00-04:00'),
+    title: 'Mentoring Desk',
+    location: 'Great Hall',
   },
   {
-    startDate: new Date('2023-11-05T00:30:00-04:00'),
-    endDate: new Date('2023-11-05T01:30:00-04:00'),
-    title: 'Movie Starts',
-    location: 'DCC 324',
-    resourceId: 25
+    startDate: new Date('2023-11-04T22:00:00-04:00'),
+    endDate: new Date('2023-11-04T09:00:00-00:00'),
+    title: 'Sleeping Rooms',
+    location: 'LOW 3112, 3130, 3116',
   },
   {
-    startDate: new Date('2023-11-05T01:00:00-04:00'),
-    endDate: new Date('2023-11-05T02:00:00-05:00'),
-    title: 'Daylight Savings Party',
-    location: 'DCC Lounge',
-    resourceId: 26
-  },
-  //Account for daylight savings using GMT -5:00
-  {
-    startDate: new Date('2023-11-05T07:00:00-05:00'),
-    endDate: new Date('2023-11-05T09:00:00-05:00'),
-    title: 'Breakfast',
-    location: 'DCC Lounge',
-    resourceId: 27
-  },
-  {
-    startDate: new Date('2023-11-05T07:00:00-05:00'),
-    endDate: new Date('2023-11-05T09:00:00-05:00'),
-    title: 'Submission Deadline',
-    location: 'Online',
-    resourceId: 28
-  },
-  {
-    startDate: new Date('2023-11-05T11:30:00-05:00'),
+    startDate: new Date('2023-11-05T08:00-05:00'),
     endDate: new Date('2023-11-05T12:00:00-05:00'),
-    title: 'Hacking Ends @ 12',
+    title: 'Last Chance Mentoring',
     location: '',
-    resourceId: 29
   },
-  {
-    startDate: new Date('2023-11-05T12:00:00-05:00'),
-    endDate: new Date('2023-11-05T15:00:00-05:00'),
-    title: 'Showcase',
-    location: 'DCC 308',
-    resourceId: 30
-  },
-  {
-    startDate: new Date('2023-11-05T13:00:00-05:00'),
-    endDate: new Date('2023-11-05T14:00:00-05:00'),
-    title: 'Lunch',
-    location: 'DCC Lounge',
-    resourceId: 31
-  },
-  {
-    startDate: new Date('2023-11-05T15:00:00-05:00'),
-    endDate: new Date('2023-11-05T15:30:00-05:00'),
-    title: 'Closing Ceremony',
-    location: 'DCC Lounge',
-    resourceId: 32
-},
 
 ];
 const Schedule = () => (
@@ -287,8 +325,20 @@ const Schedule = () => (
         currentDate={currentDate}
       />
       <DayView
+        startDayHour={9}
+        endDayHour={24}
+      />
+      <Appointments />
+    </Scheduler>
+    <Scheduler
+      data={schedulerData2}
+    >
+      <ViewState
+        currentDate={currentDate2}
+      />
+      <DayView
         startDayHour={0}
-        endDayHour={48}
+        endDayHour={16}
       />
       <Appointments />
     </Scheduler>
