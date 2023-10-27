@@ -210,7 +210,6 @@ const Top_Prize = styled.section`
     width: fit-content;
     align-items: center;
     margin: 20px;
-    transform: scale(2.0);
 
   }
 `;
