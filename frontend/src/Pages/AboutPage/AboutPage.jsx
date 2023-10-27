@@ -44,13 +44,8 @@ const AboutPage = () => {
                   }}
                   onClick={() => handleTabClick('one')}
                   >
-                  {/* <Button
-                  variant="outline" className='button'
-                  style={{ backgroundColor: '#910307', color: 'white' }}
-                  > */}
                   the event
                   </Button>
-                  {/* </Button> */}
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -71,13 +66,6 @@ const AboutPage = () => {
                   the team
                   </Button>
                 </Nav.Link>
-                {/* <Button
-                  variant="outline" className='button'
-                  style={{ backgroundColor: '#910307', color: 'white' }}
-                  > */}
-                  {/* the team */}
-                  {/* </Button> */}
-                {/* </Nav.Link> */}
               </Nav.Item>
             </Nav>
           </Row>
