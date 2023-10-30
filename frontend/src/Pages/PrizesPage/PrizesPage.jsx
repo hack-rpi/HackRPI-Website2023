@@ -285,8 +285,8 @@ const PrizesPage = () => {
     },
   ];
   const topPrizes = [
-    { title: '#1 Best Hack', amount: '$1,500' },
     { title: 'Best in Patient Safety', amount: '$1,000' },
+    { title: '#1 Best Hack', amount: '$1,500' },
     { title: '#2 Best Hack', amount: '$750' },
   ];
 
