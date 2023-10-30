@@ -12,12 +12,6 @@ class NavBar extends React.Component {
     return (
       <>
         <style>{`
-          @media screen and (max-width: 980px) {
-            .mainNav {
-              display: none;
-            }
-          }
-          
           .pageNav {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.25);
@@ -33,6 +27,7 @@ class NavBar extends React.Component {
           }
         `}</style>
         <Navbar collapseOnSelect
+          expand="lg"
           variant="dark"
           sticky="top"
           style={{ backgroundColor: '#191919', padding: '0.5rem' }}
@@ -67,7 +62,7 @@ class NavBar extends React.Component {
                 HACKRPI
               </div>
             </NavLink>
-            
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Nav className='mainNav' style={{ marginRight: 'auto' }}>
               <NavLink to="/home" className='pageNav'> Home </NavLink>
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
@@ -91,7 +86,6 @@ class NavBar extends React.Component {
                 </Nav.Link>
               </Nav>
             </Nav>
-
           </Container>
         </Navbar>
       </>
