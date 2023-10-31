@@ -289,39 +289,39 @@ return (
         </tr>
       </thead>
       <tbody>
-        {/* Render Events */}
-        {schedule.map((item, index) => {
-          // Use a loop to check if the current event's date is different from the previous event's date
-          // Render the heading row for the first event or if the event's date is different
-          if (isFirstEvent || item.startTime.getDate() !== currentDate) {
-            currentDate = item.startTime.getDate();
-            isFirstEvent = false; // Set isFirstEvent to false after the first event
+          {/* Render Events */}
+          {schedule.map((item, index) => {
+            const eventDate = item.startTime.getDate(); // Get the date of the current event
+
+            // Render the heading row if the event's date is different from the current date
+            if (eventDate !== currentDate) {
+              currentDate = eventDate; // Update currentDate to the event's date
+              return (
+                <React.Fragment key={`date-heading-${currentDate}`}>
+                  <tr>
+                    <td className='table-header' colSpan="3">
+                      {currentDate === 4 ? 'November 4th' : 'November 5th'}
+                    </td>
+                  </tr>
+                  <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
+                </React.Fragment>
+              );
+            }
+            // Determine if the current event should be highlighted
+            const isCurrentEvent =
+              currentEvent &&
+              currentEvent.startTime >= item.startTime &&
+              currentEvent.endTime <= item.endTime;
+            // Render individual event row using a fragment
             return (
-              <React.Fragment key={`date-heading-${currentDate}`}>
-                <tr>
-                  <td className='table-header' colSpan="3">
-                    {currentDate === 4 ? 'November 4th' : 'November 5th'}
-                  </td>
-                </tr>
-                <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
+              <React.Fragment key={index}>
+                <ScheduleRow
+                  item={item}
+                  isCurrentEvent={isCurrentEvent}
+                />
               </React.Fragment>
             );
-          }
-          // Determine if the current event should be highlighted
-          const isCurrentEvent =
-            currentEvent &&
-            currentEvent.startTime >= item.startTime &&
-            currentEvent.endTime <= item.endTime;
-          // Render individual event row using a fragment
-          return (
-            <React.Fragment key={index}>
-              <ScheduleRow
-                item={item}
-                isCurrentEvent={isCurrentEvent}
-              />
-            </React.Fragment>
-          );
-        })}
+          })}
         <tr>
           <td className='table-header' colSpan="3">
             Constant Events
