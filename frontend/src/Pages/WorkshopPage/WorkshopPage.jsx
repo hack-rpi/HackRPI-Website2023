@@ -11,6 +11,7 @@ import workshopDesign from '../../../assets/workshopPics/design.jpeg';
 import workshopAI from '../../../assets/workshopPics/ai.jpeg';
 import workshopAgile from '../../../assets/workshopPics/agile.jpeg';
 import workshopForge from '../../../assets/workshopPics/forge.png';
+import './style.css';
 
 const WorkshopPage = () => {
   const [show, setShow] = useState(false);
@@ -137,8 +138,8 @@ const WorkshopPage = () => {
           <Row>
           {workshops.map((workshop, index) => (
             <Col key={index} xs={12} md={4} style={{ marginBottom: '20px' }}>
-                <Card style={{ width: '21rem', background: 'transparent', border: 'none' }} onClick={() => handleShow(workshop)}>
-                <Card.Img variant="top" src={workshop.pic} className="rounded-corners" style={{ height: '210px', objectFit: 'cover', borderRadius: '10px' }} />
+                <Card className="card-container" onClick={() => handleShow(workshop)}>
+                <Card.Img variant="top" src={workshop.pic} className="rounded-corners" style={{ height: '200px', objectFit: 'cover', borderRadius: '10px', padding: '10px', margin: '0 auto'}} />
                 <Card.Body style={{ background: 'rgba(0,0,0,0.0)' }}>
                     <Card.Title style={{ color: 'white' }}>{workshop.title}</Card.Title> <br />
                     <Card.Text style={{ fontSize: 14 }}><span style={{ color: 'red', fontWeight: 'bold' }}>Time:</span> <span style={{ color: 'white' }}>{workshop.time}</span></Card.Text>
