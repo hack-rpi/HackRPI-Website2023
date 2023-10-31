@@ -7,15 +7,25 @@ const tolerance = 30 * 1000; // 30 sec in milliseconds
 
 
 
-const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
+const ScheduleRow = React.memo(({ item, isCurrentEvent, isPastEvent }) => {
   const formatDate = useMemo(() => date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), []);
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
 
+  //Which background color should we use?
+  var background_color = '';
+    if(isCurrentEvent)
+      background_color = '#910307';
+    else if(isPastEvent)
+      background_color = '#a1a19c';
+    else
+      background_color = '#353535';
+
   return (
+    
     <tr
-      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
+      style={{ fontFamily: 'Poppins', backgroundColor: background_color, padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{eventName}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{item.location}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td>
@@ -291,6 +301,21 @@ return (
       <tbody>
         {/* Render Events */}
         {schedule.map((item, index) => {
+
+          ///////////////////////////// NEW CODE /////////////////////////////
+
+          // Dates and Times 
+          const itemEndDate = item.endTime.getDate();
+          const itemEndTime = item.endTime.getTime();
+          const currentDate_ = new Date().getDate();
+          const currentTime_ = new Date().getTime();
+
+          //check if this item's date is before the current date (already happened)
+          const isPastEvent = itemEndDate < currentDate_ || 
+                             (itemEndDate == currentDate_ && itemEndTime < currentTime_);
+
+          ///////////////////////////// END NEW CODE /////////////////////////
+
           // Use a loop to check if the current event's date is different from the previous event's date
           // Render the heading row for the first event or if the event's date is different
           if (isFirstEvent || item.startTime.getDate() !== currentDate) {
@@ -303,7 +328,7 @@ return (
                     {currentDate === 4 ? 'November 4th' : 'November 5th'}
                   </td>
                 </tr>
-                <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} /> {/* Render the first event */}
+                <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} isPastEvent={isPastEvent}/> {/* Render the first event */}
               </React.Fragment>
             );
           }
@@ -318,6 +343,7 @@ return (
               <ScheduleRow
                 item={item}
                 isCurrentEvent={isCurrentEvent}
+                isPastEvent={isPastEvent}
               />
             </React.Fragment>
           );
@@ -333,10 +359,18 @@ return (
           const startTime = item.startTime.getTime();
           const endTime = item.endTime.getTime();
           const isCurrentEvent = currentTime >= startTime && currentTime <= endTime + tolerance;
-          
+
+          //check if this item's date is before the current date (already happened)
+          const itemEndDate = item.endTime.getDate();
+          const itemEndTime = item.endTime.getTime();
+          const currentDate_ = new Date().getDate();
+          const currentTime_ = new Date().getTime();
+          const isPastEvent = itemEndDate <= currentDate_ || 
+                             (itemEndDate == currentDate_ && itemEndTime < currentTime_);
+
           return (
             <React.Fragment key={index}>
-              <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} />
+              <ScheduleRow item={item} isCurrentEvent={isCurrentEvent} isPastEvent={isPastEvent} />
             </React.Fragment>
           );
         })}
