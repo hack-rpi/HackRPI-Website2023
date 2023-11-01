@@ -5,23 +5,36 @@ import './Styles.css';
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 
-
-
 const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const formatDate = useMemo(() => date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), []);
   const startTimeString = useMemo(() => formatDate(item.startTime), [item.startTime]);
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
 
+  const currentTime = new Date().getTime();
+  const isPastEvent = currentTime > item.endTime.getTime();
+
   return (
     <tr
-      style={{ fontFamily: 'Poppins', backgroundColor: isCurrentEvent ? '#910307' : '#353535', padding: '0.1rem', borderBottom: '5px solid black', specificity: 'important' }}>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{eventName}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{item.location}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td>
+      style={{
+        fontFamily: 'Poppins',
+        backgroundColor: isCurrentEvent
+          ? '#910307'
+          : isPastEvent
+          ? 'rgba(53, 53, 53, 0.5)' 
+          : '#353535',
+        padding: '0.1rem',
+        borderBottom: '5px solid black',
+        textDecoration: isPastEvent ? 'line-through' : 'none',  
+        opacity: isPastEvent ? 0.6 : 1 
+      }}>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{startTimeString} - {endTimeString}</td>
     </tr>
   );
 });
+
 //useMemo is NEEDED to optimize the initialization of the schedule array and prevents unnecessary rerender and overload.
 const Schedule = () => {
   const schedule = useMemo(() => [
