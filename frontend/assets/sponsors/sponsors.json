@@ -84,6 +84,10 @@
 				"name":"Monster Energy",
 				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/monster-energy.png",
 				"url":"https://www.monsterenergy.com/en-us/"
+			}, {
+				"name":"Nord Security",
+				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/Nord-Sec.png",
+				"url":"https://nordsecurity.com/"
 			}
     ]
   ]
