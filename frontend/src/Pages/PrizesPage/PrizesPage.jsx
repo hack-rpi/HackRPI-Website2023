@@ -283,11 +283,19 @@ const PrizesPage = () => {
       title: 'The Wolfram Award (35)',
       amount: '$375 in cash value per person',
     },
+    {
+      title: 'Google Cloud Credit',
+      amount: '$25 Credit'
+    },
+    {
+      title: 'Echo3D',
+      amount: '1 Month Business Free Trial'
+    }
   ];
   const topPrizes = [
+    { title: '#2 Best Hack', amount: '$750' },
     { title: '#1 Best Hack', amount: '$1,500' },
     { title: 'Best in Patient Safety', amount: '$1,000' },
-    { title: '#2 Best Hack', amount: '$750' },
   ];
 
   return (

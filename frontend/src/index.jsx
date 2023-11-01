@@ -15,6 +15,7 @@ import SchedulePage from './Pages/SchedulePage/SchedulePage.jsx';
 import { Outlet } from 'react-router-dom';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
+import MapsPage from './Pages/MapsPage/MapsPage.jsx';
 
 const router = createHashRouter([
   {
@@ -50,6 +51,10 @@ const router = createHashRouter([
             path: 'prizes',
             element: <PrizesPage />,
         },
+        {
+          path: 'maps',
+          element: <MapsPage />,
+      },
       {
         path: 'team',
         element: <MeetTheTeamPage />,
@@ -96,6 +101,10 @@ const mobileRouter = createHashRouter([
                 path: 'prizes',
                 element: <PrizesPage />,
             },
+            {
+              path: 'maps',
+              element: <MapsPage />,
+          },
       {
         path: 'team',
         element: <MeetTheTeamPage />,
