@@ -8,8 +8,6 @@ import Button from 'react-bootstrap/Button';
 
 // Rest of your code
 
-//import './styles.css';
-
 const AboutPage = () => {
   const [activeTab, setActiveTab] = useState('one'); // 'one' represents the default active tab.
 
