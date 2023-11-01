@@ -23,12 +23,13 @@ const MapsPage = () => {
         MAPS
       </h1>
       <Tab.Container defaultActiveKey="one" style={{ paddingBottom: 50 }}>
-        <Col>
+				<Col>
+				<div style={{height: 'fit-content'}}>
           <Row>
             <Nav
               variant="pills-primary"
               className="flex-row justify-content-center"
-              style={{ height: 50 }}
+              style={{ height: 'fit-content' }}
             >
               <Nav.Item>
                 <Nav.Link className="nav-link-custom" eventKey="one" onClick={() => setActiveTab('one')}>
@@ -62,6 +63,8 @@ const MapsPage = () => {
               </Nav.Item>
             </Nav>
           </Row>
+				</div>
+        
 
           <Tab.Content className="myClass">
             <Tab.Pane eventKey="one">
