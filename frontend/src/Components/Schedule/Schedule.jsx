@@ -254,13 +254,14 @@ const Schedule = () => {
     useEffect(() => {
       const updateCurrentEvent = () => {
         const currentTime = new Date().getTime();
-        const updatedSchedule = schedule.map(event => {
+    
+        // Iterate through all events and find the first event that is current
+        const currentEvent = schedule.find(event => {
           const startTime = event.startTime.getTime() - tolerance;
           const endTime = event.endTime.getTime() + tolerance;
-          const isCurrentEvent = currentTime >= startTime && currentTime <= endTime;
-          return { ...event, isCurrentEvent };
+          return currentTime >= startTime && currentTime <= endTime;
         });
-        const currentEvent = updatedSchedule.find(event => event.isCurrentEvent);
+
         setCurrentEvent(currentEvent);
  // Corrected function name here
       };
