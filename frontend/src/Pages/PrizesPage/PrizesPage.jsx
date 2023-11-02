@@ -203,14 +203,12 @@ const Top_Prize = styled.section`
   @media (max-width: 750px) {
     width: 100%;
     align-items: center;
-  transform: scale(0.66);
-
+    transform: scale(0.66);
   }
   @media (max-width: 390px) {
     width: fit-content;
     align-items: center;
     margin: 20px;
-
   }
 `;
 
@@ -272,6 +270,7 @@ const PrizesPage = () => {
     { title: 'Best Startup', amount: 'Mini Projector' },
     { title: 'Best Sustainability Hack', amount: 'Reusable Notepad' },
     { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
+		{ title: "Best Game", amount: "$20 Gift Card + Misc Game Dev Prizes"}
   ];
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: 'JBL Go 3 (Fire Speaker)' },
@@ -285,12 +284,44 @@ const PrizesPage = () => {
     },
     {
       title: 'Google Cloud Credit',
-      amount: '$25 Credit'
+      amount: '$25 Credit',
+    },
+    {
+      title: 'Best Use of Google Cloud',
+      amount: 'Google Cloud Backpack',
+    },
+    {
+      title: 'Best Use of MongoDB Atlas',
+      amount: 'M5GO IoT starter kit',
+    },
+    {
+      title: 'Most Creative Use of GitHub',
+      amount: 'GitHub Swag',
+    },
+    {
+      title: 'Best Domain Name from GoDaddy Registry',
+      amount: 'Hack from Home Kit',
+    },
+    {
+      title: 'Best Use of MATLAB',
+      amount: 'Wireless YoYo Speaker',
+    },
+    {
+      title: 'Best Use of AI in Education',
+      amount: 'TickTime Pomodoro Timer',
+    },
+    {
+      title: 'Best Use of TinyMCE',
+      amount: '3D Printing Pen',
+    },
+    {
+      title: 'Best Use of Soroban',
+      amount: 'Power Bank',
     },
     {
       title: 'Echo3D',
-      amount: '1 Month Business Free Trial'
-    }
+      amount: '1 Month Business Free Trial',
+    },
   ];
   const topPrizes = [
     { title: '#2 Best Hack', amount: '$750' },
@@ -354,7 +385,9 @@ const PrizesPage = () => {
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
       </div>
-      <h2 style={{textAlign:'center', margin:'0px 20px'}}>... and a Raffle Prize of an Event Banner and Amazon Echo Dot Speaker!</h2>
+      <h2 style={{ textAlign: 'center', margin: '0px 20px' }}>
+        ... and a Raffle Prize of an Event Banner and Amazon Echo Dot Speaker!
+      </h2>
     </PrizeContainer>
   );
 };
