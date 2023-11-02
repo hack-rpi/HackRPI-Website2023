@@ -34,6 +34,14 @@
   }
 }
 
+@media (max-width: 830px) {
+  .schedule-table {
+    width: 777px;
+
+  }
+
+}
+
 @media (max-width: 768px) {
   .schedule-table {
     width: 620px;
@@ -60,11 +68,12 @@
 
 @media (max-width: 426px) {
   .schedule-table {
-    width: 300px;
+    width: 95%;
+    margin: auto;
   }
 
   .schedule-item {
-    font-size: 0.47rem;
+    font-size: 13px;
     padding: 0.2rem ;
     line-height: 1.2;
   }
