@@ -156,12 +156,6 @@ const Schedule = () => {
       location: 'DCC 308',
     },
     {
-      startTime: new Date('2023-11-04T14:30:00-04:00'),
-      endTime: new Date('2023-11-04T15:30:00-04:00'),
-      event: 'Nuvalence',
-      location: 'DCC 330',
-    },
-    {
       startTime: new Date('2023-11-04T15:30:00-04:00'),
       endTime: new Date('2023-11-04T16:30:00-04:00'),
       event: 'Scrum Workshop',
@@ -215,6 +209,12 @@ const Schedule = () => {
       event: 'Dinner',
       location: 'DCC Lounge',
     },
+		{
+			startTime: new Date('2023-11-04T23:30:00.000Z'),
+			endTime: new Date("2023-11-05T00:30:00.000Z"),
+			event: 'The Forge Workshop',
+			location: 'LOW 2037A',
+		},
     {
       startTime: new Date('2023-11-04T21:00:00-04:00'),
       endTime: new Date('2023-11-04T22:00:00-04:00'),
@@ -227,14 +227,12 @@ const Schedule = () => {
       event: 'Fun Activity (Trivia/Game)',
       location: 'DCC 318',
     },
-    /*
     {
       startTime: new Date('2023-11-04T23:00:00-04:00'),
       endTime: new Date('2023-11-04T23:30:00-04:00'),
       event: 'Boba',
       location: 'DCC Lounge',
     },
-    */
     {
       startTime: new Date('2023-11-05T00:00:00-04:00'),
       endTime: new Date('2023-11-05T02:00:00-04:00'),
