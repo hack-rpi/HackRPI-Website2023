@@ -44,7 +44,7 @@ const Dropdown = styled.div`
   z-index: 1;
   width: 350px;
   height: ${(props) => (props.open ? '225px' : '0')};
-  overflow-y: hidden;
+  overflow-y: auto;
   transition: height 0.5s ease-in-out;
   border: none;
   display: block;
