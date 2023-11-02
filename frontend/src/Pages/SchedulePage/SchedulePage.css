@@ -14,3 +14,19 @@
     font-weight: 700;
     margin-bottom: 20px;
 }
+
+.event-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+ /* stack the button on smaller screen */
+  @media (max-width: 720px) {
+    .event-nav {
+      flex-direction: column;
+    }
+    .event-nav > button {
+        margin-top: 8px;
+    }
+  }
+  

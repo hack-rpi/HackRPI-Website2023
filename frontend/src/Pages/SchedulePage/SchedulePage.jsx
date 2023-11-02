@@ -48,7 +48,7 @@ const SchedulePage = () => {
       >
         Add To Google Calendar!
       </Nav.Link>
-      <div>
+      <div className='event-nav'>
         <button id="nov5-events-button" className='button'>November 5th Events</button>
         <button id="constant-events-button" className='button'>Constant Events</button>
       </div>
