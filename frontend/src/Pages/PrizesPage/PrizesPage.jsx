@@ -272,6 +272,7 @@ const PrizesPage = () => {
     { title: 'Best Startup', amount: 'Mini Projector' },
     { title: 'Best Sustainability Hack', amount: 'Reusable Notepad' },
     { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
+		{ title: "Best Game", amount: "$20 Gift Card + Misc Game Dev Prizes"}
   ];
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: 'JBL Go 3 (Fire Speaker)' },
