@@ -283,12 +283,12 @@ const PrizesPage = () => {
       amount: '$375 in cash value per person',
     },
     {
-      title: 'Best Use of Google Cloud',
-      amount: 'Google Cloud Backpack',
-    },
-    {
       title: 'Google Cloud Credit',
       amount: '$25 Credit',
+    },
+    {
+      title: 'Best Use of Google Cloud',
+      amount: 'Google Cloud Backpack',
     },
     {
       title: 'Best Use of MongoDB Atlas',
