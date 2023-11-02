@@ -74,6 +74,7 @@ class NavBar extends React.Component {
               <NavLink to="/home" className='pageNav'> Home </NavLink>
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
               <NavLink to="/schedule" className='pageNav'> Schedule </NavLink>
+              <NavLink to="/maps" className='pageNav'> Maps </NavLink>
               <NavLink to="/prizes" className='pageNav'> Prizes </NavLink>
               <NavLink to="/team" className='pageNav'> Team </NavLink>
               <NavLink to="/sponsor-us" className='pageNav'> Sponsor </NavLink>
