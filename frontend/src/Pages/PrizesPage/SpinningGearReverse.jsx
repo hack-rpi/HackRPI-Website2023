@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const SpinningGearImg = styled(animated.img)`
   width: 20vw;
   height: auto;
+  filter: grayscale(100%) contrast(10%); // Add this line
   @media (max-width: 700px) {
     display: none;
   }

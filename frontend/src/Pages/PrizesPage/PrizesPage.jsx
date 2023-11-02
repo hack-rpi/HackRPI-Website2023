@@ -270,6 +270,7 @@ const PrizesPage = () => {
     { title: 'Best Startup', amount: 'Mini Projector' },
     { title: 'Best Sustainability Hack', amount: 'Reusable Notepad' },
     { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
+		{ title: "Best Game", amount: "$20 Gift Card + Misc Game Dev Prizes"}
   ];
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: 'JBL Go 3 (Fire Speaker)' },
@@ -323,9 +324,9 @@ const PrizesPage = () => {
     },
   ];
   const topPrizes = [
+    { title: '#2 Best Hack', amount: '$750' },
     { title: '#1 Best Hack', amount: '$1,500' },
     { title: 'Best in Patient Safety', amount: '$1,000' },
-    { title: '#2 Best Hack', amount: '$750' },
   ];
 
   return (

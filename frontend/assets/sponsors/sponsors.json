@@ -1,6 +1,5 @@
 {
-  "sponsorGroups": 
-  [
+  "sponsorGroups": [
     [
       {
         "name": "Nuvalence",
@@ -13,7 +12,7 @@
         "url": "https://www.ibm.com/us-en"
       }
     ],
-    [ 
+    [
       {
         "name": "Global Foundries",
         "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/GF_Logo_png.png",
@@ -47,6 +46,11 @@
         "name": "RCOS",
         "logoPath": "https://rcos.io/static/icons/rcos-branding/img/lockup-red.png",
         "url": "https://rcos.io/"
+      },
+      {
+        "name": "Kudu Dynamics",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/kudu-dyn.png",
+        "url": "https://www.kududyn.com/"
       }
     ],
     [
@@ -70,16 +74,31 @@
         "logoPath": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5194272600006400052e6d5c/0x0.png",
         "url": "http://hackp.ac/mlh-StandOutStickers-hackathons"
       },
-			{
-				"name":"Taichi Bubble Tea",
-				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/taichi-bubble-tea.png",
-				"url":"https://www.taichibubbletea.com/"
-			},
-			{
-				"name":"Monster Energy",
-				"logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/monster-energy.png",
-				"url":"https://www.monsterenergy.com/en-us/"
-			}
+      {
+        "name": "Taichi Bubble Tea",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/taichi-bubble-tea.png",
+        "url": "https://www.taichibubbletea.com/"
+      },
+      {
+        "name": "Monster Energy",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/monster-energy.png",
+        "url": "https://www.monsterenergy.com/en-us/"
+      },
+      {
+        "name": "NordVPN",
+        "logoPath": "https://media.wired.co.uk/photos/606d9bc4307b8f0b37c724bb/4:3/w_2664,h_1998,c_limit/wired-nordvpn-2.jpg",
+        "url": "https://nordvpn.com"
+      },
+      {
+        "name": "NordPass",
+        "logoPath": "https://s1.npass.app/nordpass/media/1.1887.0/images/web/meta/nordpass-meta-trademark.png",
+        "url": "https://nordpass.com"
+      },
+      {
+        "name": "Incogni",
+        "logoPath": "https://hackrpi-sponsor-logos.s3.us-east-2.amazonaws.com/social-banner.png",
+        "url": "https://incogni.com"
+      }
     ]
   ]
 }

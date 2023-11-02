@@ -78,3 +78,8 @@
     padding: 13px 0 5px 6px;
   }
 }
+
+
+.strikethrough {
+  text-decoration: line-through;
+}
