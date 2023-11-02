@@ -1,9 +1,28 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 import './Styles.css';
+{/*
+Summary
+The code snippet is a React component that renders a schedule table. It uses the useState and useEffect hooks to update the current event based on the current time. The schedule and constantEvents arrays store the event data, and the ScheduleRow component is used to render each row in the table.
+
+Code Analysis
+Inputs
+schedule: An array of objects representing the events in the schedule.
+constantEvents: An array of objects representing the constant events in the schedule.
+
+Flow
+The component initializes the currentEvent state variable to null.
+The useEffect hook is used to update the currentEvent based on the current time.
+The updateCurrentEvent function is called initially and then every minute using setInterval.
+The updateCurrentEvent function checks the current time against the start and end times of each event in the schedule array.
+The currentEvent state variable is updated with the first event that matches the current time.
+The schedule and constantEvents arrays are mapped to render the rows in the table using the ScheduleRow component.
+The currentEvent is passed to the ScheduleRow component to highlight the current event.
+Outputs
+A table displaying the events in the schedule, with the current event highlighted.*/}
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
-
+//confused about isCurrentEvent additionally format date should be defined outside ScheduleRow component
 const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const formatDate = date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
