@@ -11,6 +11,10 @@ import workshopDesign from '../../../assets/workshopPics/design.jpeg';
 import workshopAI from '../../../assets/workshopPics/ai.jpeg';
 import workshopAgile from '../../../assets/workshopPics/agile.jpeg';
 import workshopForge from '../../../assets/workshopPics/forge.png';
+import workshopMobdev from '../../../assets/workshopPics/mobdev.png';
+import workshopQuantum from '../../../assets/workshopPics/quantum.png';
+import workshopSemi from '../../../assets/workshopPics/semi.jpeg';
+import workshopTechstack from '../../../assets/workshopPics/techstack.jpeg';
 import './style.css';
 
 const WorkshopPage = () => {
@@ -41,7 +45,7 @@ const WorkshopPage = () => {
           time: '12:30-1:30pm',
           location: 'DCC 308',
           speaker: 'Michael and Kuzmin',
-          pic: workshopSafety,
+          pic: workshopTechstack,
           description: 'TBD'
         },
         
@@ -63,7 +67,7 @@ const WorkshopPage = () => {
           time: '1:30-2:30pm',
           location: 'DCC 318',
           speaker: 'Brian Ingmanson',
-          pic: workshopMern,
+          pic: workshopMobdev,
           description: "If you've ever wondered how those awesome apps on your phone are made, or if you've got an itch to create something fun and \
           innovative, the Mobile Dev Workshop is the perfect place to start! The main course of our workshop revolves around React and Flutter.  \
           These two powerful frameworks empower you to create fantastic, user-friendly, and visually stunning apps for both IOS and Android at  \
@@ -81,7 +85,7 @@ const WorkshopPage = () => {
           time: '2:30-3:30pm',
           location: 'DCC 308',
           speaker: 'Brian Ingmanson',
-          pic: workshopMern,
+          pic: workshopQuantum,
           description: 'How folks can run their first quantum circuit on a real quantum computer, and some of the quirks of quantum computing.'
         },
 
@@ -133,6 +137,17 @@ const WorkshopPage = () => {
         break passwords. They will cover steps on how to extract a password hash from a file and run it with \
         hashcat to crack the password. '
     },
+
+    {
+      title: 'Semiconductor Industry Overview',
+      time: '5:30-6:30pm',
+      location: 'DCC 327',
+      speaker: 'Alexander Martin',
+      pic: workshopSemi,
+      description: 'Software needs hardware to operate. The last several years has seen a fundamental shift in the\
+      Semiconductor Supply Chain. We will provide an overview of the Semiconductor Industry and the role of Global \
+      Foundries in that ecosystem.'
+  },
 
     {
         title: 'AI made easy with Hugging Face',
