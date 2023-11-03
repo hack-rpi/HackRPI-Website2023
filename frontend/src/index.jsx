@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MeetTheTeamPage from './Pages/MeetTheTeamPage/MeetTheTeamPage.jsx';
 import SponsorUsPage from './Pages/SponsorUsPage/SponsorUsPage.jsx';
+import WorkshopPage from './Pages/WorkshopPage/WorkshopPage.jsx';
 import './style.css';
 import SchedulePage from './Pages/SchedulePage/SchedulePage.jsx';
 import { Outlet } from 'react-router-dom';
@@ -47,17 +48,21 @@ const router = createHashRouter([
         path: 'sponsor-us',
         element: <SponsorUsPage />,
       },
-        {
-            path: 'prizes',
-            element: <PrizesPage />,
-        },
-        {
-          path: 'maps',
-          element: <MapsPage />,
+      {
+        path: 'prizes',
+        element: <PrizesPage />,
+      },
+      {
+        path: 'maps',
+        element: <MapsPage />,
       },
       {
         path: 'team',
         element: <MeetTheTeamPage />,
+      },
+      {
+        path: 'workshops',
+        element: <WorkshopPage />,
       },
       {
         path: '*',
@@ -97,17 +102,21 @@ const mobileRouter = createHashRouter([
         path: 'sponsor-us',
         element: <SponsorUsPage />,
       },
-            {
-                path: 'prizes',
-                element: <PrizesPage />,
-            },
-            {
-              path: 'maps',
-              element: <MapsPage />,
-          },
+      {
+        path: 'prizes',
+        element: <PrizesPage />,
+      },
+      {
+        path: 'maps',
+        element: <MapsPage />,
+      },
       {
         path: 'team',
         element: <MeetTheTeamPage />,
+      },
+      {
+        path: 'workshops',
+        element: <WorkshopPage />,
       },
       {
         path: '*',
