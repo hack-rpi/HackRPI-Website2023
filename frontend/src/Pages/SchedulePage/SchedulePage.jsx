@@ -9,7 +9,7 @@ const SchedulePage = () => {
       <h1>Schedule</h1>
       <Nav.Link
         className="button btn btn-outline"
-				style={{padding:'5px'}}
+				style={{padding:'7px'}}
         href="https://calendar.google.com/calendar/u/0?cid=MDNmMmY5MDlhNjNkOTU1ZjljODIyOGQyNzM3NzJkOTg4NzA4NDM5YzBkOTc4ZDgwNTA2MWJhZWMyNTlkOTgxZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
       >
         Add To Google Calendar!
