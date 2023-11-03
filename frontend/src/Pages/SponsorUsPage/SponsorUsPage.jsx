@@ -6,14 +6,16 @@ import { Row, Col } from 'react-bootstrap';
 function SponsorUsPage() {
   return (
     <div className="sponsor-container text-center">
-      <h2 className="sponsor-title">Sponsor Us!</h2>
-      <Nav.Link
-        className="button btn btn-outline"
-        style={{padding:'5px'}}
-        href="https://tinyurl.com/hackrpi-donation"
-      >
-        Donate
-      </Nav.Link>
+      <h1 className="sponsor-title">Sponsor Us!</h1>
+      <h2 className="centered-container">
+        <Nav.Link
+          className="button btn btn-outline"
+          style={{width: '100px', padding:'6px'}}
+          href="https://tinyurl.com/hackrpi-donation"
+        >
+          Donate
+        </Nav.Link>
+      </h2>
       <Row className="sponsor-content justify-content-center">
         <Col lg={6} md={12} className="content-section">
           <h3 className="content-title">Want to support?</h3>
