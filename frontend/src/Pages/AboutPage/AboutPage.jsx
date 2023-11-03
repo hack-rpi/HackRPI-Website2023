@@ -1,34 +1,68 @@
-import React from 'react';
+import React from 'react'; // Import React only once
+import { useState } from 'react'; // Import useState separately if you need it
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import Button from 'react-bootstrap/Button';
 
-// import './styles.css';
+// Rest of your code
 
 const AboutPage = () => {
+  const [activeTab, setActiveTab] = useState('one'); // 'one' represents the default active tab.
+
+  const handleTabClick = (tabKey) => {
+    setActiveTab(tabKey);
+  };
+  
   return (
-    <div id="about"  className="AboutPage" style={{ textAlign: 'center', width: "80%", margin: 'auto'}}>
-      <h1 className="title" style={{ fontFamily: 'Mokoto', fontSize: 46, height: 35 }}>
+    <div id = "about"  className = "AboutPage" style = {{ textAlign: 'center', width: "80%", margin: 'auto'}}>
+      <h1 className = "title" style = {{ fontFamily: 'Mokoto', fontSize: 55, height: 55 }}>
         HackRPI X
       </h1>
-      <Tab.Container defaultActiveKey="one" style={{paddingBottom: 30}}>
+      <Tab.Container defaultActiveKey="one" style = {{paddingBottom: 50}}>
         <Col>
           <Row>
             <Nav
-              variant="pills-primary"
-              className="flex-row justify-content-center"
-              style={{ height: 30 }}
+              variant = "pills-primary"
+              className = "flex-row justify-content-center"
+              style = {{ height: 50 }}
             >
               <Nav.Item>
-                <Nav.Link className="nav-link-custom" eventKey="one">
+                <Nav.Link className = "nav-link-custom" 
+                  eventKey = "one"
+                  onClick={() => setActiveTab('one')}
+                >
+                  <Button
+                    variant="outline"
+                    className="button"
+                  style={{
+                    backgroundColor: activeTab === 'one' ? 'white' : '#910307',
+                    color: activeTab === 'one' ? '#910307' : 'white'
+                  }}
+                  onClick={() => handleTabClick('one')}
+                  >
                   the event
+                  </Button>
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="nav-link-custom" eventKey="two">
+              <Nav.Link
+                  className="nav-link-custom"
+                  eventKey="two"
+                  onClick={() => setActiveTab('two')}
+                >
+                  <Button
+                    variant="outline"
+                    className="button"
+                  style={{
+                    backgroundColor: activeTab === 'two' ? 'white' : '#910307',
+                    color: activeTab === 'two' ? '#910307' : 'white'
+                  }}
+                  onClick={() => handleTabClick('two')}
+                >
                   the team
+                  </Button>
                 </Nav.Link>
               </Nav.Item>
             </Nav>
@@ -43,13 +77,13 @@ const AboutPage = () => {
               experience necessary to attend. Hackers will also have the
               opportunity to network with our fantastic sponsors from the
               companies that make our event possible. This year's theme,{' '}
-              <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: '#910307' }}>
+              <span style={{ fontFamily: 'Poppins', fontWeight: "bold", color: 'white' }}>
                 Change the World
               </span>{' '}
-              is an ode to a decade inspring students and HackRPI!
+              is an ode to a decade inspiring students and HackRPI!
               <br></br>
               <br></br>Come join us this coming November 4-5, 2023 to hack,
-              learn, and meet other poeple!{' '}
+              learn, and meet other people!{' '}
             </Tab.Pane>
             <Tab.Pane eventKey="two">
               We are a motivated team of RPI students who share a passion for

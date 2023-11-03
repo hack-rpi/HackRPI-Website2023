@@ -1,0 +1,16 @@
+.schedule-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* adjust the value as needed */
+    overflow-y: auto;
+    flex: 1;
+    height: fit-content;
+}
+
+.schedule-page-container h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}

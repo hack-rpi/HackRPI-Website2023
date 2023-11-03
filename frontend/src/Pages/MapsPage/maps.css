@@ -1,0 +1,40 @@
+@media screen and (max-width: 700px) {
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+.hack-button {
+    position: relative;
+    font-family: Poppins;
+    /* font-weight: 500; */
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border-radius: 0.8em;
+    border: none;
+    background: var(--red);
+    overflow: hidden;
+}
+
+.hack-button:hover {
+    background: linear-gradient(to right, var(--red), #d50110, #560002);
+    /* transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1); */
+}
+
+h2 {
+    font-Family: 'Poppins';
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .mainNav {
+        display: none;
+    }
+}
