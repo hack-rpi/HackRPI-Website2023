@@ -44,7 +44,7 @@ const WorkshopPage = () => {
           title: 'Intro to Tech Stacks',
           time: '12:30-1:30pm',
           location: 'DCC 308',
-          speaker: 'Michael and Kuzmin',
+          speaker: 'Michael Anderson and Konstantin Kuzmin',
           pic: workshopTechstack,
           description: 'TBD'
         },
