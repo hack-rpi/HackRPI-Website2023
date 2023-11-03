@@ -33,6 +33,12 @@
   border: none;
 }
 
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
   .sponsor-title {
