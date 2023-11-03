@@ -158,7 +158,7 @@ const Schedule = () => {
     {
       startTime: new Date('2023-11-04T15:30:00-04:00'),
       endTime: new Date('2023-11-04T16:30:00-04:00'),
-      event: 'Scrum Workshop',
+      event: 'Agile Development Workshop',
       location: 'DCC 327',
     },
     {
