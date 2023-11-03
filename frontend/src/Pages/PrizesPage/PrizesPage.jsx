@@ -266,18 +266,19 @@ const PrizesPage = () => {
     { title: 'Cyber Security Hack', amount: '$400' },
   ];
   const smallPrize1 = [
+    { title: 'Best Web3 Hack', amount: '$400' },
     { title: 'Best Mobile Hack', amount: 'Wireless Earbuds' },
     { title: 'Best Startup', amount: 'Mini Projector' },
     { title: 'Best Sustainability Hack', amount: 'Reusable Notepad' },
     { title: 'Best Data Science Hack', amount: 'Anker Battery Pack' },
-		{ title: "Best Game", amount: "$20 Gift Card + Misc Game Dev Prizes"}
+		{ title: "Best Game", amount: "$20 Gift Card + Misc Game Dev Prizes"},
+
   ];
   const smallPrize2 = [
     { title: 'Best First Time Hack', amount: 'JBL Go 3 (Fire Speaker)' },
     { title: 'Ugliest Code Competition', amount: '$50' },
   ];
   const sponsorPrizes = [
-    // { title: 'Web3', amount: '$500' },
     {
       title: 'The Wolfram Award (35)',
       amount: '$375 in cash value per person',
