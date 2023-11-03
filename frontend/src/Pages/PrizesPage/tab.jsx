@@ -43,8 +43,8 @@ const Dropdown = styled.div`
   border: 1px solid #ccc;
   z-index: 1;
   width: 350px;
-  height: ${(props) => (props.open ? '280px' : '0')};
-  overflow-y: hidden;
+  height: ${(props) => (props.open ? '300px' : '0')};
+  overflow-y: auto;
   transition: height 0.5s ease-in-out;
   border: none;
   display: block;
