@@ -159,7 +159,7 @@ const Schedule = () => {
       startTime: new Date('2023-11-04T15:30:00-04:00'),
       endTime: new Date('2023-11-04T16:30:00-04:00'),
       event: 'Agile Development Workshop',
-      location: 'DCC 327',
+      location: 'DCC 324',
     },
     {
       startTime: new Date('2023-11-04T16:30:00-04:00'),
@@ -171,7 +171,7 @@ const Schedule = () => {
       startTime: new Date('2023-11-04T17:30:00-04:00'),
       endTime: new Date('2023-11-04T18:30:00-04:00'),
       event: 'Global Foundries',
-      location: 'DCC 327',
+      location: 'DCC 324',
     },
     {
       startTime: new Date('2023-11-04T17:30:00-04:00'),
@@ -183,7 +183,7 @@ const Schedule = () => {
       startTime: new Date('2023-11-04T18:30:00-04:00'),
       endTime: new Date('2023-11-04T19:30:00-04:00'),
       event: 'Hugging Face',
-      location: 'DCC 327',
+      location: 'DCC 324',
     },
     {
       startTime: new Date('2023-11-04T18:30:00-04:00'),

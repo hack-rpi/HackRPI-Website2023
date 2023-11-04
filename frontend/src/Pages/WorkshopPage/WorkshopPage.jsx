@@ -92,7 +92,7 @@ const WorkshopPage = () => {
         {
           title: 'Agile Development Workshop',
           time: '3:30-4:30pm',
-          location: 'DCC 327',
+          location: 'DCC 324',
           speaker: 'John Sturman',
           pic: workshopAgile,
           description: 'Join John Sturman for a presentation about agile development and how to work in a development group for maximum productivity.\
@@ -141,7 +141,7 @@ const WorkshopPage = () => {
     {
       title: 'Semiconductor Industry Overview',
       time: '5:30-6:30pm',
-      location: 'DCC 327',
+      location: 'DCC 324',
       speaker: 'Alexander Martin',
       pic: workshopSemi,
       description: 'Software needs hardware to operate. The last several years has seen a fundamental shift in the\
@@ -152,7 +152,7 @@ const WorkshopPage = () => {
     {
         title: 'AI made easy with Hugging Face',
         time: '6:30-7:30pm',
-        location: 'DCC 327',
+        location: 'DCC 324',
         speaker: 'Raven Levitt',
         pic: workshopAI,
         description: 'Have a hack that needs AI but no idea where to start? In this workshop I’ll go over how to use the\
