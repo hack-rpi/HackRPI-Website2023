@@ -11,22 +11,26 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
   const endTimeString = useMemo(() => formatDate(item.endTime), [item.endTime]);
   const eventName = item.event;
 
-  // Determine if the event has ended
-  const isPastEvent = new Date() > item.endTime;
+  const currentTime = new Date().getTime();
+  const isPastEvent = currentTime > item.endTime.getTime();
 
   return (
     <tr
       style={{
-        fontFamily: 'Poppins', 
-        backgroundColor: isCurrentEvent ? '#910307' : '#353535', 
-        padding: '0.1rem', 
-        borderBottom: '5px solid black', 
-        specificity: 'important',
-        textDecoration: isPastEvent ? 'line-through' : 'none'  // Add strikethrough for past events
+        fontFamily: 'Poppins',
+        backgroundColor: isCurrentEvent
+          ? '#910307'
+          : isPastEvent
+          ? 'rgba(53, 53, 53, 0.5)'  // Faded background color for past events
+          : '#353535',
+        padding: '0.1rem',
+        borderBottom: '5px solid black',
+        textDecoration: isPastEvent ? 'line-through' : 'none',  // Strike through for past events
+        opacity: isPastEvent ? 0.6 : 1  // Additional fading effect
       }}>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{eventName}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{item.location}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white'}}>{startTimeString} - {endTimeString}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
+      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{startTimeString} - {endTimeString}</td>
     </tr>
   );
 });
