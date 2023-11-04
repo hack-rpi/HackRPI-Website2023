@@ -21,12 +21,12 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
         backgroundColor: isCurrentEvent
           ? '#910307'
           : isPastEvent
-          ? 'rgba(53, 53, 53, 0.5)'  // Faded background color for past events
+          ? 'rgba(53, 53, 53, 0.5)' 
           : '#353535',
         padding: '0.1rem',
         borderBottom: '5px solid black',
-        textDecoration: isPastEvent ? 'line-through' : 'none',  // Strike through for past events
-        opacity: isPastEvent ? 0.6 : 1  // Additional fading effect
+        textDecoration: isPastEvent ? 'line-through' : 'none',  
+        opacity: isPastEvent ? 0.6 : 1 
       }}>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
       <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
