@@ -7,19 +7,19 @@ class Timer extends React.Component {
   constructor() {
     super();
     this.state = {
-      time: new Date('Nov 4, 2023 12:00:00').getTime() - new Date().getTime(),
+      time: new Date('Nov 5, 2023 12:00:00').getTime() - new Date().getTime(),
     };
     this.startTimer = this.startTimer.bind(this);
   }
 
   startTimer() {
     this.setState({
-      time: new Date('Nov 4, 2023 12:00:00').getTime() - new Date().getTime(),
+      time: new Date('Nov 5, 2023 12:00:00').getTime() - new Date().getTime(),
     });
 
     this.timer = setInterval(() => {
       const remainingTime =
-        new Date('Nov 4, 2023 12:00:00').getTime() - new Date().getTime();
+        new Date('Nov 5, 2023 12:00:00').getTime() - new Date().getTime();
       this.setState({
         time: remainingTime,
       });
