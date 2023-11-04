@@ -13,24 +13,53 @@ const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
 
   const currentTime = new Date().getTime();
   const isPastEvent = currentTime > item.endTime.getTime();
+  const hour = 3600000;
+  const isCurrentEventv2 = item.startTime.getTime() <= currentTime && currentTime <= item.endTime.getTime()
+  const isUpcomingEvent = item.startTime.getTime() <= (currentTime + hour) && !isPastEvent
 
   return (
     <tr
       style={{
+        height: '70px',
         fontFamily: 'Poppins',
-        backgroundColor: isCurrentEvent
-          ? '#910307'
-          : isPastEvent
-          ? 'rgba(53, 53, 53, 0.5)' 
-          : '#353535',
+        backgroundColor: isCurrentEventv2 ? '#910307'
+          : isUpcomingEvent ? '#2f0003'
+            : isPastEvent ? 'rgba(53, 53, 53, 0.4)'
+              : '#353535',
         padding: '0.1rem',
-        borderBottom: '5px solid black',
-        textDecoration: isPastEvent ? 'line-through' : 'none',  
-        opacity: isPastEvent ? 0.6 : 1 
+        textDecoration: isPastEvent ? 'line-through' : 'none',
+        color: isPastEvent ? 'black' : 'white', //only applies to text decoration... (idk why lol)
+        border: isCurrentEventv2 ? '5px solid white' : ' ',
+        borderBottom: isCurrentEventv2 ? '5px solid white'
+          : isPastEvent ? '5px solid rgba(0, 0, 0, 0.4)'
+            : '5px solid black',
+        opacity: isPastEvent ? 0.4 : 1,
+        boxShadow: isCurrentEventv2 ? '0 0 12px white' : 'none',
       }}>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{eventName}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{item.location}</td>
-      <td className="schedule-item" style={{ fontFamily: 'Poppins', color: 'white' }}>{startTimeString} - {endTimeString}</td>
+      <td className="schedule-item"
+          style={{
+            fontFamily: 'Poppins',
+            color: isPastEvent ? 'black' : 'white',
+            borderTop: isCurrentEventv2 ? '5px solid white' : 'none' //only way to "override" bottom border of row above
+      }}>
+        {eventName}
+      </td>
+      <td className="schedule-item"
+          style={{
+            fontFamily: 'Poppins',
+            color: isPastEvent ? 'black' : 'white',
+            borderTop: isCurrentEventv2 ? '5px solid white' : 'none'
+      }}>
+        {item.location}
+      </td>
+      <td className="schedule-item"
+          style={{
+            fontFamily: 'Poppins',
+            color: isPastEvent ? 'black' : 'white',
+            borderTop: isCurrentEventv2 ? '5px solid white' : 'none'
+      }}>
+        {startTimeString} - {endTimeString}
+      </td>
     </tr>
   );
 });
