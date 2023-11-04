@@ -64,8 +64,9 @@
     background-color: #910307;
     background-size: 1000%;
     background-position: center;
-    transform: rotate(45deg);
-    bottom: -20%;
+    transform: translateX(-50%) rotate(45deg);
+    left: 50%;
+    bottom: -5px;
     transition-duration: .3s;
 }
 
