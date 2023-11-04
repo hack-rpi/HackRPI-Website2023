@@ -293,7 +293,7 @@ const Schedule = () => {
     const constantEvents = useMemo(() => [
       {
         startTime: new Date('2023-11-04T12:00:00-04:00'),
-        endTime: new Date('2023-11-04T12:00:00-04:00'),
+        endTime: new Date('2023-11-04T24:00:00-04:00'),
         event: 'Mentoring Desk',
         location: 'Great Hall',
       },
