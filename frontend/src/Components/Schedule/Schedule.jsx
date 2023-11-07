@@ -25,15 +25,18 @@ A table displaying the events in the schedule, with the current event highlighte
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 //confused about isCurrentEvent additionally format date should be defined outside ScheduleRow component
 const ScheduleRow = React.memo(({ item, isCurrentEvent }) => {
-  const formatDate = date => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
+  const formatDate = date => {
+    const dateObj = new Date(date);
+    return dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
+  
   const startTimeString = formatDate(item.startTime);
   const endTimeString = formatDate(item.endTime);
   const eventName = item.event;
 
   const currentTime = Date.now();
-  const startTime = item.startTime.getTime();
-  const endTime = item.endTime.getTime();
+  const startTime = new Date(item.startTime).getTime(); // Convert startTime to a valid Date object
+  const endTime = new Date(item.endTime).getTime(); // Convert endTime to a valid Date object
   const isPastEvent = currentTime > endTime; 
   const hour = 3600000;
   const isCurrentEventv2 = startTime <= currentTime && currentTime <= endTime;
@@ -101,8 +104,9 @@ const Schedule = () => {
     const updateCurrentEvent = () => {
       const currentTime = Date.now();
       const updatedSchedule = schedule.map(event => {
-        const startTime = event.startTime.getTime() - tolerance;
-        const endTime = event.endTime.getTime() + tolerance;
+   
+        const startTime = new Date(event.startTime).getTime() - tolerance;
+        const endTime = new Date(event.endTime).getTime() + tolerance;
         const isCurrentEvent = currentTime >= startTime && currentTime <= endTime;
         return { ...event, isCurrentEvent };
       });
@@ -139,13 +143,13 @@ const Schedule = () => {
           </tr>
         </thead>
         <tbody>
-          {/* Render Events */}
-          {schedule.map((item, index) => {
-            if (isFirstEvent || item.startTime.getDate() !== currentDate) {
-              currentDate = item.startTime.getDate();
-              isFirstEvent = false;
-              return (
-                <React.Fragment key={`date-heading-${currentDate}`}>
+           {/* Render Events */}
+        {schedule.map((item, index) => {
+          if (isFirstEvent || new Date(item.startTime).getDate() !== currentDate) {
+            currentDate = new Date(item.startTime).getDate();
+            isFirstEvent = false;
+            return (
+              <React.Fragment key={`date-heading-${currentDate}`}>
                   <tr>
                     <td className="table-header" colSpan="3">
                       {currentDate === 4 ? 'November 4th' : 'November 5th'}
@@ -173,8 +177,10 @@ const Schedule = () => {
           {/* Render Constant Events */}
           {constantEvents.map((item, index) => {
             const currentTime = Date.now();
-            const startTime = item.startTime.getTime();
-            const endTime = item.endTime.getTime();
+            
+            const startTime = new Date(item.startTime).getTime()
+            const endTime = new Date(item.endTime).getTime();
+           
             const isCurrentEvent = currentTime >= startTime && currentTime <= endTime + tolerance;
 
             return (
