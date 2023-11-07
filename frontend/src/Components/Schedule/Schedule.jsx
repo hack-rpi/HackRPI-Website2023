@@ -1,26 +1,53 @@
+{/*## Summary
+The code snippet is a part of a React component that renders a schedule table. It uses the schedule data from a JSON file and updates the current event based on the current time. The table rows are styled based on whether the event is past, current, or upcoming.
+
+## Example Usage
+```javascript
+import React from 'react';
+import Schedule from './Schedule';
+
+const App = () => {
+  return (
+    <div>
+      <h1>Event Schedule</h1>
+      <Schedule />
+    </div>
+  );
+};
+
+export default App;
+```
+
+## Code Analysis
+### Inputs
+- `item`: An object representing an event in the schedule.
+- `isCurrentEvent`: A boolean indicating whether the event is the current event.
+___
+### Flow
+1. The `ScheduleRow` component receives an `item` and `isCurrentEvent` as props.
+2. The `formatDate` function is used to format the start and end times of the event.
+3. The current time is obtained using `Date.now()`.
+4. The start and end times of the event are converted to valid Date objects.
+5. The `isPastEvent` variable is set to true if the current time is greater than the end time of the event.
+6. The `isCurrentEventv2` variable is set to true if the current time is between the start and end times of the event.
+7. The `isUpcomingEvent` variable is set to true if the current time is within an hour of the start time of the event and the event is not in the past.
+8. The table row is styled based on the values of `isCurrentEventv2`, `isUpcomingEvent`, and `isPastEvent`.
+9. The event name, location, and time are rendered in separate table cells.
+___
+### Outputs
+- A styled table row representing an event in the schedule.
+___
+*/}
+
+
+
+
+
 import React, { useState, useEffect, useMemo } from 'react';
 import '../../fonts.css';
 import './Styles.css';
 import scheduleData from './scheduleData.json'; // Import the JSON data
-{/*
-Summary
-The code snippet is a React component that renders a schedule table. It uses the useState and useEffect hooks to update the current event based on the current time. The schedule and constantEvents arrays store the event data, and the ScheduleRow component is used to render each row in the table.
 
-Code Analysis
-Inputs
-schedule: An array of objects representing the events in the schedule.
-constantEvents: An array of objects representing the constant events in the schedule.
-
-Flow
-The component initializes the currentEvent state variable to null.
-The useEffect hook is used to update the currentEvent based on the current time.
-The updateCurrentEvent function is called initially and then every minute using setInterval.
-The updateCurrentEvent function checks the current time against the start and end times of each event in the schedule array.
-The currentEvent state variable is updated with the first event that matches the current time.
-The schedule and constantEvents arrays are mapped to render the rows in the table using the ScheduleRow component.
-The currentEvent is passed to the ScheduleRow component to highlight the current event.
-Outputs
-A table displaying the events in the schedule, with the current event highlighted.*/}
 
 const tolerance = 30 * 1000; // 30 sec in milliseconds
 //confused about isCurrentEvent additionally format date should be defined outside ScheduleRow component
