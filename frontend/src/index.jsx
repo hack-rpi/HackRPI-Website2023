@@ -17,20 +17,20 @@ import { Outlet } from 'react-router-dom';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import MapsPage from './Pages/MapsPage/MapsPage.jsx';
+import ThankYouPage from './Pages/ThankYouPage/ThankYouPage.jsx';
 
 const router = createHashRouter([
   {
     path: '/',
     element: (
       <div>
-        <NavBar />
         <Layout />
       </div>
     ),
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: <ThankYouPage />,
       },
       {
         path: 'home',
