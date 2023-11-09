@@ -18,8 +18,107 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import MapsPage from './Pages/MapsPage/MapsPage.jsx';
 import ThankYouPage from './Pages/ThankYouPage/ThankYouPage.jsx';
+import ThankYouFooter from './Components/Footer/ThankYouFooter.jsx';
 
 const router = createHashRouter([
+  {
+    path: '/',
+    children: [
+      {
+        index: true,
+        element: (
+          <div>
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      {
+        path: 'home',
+        element: (
+          <div>
+            <HomePage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'faq',
+        element: (
+          <div>
+            <FAQPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'schedule',
+        element: (
+          <div>
+            <SchedulePage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'sponsor-us',
+        element: (
+          <div>
+            <SponsorUsPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'prizes',
+        element: (
+          <div>
+            <PrizesPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'maps',
+        element: (
+          <div>
+            <MapsPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'team',
+        element: (
+          <div>
+            <MeetTheTeamPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'workshops',
+        element: (
+          <div>
+            <WorkshopPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: '*',
+        element: (
+          <div>
+            <ErrorPage />
+            <Layout />
+          </div>
+        ),
+      },
+    ],
+  },
+]);
+
+const mobileRouter = createHashRouter([
   {
     path: '/',
     element: (
@@ -31,60 +130,6 @@ const router = createHashRouter([
       {
         index: true,
         element: <ThankYouPage />,
-      },
-      {
-        path: 'home',
-        element: <HomePage />,
-      },
-      {
-        path: 'faq',
-        element: <FAQPage />,
-      },
-      {
-        path: 'schedule',
-        element: <SchedulePage />,
-      },
-      {
-        path: 'sponsor-us',
-        element: <SponsorUsPage />,
-      },
-      {
-        path: 'prizes',
-        element: <PrizesPage />,
-      },
-      {
-        path: 'maps',
-        element: <MapsPage />,
-      },
-      {
-        path: 'team',
-        element: <MeetTheTeamPage />,
-      },
-      {
-        path: 'workshops',
-        element: <WorkshopPage />,
-      },
-      {
-        path: '*',
-        element: <ErrorPage />,
-      },
-    ],
-  },
-]);
-
-const mobileRouter = createHashRouter([
-  {
-    path: '/',
-    element: (
-      <div>
-        <MobileNavBar />
-        <Layout />
-      </div>
-    ),
-    children: [
-      {
-        index: true,
-        element: <HomePageMobile />,
       },
       {
         path: 'home',
@@ -153,6 +198,15 @@ function App() {
           <Layout />
         </RouterProvider>
       )}
+    </div>
+  );
+}
+
+function LayoutThankYou() {
+  return (
+    <div>
+      <Outlet />
+      <ThankYouFooter />
     </div>
   );
 }

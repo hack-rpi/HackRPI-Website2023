@@ -7,9 +7,9 @@ import './ThankYouPage.css';
 const ThankYouPage = () => {
     return (
       <div className="thank-you-page">
-        <h1>Thank You for Your Visit!</h1>
+        <h1>THANK YOU!</h1>
         <LinkContainer to="/home">
-          <Nav.Link className="button btn btn-outline" style={{ width: '100px', padding: '6px' }}>
+          <Nav.Link className="button" style={{ width: '100px', padding: '6px' }}>
             Back to HackRPI X
           </Nav.Link>
         </LinkContainer>
