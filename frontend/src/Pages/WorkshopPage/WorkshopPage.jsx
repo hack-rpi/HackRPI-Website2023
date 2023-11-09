@@ -32,7 +32,7 @@ const WorkshopPage = () => {
             title: 'Patient Safety 101',
             time: '12-12:30pm',
             location: 'DCC 318',
-            speaker: 'TBD',
+            speaker: 'Kathy Rauch',
             pic: workshopSafety,
             description: 'This workshop is designed for hackers interested in the Patient Safety Tech Prize. It will\
             give you background on patient safety as an urgent issue and will help inspire you to\
@@ -66,7 +66,7 @@ const WorkshopPage = () => {
           title: 'Mobile Dev Workshop',
           time: '1:30-2:30pm',
           location: 'DCC 318',
-          speaker: 'Brian Ingmanson',
+          speaker: 'Ryan Hickey',
           pic: workshopMobdev,
           description: "If you've ever wondered how those awesome apps on your phone are made, or if you've got an itch to create something fun and \
           innovative, the Mobile Dev Workshop is the perfect place to start! The main course of our workshop revolves around React and Flutter.  \
