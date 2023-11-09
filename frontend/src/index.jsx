@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
+import ThankYouNavBar from './Components/NavBar/ThankYouNavBar.jsx';
 import MobileNavBar from './Components/NavBar/MobileNavBar.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
@@ -28,6 +29,17 @@ const router = createHashRouter([
         index: true,
         element: (
           <div>
+            <ThankYouNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      {
+        path: 'thank-you',
+        element: (
+          <div>
+            <ThankYouNavBar />
             <ThankYouPage />
             <LayoutThankYou />
           </div>
@@ -37,6 +49,7 @@ const router = createHashRouter([
         path: 'home',
         element: (
           <div>
+            <NavBar />
             <HomePage />
             <Layout />
           </div>
@@ -46,6 +59,7 @@ const router = createHashRouter([
         path: 'faq',
         element: (
           <div>
+            <NavBar />
             <FAQPage />
             <Layout />
           </div>
@@ -55,6 +69,7 @@ const router = createHashRouter([
         path: 'schedule',
         element: (
           <div>
+            <NavBar />
             <SchedulePage />
             <Layout />
           </div>
@@ -64,6 +79,7 @@ const router = createHashRouter([
         path: 'sponsor-us',
         element: (
           <div>
+            <NavBar />
             <SponsorUsPage />
             <Layout />
           </div>
@@ -73,6 +89,7 @@ const router = createHashRouter([
         path: 'prizes',
         element: (
           <div>
+            <NavBar />
             <PrizesPage />
             <Layout />
           </div>
@@ -82,6 +99,7 @@ const router = createHashRouter([
         path: 'maps',
         element: (
           <div>
+            <NavBar />
             <MapsPage />
             <Layout />
           </div>
@@ -91,6 +109,7 @@ const router = createHashRouter([
         path: 'team',
         element: (
           <div>
+            <NavBar />
             <MeetTheTeamPage />
             <Layout />
           </div>
@@ -100,6 +119,7 @@ const router = createHashRouter([
         path: 'workshops',
         element: (
           <div>
+            <NavBar />
             <WorkshopPage />
             <Layout />
           </div>
@@ -109,6 +129,7 @@ const router = createHashRouter([
         path: '*',
         element: (
           <div>
+            <NavBar />
             <ErrorPage />
             <Layout />
           </div>
