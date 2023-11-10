@@ -7,7 +7,9 @@ const ThankYouPage = () => {
   return (
     <div className="thank-you-page text-center">
       <h1>
+      <div className="thankyou-text">
         Thank you <br />
+        </div>
         <span className="small-text">
           for joining us at <br /> HACKRPI X!
         </span>
