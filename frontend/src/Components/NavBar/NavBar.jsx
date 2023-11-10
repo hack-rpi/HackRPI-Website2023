@@ -11,7 +11,8 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <style>{`
+        <style>
+        {`
           .pageNav {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.25);
@@ -25,12 +26,27 @@ class NavBar extends React.Component {
           .active, .active:hover {
             color: rgba(255, 255, 255, 1);
           }
-        `}</style>
+
+          .navContainer {
+            @media (min-width: 1200px) {
+              width: 100%;
+              height: 5%;
+            }
+          }
+          .navWrap {
+            @media (min-width: 1200px) {
+              width: 100%;
+              height: 7%;
+            }
+          }
+        `}
+        </style>
         <Navbar collapseOnSelect
           expand="lg"
           variant="dark"
           sticky="top"
           style={{ backgroundColor: '#191919', padding: '0.5rem' }}
+          className='navWrap'
         >
           <Container
             fluid
@@ -43,6 +59,7 @@ class NavBar extends React.Component {
               fontSize: 15,
               color: 'white',
             }}
+            className='navContainer'
           >
             <NavLink to="/" style={{ paddingLeft: 30 }}>
               <img
