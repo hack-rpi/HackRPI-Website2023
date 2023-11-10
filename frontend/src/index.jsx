@@ -166,39 +166,94 @@ const mobileRouter = createHashRouter([
       },
       {
         path: 'home',
-        element: <HomePageMobile />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <HomePageMobile />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'faq',
-        element: <FAQPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <FAQPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'schedule',
-        element: <SchedulePage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <SchedulePage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'sponsor-us',
-        element: <SponsorUsPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <SponsorUsPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'prizes',
-        element: <PrizesPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <PrizesPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'maps',
-        element: <MapsPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <MapsPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'team',
-        element: <MeetTheTeamPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <MeetTheTeamPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'workshops',
-        element: <WorkshopPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <WorkshopPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: '*',
-        element: <ErrorPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <ErrorPage />
+            <Layout />
+          </div>
+        ),
+        
       },
     ],
   },

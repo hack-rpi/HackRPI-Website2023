@@ -18,7 +18,7 @@ const MobileNavBar = () => {
     return (
         <div className="mobile-navbar">
             <Menu isOpen={isOpen} onStateChange={handleStateChange}>
-                <NavLink id="home" className="menu-item" to="/" onClick={closeMenu}>Home</NavLink>
+                <NavLink id="home" className="menu-item" to="/home" onClick={closeMenu}>Home</NavLink>
                 <NavLink id="faq" className="menu-item" to="/faq" onClick={closeMenu}>FAQ</NavLink>
                 <NavLink id="schedule" className="menu-item" to="/schedule" onClick={closeMenu}>Schedule</NavLink>
                 <NavLink id="workshops" className="menu-item" to="/workshops" onClick={closeMenu}>Workshops</NavLink>
