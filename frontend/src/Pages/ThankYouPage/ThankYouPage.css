@@ -1,56 +1,9 @@
-
 .thank-you-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 94.5vh;
-}
-
-.thankyou-text {
-  text-align: center;
-  position: relative;
-  font-size: 8vw;
-  margin: 1vw;
-  color: transparent;
-}
-
-.thankyou-text::before {
-  content: "Thank you";
-  background-image: linear-gradient(45deg, #ffc7c9, #ba292e, #d96f6f, #e50717);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  animation: shine 2s linear infinite, pulsate 2s infinite;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes shine {
-  0% {
-    background-position: -100% 0; /* Start from the right */
-  }
-  100% {
-    background-position: 100% 0; /* Move to the left */
-  }
+  height: 100vh;
 }
 
 .button {
@@ -70,7 +23,7 @@
 }
 
 .small-text {
-  font-size: 45%;
+  font-size: 50%;
 }
 
 h1 {
