@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
 import ThankYouNavBar from './Components/NavBar/ThankYouNavBar.jsx';
+import ThankYouMobileNavBar from './Components/NavBar/ThankYouMobileNavBar.jsx';
 import MobileNavBar from './Components/NavBar/MobileNavBar.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
@@ -142,15 +143,26 @@ const router = createHashRouter([
 const mobileRouter = createHashRouter([
   {
     path: '/',
-    element: (
-      <div>
-        <Layout />
-      </div>
-    ),
     children: [
       {
         index: true,
-        element: <ThankYouPage />,
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      {
+        path: 'thank-you',
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
       },
       {
         path: 'home',
