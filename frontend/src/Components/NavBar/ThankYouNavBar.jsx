@@ -72,6 +72,7 @@ class ThankYouNavBar extends React.Component {
             
             <Nav className='mainNav' style={{ marginRight: 'auto' }}>
               <NavLink to="/thank-you" className='pageNav'> Home </NavLink>
+              <NavLink to="/winners" className='pageNav'> Winners</NavLink>
             </Nav>
 
             <Nav

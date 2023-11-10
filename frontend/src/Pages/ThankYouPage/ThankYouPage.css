@@ -21,3 +21,12 @@
   bottom: 10px; /* Adjust the distance from the bottom as needed */
   right: 10px; /* Adjust the distance from the right as needed */
 }
+
+.small-text {
+  font-size: 50%;
+}
+
+h1 {
+  line-height: .8; 
+  margin-bottom: 20px;
+}

@@ -130,9 +130,9 @@ const router = createHashRouter([
         path: '*',
         element: (
           <div>
-            <NavBar />
+            <ThankYouNavBar />
             <ErrorPage />
-            <Layout />
+            <LayoutThankYou />
           </div>
         ),
       },
@@ -248,9 +248,9 @@ const mobileRouter = createHashRouter([
         path: '*',
         element: (
           <div>
-            <MobileNavBar />
+            <ThankYouMobileNavBar />
             <ErrorPage />
-            <Layout />
+            <LayoutThankYou />
           </div>
         ),
         
