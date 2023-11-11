@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
-import Schedule from '../../Components/Schedule/Schedule.jsx';
 import './SchedulePage.css'; // Import your CSS file for SchedulePage styling
 
 const SchedulePage = () => {
@@ -14,8 +13,8 @@ const SchedulePage = () => {
       >
         Add To Google Calendar!
       </Nav.Link>
-      <Schedule />
     </div>
+    
   );
 };
 

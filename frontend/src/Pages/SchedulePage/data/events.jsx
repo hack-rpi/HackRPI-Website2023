@@ -158,7 +158,7 @@ const eventsData = {
             event: 'Last Chance Mentoring',
             location: '',
         },
-    ],
+    ]
 };
   
   
