@@ -1,0 +1,12 @@
+Possible Libraries
+
+
+FullCalendar: FullCalendar is a highly popular and versatile library. It provides a full-sized, drag & drop calendar and is easily integrated with React. It supports various views like month, week, day, and list, and can easily display events from a JSON file.
+
+React Big Calendar: This library is built on top of modern React and uses flexbox for the layout. It's simple to use and can be easily connected with your JSON data to display events on the calendar.
+
+DayPilot React Calendar: This is a powerful calendar component for React applications. It includes features for event scheduling, drag-and-drop, and resizable events. It can work well with external data sources, including JSON.
+
+Toast UI Calendar: Toast UI Calendar is a full-featured calendar library that can be integrated with React. It supports various views and is customizable. You can load events dynamically from a JSON file into this calendar.
+
+react-calendar: This is a simpler, lightweight option for those who need a more basic calendar without the full suite of scheduling features. It's easy to integrate and customize, and you can display data from a JSON file using state management.
