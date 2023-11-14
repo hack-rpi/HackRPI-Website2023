@@ -2,12 +2,12 @@
     text-align: center;
 }
 
-.MeetTheTeamPage {
+.OrganizersPage {
     width: 1100px;
     margin: auto;
 }
 
-#meet-our-team-header {
+#organizers-header {
     font-family: Mokoto;
     font-size: 46px;
     margin-bottom: 40px;
@@ -82,15 +82,16 @@
 .button-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 20px; /* Adjust the margin as needed */
   }
-  
-.button {
-    margin-left: 10px; /* Adjust the spacing between buttons as needed */
+
+.help-organize-section {
+    margin-bottom: 20px;
 }
 
 @media (max-width: 1140px) {
-    .MeetTheTeamPage {
+    .OrganizersPage {
         width: 900px;
     }
 
@@ -106,7 +107,7 @@
 }
 
 @media (max-width: 768px) {
-    .MeetTheTeamPage {
+    .OrganizersPage {
         width: 700px;
     }
 
@@ -132,11 +133,11 @@
 }
 
 @media (max-width: 425px) {
-    .MeetTheTeamPage {
+    .OrganizersPage {
         width: 100%;
     }
 
-    #meet-our-team-header {
+    #organizers-header {
         margin-bottom: 15px;
     }
 
