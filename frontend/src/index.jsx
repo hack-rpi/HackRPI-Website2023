@@ -7,6 +7,7 @@ import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import PrizesPage from './Pages/PrizesPage/PrizesPage.jsx';
+import OrganizersPage from './Pages/OrganizersPage/OrganizersPage.jsx';
 import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,6 +43,16 @@ const router = createHashRouter([
           <div>
             <ThankYouNavBar />
             <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      { // come back to this
+        path: 'organizers',
+        element: (
+          <div>
+            <ThankYouNavBar />
+            <OrganizersPage />
             <LayoutThankYou />
           </div>
         ),
