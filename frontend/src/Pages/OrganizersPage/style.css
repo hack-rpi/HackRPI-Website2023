@@ -167,4 +167,8 @@
     .position {
         font-size: 1.2rem;
     }
+    .help-organize-section p,
+    .team-members p {
+        padding: 0 10px;
+    }
 }

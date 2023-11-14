@@ -120,7 +120,7 @@ const OrganizersPage = () => {
                 </Button>
             </Nav.Link>
 
-            <p style={{ fontSize: '19px', textAlign: 'center', lineHeight: '1.6' }}>
+            <p style={{ fontSize: '19px', textAlign: 'center', lineHeight: '1.6', padding: '0 10px' }}>
                 Join our dynamic team of motivated RPI students on a mission to organize 
                 the next incredible HackRPI! As passionate computer science enthusiasts, 
                 we're committed to crafting an unforgettable event. With a diverse team 
