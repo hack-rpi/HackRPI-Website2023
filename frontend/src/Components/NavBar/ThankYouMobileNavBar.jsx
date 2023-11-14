@@ -19,6 +19,7 @@ const ThankYouMobileNavBar = () => {
         <div className="mobile-navbar">
             <Menu isOpen={isOpen} onStateChange={handleStateChange}>
                 <NavLink id="thank-you" className="menu-item" to="/thank-you" onClick={closeMenu}>Home</NavLink>
+                <NavLink id="organizers" className="menu-item" to="/organizers" onClick={closeMenu}>Organizers</NavLink>
             </Menu>
             <NavLink to="/" style={{ paddingLeft: 30 }} onClick={closeMenu}>
                 <img

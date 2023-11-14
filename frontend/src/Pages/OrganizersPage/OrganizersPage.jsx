@@ -108,18 +108,39 @@ const OrganizersPage = () => {
     return (
         <div id="members" className="OrganizersPage centeredText">
             <div className="help-organize-section">
-                <h1 style={{ fontFamily: 'Mokoto', fontSize: '46px', marginBottom: '20px' }}>
+                <h1 style={{ fontFamily: 'Mokoto', fontSize: '46px', marginTop: '40px', marginBottom: '20px' }}>
                     Help Organize
                 </h1>
             </div>
 
             {/* Move the button outside the help-organize-section div */}
             <Nav.Link href="https://discord.gg/mjsusWUM">
-                <Button variant="outline" className='button' style={{ backgroundColor: '#910307', color: 'white', marginBottom: '30px', }}>
+                <Button variant="outline" className='button' style={{ backgroundColor: '#910307', color: 'white', marginBottom: '20px', }}>
                     Join Now!
                 </Button>
             </Nav.Link>
-            <h1 id="organizers-header" style={{ fontFamily: 'Mokoto', fontSize: '46px' }}>
+
+            <p style={{ fontSize: '19px', textAlign: 'center', lineHeight: '1.6' }}>
+                Join our dynamic team of motivated RPI students on a mission to organize 
+                the next incredible HackRPI! As passionate computer science enthusiasts, 
+                we're committed to crafting an unforgettable event. With a diverse team 
+                spanning every grade level, we collaboratively plan the hackathon and secure 
+                sponsors to make it happen.
+                <br />
+                <br />
+                At the core of our mission is the belief that HackRPI is a vital force at our 
+                school. We're dedicated to inspiring and challenging innovators, creators, 
+                developers, and entrepreneurs not only within New York's Tech Valley but also 
+                far beyond. Our goal is to provide a platform where attendees can hone their 
+                skills, explore cutting-edge technologies, and transform their interests and 
+                visions into tangible opportunities. Embodying our slogan, "Why Not Code the 
+                World?" we invite you to be part of this exciting journey, pushing the boundaries 
+                of what's possible in the world of technology. Join us, and let's code the 
+                future together!
+            </p>
+
+
+            <h1 id="organizers-header" style={{ fontFamily: 'Mokoto', fontSize: '46px', marginTop: '50px'}}>
                 Meet Our Team!
             </h1>
 

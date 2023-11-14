@@ -47,7 +47,7 @@ const router = createHashRouter([
           </div>
         ),
       },
-      { // come back to this
+      {
         path: 'organizers',
         element: (
           <div>
@@ -171,6 +171,16 @@ const mobileRouter = createHashRouter([
           <div>
             <ThankYouMobileNavBar />
             <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      { 
+        path: 'organizers',
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <OrganizersPage />
             <LayoutThankYou />
           </div>
         ),
