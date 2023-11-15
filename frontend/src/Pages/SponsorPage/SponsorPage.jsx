@@ -49,7 +49,9 @@ const SponsorPage = () => {
                       .map((sponsor, innerIndx) => {
                         let img;
                         if (sponsor.webpack_bundled === true) {
-                          img = require(`../../../assets/sponsors/sponsor_logos/${sponsor.logoPath}`);
+                          img = require(
+                            `../../../assets/sponsors/sponsor_logos/${sponsor.logoPath}`,
+                          );
                         }
 
                         return (
@@ -81,30 +83,43 @@ const SponsorPage = () => {
                           </div>
                         );
                       })
-                  : sponsorGroup.map((sponsorGroup, innerIndx) => (
-                      <div
-                        className="sponsor col-md-3 d-flex mb-5"
-                        key={'sponsorGroup' + indx + 'sponsor' + innerIndx}
-                      >
-                        <a
-                          href={sponsorGroup.url}
-                          target="_blank"
-                          className="rounded px-3"
+                  : sponsorGroup.map((sponsor, innerIndx) => {
+                      let img;
+                      if (sponsor.webpack_bundled === true) {
+                        img = require(
+                          `../../../assets/sponsors/sponsor_logos/${sponsor.logoPath}`,
+                        );
+                      }
+
+                      return (
+                        <div
+                          className="sponsor col-md-3 d-flex mb-5"
+                          key={'sponsorGroup' + indx + 'sponsor' + innerIndx}
                         >
-                          <div
-                            className="d-flex flex-column align-items-center justify-content-center innerSponsor"
-                            style={{ margin: '10px' }}
+                          <a
+                            href={sponsor.url}
+                            target="_blank"
+                            className="rounded px-3"
                           >
-                            {/* Add margin to companies */}
-                            <img
-                              src={sponsorGroup.logoPath}
-                              className="img-fluid rounded mw-100 mh-100"
-                              alt={sponsorGroup.name}
-                            />
-                          </div>
-                        </a>
-                      </div>
-                    ))}
+                            <div
+                              className="d-flex flex-column align-items-center justify-content-center innerSponsor"
+                              style={{ margin: '10px' }}
+                            >
+                              {/* Add margin to companies */}
+                              <img
+                                src={
+																	sponsor.webpack_bundled === true
+																		? img
+																		: sponsor.logoPath
+																}
+                                className="img-fluid rounded mw-100 mh-100"
+                                alt={sponsor.name}
+                              />
+                            </div>
+                          </a>
+                        </div>
+                      );
+                    })}
               </div>
             </div>
           );
