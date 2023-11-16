@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import './ThankYouPage.css';
@@ -7,6 +6,8 @@ import '../../fonts.css'
 import Globe from 'react-globe.gl';
 import data from '../../../assets/data.geojson';
 import globeimage from '../../../assets/earth-dark.jpg';
+
+const wordsToCycle = ["HACKERS", "SPONSORS", "ORGANIZERS", "VOLUNTEERS", "MENTORS", "JUDGES"];
 
 const ThankYouPage = () => {
   const globeEl = useRef();
@@ -16,6 +17,17 @@ const ThankYouPage = () => {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+  const [currentWord, setCurrentWord] = useState(wordsToCycle[0]);
+  const wordIndex = useRef(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      wordIndex.current = (wordIndex.current + 1) % wordsToCycle.length;
+      setCurrentWord(wordsToCycle[wordIndex.current]);
+    }, 600);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     // load data
@@ -82,7 +94,7 @@ const ThankYouPage = () => {
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%', height: '100%', position: 'fixed'}}>
 
       <h1 id='thankyou-header' className='header'>THANK YOU</h1>
-      <h1 id='people-header'  className='header'>HACKERS</h1>
+      <h1 id='people-header'  className='header'>{currentWord}</h1>
       <h2 id='sub-header'>for
         <a id='sub-header-highlight' style={{ fontFamily: 'Mokoto', color: '#910307' }}> Changing The World </a>
         with us!
