@@ -30,7 +30,6 @@
 #button-container {
   row-gap: 45px;
   bottom: 150px;
-
 }
 
 #link-button-container {
@@ -77,14 +76,14 @@
 
 @media (max-width: 768px) {
   #thankyou-header {
-    font-size: 120px;
+    font-size: 100px;
+    margin-bottom: -10px;
   }
   #people-header {
-    font-size: 90px;
+    font-size: 70px;
   }
   #sub-header {
-    font-size: 35px;
-    margin-top: 60px;
+    display: none;
   }
   #sub-header-highlight {
     font-size: 38px;
@@ -103,6 +102,8 @@
     font-size: 22px;
     padding: 3px; /* Adjust the padding as needed */
     border: 3px solid white;
+    width: 250px; /* Adjust as needed */
+    font-size: 20px;
   }
   #winners-button {
     padding: 6px;
@@ -121,7 +122,6 @@
   }
   #people-header {
     font-size: 80px;
-
   }
   #sub-header {
     font-size: 30px;
