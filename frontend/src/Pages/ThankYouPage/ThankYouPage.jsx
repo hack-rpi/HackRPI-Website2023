@@ -42,7 +42,7 @@ const ThankYouPage = () => {
   }, []);
 
   const transitionSpeed = 3000;
-  let initialCenter = { latitude: 23.0, longitude: -80.0, altitude: 1.7 };
+  let initialCenter = { latitude: 15.0, longitude: -94.0, altitude: 1.7 };
 
   const mapCenter = {
     lat: initialCenter.latitude,
@@ -52,8 +52,6 @@ const ThankYouPage = () => {
 
   let globeWidth = windowDimensions.width * 1.75;
   let globeHeight = windowDimensions.height * 1.75;
-
-
   if (windowDimensions.width <= 425) {
     mapCenter.altitude = 1.9;
     globeWidth = windowDimensions.width;
@@ -68,7 +66,6 @@ const ThankYouPage = () => {
     globeHeight = windowDimensions.height * 1.3;
     console.log('globe is reduced size')
   }
-
   console.log('window width: ' + windowDimensions.width + '| window height: ' +  windowDimensions.height)
   console.log('globe width: ' + globeWidth + '| globe height: ' +  globeHeight);
 
@@ -107,9 +104,9 @@ const ThankYouPage = () => {
               Back To HackRPI X
             </Nav.Link>
           </LinkContainer>
-            <Nav.Link href='https://tinyurl.com/hackrpi-donation' className="button">
-              Support Our Next Event
-            </Nav.Link>
+          <Nav.Link href='https://tinyurl.com/hackrpi-donation' className="button">
+            Support Our Next Event
+          </Nav.Link>
         </div>
       </div>
       <div id="globe" style={{width: 'auto', height: 'auto', position: 'absolute' }}>
@@ -117,7 +114,6 @@ const ThankYouPage = () => {
                ref={globeEl}
                width={globeWidth}
                height={globeHeight}
-          // showAtmosphere={true}
                atmosphereColor={'rgb(255, 255, 255)'}
                globeImageUrl={globeimage}
                backgroundColor={'rgb(255,255,255, 0)'}
