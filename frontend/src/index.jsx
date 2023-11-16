@@ -32,7 +32,7 @@ const router = createHashRouter([
           <div>
             <ThankYouNavBar />
             <ThankYouPage />
-            <LayoutThankYou />
+            {/*<LayoutThankYou />*/}
           </div>
         ),
       },
@@ -42,7 +42,7 @@ const router = createHashRouter([
           <div>
             <ThankYouNavBar />
             <ThankYouPage />
-            <LayoutThankYou />
+            {/*<LayoutThankYou />*/}
           </div>
         ),
       },
@@ -150,7 +150,7 @@ const mobileRouter = createHashRouter([
           <div>
             <ThankYouMobileNavBar />
             <ThankYouPage />
-            <LayoutThankYou />
+            {/*<LayoutThankYou />*/}
           </div>
         ),
       },
@@ -160,7 +160,7 @@ const mobileRouter = createHashRouter([
           <div>
             <ThankYouMobileNavBar />
             <ThankYouPage />
-            <LayoutThankYou />
+            {/*<LayoutThankYou />*/}
           </div>
         ),
       },
