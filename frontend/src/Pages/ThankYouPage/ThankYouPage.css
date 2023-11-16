@@ -1,0 +1,32 @@
+.thank-you-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.button {
+  width: auto; /* or remove this line altogether */
+  padding: 12px; /* Adjust the padding as needed */
+}
+
+.thank-you-page {
+  /* Add any existing styles for the thank-you page */
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  right: 10px; /* Adjust the distance from the right as needed */
+}
+
+.small-text {
+  font-size: 50%;
+}
+
+h1 {
+  line-height: .8; 
+  margin-bottom: 20px;
+}

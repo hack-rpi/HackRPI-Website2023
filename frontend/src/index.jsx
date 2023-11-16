@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar.jsx';
+import ThankYouNavBar from './Components/NavBar/ThankYouNavBar.jsx';
+import ThankYouMobileNavBar from './Components/NavBar/ThankYouMobileNavBar.jsx';
 import MobileNavBar from './Components/NavBar/MobileNavBar.jsx';
 import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
@@ -17,56 +19,122 @@ import { Outlet } from 'react-router-dom';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import MapsPage from './Pages/MapsPage/MapsPage.jsx';
+import ThankYouPage from './Pages/ThankYouPage/ThankYouPage.jsx';
+import ThankYouFooter from './Components/Footer/ThankYouFooter.jsx';
 
 const router = createHashRouter([
   {
     path: '/',
-    element: (
-      <div>
-        <NavBar />
-        <Layout />
-      </div>
-    ),
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: (
+          <div>
+            <ThankYouNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      {
+        path: 'thank-you',
+        element: (
+          <div>
+            <ThankYouNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
       },
       {
         path: 'home',
-        element: <HomePage />,
+        element: (
+          <div>
+            <NavBar />
+            <HomePage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'faq',
-        element: <FAQPage />,
+        element: (
+          <div>
+            <NavBar />
+            <FAQPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'schedule',
-        element: <SchedulePage />,
+        element: (
+          <div>
+            <NavBar />
+            <SchedulePage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'sponsor-us',
-        element: <SponsorUsPage />,
+        element: (
+          <div>
+            <NavBar />
+            <SponsorUsPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'prizes',
-        element: <PrizesPage />,
+        element: (
+          <div>
+            <NavBar />
+            <PrizesPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'maps',
-        element: <MapsPage />,
+        element: (
+          <div>
+            <NavBar />
+            <MapsPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'team',
-        element: <MeetTheTeamPage />,
+        element: (
+          <div>
+            <NavBar />
+            <MeetTheTeamPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'workshops',
-        element: <WorkshopPage />,
+        element: (
+          <div>
+            <NavBar />
+            <WorkshopPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: '*',
-        element: <ErrorPage />,
+        element: (
+          <div>
+            <ThankYouNavBar />
+            <ErrorPage />
+            <LayoutThankYou />
+          </div>
+        ),
       },
     ],
   },
@@ -75,52 +143,117 @@ const router = createHashRouter([
 const mobileRouter = createHashRouter([
   {
     path: '/',
-    element: (
-      <div>
-        <MobileNavBar />
-        <Layout />
-      </div>
-    ),
     children: [
       {
         index: true,
-        element: <HomePageMobile />,
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      {
+        path: 'thank-you',
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <ThankYouPage />
+            <LayoutThankYou />
+          </div>
+        ),
       },
       {
         path: 'home',
-        element: <HomePageMobile />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <HomePageMobile />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'faq',
-        element: <FAQPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <FAQPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'schedule',
-        element: <SchedulePage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <SchedulePage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'sponsor-us',
-        element: <SponsorUsPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <SponsorUsPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'prizes',
-        element: <PrizesPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <PrizesPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'maps',
-        element: <MapsPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <MapsPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'team',
-        element: <MeetTheTeamPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <MeetTheTeamPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: 'workshops',
-        element: <WorkshopPage />,
+        element: (
+          <div>
+            <MobileNavBar />
+            <WorkshopPage />
+            <Layout />
+          </div>
+        ),
       },
       {
         path: '*',
-        element: <ErrorPage />,
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <ErrorPage />
+            <LayoutThankYou />
+          </div>
+        ),
+        
       },
     ],
   },
@@ -153,6 +286,15 @@ function App() {
           <Layout />
         </RouterProvider>
       )}
+    </div>
+  );
+}
+
+function LayoutThankYou() {
+  return (
+    <div>
+      <Outlet />
+      <ThankYouFooter />
     </div>
   );
 }
