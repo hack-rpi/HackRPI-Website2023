@@ -1,10 +1,13 @@
+* {
+  margin: 0;
+}
+
 
  .thank-you-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 94.5vh;
 }
 
 .thankyou-text {
@@ -54,9 +57,18 @@
 }
 
 .button {
-  width: auto; /* or remove this line altogether */
-  padding: 12px; /* Adjust the padding as needed */
-  border: 2px solid white;
+  width: 400px;
+  height: auto;
+  font-size: 30px;
+  padding: 3px; /* Adjust the padding as needed */
+  border: 3.6px solid white;
+  text-align: center;
+}
+
+#winners-button {
+  font-size: 42px;
+  border: 5px solid white;
+  box-shadow: 0 0 20px white;
 }
 
 .thank-you-page {
@@ -74,7 +86,7 @@
   font-size: 45%;
 }
 
-h1 {
-  line-height: .8; 
-  margin-bottom: 20px;
-}
+/*h1 {*/
+/*  line-height: .8; */
+/*  margin-bottom: 20px;*/
+/*}*/
