@@ -105,11 +105,9 @@ const ThankYouPage = () => {
              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: '5',
               position: 'absolute',
       }}>
-        <LinkContainer to="/winners">
-          <Nav.Link id='winners-button' className="button">
-            See Our Winners!
-          </Nav.Link>
-        </LinkContainer>
+        <Nav.Link href='https://hackrpi-x-2023.devpost.com/project-gallery' className="button">
+          See Our Winners!
+        </Nav.Link>
         <div id='link-button-container' style={{display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <LinkContainer to="/home">
             <Nav.Link className="button">
