@@ -88,26 +88,32 @@
   #sub-header-highlight {
     font-size: 38px;
   }
-
+  .button:first-child {
+    margin-bottom: 10px;
+  }
+  .button:not(:first-child) {
+    margin-top: 0;
+  }
   #button-container {
     row-gap: 30px;
   }
   #link-button-container {
     flex-direction: column;
-    column-gap: 0;
-    row-gap: 15px;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
   }
   .button {
-    width: 300px;
+    width: 90%;
     font-size: 22px;
-    padding: 3px; /* Adjust the padding as needed */
+    padding: 3px;
     border: 3px solid white;
-    width: 250px; /* Adjust as needed */
     font-size: 20px;
   }
   #winners-button {
-    padding: 6px;
+    padding: 3px;
     font-size: 37px;
+    margin-bottom: 15px;
   }
 
   #globe {
@@ -121,7 +127,7 @@
     margin-bottom: -20px;
   }
   #people-header {
-    font-size: 80px;
+    font-size: 50px;
   }
   #sub-header {
     font-size: 30px;
@@ -130,12 +136,22 @@
   #sub-header-highlight {
     font-size: 35px;
   }
-
+  .button:first-child {
+    margin-bottom: 10px;
+  }
+  .button:not(:first-child) {
+    margin-top: 0;
+  }
   #button-container {
     row-gap: 40px;
   }
   #link-button-container {
-    row-gap: 20px;
+    row-gap: 15px;
+  }
+
+  .button {
+    width: 90%;
+    margin-bottom: 10px;
   }
 
   #globe {
@@ -149,11 +165,24 @@
     line-height: 85px;
     margin-bottom: -6px;
   }
+  .button:first-child {
+    margin-bottom: 10px;
+  }
+  .button:not(:first-child) {
+    margin-top: 0;
+  }
   #people-header {
-    font-size: 75px;
+    font-size: 50px;
   }
   #sub-header {
     margin-top: 40px;
+  }
+  #link-button-container {
+    row-gap: 10px;
+  }
+  .button {
+    width: 90%;
+    margin-bottom: 10px;
   }
 }
 
@@ -163,21 +192,25 @@
     line-height: 75px;
     margin-bottom: -6px;
   }
+  #button-container {
+    position: absolute;
+    bottom: 80px; /* Adjusted to 0 to stick to the bottom */
+    width: 90%;
+    font-size: 16px;
+    padding: 3px; /* Adjust the padding as needed */
+  }
+  #link-button-container {
+    flex-direction: column;
+    width: 100%; /* Take full width to center buttons */
+  }
+  .button {
+    width: 80%; /* Adjust width to not take full screen */
+    margin: 10px auto; /* Add top and bottom margin, auto for left and right for centering */
+  }
   #people-header {
-    font-size: 55px;
+    font-size: 40px;
   }
   #sub-header {
     margin-top: 40px;
-  }
-
-  .button {
-    width: 215px;
-    font-size: 16px;
-    padding: 3px; /* Adjust the padding as needed */
-    border: 3px solid white;
-  }
-  #winners-button {
-    padding: 6px;
-    font-size: 30px;
   }
 }
