@@ -27,6 +27,11 @@
   font-size: 30px;
 }
 
+.button{
+	width: fit-content;
+}
+
+
 .content-iframe {
   width: 100%;
   height: 550px;
