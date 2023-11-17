@@ -9,6 +9,7 @@
 #thankyou-header {
   margin: 30px 0 -35px 0;
   font-size: 200px;
+  text-align: center;
 }
 
 #people-header {
@@ -29,7 +30,7 @@
 
 #button-container {
   row-gap: 45px;
-  bottom: 150px;
+  margin-top: 40px;
 }
 
 #link-button-container {
@@ -38,12 +39,14 @@
 }
 
 .button {
-  width: 400px;
+  width: fit-content;
   height: auto;
   font-size: 30px;
   padding: 3px; /* Adjust the padding as needed */
   border: 3.6px solid white;
   text-align: center;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 #winners-button {
@@ -56,7 +59,7 @@
 
 #globe {
   bottom: 0;
-  transform: translate(0%, 66%);
+  transform: translate(0%, -20%);
 }
 
 @media (max-width: 1100px) {
@@ -88,14 +91,12 @@
   #sub-header-highlight {
     font-size: 38px;
   }
-  .button:first-child {
-    margin-bottom: 10px;
-  }
+ 
   .button:not(:first-child) {
     margin-top: 0;
   }
   #button-container {
-    row-gap: 30px;
+    row-gap: 20px;
   }
   #link-button-container {
     flex-direction: column;
@@ -104,20 +105,18 @@
     row-gap: 20px;
   }
   .button {
-    width: 90%;
+    width: fit-content;
     font-size: 22px;
     padding: 3px;
     border: 3px solid white;
     font-size: 20px;
+    padding-left: 7px;
+    padding-right: 7px;
   }
   #winners-button {
     padding: 3px;
     font-size: 37px;
     margin-bottom: 15px;
-  }
-
-  #globe {
-    transform: translate(0%, 54%);
   }
 }
 
@@ -136,26 +135,21 @@
   #sub-header-highlight {
     font-size: 35px;
   }
-  .button:first-child {
-    margin-bottom: 10px;
-  }
+  
   .button:not(:first-child) {
     margin-top: 0;
   }
   #button-container {
-    row-gap: 40px;
+    row-gap: 20px;
   }
   #link-button-container {
-    row-gap: 15px;
+    row-gap: 20px;
   }
 
   .button {
-    width: 90%;
-    margin-bottom: 10px;
-  }
-
-  #globe {
-    transform: translate(0%, 40%);
+    width: fit-content;
+    padding-left: 7px;
+    padding-right: 7px;
   }
 }
 
@@ -165,9 +159,7 @@
     line-height: 85px;
     margin-bottom: -6px;
   }
-  .button:first-child {
-    margin-bottom: 10px;
-  }
+  
   .button:not(:first-child) {
     margin-top: 0;
   }
@@ -178,34 +170,28 @@
     margin-top: 40px;
   }
   #link-button-container {
-    row-gap: 10px;
+    row-gap: 20px;
+		width: 100%;
   }
   .button {
     width: 90%;
-    margin-bottom: 10px;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
   #thankyou-header {
     font-size: 80px;
     line-height: 75px;
     margin-bottom: -6px;
   }
-  #button-container {
-    position: absolute;
-    bottom: 80px; /* Adjusted to 0 to stick to the bottom */
-    width: 90%;
-    font-size: 16px;
-    padding: 3px; /* Adjust the padding as needed */
-  }
+
   #link-button-container {
     flex-direction: column;
     width: 100%; /* Take full width to center buttons */
   }
   .button {
     width: 80%; /* Adjust width to not take full screen */
-    margin: 10px auto; /* Add top and bottom margin, auto for left and right for centering */
+    /* margin: 10px auto; Add top and bottom margin, auto for left and right for centering */
   }
   #people-header {
     font-size: 40px;
