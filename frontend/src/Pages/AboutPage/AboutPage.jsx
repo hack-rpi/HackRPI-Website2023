@@ -33,12 +33,13 @@ const AboutPage = () => {
                   eventKey = "one"
                   onClick={() => setActiveTab('one')}
                 >
+									{/* TODO: Make this use an active class instead of this styling method */}
                   <Button
                     variant="outline"
                     className="button"
                   style={{
                     backgroundColor: activeTab === 'one' ? 'white' : '#910307',
-                    color: activeTab === 'one' ? '#910307' : 'white'
+                    color: activeTab === 'one' ? 'black' : 'white'
                   }}
                   onClick={() => handleTabClick('one')}
                   >
@@ -52,12 +53,13 @@ const AboutPage = () => {
                   eventKey="two"
                   onClick={() => setActiveTab('two')}
                 >
+									{/* TODO: Make this use an active class instead of this styling method */}
                   <Button
                     variant="outline"
                     className="button"
                   style={{
                     backgroundColor: activeTab === 'two' ? 'white' : '#910307',
-                    color: activeTab === 'two' ? '#910307' : 'white'
+                    color: activeTab === 'two' ? 'black' : 'white'
                   }}
                   onClick={() => handleTabClick('two')}
                 >

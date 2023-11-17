@@ -68,18 +68,13 @@ const ThankYouPage = () => {
     mapCenter.altitude = 1.9;
     globeWidth = windowDimensions.width;
     globeHeight = windowDimensions.height;
-    console.log('globe is min size')
   } else if (windowDimensions.width <= 653) {
     globeWidth = windowDimensions.width;
     globeHeight = windowDimensions.height;
-    console.log('globe is proportionate size')
   } else if (windowDimensions.width <= 768) {
     globeWidth = windowDimensions.width * 1.3;
     globeHeight = windowDimensions.height * 1.3;
-    console.log('globe is reduced size')
   }
-  console.log('window width: ' + windowDimensions.width + '| window height: ' +  windowDimensions.height)
-  console.log('globe width: ' + globeWidth + '| globe height: ' +  globeHeight);
 
   useEffect(() => {
 
@@ -91,7 +86,7 @@ const ThankYouPage = () => {
   }, []);
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%', height: '100%', position: 'fixed'}}>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', width: '100%', height: '100vh', position: 'fixed'}}>
 
       <h1 id='thankyou-header' className='header'>THANK YOU</h1>
       <h1 id='people-header'>{currentWord}</h1>
@@ -102,8 +97,7 @@ const ThankYouPage = () => {
 
       <div id='button-container'
            style={{
-             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: '5',
-              position: 'absolute',
+             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: '10', width:'95%'
       }}>
         <Nav.Link href='https://hackrpi-x-2023.devpost.com/project-gallery' className="button">
           See Our Winners!
@@ -119,7 +113,7 @@ const ThankYouPage = () => {
           </Nav.Link>
         </div>
       </div>
-      <div id="globe" style={{width: 'auto', height: 'auto', position: 'absolute' }}>
+      <div id="globe" style={{width: 'auto', height: 'auto', position: 'absolute', maxHeight:'33.333%', zIndex: '0' }}>
         <Globe id='earth'
                ref={globeEl}
                width={globeWidth}

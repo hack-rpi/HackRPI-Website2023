@@ -33,12 +33,13 @@ const MapsPage = () => {
             >
               <Nav.Item>
                 <Nav.Link className="nav-link-custom" eventKey="one" onClick={() => setActiveTab('one')}>
+									{/* TODO: Make this use an active class instead of this styling method */}
                   <Button
                     variant="outline"
-                    className="hack-button"
+                    className="button"
                     style={{
-                      backgroundColor: activeTab === 'one' ? 'white' : '#910307',
-                      color: 'black',
+                      backgroundColor: activeTab === 'one' ? '#910307': 'white',
+											color: activeTab === 'one' ?  'white' : 'black'
                     }}
                     onClick={() => handleTabClick('one')}
                   >
@@ -48,12 +49,13 @@ const MapsPage = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link className="nav-link-custom" eventKey="two" onClick={() => setActiveTab('two')}>
-                  <Button
+									{/* TODO: Make this use an active class instead of this styling method */}
+									<Button
                     variant="outline"
                     className="button"
                     style={{
-                      backgroundColor: activeTab === 'two' ? 'white' : '#910307',
-                      color: 'black'
+                      backgroundColor: activeTab === 'two' ? '#910307': 'white',
+											color: activeTab === 'two' ?  'white' : 'black'
                     }}
                     onClick={() => handleTabClick('two')}
                   >

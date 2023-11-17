@@ -10,7 +10,7 @@ function SponsorUsPage() {
       <h2 className="centered-container">
         <Nav.Link
           className="button btn btn-outline"
-          style={{width: '100px', padding:'6px'}}
+          style={{ padding:'6px'}}
           href="https://tinyurl.com/hackrpi-donation"
         >
           Donate
