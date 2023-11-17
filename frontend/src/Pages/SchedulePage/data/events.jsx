@@ -162,21 +162,13 @@ const eventsData = {
 };
   
   
-const allEvents = [[eventsData.normalEvents], [eventsData.constantEvents]];
+const allEvents = [...eventsData.normalEvents, ...eventsData.constantEvents];
 
+allEvents.sort((eventA, eventB) => {
+  const startTimeA = new Date(eventA.startTime).getTime();
+  const startTimeB = new Date(eventB.startTime).getTime();
 
-allEvents[0].sort((eventA, eventB) => {
-    const startTimeA = new Date(eventA.startTime).getTime();
-    const startTimeB = new Date(eventB.startTime).getTime();
-  
-    return startTimeA - startTimeB;
-});
-
-allEvents[1].sort((eventA, eventB) => {
-    const startTimeA = new Date(eventA.startTime).getTime();
-    const startTimeB = new Date(eventB.startTime).getTime();
-  
-    return startTimeA - startTimeB;
+  return startTimeA - startTimeB;
 });
 
 export default allEvents;
