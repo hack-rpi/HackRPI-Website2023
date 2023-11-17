@@ -33,6 +33,7 @@ const MapsPage = () => {
             >
               <Nav.Item>
                 <Nav.Link className="nav-link-custom" eventKey="one" onClick={() => setActiveTab('one')}>
+									{/* TODO: Make this use an active class instead of this styling method */}
                   <Button
                     variant="outline"
                     className="button"
@@ -48,7 +49,8 @@ const MapsPage = () => {
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link className="nav-link-custom" eventKey="two" onClick={() => setActiveTab('two')}>
-                  <Button
+									{/* TODO: Make this use an active class instead of this styling method */}
+									<Button
                     variant="outline"
                     className="button"
                     style={{
