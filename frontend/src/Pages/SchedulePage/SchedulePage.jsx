@@ -20,7 +20,7 @@ const SchedulePage = () => {
         Add To Google Calendar!
       </Nav.Link>
 
-      <div style={{ height: '500px' }}>
+      <div style={{ height: '800px', width: '90%' }}> {}
         <Calendar
           localizer={localizer}
           events={allEvents}
@@ -34,3 +34,5 @@ const SchedulePage = () => {
 };
 
 export default SchedulePage;
+
+
