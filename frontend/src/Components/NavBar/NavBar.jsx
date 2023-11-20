@@ -12,10 +12,6 @@ class NavBar extends React.Component {
     return (
       <>
         <style>{`
-          .navbar {
-            height: 60px;
-          }
-
           @media screen and (max-width: 980px) {
             .mainNav {
               display: none;
@@ -41,7 +37,7 @@ class NavBar extends React.Component {
           variant="dark"
           sticky="top"
           className="fixed-top"
-          style={{ backgroundColor: '#191919', padding: '0.5rem' }}
+          style={{ backgroundColor: '#191919', padding: '0.5rem', height: '60px' }}
         >
           <Container
             fluid
@@ -60,6 +56,7 @@ class NavBar extends React.Component {
                 className="d-inline-block align-top"
                 width="40"
                 height="40"
+                alt="Logo"
               />
               <div
                 className="d-inline-block align-top"
@@ -73,12 +70,17 @@ class NavBar extends React.Component {
               </div>
             </NavLink>
             
-            <Nav className='mainNav' style={{ marginRight: 'auto' }}>
-              <NavLink to="/home" className='pageNav'> Home </NavLink>
-              <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
-              <NavLink to="/mini-event" className='pageNav'> Mini Event </NavLink>
+            <Nav className="mainNav" style={{ marginRight: 'auto' }}>
+              <NavLink to="/home" className="pageNav">
+                Home
+              </NavLink>
+              <NavLink to="/faq" className="pageNav">
+                FAQ
+              </NavLink>
+              <NavLink to="/mini-event" className="pageNav">
+                Mini Event
+              </NavLink>
             </Nav>
-
             <Nav className="mainNav" style={{ alignLeft: 'auto', alignItems: 'center' }}>
               <Nav.Link href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf">
                 MLH Code of Conduct
