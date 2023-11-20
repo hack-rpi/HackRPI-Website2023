@@ -11,8 +11,17 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <style>
-        {`
+        <style>{`
+          .navbar {
+            height: 60px;
+          }
+
+          @media screen and (max-width: 980px) {
+            .mainNav {
+              display: none;
+            }
+          }
+          
           .pageNav {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.25);
@@ -26,40 +35,24 @@ class NavBar extends React.Component {
           .active, .active:hover {
             color: rgba(255, 255, 255, 1);
           }
-
-          .navContainer {
-            @media (min-width: 1200px) {
-              width: 100%;
-              height: 5%;
-            }
-          }
-          .navWrap {
-            @media (min-width: 1200px) {
-              width: 100%;
-              height: 7%;
-            }
-          }
-        `}
-        </style>
-        <Navbar collapseOnSelect
-          expand="lg"
+        `}</style>
+        <Navbar 
+          collapseOnSelect
           variant="dark"
           sticky="top"
+          className="fixed-top"
           style={{ backgroundColor: '#191919', padding: '0.5rem' }}
-          className='navWrap'
         >
           <Container
             fluid
             style={{
               display: 'flex',
               flexDirection: 'row',
-              // justifyContent: 'center',
               alignItems: 'center',
               fontFamily: 'Poppins Light',
               fontSize: 15,
               color: 'white',
             }}
-            className='navContainer'
           >
             <NavLink to="/" style={{ paddingLeft: 30 }}>
               <img
@@ -79,7 +72,7 @@ class NavBar extends React.Component {
                 HACKRPI
               </div>
             </NavLink>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            
             <Nav className='mainNav' style={{ marginRight: 'auto' }}>
               <NavLink to="/home" className='pageNav'> Home </NavLink>
               <NavLink to="/faq" className='pageNav'> FAQ </NavLink>
