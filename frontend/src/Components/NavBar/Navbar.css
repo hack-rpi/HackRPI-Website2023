@@ -1,0 +1,16 @@
+.menu-item {
+    font-family: 'Mokoto', sans-serif;
+    color: white;
+    font-size: 6vw;
+    margin-bottom: 1em;
+  }
+  
+  .menu-item:active {
+    color: var(--red);
+  }
+  
+  @media (min-width: 1200px) {
+    .menu-item {
+        font-size: 2em;
+    }
+}
