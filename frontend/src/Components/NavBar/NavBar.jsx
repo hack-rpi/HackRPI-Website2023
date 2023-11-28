@@ -37,7 +37,7 @@ class NavBar extends React.Component {
           variant="dark"
           sticky="top"
           className="fixed-top"
-          style={{ backgroundColor: '#191919', padding: '0.5rem', height: '60px' }}
+          style={{ backgroundColor: '#191919', padding: '0.5rem' }}
         >
           <Container
             fluid
@@ -48,6 +48,7 @@ class NavBar extends React.Component {
               fontFamily: 'Poppins Light',
               fontSize: 15,
               color: 'white',
+              padding: '1rem'
             }}
           >
             <NavLink to="/" style={{ paddingLeft: 30 }}>
