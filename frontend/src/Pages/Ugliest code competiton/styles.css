@@ -1,0 +1,50 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+nav {
+    /* Add your navigation bar styles here */
+    background: #000;
+    color: #fff;
+    padding: 1em 0;
+    /* Other styles for your nav bar */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1em;
+    /* Other styles for your navigation links */
+}
+
+#ugliest-code-competition {
+    background: url('path_to_your_background_image.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#ugliest-code-competition h1 {
+    color: #ff4500;
+    font-size: 2.5em;
+}
+
+#ugliest-code-competition p {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    /* Other footer styles */
+}
+
+/* Add additional CSS rules for buttons, links, and other elements based on your design */
