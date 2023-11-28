@@ -21,7 +21,7 @@ function SponsorUsPage() {
           <h3 className="content-title">Want to support?</h3>
           <iframe
             className="content-iframe"
-            src="https://drive.google.com/file/d/17z1LSpUkCeY-AO3tYG5PfMv0U2FngzD_/preview"
+            src="https://drive.google.com/file/d/1Stab72LwDe9qPZGOczRYpISvtK27ervM/preview"
             allow="autoplay"
             sandbox="allow-scripts allow-same-origin allow-popups"
           ></iframe>
