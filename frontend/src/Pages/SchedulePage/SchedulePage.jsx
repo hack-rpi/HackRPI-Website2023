@@ -27,6 +27,11 @@ const SchedulePage = () => {
           startAccessor={(event) => new Date(event.startTime)}
           endAccessor={(event) => new Date(event.endTime)}
           titleAccessor="event"
+          eventPropGetter={(event) => ({
+            style: {
+              backgroundColor: event.type.color,
+            },
+          })}
         />
       </div>
     </div>

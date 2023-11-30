@@ -162,7 +162,11 @@ const eventsData = {
 };
   
   
-const allEvents = [...eventsData.normalEvents, ...eventsData.constantEvents];
+
+const allEvents = [
+    ...eventsData.normalEvents.map((event) => ({ ...event, type: 'normal' })),
+    ...eventsData.constantEvents.map((event) => ({ ...event, type: 'constant' })),
+];
 
 allEvents.sort((eventA, eventB) => {
   const startTimeA = new Date(eventA.startTime).getTime();

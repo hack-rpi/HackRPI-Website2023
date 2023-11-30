@@ -38,3 +38,20 @@
     background-color: #333333; 
 }
 
+.rbc-time-view {
+    /* height: auto !important; */
+}
+
+.rbc-time-header-content {
+    min-height: 100px;
+}
+
+.rbc-timeslot-group {
+    min-height: 100px;
+}
+
+.rbc-time-gutter,
+.rbc-timeslot-cell {
+    min-height: 70px;
+}
+  
