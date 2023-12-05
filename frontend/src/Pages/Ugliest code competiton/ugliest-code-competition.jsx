@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const UgliestCodeCompetition = () => {
   const prizes = [
@@ -158,15 +160,46 @@ const UgliestCodeCompetition = () => {
     zIndex: 9999,
     color: '#fff',
     fontFamily: 'Arial, sans-serif',
+    width: '50%',   
+    height: '50%',  
   };
 
+  const popupButtonStyle = {
+    backgroundColor: 'red',
+    color: 'white',
+    padding: '10px',
+    border: 'none',
+    cursor: 'pointer',
+    borderRadius: '5px', 
+  };
+  
+  
+  const popupCodeContainerStyle = {
+    width: '80%',
+    height: '80%',
+    overflow: 'hidden',
+    overflowY: 'auto',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center', // Center horizontally
+  };
+
+  const codeStyle = {
+    ...dark,
+    fontSize: '14px',
+    lineHeight: '1.6',
+    borderRadius: '5px',
+    padding: '20px',
+    margin: '0',
+  };
+    
   const toggleWindow = (index) => {
     const newShowWindows = [...showWindows];
     newShowWindows[index] = !newShowWindows[index];
     setShowWindows(newShowWindows);
     setSelectedPrize(ugliestCodeArray[index]);
   };
-
+  
   return (
     <section id="ugliest-code-competition" style={sectionStyle}>
       <h1 style={h1Style}>UGLIEST CODE COMPETITION</h1>
@@ -186,8 +219,14 @@ const UgliestCodeCompetition = () => {
         showWindow && (
           <div key={index} style={popupStyle}>
             <h2>{selectedPrize.title}</h2>
-            <pre>{selectedPrize.code}</pre>
-            <button onClick={() => toggleWindow(index)}>Close</button>
+            <div style={popupCodeContainerStyle}>
+              <SyntaxHighlighter language="java" style={codeStyle}>
+                {selectedPrize.code}
+              </SyntaxHighlighter>
+            </div>
+            <button style={popupButtonStyle} onClick={() => toggleWindow(index)}>
+              Close
+            </button>
           </div>
         )
       ))}
