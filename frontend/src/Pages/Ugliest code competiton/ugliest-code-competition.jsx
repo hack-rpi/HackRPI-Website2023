@@ -2,6 +2,82 @@ import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
+const Popup = ({ title, code, onClose }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const popupStyle = {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    background: '#1a1a1a',
+    padding: '20px',
+    borderRadius: '10px',
+    boxShadow: '0 0 30px rgba(0, 0, 0, 0.7)',
+    zIndex: 9999,
+    color: '#fff',
+    fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
+    width: '60%',
+    height: '70%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
+  const popupHeaderStyle = {
+    fontSize: '1.5em',
+    marginBottom: '15px',
+    borderBottom: '1px solid #333',
+    paddingBottom: '10px',
+  };
+
+  const popupButtonStyle = {
+    backgroundColor: '#e74c3c',
+    color: '#fff',
+    padding: '12px 20px',
+    border: 'none',
+    cursor: 'pointer',
+    borderRadius: '5px',
+    marginTop: '15px',
+    transition: 'background 0.3s ease-in-out',
+    backgroundColor: isHovered ? '#c0392b' : '#e74c3c',
+    transition: 'background 0.3s ease-in-out',
+
+  };
+
+  const popupButtonHoverStyle = {
+    backgroundColor: '#c0392b',
+  };
+
+  const syntaxHighlighterStyle = {
+    ...dark,
+    fontSize: '1em',
+    borderRadius: '5px',
+    margin: '20px 0',
+    overflow: 'auto',
+  };
+
+  return (
+    <div style={popupStyle}>
+      <div style={popupHeaderStyle}>
+        <h2>{title}</h2>
+      </div>
+      <SyntaxHighlighter language="java" style={syntaxHighlighterStyle}>
+        {code}
+      </SyntaxHighlighter>
+      <button
+        style={popupButtonStyle}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={onClose}
+      >
+        Close
+      </button>
+    </div>
+  );
+};
+
 const UgliestCodeCompetition = () => {
   const prizes = [
     { place: 'First Place Award', prize: 'An iPhone 15 Pro' },
@@ -9,33 +85,28 @@ const UgliestCodeCompetition = () => {
     { place: 'Third Place Award', prize: 'An Apple Watch Series 9' },
   ];
 
-  // some examples of ugly code fond online
-  // https://www.quora.com/What-is-the-ugliest-yet-functional-piece-of-code-ever-written-by-you
-  // https://dev.to/weeb/what-s-one-of-the-ugliest-piece-of-code-you-ve-written-so-far-1ej3
-
-  // container of ugliest code
   const ugliestCodeArray = [
     {
       title: 'Ugliest Code 1',
       code: `public class Square 
-{
-    public static void main(String args[]) 
-    {
-        System.out.println("*"+"*"+"*"+"*"+"*"); 
-        System.out.println("*"+"*"+"*"+"*"+"*"); 
-        System.out.println("*"+"*"+"*"+"*"+"*"); 
-        System.out.println("*"+"*"+"*"+"*"+"*"); 
-        System.out.println("*"+"*"+"*"+"*"+"*"); 
-    } 
-}`,
+      {
+          public static void main(String args[]) 
+          {
+              System.out.println("*"+"*"+"*"+"*"+"*"); 
+              System.out.println("*"+"*"+"*"+"*"+"*"); 
+              System.out.println("*"+"*"+"*"+"*"+"*"); 
+              System.out.println("*"+"*"+"*"+"*"+"*"); 
+              System.out.println("*"+"*"+"*"+"*"+"*"); 
+          } 
+      }`,
     },
     {
-      title: 'Ugliest Code 2',
-      code: `int dow(int y, int m, int d) { 
-    static int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4}; 
-    y -= m < 3; 
-    return (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7; 
-}`,
+        title: 'Ugliest Code 2',
+        code: `int dow(int y, int m, int d) { 
+          static int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4}; 
+          y -= m < 3; 
+          return (y + y/4 - y/100 + y/400 + t[m-1] + d) % 7; 
+        }`,
     },
     {
       title: 'Ugliest Code 3',
@@ -127,7 +198,7 @@ const UgliestCodeCompetition = () => {
     marginTop: '20px',
     borderRadius: '5px',
   };
-      
+
   const awardsStyle = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -148,58 +219,13 @@ const UgliestCodeCompetition = () => {
     marginBottom: '10px',
   };
 
-  const popupStyle = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    background: '#000',
-    padding: '20px',
-    borderRadius: '5px',
-    boxShadow: '0 0 30px rgba(0, 0, 0, 0.5)',
-    zIndex: 9999,
-    color: '#fff',
-    fontFamily: 'Arial, sans-serif',
-    width: '50%',   
-    height: '50%',  
-  };
-
-  const popupButtonStyle = {
-    backgroundColor: 'red',
-    color: 'white',
-    padding: '10px',
-    border: 'none',
-    cursor: 'pointer',
-    borderRadius: '5px', 
-  };
-  
-  
-  const popupCodeContainerStyle = {
-    width: '80%',
-    height: '80%',
-    overflow: 'hidden',
-    overflowY: 'auto',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center', // Center horizontally
-  };
-
-  const codeStyle = {
-    ...dark,
-    fontSize: '14px',
-    lineHeight: '1.6',
-    borderRadius: '5px',
-    padding: '20px',
-    margin: '0',
-  };
-    
   const toggleWindow = (index) => {
     const newShowWindows = [...showWindows];
     newShowWindows[index] = !newShowWindows[index];
     setShowWindows(newShowWindows);
     setSelectedPrize(ugliestCodeArray[index]);
   };
-  
+
   return (
     <section id="ugliest-code-competition" style={sectionStyle}>
       <h1 style={h1Style}>UGLIEST CODE COMPETITION</h1>
@@ -215,23 +241,19 @@ const UgliestCodeCompetition = () => {
           </article>
         ))}
       </div>
+
       {showWindows.map((showWindow, index) => (
         showWindow && (
-          <div key={index} style={popupStyle}>
-            <h2>{selectedPrize.title}</h2>
-            <div style={popupCodeContainerStyle}>
-              <SyntaxHighlighter language="java" style={codeStyle}>
-                {selectedPrize.code}
-              </SyntaxHighlighter>
-            </div>
-            <button style={popupButtonStyle} onClick={() => toggleWindow(index)}>
-              Close
-            </button>
-          </div>
+          <Popup
+            key={index}
+            title={selectedPrize.title}
+            onClose={() => toggleWindow(index)}
+            code={selectedPrize.code}
+          />
         )
       ))}
     </section>
-  );
-};
+    );
+  };
 
 export default UgliestCodeCompetition;
