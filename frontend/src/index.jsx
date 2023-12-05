@@ -7,6 +7,7 @@ import HomePage from './Pages/HomePage/HomePage.jsx';
 import HomePageMobile from './Pages/HomePage/HomePageMobile.jsx';
 import FAQPage from './Pages/FAQPage/FAQPage.jsx';
 import PrizesPage from './Pages/PrizesPage/PrizesPage.jsx';
+import UgliestCodePage from './Pages/UgliestCodeCompetition/UgliestCodePage.jsx';
 import MiniEventPage from './Pages/MiniEventPage/MiniEventPage.jsx';
 import Footer from './Components/Footer/Footer.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -43,6 +44,16 @@ const router = createHashRouter([
             <ThankYouNavBar />
             <ThankYouPage />
             {/*<LayoutThankYou />*/}
+          </div>
+        ),
+      },
+      {
+        path: 'ugliest-code',
+        element: (
+          <div>
+            <ThankYouNavBar />
+            < UgliestCodePage/>
+            <LayoutThankYou />
           </div>
         ),
       },

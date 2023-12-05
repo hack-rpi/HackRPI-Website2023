@@ -1,0 +1,13 @@
+/* styles.css or styles.scss */
+.card-container {
+    width: 21rem;
+    background: transparent;
+    border: none;
+    transition: .5s;
+}
+
+.card-container:hover {
+    background: rgba(142, 142, 142, 0.27);
+    scale: 1.04;
+    box-shadow: 0 0 15px red;
+}
