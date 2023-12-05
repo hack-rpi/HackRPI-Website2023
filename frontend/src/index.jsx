@@ -176,6 +176,16 @@ const mobileRouter = createHashRouter([
         ),
       },
       {
+        path: 'ugliest-code',
+        element: (
+          <div>
+            <ThankYouMobileNavBar />
+            <UgliestCodePage />
+            <LayoutThankYou />
+          </div>
+        ),
+      },
+      {
         path: 'home',
         element: (
           <div>
