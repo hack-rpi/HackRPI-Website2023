@@ -21,6 +21,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import MapsPage from './Pages/MapsPage/MapsPage.jsx';
 import ThankYouPage from './Pages/ThankYouPage/ThankYouPage.jsx';
 import ThankYouFooter from './Components/Footer/ThankYouFooter.jsx';
+import UgliestCodeCompetition from './Pages/UgliestCodeCompetition/UgliestCodeCompetition.jsx';
 
 const router = createHashRouter([
   {
@@ -123,6 +124,16 @@ const router = createHashRouter([
             <NavBar />
             <WorkshopPage />
             <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'ugliest-code-competition',
+        element: (
+          <div>
+            <NavBar /> {/* Replace with your actual NavBar component */}
+            <UgliestCodeCompetition />
+            <Layout /> {/* Replace with your actual Footer component */}
           </div>
         ),
       },
@@ -240,6 +251,16 @@ const mobileRouter = createHashRouter([
           <div>
             <MobileNavBar />
             <WorkshopPage />
+            <Layout />
+          </div>
+        ),
+      },
+      {
+        path: 'ugliest-code-competition',
+        element: (
+          <div>
+            <MobileNavBar />
+            <UgliestCodeCompetition />
             <Layout />
           </div>
         ),
