@@ -22,18 +22,23 @@ class NavBar extends React.Component {
             .navbar {
               padding: 1.8rem;
             }
-          }
 
             .pageNav {
               padding: .7rem;
               font-size: 16px;
               line-height: 1.5;
+              margin-right: 20px;
             }
           }
 
-          @media screen and (min-width: 2000px) {
+          @media screen and (min-width: 2000px) and (min-height: 1000px){
             .navbar {
-              padding: 1.8rem;
+              padding: 2rem;
+            }
+          
+            .pageNav {
+              font-size: 18px;
+              margin-right: 30px;
             }
           }
 
