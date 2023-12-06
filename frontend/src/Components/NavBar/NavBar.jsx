@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import { NavLink } from 'react-router-dom';
-import './NavBar.css';
 
 import transparentLogo from '../../../assets/logo_transparent.png';
 
@@ -19,9 +18,15 @@ class NavBar extends React.Component {
             }
           }
           
-          @media screen and (min-width: 1201px) {
+          @media screen and (min-width: 1200px) {
             .navbar {
               padding: 1.5rem;
+            }
+          }
+
+          @media screen and (min-width: 2000px) {
+            .navbar {
+              padding: 1.8rem;
             }
           }
 
