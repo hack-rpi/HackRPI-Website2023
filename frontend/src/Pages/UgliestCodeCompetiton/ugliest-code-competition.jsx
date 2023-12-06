@@ -163,8 +163,10 @@ const UgliestCodeCompetition = () => {
     const newShowWindows = [...showWindows];
     newShowWindows[index] = !newShowWindows[index];
     setShowWindows(newShowWindows);
+    // Move this line here so that it sets the selected prize after toggling the window
     setSelectedPrize(ugliestCodeArray[index]);
   };
+  
 
   return (
     <section id="ugliest-code-competition" style={sectionStyle}>
