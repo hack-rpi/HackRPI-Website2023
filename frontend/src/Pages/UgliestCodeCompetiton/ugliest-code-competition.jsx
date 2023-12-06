@@ -3,9 +3,6 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import CodePopup from './CodePopup'; // Import the CodePopup component
 
-// https://www.npmjs.com/package/react-syntax-highlighter
-// http://localhost:3000/#/ugliest-code-competition
-
 const UgliestCodeCompetition = () => {
   const prizes = [
     { place: 'First Place Award', prize: 'An iPhone 15 Pro' },
@@ -40,62 +37,7 @@ const UgliestCodeCompetition = () => {
       title: 'Ugliest Code 3',
       code: `function S1E23(){
         document.getElementById("Season3div").style.display="none";
-        document.getElementById("Season4div").style.display="none";
-        document.getElementById("director").style.display="block";
-        document.getElementById("directorname").innerHTML="<a target=blank href=https://www.imdb.com/name/nm0236173/?ref_=tt_ov_dr>Dermott Downs</a>";
-        document.getElementById("episode23buttons").style.display="block";
-        document.getElementById("episode2buttons").style.display="none";
-        document.getElementById("episode3buttons").style.display="none";
-        document.getElementById("episode4buttons").style.display="none";
-        document.getElementById("episode5buttons").style.display="none";
-        document.getElementById("episode6buttons").style.display="none";
-        document.getElementById("episode7buttons").style.display="none";
-        document.getElementById("episode8buttons").style.display="none";
-        document.getElementById("episode9buttons").style.display="none";
-        document.getElementById("episode10buttons").style.display="none";
-        document.getElementById("episode11buttons").style.display="none";
-        document.getElementById("episode12buttons").style.display="none";
-        document.getElementById("episode13buttons").style.display="none";
-        document.getElementById("episode14buttons").style.display="none";
-        document.getElementById("episode15buttons").style.display="none";
-        document.getElementById("episode16buttons").style.display="none";
-        document.getElementById("episode17buttons").style.display="none";
-        document.getElementById("episode18buttons").style.display="none";
-        document.getElementById("episode19buttons").style.display="none";
-        document.getElementById("episode20buttons").style.display="none";
-        document.getElementById("episode21buttons").style.display="none";
-        document.getElementById("episode22buttons").style.display="none";
-        document.getElementById("episode1buttons").style.display="none";
-        document.getElementById("Season2div").style.display="none";
-        document.getElementById("Season1div").style.display="block";
-        document.getElementById("review").style.display="block";
-        document.getElementById("reviewlink").style.display="block";
-        document.getElementById("reviewlink").innerHTML="<a target=blank href=http://www.ign.com/articles/2015/05/20/the-flash-fast-enough-review>Read here</a>";
-    
-        document.getElementById("trailer").style.display="block"
-        document.getElementById("promo").style.display="block"
-        document.getElementById("promo").innerHTML="<a target=blank href=https://www.youtube.com/watch?v=Qx90DwHjIvk>Watch here</a>";
-    
-        document.getElementById("episodeinformation").style.display="block";
-        document.getElementById("episoderate").style.display="block";
-        document.getElementById("episodedate").style.display="block";
-        document.getElementById("episodelength").style.display="block";
-        document.getElementById("date").innerHTML="19 May 2015";
-        document.getElementById("star").style.display="block";
-        document.getElementById("length").innerHTML="44 min";
-        document.getElementById("ratenumber").innerHTML="9.6";
-        document.getElementById("episodeimage").src="s1e23.png";
-        document.getElementById("episodetitle").innerHTML = "<div id=episodetitle>Season 1 Episode 23:Fast Enough</div>";
-        document.getElementById("episodedescription").innerHTML="<p> Once the preparations were set for Barry to travel back in time,"+
-    " he traveled back to the night Nora died. However, despite this,"+
-    " Barry's alternative future self saw Barry and signaled him to not to interfere and proceeded"+
-    " to transport his younger self 20 blocks away.<br><br> Barry, in tears, obeyed. He spoke to Nora once last time,"+
-    " revealing his identity to her, and assured her that he and Henry are okay in the future."+
-    " In the present, Eobard gets into the time machine Cisco made,"+
-    " remarking that Rip Hunter first designed it.<br><br> Cisco warns him never to return."+
-    " Suddenly, a helmet with wings on top comes out of the wormhole, which Eobard takes as his signal to leave. "+
-    "However, Barry returns, destroying the time machine with a supersonic punch.</p>";
-    
+        // ... (rest of the code)
       }
     }`,
     },
@@ -160,10 +102,12 @@ const UgliestCodeCompetition = () => {
   };
 
   const toggleWindow = (index) => {
-    const newShowWindows = [...showWindows];
-    newShowWindows[index] = !newShowWindows[index];
-    setShowWindows(newShowWindows);
-    // Move this line here so that it sets the selected prize after toggling the window
+    setShowWindows((prevShowWindows) => {
+      const newShowWindows = [...prevShowWindows];
+      newShowWindows[index] = !newShowWindows[index];
+      return newShowWindows;
+    });
+    
     setSelectedPrize(ugliestCodeArray[index]);
   };
   
@@ -190,7 +134,7 @@ const UgliestCodeCompetition = () => {
       {showWindows.map((showWindow, index) => (
         showWindow && (
           <CodePopup
-            key={index}
+            key={index + selectedPrize.title} // Use a dynamic key to ensure uniqueness
             title={selectedPrize.title}
             onClose={() => toggleWindow(index)}
             code={selectedPrize.code}
