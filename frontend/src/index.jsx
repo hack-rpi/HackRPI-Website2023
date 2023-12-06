@@ -21,7 +21,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import MapsPage from './Pages/MapsPage/MapsPage.jsx';
 import ThankYouPage from './Pages/ThankYouPage/ThankYouPage.jsx';
 import ThankYouFooter from './Components/Footer/ThankYouFooter.jsx';
-import UgliestCodeCompetition from './Pages/UgliestCodeCompetiton/ugliest-code-competition.jsx';
+import UgliestCodeCompetition from './Pages/UgliestCodeCompetiton/ugliest-code-competition';
 
 const router = createHashRouter([
   {
