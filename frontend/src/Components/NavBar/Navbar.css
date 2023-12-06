@@ -1,7 +1,7 @@
 .menu-item {
     font-family: 'Mokoto', sans-serif;
     color: white;
-    font-size: 6vw;
+    font-size: 1.5rem;
     margin-bottom: 1em;
   }
   
@@ -11,7 +11,7 @@
     color: var(--red);
   }
   
-  @media (min-width: 1200px) {
+  @media (min-width: 1200px) and (min-height: 800px) {
     .menu-item {
         font-size: 2em;
     }
