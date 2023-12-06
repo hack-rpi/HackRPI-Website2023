@@ -12,15 +12,22 @@ class NavBar extends React.Component {
     return (
       <>
         <style>{`
-          @media screen and (min-width: 980px) {
+          @media screen and (max-width: 980px) {
             .mainNav {
               display: none;
             }
           }
           
-          @media screen and (min-width: 1200px) {
+          @media screen and (min-width: 1200px) and (min-height: 800px) {
             .navbar {
-              padding: 1.5rem;
+              padding: 1.8rem;
+            }
+          }
+
+            .pageNav {
+              padding: .7rem;
+              font-size: 16px;
+              line-height: 1.5;
             }
           }
 
