@@ -6,11 +6,20 @@
   }
   
   .menu-item:active {
+    
+    
     color: var(--red);
   }
   
   @media (min-width: 1200px) {
     .menu-item {
         font-size: 2em;
+    }
+}
+
+
+@media (min-width: 2500px) and (min-height: 800px) {
+    .menu-item {
+        font-size: 4em;
     }
 }
