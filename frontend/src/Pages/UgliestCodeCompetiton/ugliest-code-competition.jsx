@@ -1,82 +1,10 @@
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodePopup from './CodePopup'; // Import the CodePopup component
 
-const Popup = ({ title, code, onClose }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const popupStyle = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    background: '#1a1a1a',
-    padding: '20px',
-    borderRadius: '10px',
-    boxShadow: '0 0 30px rgba(0, 0, 0, 0.7)',
-    zIndex: 9999,
-    color: '#fff',
-    fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
-    width: '60%',
-    height: '70%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  };
-
-  const popupHeaderStyle = {
-    fontSize: '1.5em',
-    marginBottom: '15px',
-    borderBottom: '1px solid #333',
-    paddingBottom: '10px',
-  };
-
-  const popupButtonStyle = {
-    backgroundColor: '#e74c3c',
-    color: '#fff',
-    padding: '12px 20px',
-    border: 'none',
-    cursor: 'pointer',
-    borderRadius: '5px',
-    marginTop: '15px',
-    transition: 'background 0.3s ease-in-out',
-    backgroundColor: isHovered ? '#c0392b' : '#e74c3c',
-    transition: 'background 0.3s ease-in-out',
-
-  };
-
-  const popupButtonHoverStyle = {
-    backgroundColor: '#c0392b',
-  };
-
-  const syntaxHighlighterStyle = {
-    ...dark,
-    fontSize: '1em',
-    borderRadius: '5px',
-    margin: '20px 0',
-    overflow: 'auto',
-  };
-
-  return (
-    <div style={popupStyle}>
-      <div style={popupHeaderStyle}>
-        <h2>{title}</h2>
-      </div>
-      <SyntaxHighlighter language="java" style={syntaxHighlighterStyle}>
-        {code}
-      </SyntaxHighlighter>
-      <button
-        style={popupButtonStyle}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={onClose}
-      >
-        Close
-      </button>
-    </div>
-  );
-};
+// https://www.npmjs.com/package/react-syntax-highlighter
+// http://localhost:3000/#/ugliest-code-competition
 
 const UgliestCodeCompetition = () => {
   const prizes = [
@@ -182,13 +110,25 @@ const UgliestCodeCompetition = () => {
     backgroundSize: 'cover',
     textAlign: 'center',
     position: 'relative',
+    maxWidth: '800px', 
+    margin: '0 auto', 
   };
-
+  
   const h1Style = {
     color: '#f50057',
     fontSize: '2.5em',
+    marginBottom: '10px', 
   };
-
+  
+  const pStyle = {
+    fontSize: '1.2em',
+    color: 'gray', 
+    maxWidth: '600px', 
+    margin: '0 auto', 
+    lineHeight: '1.5',
+  };
+    
+  
   const buttonStyle = {
     backgroundColor: 'white',
     color: 'rgb(145, 3, 7)',
@@ -229,7 +169,10 @@ const UgliestCodeCompetition = () => {
   return (
     <section id="ugliest-code-competition" style={sectionStyle}>
       <h1 style={h1Style}>UGLIEST CODE COMPETITION</h1>
-      <p>An "Ugliest Code Competition" is a humorous contest where programmers intentionally create the most convoluted and poorly written code.</p>
+      <p style={pStyle}>
+        An "Ugliest Code Competition" is a humorous contest where programmers intentionally create
+        the most convoluted and poorly written code.
+      </p>
       <button style={buttonStyle} onClick={() => toggleWindow(0)}>
         Join now
       </button>
@@ -244,7 +187,7 @@ const UgliestCodeCompetition = () => {
 
       {showWindows.map((showWindow, index) => (
         showWindow && (
-          <Popup
+          <CodePopup
             key={index}
             title={selectedPrize.title}
             onClose={() => toggleWindow(index)}
@@ -253,7 +196,8 @@ const UgliestCodeCompetition = () => {
         )
       ))}
     </section>
-    );
-  };
+  );
+};
+
 
 export default UgliestCodeCompetition;
