@@ -131,9 +131,9 @@ const router = createHashRouter([
         path: 'ugliest-code-competition',
         element: (
           <div>
-            <NavBar /> {/* Replace with your actual NavBar component */}
+            <NavBar />
             <UgliestCodeCompetition />
-            <Layout /> {/* Replace with your actual Footer component */}
+            <Layout />
           </div>
         ),
       },
