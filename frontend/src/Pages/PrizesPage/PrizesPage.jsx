@@ -386,9 +386,14 @@ const PrizesPage = () => {
           <Tab title="Sponsor Prizes" prizes={sponsorPrizes} />
         </div>
       </div>
+<<<<<<< Updated upstream
       <h2 style={{ textAlign: 'center', margin: '0px 20px' }}>
         ... and a Raffle Prize of an Event Banner and Amazon Echo Dot Speaker!
       </h2>
+=======
+      <h2 style={{textAlign:'center', margin:'0px 20px'}}>...and a Raffle Prize of an Event Banner and Amazon Echo Dot Speaker!</h2>
+      <h3 style={{textAlign:'center', margin:'0px 10px'}}>NOTE: Each Minor Track Prizes and the Best First Time Hack Prize is awarded per person.</h3>
+>>>>>>> Stashed changes
     </PrizeContainer>
   );
 };
